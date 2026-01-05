@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
-import { getTasteProfile } from '@/data/quizData';
+import { getTasteProfile, QuizType, quizLabels } from '@/data/quizData';
 
 interface LocationState {
-  averageSweetness: number;
+  averageIntensity: number;
   totalAnswered: number;
   likedCount: number;
+  quizType: QuizType;
 }
 
 const Results = () => {
@@ -20,10 +21,12 @@ const Results = () => {
     return <Navigate to="/" replace />;
   }
 
-  const profile = getTasteProfile(state.averageSweetness);
+  const quizType = state.quizType || 'sweet';
+  const labels = quizLabels[quizType];
+  const profile = getTasteProfile(state.averageIntensity, quizType);
 
   const handleShare = async () => {
-    const text = `I'm a "${profile.label}" ${profile.emoji}! My sweetness preference is ${profile.level.toFixed(1)}/10. Take the Taste Quiz to discover your palate!`;
+    const text = `I'm a "${profile.label}" ${profile.emoji}! My ${labels.label.toLowerCase()} preference is ${profile.level.toFixed(1)}/10. Take the Taste Quiz to discover your palate!`;
     
     if (navigator.share) {
       try {
@@ -110,9 +113,9 @@ const Results = () => {
           transition={{ delay: 0.4 }}
         >
           <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
-            Your Sweetness Spectrum
+            Your {labels.label} Spectrum
           </h2>
-          <ResultsChart profile={profile} />
+          <ResultsChart profile={profile} labels={labels} />
         </motion.div>
       </div>
 

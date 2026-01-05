@@ -1,24 +1,42 @@
-import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useCallback, useMemo } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import SwipeCard from '@/components/SwipeCard';
 import ActionButtons from '@/components/ActionButtons';
 import ProgressBar from '@/components/ProgressBar';
-import { quizItems, QuizItem } from '@/data/quizData';
+import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
 
 interface Answer {
   item: QuizItem;
   liked: boolean;
 }
 
+interface LocationState {
+  diet?: 'all-good' | 'pescatarian' | 'vegetarian' | 'vegan';
+  quizType?: QuizType;
+}
+
 const Quiz = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state as LocationState | null;
+  
+  const quizType = state?.quizType || 'sweet';
+  const dietPreference = state?.diet || 'all-good';
+  
+  const quizItems = useMemo(() => {
+    const items = quizDataMap[quizType] || quizDataMap.sweet;
+    // Filter by dietary preference
+    return items.filter(item => item.dietary.includes(dietPreference));
+  }, [quizType, dietPreference]);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [exitDirection, setExitDirection] = useState<'left' | 'right' | null>(null);
 
   const currentItem = quizItems[currentIndex];
   const nextItem = quizItems[currentIndex + 1];
+  const labels = quizLabels[quizType];
 
   const handleSwipe = useCallback((direction: 'left' | 'right') => {
     if (currentIndex >= quizItems.length) return;
@@ -33,15 +51,16 @@ const Quiz = () => {
       if (currentIndex + 1 >= quizItems.length) {
         // Calculate results and navigate
         const likedItems = newAnswers.filter(a => a.liked);
-        const avgSweetness = likedItems.length > 0
-          ? likedItems.reduce((sum, a) => sum + a.item.sweetnessLevel, 0) / likedItems.length
+        const avgIntensity = likedItems.length > 0
+          ? likedItems.reduce((sum, a) => sum + a.item.intensityLevel, 0) / likedItems.length
           : 5;
         
         navigate('/results', { 
           state: { 
-            averageSweetness: avgSweetness,
+            averageIntensity: avgIntensity,
             totalAnswered: newAnswers.length,
-            likedCount: likedItems.length
+            likedCount: likedItems.length,
+            quizType: quizType,
           }
         });
       } else {
@@ -49,7 +68,7 @@ const Quiz = () => {
         setExitDirection(null);
       }
     }, 200);
-  }, [currentIndex, answers, currentItem, navigate]);
+  }, [currentIndex, answers, currentItem, navigate, quizItems.length, quizType]);
 
   const handleUndo = useCallback(() => {
     if (answers.length === 0) return;
@@ -66,7 +85,7 @@ const Quiz = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Taste Quiz
+          {labels.label} Quiz
         </motion.h1>
         <p className="text-center text-muted-foreground text-sm mt-1">
           Swipe right if you like it, left if you don't

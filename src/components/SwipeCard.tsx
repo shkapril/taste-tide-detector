@@ -77,16 +77,16 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             {item.description}
           </p>
           
-          {/* Sweetness indicator */}
+          {/* Intensity indicator */}
           <div className="mt-4 flex items-center gap-2">
-            <span className="text-xs text-muted-foreground uppercase tracking-wide">Sweetness</span>
+            <span className="text-xs text-muted-foreground uppercase tracking-wide">Intensity</span>
             <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-taste-mild to-taste-intense rounded-full transition-all duration-300"
-                style={{ width: `${item.sweetnessLevel * 10}%` }}
+                style={{ width: `${item.intensityLevel * 10}%` }}
               />
             </div>
-            <span className="text-xs font-medium text-muted-foreground">{item.sweetnessLevel}/10</span>
+            <span className="text-xs font-medium text-muted-foreground">{item.intensityLevel}/10</span>
           </div>
         </div>
       </div>
