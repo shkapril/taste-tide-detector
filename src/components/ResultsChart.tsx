@@ -3,18 +3,14 @@ import { TasteProfile } from '@/data/quizData';
 
 interface ResultsChartProps {
   profile: TasteProfile;
+  labels?: { label: string; lowLabel: string; highLabel: string };
 }
 
-const ResultsChart = ({ profile }: ResultsChartProps) => {
+const ResultsChart = ({ profile, labels }: ResultsChartProps) => {
   const markerPosition = (profile.level / 10) * 100;
-  
-  const spectrumLabels = [
-    { position: 0, label: 'Bitter', emoji: '☕' },
-    { position: 25, label: 'Subtle', emoji: '🍵' },
-    { position: 50, label: 'Balanced', emoji: '⚖️' },
-    { position: 75, label: 'Sweet', emoji: '🧁' },
-    { position: 100, label: 'Very Sweet', emoji: '🍭' },
-  ];
+  const labelName = labels?.label || 'Sweetness';
+  const lowLabel = labels?.lowLabel || 'Bitter';
+  const highLabel = labels?.highLabel || 'Very Sweet';
 
   return (
     <div className="w-full max-w-md mx-auto">
@@ -47,16 +43,9 @@ const ResultsChart = ({ profile }: ResultsChartProps) => {
       </div>
 
       {/* Labels */}
-      <div className="relative h-8 mb-6">
-        {spectrumLabels.map((item) => (
-          <div
-            key={item.position}
-            className="absolute -translate-x-1/2 text-center"
-            style={{ left: `${item.position}%` }}
-          >
-            <span className="text-xs text-muted-foreground">{item.emoji}</span>
-          </div>
-        ))}
+      <div className="flex justify-between mb-6 px-2">
+        <span className="text-xs text-muted-foreground">{lowLabel}</span>
+        <span className="text-xs text-muted-foreground">{highLabel}</span>
       </div>
 
       {/* Percentile */}
@@ -70,7 +59,7 @@ const ResultsChart = ({ profile }: ResultsChartProps) => {
           Compared to others who took this quiz
         </p>
         <p className="text-2xl font-display font-semibold text-foreground">
-          Top <span className="text-primary">{100 - profile.percentile}%</span> sweetest palate
+          Top <span className="text-primary">{100 - profile.percentile}%</span> highest {labelName.toLowerCase()}
         </p>
       </motion.div>
     </div>
