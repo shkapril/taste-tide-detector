@@ -8,7 +8,7 @@ import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
 
 interface Answer {
   item: QuizItem;
-  liked: boolean;
+  chosenIntensity: number;
 }
 
 interface LocationState {
@@ -41,25 +41,26 @@ const Quiz = () => {
   const handleSwipe = useCallback((direction: 'left' | 'right') => {
     if (currentIndex >= quizItems.length) return;
 
-    const liked = direction === 'right';
+    // Right swipe = prefer option A, Left swipe = prefer option B
+    const chosenIntensity = direction === 'right' 
+      ? currentItem.intensityA 
+      : currentItem.intensityB;
+    
     setExitDirection(direction);
     
-    const newAnswers = [...answers, { item: currentItem, liked }];
+    const newAnswers = [...answers, { item: currentItem, chosenIntensity }];
     setAnswers(newAnswers);
 
     setTimeout(() => {
       if (currentIndex + 1 >= quizItems.length) {
-        // Calculate results and navigate
-        const likedItems = newAnswers.filter(a => a.liked);
-        const avgIntensity = likedItems.length > 0
-          ? likedItems.reduce((sum, a) => sum + a.item.intensityLevel, 0) / likedItems.length
-          : 5;
+        // Calculate average intensity from all choices
+        const avgIntensity = newAnswers.reduce((sum, a) => sum + a.chosenIntensity, 0) / newAnswers.length;
         
         navigate('/results', { 
           state: { 
             averageIntensity: avgIntensity,
             totalAnswered: newAnswers.length,
-            likedCount: likedItems.length,
+            likedCount: newAnswers.length,
             quizType: quizType,
           }
         });
@@ -88,7 +89,7 @@ const Quiz = () => {
           {labels.label} Quiz
         </motion.h1>
         <p className="text-center text-muted-foreground text-sm mt-1">
-          Swipe right if you like it, left if you don't
+          Swipe towards your preference
         </p>
       </header>
 
