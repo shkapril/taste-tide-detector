@@ -89,7 +89,7 @@ const Quiz = () => {
           {labels.label} Quiz
         </motion.h1>
         <p className="text-center text-muted-foreground text-sm mt-1">
-          Swipe towards your preference
+          Tap the one you prefer
         </p>
       </header>
 
