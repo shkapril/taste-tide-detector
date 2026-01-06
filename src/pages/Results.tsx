@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
-import { getTasteProfile, QuizType, quizLabels } from '@/data/quizData';
+import { getTasteProfile, QuizType, quizLabels, TasteProfile } from '@/data/quizData';
 
 interface LocationState {
   averageIntensity: number;
@@ -26,7 +26,7 @@ const Results = () => {
   const profile = getTasteProfile(state.averageIntensity, quizType);
 
   const handleShare = async () => {
-    const text = `I'm a "${profile.label}" ${profile.emoji}! My ${labels.label.toLowerCase()} preference is ${profile.level.toFixed(1)}/10. Take the Taste Quiz to discover your palate!`;
+    const text = `I'm a "${profile.label}" ${profile.emoji}! My ${labels.label.toLowerCase()} preference level is ${profile.level.toFixed(1)}/10. Take the Taste Quiz to discover your palate!`;
     
     if (navigator.share) {
       try {
@@ -89,18 +89,18 @@ const Results = () => {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="bg-secondary/50 rounded-xl p-4 text-center">
               <p className="text-2xl font-display font-bold text-foreground">
-                {state.likedCount}
+                {state.totalAnswered}
               </p>
               <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                Items Liked
+                Questions
               </p>
             </div>
             <div className="bg-secondary/50 rounded-xl p-4 text-center">
               <p className="text-2xl font-display font-bold text-foreground">
-                {state.totalAnswered}
+                {profile.level.toFixed(1)}/10
               </p>
               <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                Total Answered
+                {labels.label} Level
               </p>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import { motion, useMotionValue, useTransform, PanInfo } from 'framer-motion';
-import { X, Heart } from 'lucide-react';
 import { QuizItem } from '@/data/quizData';
 
 interface SwipeCardProps {
@@ -10,9 +9,9 @@ interface SwipeCardProps {
 
 const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
   const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-25, 25]);
-  const likeOpacity = useTransform(x, [0, 100], [0, 1]);
-  const nopeOpacity = useTransform(x, [-100, 0], [1, 0]);
+  const rotate = useTransform(x, [-200, 200], [-15, 15]);
+  const leftOpacity = useTransform(x, [-100, 0], [1, 0]);
+  const rightOpacity = useTransform(x, [0, 100], [0, 1]);
 
   const handleDragEnd = (_: any, info: PanInfo) => {
     if (info.offset.x > 100) {
@@ -39,54 +38,84 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
       whileDrag={{ scale: 1.02 }}
     >
       <div className="relative overflow-hidden rounded-2xl card-shadow bg-card">
-        {/* Image */}
-        <div className="relative aspect-square overflow-hidden">
-          <img
-            src={item.image}
-            alt={item.name}
-            className="w-full h-full object-cover"
-            draggable={false}
-          />
-          
-          {/* Overlay gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
-          
-          {/* Like indicator */}
-          <motion.div
-            className="absolute top-6 right-6 bg-success px-4 py-2 rounded-lg border-2 border-success rotate-12"
-            style={{ opacity: likeOpacity }}
-          >
-            <span className="text-success-foreground font-bold text-xl tracking-wide">LIKE</span>
-          </motion.div>
-          
-          {/* Nope indicator */}
-          <motion.div
-            className="absolute top-6 left-6 bg-taste-dislike px-4 py-2 rounded-lg border-2 border-taste-dislike -rotate-12"
-            style={{ opacity: nopeOpacity }}
-          >
-            <span className="text-primary-foreground font-bold text-xl tracking-wide">NOPE</span>
-          </motion.div>
+        {/* VS Header */}
+        <div className="bg-primary/10 px-4 py-3 text-center">
+          <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            Which do you prefer?
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          <h3 className="font-display text-2xl font-semibold text-card-foreground mb-2">
-            {item.name}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {item.description}
-          </p>
-          
-          {/* Intensity indicator */}
-          <div className="mt-4 flex items-center gap-2">
-            <span className="text-xs text-muted-foreground uppercase tracking-wide">Intensity</span>
-            <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-taste-mild to-taste-intense rounded-full transition-all duration-300"
-                style={{ width: `${item.intensityLevel * 10}%` }}
-              />
+        {/* Two images side by side */}
+        <div className="relative flex">
+          {/* Option A (Left) - Swipe Right to choose */}
+          <div className="relative w-1/2 aspect-square overflow-hidden border-r border-border/50">
+            <img
+              src={item.optionA.image}
+              alt={item.optionA.name}
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <h3 className="font-display text-lg font-semibold text-white text-center leading-tight">
+                {item.optionA.name}
+              </h3>
             </div>
-            <span className="text-xs font-medium text-muted-foreground">{item.intensityLevel}/10</span>
+            
+            {/* Selected indicator for Option A */}
+            <motion.div
+              className="absolute inset-0 bg-success/30 flex items-center justify-center"
+              style={{ opacity: rightOpacity }}
+            >
+              <span className="bg-success text-success-foreground px-3 py-1 rounded-full font-bold text-sm">
+                YOUR PICK
+              </span>
+            </motion.div>
+          </div>
+
+          {/* VS Badge */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="bg-card border-2 border-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+              <span className="font-display font-bold text-primary text-sm">VS</span>
+            </div>
+          </div>
+
+          {/* Option B (Right) - Swipe Left to choose */}
+          <div className="relative w-1/2 aspect-square overflow-hidden">
+            <img
+              src={item.optionB.image}
+              alt={item.optionB.name}
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <h3 className="font-display text-lg font-semibold text-white text-center leading-tight">
+                {item.optionB.name}
+              </h3>
+            </div>
+            
+            {/* Selected indicator for Option B */}
+            <motion.div
+              className="absolute inset-0 bg-success/30 flex items-center justify-center"
+              style={{ opacity: leftOpacity }}
+            >
+              <span className="bg-success text-success-foreground px-3 py-1 rounded-full font-bold text-sm">
+                YOUR PICK
+              </span>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Swipe Instructions */}
+        <div className="p-4 flex justify-between text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span>←</span>
+            <span>{item.optionB.name}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>{item.optionA.name}</span>
+            <span>→</span>
           </div>
         </div>
       </div>
