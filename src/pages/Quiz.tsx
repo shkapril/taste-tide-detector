@@ -12,7 +12,6 @@ interface Answer {
 }
 
 interface LocationState {
-  diet?: 'all-good' | 'pescatarian' | 'vegetarian' | 'vegan';
   quizType?: QuizType;
 }
 
@@ -22,13 +21,10 @@ const Quiz = () => {
   const state = location.state as LocationState | null;
   
   const quizType = state?.quizType || 'sweet';
-  const dietPreference = state?.diet || 'all-good';
   
   const quizItems = useMemo(() => {
-    const items = quizDataMap[quizType] || quizDataMap.sweet;
-    // Filter by dietary preference
-    return items.filter(item => item.dietary.includes(dietPreference));
-  }, [quizType, dietPreference]);
+    return quizDataMap[quizType] || quizDataMap.sweet;
+  }, [quizType]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);

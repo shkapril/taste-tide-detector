@@ -4,15 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-type DietPreference = 'all-good' | 'pescatarian' | 'vegetarian' | 'vegan';
 type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'buttery';
-
-const dietOptions: { value: DietPreference; label: string; emoji: string }[] = [
-  { value: 'all-good', label: 'All Good', emoji: '🍽️' },
-  { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
-  { value: 'vegetarian', label: 'Vegetarian', emoji: '🥗' },
-  { value: 'vegan', label: 'Vegan', emoji: '🌱' },
-];
 
 const quizOptions: { value: QuizType; label: string; emoji: string; description: string }[] = [
   { value: 'sweet', label: 'Sweet', emoji: '🍫', description: 'Chocolate, desserts & treats' },
@@ -25,8 +17,7 @@ const quizOptions: { value: QuizType; label: string; emoji: string; description:
 
 const Index = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState(0); // 0 = landing, 1 = diet, 2 = quiz type
-  const [selectedDiet, setSelectedDiet] = useState<DietPreference | null>(null);
+  const [step, setStep] = useState(0); // 0 = landing, 1 = quiz type
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
 
   const features = [
@@ -49,7 +40,7 @@ const Index = () => {
 
   const handleStartQuiz = () => {
     if (selectedQuiz) {
-      navigate('/quiz', { state: { diet: selectedDiet, quizType: selectedQuiz } });
+      navigate('/quiz', { state: { quizType: selectedQuiz } });
     }
   };
 
@@ -260,7 +251,7 @@ const Index = () => {
 
         {step === 1 && (
           <motion.div
-            key="diet"
+            key="quiz-type"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
@@ -278,83 +269,6 @@ const Index = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Button>
               <div className="flex-1">
-                <p className="text-sm text-muted-foreground">Step 1 of 2</p>
-                <h2 className="text-2xl font-display font-bold text-foreground">
-                  Dietary Preference
-                </h2>
-              </div>
-            </div>
-
-            {/* Diet Options */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {dietOptions.map((option, index) => (
-                <motion.button
-                  key={option.value}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => setSelectedDiet(option.value)}
-                  className={`relative p-6 rounded-2xl border-2 transition-all ${
-                    selectedDiet === option.value
-                      ? 'border-primary bg-primary/10'
-                      : 'border-border bg-card hover:border-primary/50'
-                  }`}
-                >
-                  {selectedDiet === option.value && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute top-3 right-3 w-6 h-6 rounded-full bg-primary flex items-center justify-center"
-                    >
-                      <Check className="w-4 h-4 text-primary-foreground" />
-                    </motion.div>
-                  )}
-                  <span className="text-3xl mb-2 block">{option.emoji}</span>
-                  <span className="font-medium text-foreground">{option.label}</span>
-                </motion.button>
-              ))}
-            </div>
-
-            {/* Continue Button */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <Button
-                onClick={() => setStep(2)}
-                disabled={!selectedDiet}
-                size="lg"
-                className="w-full h-14 text-lg font-medium"
-              >
-                Continue
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </motion.div>
-          </motion.div>
-        )}
-
-        {step === 2 && (
-          <motion.div
-            key="quiz-type"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
-            className="min-h-screen px-6 pt-12 pb-8"
-          >
-            {/* Header */}
-            <div className="flex items-center mb-8">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setStep(1)}
-                className="mr-2"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-              <div className="flex-1">
-                <p className="text-sm text-muted-foreground">Step 2 of 2</p>
                 <h2 className="text-2xl font-display font-bold text-foreground">
                   Choose Your Quiz
                 </h2>
