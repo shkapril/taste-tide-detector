@@ -101,49 +101,104 @@ const Index = () => {
                 </p>
               </motion.div>
 
-              {/* Preview Cards */}
+              {/* Elegant Food Gallery */}
               <motion.div
-                className="relative h-48 mb-8"
+                className="relative mb-10"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 w-32 h-40 rounded-xl overflow-hidden card-shadow"
-                  style={{ rotate: -8, top: 8 }}
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=300&h=400&fit=crop"
-                    alt="Dark chocolate"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 w-36 h-44 rounded-xl overflow-hidden elevated-shadow z-10"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=300&h=400&fit=crop"
-                    alt="Macarons"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
-                </motion.div>
-                <motion.div
-                  className="absolute left-1/2 -translate-x-1/2 w-32 h-40 rounded-xl overflow-hidden card-shadow"
-                  style={{ rotate: 8, top: 8 }}
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=300&h=400&fit=crop"
-                    alt="White chocolate"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
+                {/* Main Featured Row */}
+                <div className="flex justify-center gap-3 mb-3">
+                  <motion.div
+                    className="w-24 h-32 rounded-2xl overflow-hidden card-shadow"
+                    style={{ rotate: -6 }}
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.2 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200&h=280&fit=crop"
+                      alt="Colorful donuts"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="w-32 h-40 rounded-2xl overflow-hidden elevated-shadow z-10"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=280&h=360&fit=crop"
+                      alt="Gourmet chocolate"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
+                  </motion.div>
+                  <motion.div
+                    className="w-24 h-32 rounded-2xl overflow-hidden card-shadow"
+                    style={{ rotate: 6 }}
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.4 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=200&h=280&fit=crop"
+                      alt="French macarons"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Secondary Row */}
+                <div className="flex justify-center gap-2">
+                  <motion.div
+                    className="w-16 h-20 rounded-xl overflow-hidden card-shadow"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=140&h=180&fit=crop"
+                      alt="Chocolate truffles"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="w-20 h-24 rounded-xl overflow-hidden card-shadow"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=160&h=200&fit=crop"
+                      alt="Artisan pastries"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="w-20 h-24 rounded-xl overflow-hidden card-shadow"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=160&h=200&fit=crop"
+                      alt="Elegant ice cream"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="w-16 h-20 rounded-xl overflow-hidden card-shadow"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=140&h=180&fit=crop"
+                      alt="Gourmet dessert"
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                </div>
               </motion.div>
 
               {/* CTA Button */}
