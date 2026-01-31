@@ -109,7 +109,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-12',
-    optionA: { name: 'Banana Split', image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=600&fit=crop' },
+    optionA: { name: 'White Chocolate', image: 'https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=600&h=600&fit=crop' },
     optionB: { name: 'Fruit Sorbet', image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 4,
