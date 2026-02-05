@@ -62,7 +62,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-6',
     optionA: { name: 'Honey', image: '/images/honey.png' },
-    optionB: { name: 'Maple Syrup', image: 'https://images.unsplash.com/photo-1589496933738-f5c27bc146e3?w=600&h=600&fit=crop' },
+    optionB: { name: 'Maple Syrup', image: '/images/maple_syrup.png' },
     intensityA: 8,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
