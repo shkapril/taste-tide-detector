@@ -94,7 +94,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-10',
     optionA: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
-    optionB: { name: 'Biscotti', image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop' },
+    optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
