@@ -77,7 +77,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-8',
-    optionA: { name: 'Tiramisu', image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=600&fit=crop' },
+    optionA: { name: 'Tiramisu', image: '/images/tiramisu.png' },
     optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
     intensityA: 5,
     intensityB: 1,
