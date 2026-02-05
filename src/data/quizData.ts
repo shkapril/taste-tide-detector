@@ -421,7 +421,7 @@ export const saltyItems: QuizItem[] = [
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
-    optionA: { name: 'Triple Cream Brie', image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=600&h=600&fit=crop' },
+    optionA: { name: 'Brie Cheese', image: 'https://images.unsplash.com/photo-1634487359989-3e90c9432133?w=600&h=600&fit=crop' },
     optionB: { name: 'Goat Cheese', image: 'https://images.unsplash.com/photo-1559561853-08451507cbe7?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 4,
@@ -437,11 +437,11 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-3',
-    optionA: { name: 'Lobster Bisque', image: 'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=600&h=600&fit=crop' },
-    optionB: { name: 'Tomato Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionA: { name: 'Creamy Mushroom Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Tomato Soup', image: 'https://images.unsplash.com/photo-1629978767625-e6e6a5e33c91?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 3,
-    dietary: ['pescatarian', 'all-good'],
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'rich-4',
