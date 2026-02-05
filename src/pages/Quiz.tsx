@@ -124,8 +124,6 @@ const Quiz = () => {
       {/* Action Buttons */}
       <div className="px-6 pb-8">
         <ActionButtons
-          onSwipeLeft={() => handleSwipe('left')}
-          onSwipeRight={() => handleSwipe('right')}
           onUndo={handleUndo}
           canUndo={answers.length > 0}
         />
