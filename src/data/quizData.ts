@@ -469,7 +469,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-7',
-    optionA: { name: 'Eggs Benedict', image: 'https://images.unsplash.com/photo-1608039829572-9b0c93c01c9c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Eggs Benedict', image: 'https://images.unsplash.com/photo-1608442319624-07be2e1cae0e?w=600&h=600&fit=crop' },
     optionB: { name: 'Poached Eggs', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 3,
@@ -477,7 +477,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-8',
-    optionA: { name: 'Chocolate Mousse', image: 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=600&h=600&fit=crop' },
+    optionA: { name: 'Chocolate Mousse', image: 'https://images.unsplash.com/photo-1511715282680-fbf93a50e721?w=600&h=600&fit=crop' },
     optionB: { name: 'Fruit Salad', image: 'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 1,
