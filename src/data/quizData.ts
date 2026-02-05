@@ -493,8 +493,8 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-10',
-    optionA: { name: 'Peanut Butter', image: 'https://images.unsplash.com/photo-1598887142487-3c854d51eabb?w=600&h=600&fit=crop' },
-    optionB: { name: 'Jam', image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=600&fit=crop' },
+    optionA: { name: 'Peanut Butter', image: 'https://images.unsplash.com/photo-1587823356547-7d7e6e97c5ad?w=600&h=600&fit=crop' },
+    optionB: { name: 'Jam', image: 'https://images.unsplash.com/photo-1563639139824-dc70f8f55e2f?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
