@@ -61,7 +61,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-6',
-    optionA: { name: 'Honey', image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&h=600&fit=crop' },
+    optionA: { name: 'Honey', image: '/images/honey.png' },
     optionB: { name: 'Maple Syrup', image: 'https://images.unsplash.com/photo-1589496933738-f5c27bc146e3?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 7,
