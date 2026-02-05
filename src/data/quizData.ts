@@ -70,7 +70,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-7',
     optionA: { name: 'Glazed Donut', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Croissant', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Croissant', image: '/images/plain_croissant.png' },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
