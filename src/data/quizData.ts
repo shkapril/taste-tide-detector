@@ -85,7 +85,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-9',
-    optionA: { name: 'Crème Brûlée', image: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&h=600&fit=crop' },
+    optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
     optionB: { name: 'Panna Cotta', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 5,
