@@ -172,8 +172,8 @@ const Index = () => {
                     transition={{ delay: 0.7 }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=160&h=200&fit=crop"
-                      alt="Elegant ice cream"
+                      src="/images/aglio_e_olio.png"
+                      alt="Aglio e Olio pasta"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
