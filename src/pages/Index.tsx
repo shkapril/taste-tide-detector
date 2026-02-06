@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
@@ -19,6 +19,14 @@ const Index = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0); // 0 = landing, 1 = quiz type
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
+  const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('completedQuizzes');
+    if (stored) {
+      setCompletedQuizzes(JSON.parse(stored));
+    }
+  }, []);
 
   const features = [
     {
@@ -290,15 +298,16 @@ const Index = () => {
                       : 'border-border bg-card hover:border-primary/50'
                   }`}
                 >
-                  {selectedQuiz === option.value && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute top-3 right-3 w-6 h-6 rounded-full bg-primary flex items-center justify-center"
-                    >
-                      <Check className="w-4 h-4 text-primary-foreground" />
-                    </motion.div>
-                  )}
+                  {/* Completion indicator */}
+                  <div className="absolute top-3 right-3">
+                    {completedQuizzes.includes(option.value) ? (
+                      <div className="w-6 h-6 rounded-full bg-success flex items-center justify-center">
+                        <Check className="w-4 h-4 text-success-foreground" />
+                      </div>
+                    ) : (
+                      <Circle className="w-6 h-6 text-muted-foreground/40" strokeWidth={1.5} />
+                    )}
+                  </div>
                   <span className="text-2xl mb-2 block">{option.emoji}</span>
                   <span className="font-semibold text-foreground block">{option.label}</span>
                   <span className="text-xs text-muted-foreground">{option.description}</span>

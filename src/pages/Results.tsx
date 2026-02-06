@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
@@ -17,13 +18,24 @@ const Results = () => {
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
 
-  if (!state) {
+  const quizType = state?.quizType || 'sweet';
+  const labels = quizLabels[quizType];
+  const profile = state ? getTasteProfile(state.averageIntensity, quizType) : null;
+
+  // Mark quiz as completed
+  useEffect(() => {
+    if (!state) return;
+    const stored = localStorage.getItem('completedQuizzes');
+    const completed: QuizType[] = stored ? JSON.parse(stored) : [];
+    if (!completed.includes(quizType)) {
+      completed.push(quizType);
+      localStorage.setItem('completedQuizzes', JSON.stringify(completed));
+    }
+  }, [quizType, state]);
+
+  if (!state || !profile) {
     return <Navigate to="/" replace />;
   }
-
-  const quizType = state.quizType || 'sweet';
-  const labels = quizLabels[quizType];
-  const profile = getTasteProfile(state.averageIntensity, quizType);
 
   const handleShare = async () => {
     const text = `I'm a "${profile.label}" ${profile.emoji}! My ${labels.label.toLowerCase()} preference level is ${profile.level.toFixed(1)}/10. Take the Taste Quiz to discover your palate!`;
