@@ -15,7 +15,7 @@ export interface QuizItem {
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
 }
 
-export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich';
+export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
 // Sweet comparisons (comparing sweetness preferences)
 export const sweetItems: QuizItem[] = [
@@ -517,8 +517,105 @@ export const richItems: QuizItem[] = [
   },
 ];
 
-// Buttery comparisons (merged into richItems, kept for reference)
-// Items have been combined with richItems above
+// Spicy comparisons (heat tolerance)
+export const spicyItems: QuizItem[] = [
+  {
+    id: 'spicy-1',
+    optionA: { name: 'Ghost Pepper Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
+    optionB: { name: 'BBQ Wings', image: 'https://images.unsplash.com/photo-1608039829572-25e8182a7a01?w=600&h=600&fit=crop' },
+    intensityA: 10,
+    intensityB: 2,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'spicy-2',
+    optionA: { name: 'Thai Green Curry', image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Coconut Curry', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-3',
+    optionA: { name: 'Jalapeño Poppers', image: 'https://images.unsplash.com/photo-1548869206-93b036288fa3?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mozzarella Sticks', image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=600&h=600&fit=crop' },
+    intensityA: 5,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-4',
+    optionA: { name: 'Szechuan Noodles', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop' },
+    optionB: { name: 'Lo Mein', image: 'https://images.unsplash.com/photo-1634864572865-1cf8ff8bd23d?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-5',
+    optionA: { name: 'Habanero Salsa', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mild Salsa', image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-6',
+    optionA: { name: 'Spicy Ramen', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop' },
+    optionB: { name: 'Tonkotsu Ramen', image: 'https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'spicy-7',
+    optionA: { name: 'Vindaloo', image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=600&fit=crop' },
+    optionB: { name: 'Korma', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'spicy-8',
+    optionA: { name: 'Wasabi', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
+    optionB: { name: 'Soy Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-9',
+    optionA: { name: 'Nashville Hot Chicken', image: 'https://images.unsplash.com/photo-1626645738196-c2a72c7d6e3b?w=600&h=600&fit=crop' },
+    optionB: { name: 'Fried Chicken', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'spicy-10',
+    optionA: { name: 'Spicy Tuna Roll', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
+    optionB: { name: 'California Roll', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&h=600&fit=crop' },
+    intensityA: 5,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-11',
+    optionA: { name: 'Spicy Kimchi', image: 'https://images.unsplash.com/photo-1583224994076-36a6e5c14438?w=600&h=600&fit=crop' },
+    optionB: { name: 'Pickled Vegetables', image: 'https://images.unsplash.com/photo-1602099819679-dfab5cc87347?w=600&h=600&fit=crop' },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-12',
+    optionA: { name: 'Buffalo Cauliflower', image: 'https://images.unsplash.com/photo-1529059356943-4d0aa6c20ace?w=600&h=600&fit=crop' },
+    optionB: { name: 'Roasted Cauliflower', image: 'https://images.unsplash.com/photo-1613743983303-b3e8991e050c?w=600&h=600&fit=crop' },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
   sweet: sweetItems,
@@ -526,6 +623,7 @@ export const quizDataMap: Record<QuizType, QuizItem[]> = {
   bitter: bitterItems,
   salty: saltyItems,
   rich: richItems,
+  spicy: spicyItems,
 };
 
 export const quizLabels: Record<QuizType, { label: string; lowLabel: string; highLabel: string }> = {
@@ -534,6 +632,7 @@ export const quizLabels: Record<QuizType, { label: string; lowLabel: string; hig
   bitter: { label: 'Bitter', lowLabel: 'Subtle', highLabel: 'Bold' },
   salty: { label: 'Salty', lowLabel: 'Light', highLabel: 'Savory' },
   rich: { label: 'Rich & Buttery', lowLabel: 'Light', highLabel: 'Decadent' },
+  spicy: { label: 'Spicy', lowLabel: 'Mild', highLabel: 'Fire' },
 };
 
 export interface TasteProfile {

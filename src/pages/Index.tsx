@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich';
+type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
 const quizOptions: { value: QuizType; label: string; emoji: string; description: string }[] = [
   { value: 'sweet', label: 'Sweet', emoji: '🍫', description: 'Chocolate, desserts & treats' },
@@ -12,6 +12,7 @@ const quizOptions: { value: QuizType; label: string; emoji: string; description:
   { value: 'bitter', label: 'Bitter', emoji: '☕', description: 'Coffee, dark greens & cocoa' },
   { value: 'salty', label: 'Salty', emoji: '🧂', description: 'Savory snacks & umami' },
   { value: 'rich', label: 'Rich & Buttery', emoji: '🧈', description: 'Creamy, indulgent & pastries' },
+  { value: 'spicy', label: 'Spicy', emoji: '🌶️', description: 'Hot peppers, chili & heat' },
 ];
 
 const Index = () => {
