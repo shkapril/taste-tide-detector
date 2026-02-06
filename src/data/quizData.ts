@@ -18,17 +18,11 @@ export interface QuizItem {
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
 // Sweet comparisons (comparing sweetness preferences)
+// Key items overlap across questions to help users calibrate their preferences
 export const sweetItems: QuizItem[] = [
+  // Milk Chocolate appears 3 times at different matchups
   {
     id: 'sweet-1',
-    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
-    optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
-    intensityA: 7,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'sweet-2',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
     intensityA: 9,
@@ -36,13 +30,22 @@ export const sweetItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'sweet-3',
-    optionA: { name: 'Cheesecake', image: '/images/cheese_cake.png' },
-    optionB: { name: 'Carrot Cake', image: '/images/carrot_cake.png' },
-    intensityA: 6,
-    intensityB: 5,
+    id: 'sweet-2',
+    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionB: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'sweet-3',
+    optionA: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
+    intensityA: 4,
+    intensityB: 2,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  // Cheesecake appears 2 times
   {
     id: 'sweet-4',
     optionA: { name: 'Chocolate Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop' },
@@ -53,6 +56,15 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-5',
+    optionA: { name: 'Cheesecake', image: '/images/cheese_cake.png' },
+    optionB: { name: 'Carrot Cake', image: '/images/carrot_cake.png' },
+    intensityA: 6,
+    intensityB: 5,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  // Cotton Candy & Caramel chain
+  {
+    id: 'sweet-6',
     optionA: { name: 'Cotton Candy', image: '/images/cotton_candy.png' },
     optionB: { name: 'Caramel', image: '/images/caramel.png' },
     intensityA: 10,
@@ -60,59 +72,54 @@ export const sweetItems: QuizItem[] = [
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'sweet-6',
-    optionA: { name: 'Honey', image: '/images/honey.png' },
-    optionB: { name: 'Maple Syrup', image: '/images/maple_syrup.png' },
+    id: 'sweet-7',
+    optionA: { name: 'Caramel', image: '/images/caramel.png' },
+    optionB: { name: 'Honey', image: '/images/honey.png' },
+    intensityA: 6,
+    intensityB: 8,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  // Glazed Donut chain
+  {
+    id: 'sweet-8',
+    optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png' },
+    optionB: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
     intensityA: 8,
-    intensityB: 7,
+    intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'sweet-7',
-    optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png' },
+    id: 'sweet-9',
+    optionA: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
     optionB: { name: 'Plain Croissant', image: '/images/plain_croissant.png' },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  // Tiramisu chain
   {
-    id: 'sweet-8',
-    optionA: { name: 'Tiramisu', image: '/images/tiramisu.png' },
-    optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
-    intensityA: 5,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'sweet-9',
+    id: 'sweet-10',
     optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
-    optionB: { name: 'Panna Cotta', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
+    optionB: { name: 'Tiramisu', image: '/images/tiramisu.png' },
     intensityA: 7,
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'sweet-10',
-    optionA: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
-    optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
-    intensityA: 8,
+    id: 'sweet-11',
+    optionA: { name: 'Tiramisu', image: '/images/tiramisu.png' },
+    optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
+    intensityA: 5,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  // Coffee drinks chain (less sweet)
   {
-    id: 'sweet-11',
+    id: 'sweet-12',
     optionA: { name: 'Matcha Latte', image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&h=600&fit=crop' },
     optionB: { name: 'Black Coffee', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'sweet-12',
-    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
-    optionB: { name: 'Fruit Sorbet', image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
