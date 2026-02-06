@@ -148,7 +148,7 @@ const Results = () => {
         </Button>
         
         <Button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
           variant="outline"
           className="w-full h-14 text-lg font-medium"
           size="lg"
