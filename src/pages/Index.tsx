@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,9 +15,16 @@ const quizOptions: { value: QuizType; label: string; emoji: string; description:
   { value: 'spicy', label: 'Spicy', emoji: '🌶️', description: 'Hot peppers, chili & heat' },
 ];
 
+interface IndexLocationState {
+  startAtQuizSelection?: boolean;
+}
+
 const Index = () => {
   const navigate = useNavigate();
-  const [step, setStep] = useState(0); // 0 = landing, 1 = quiz type
+  const location = useLocation();
+  const locationState = location.state as IndexLocationState | null;
+  
+  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 1 : 0);
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
 
