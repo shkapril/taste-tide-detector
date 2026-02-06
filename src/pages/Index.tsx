@@ -147,9 +147,9 @@ const Index = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=140&h=180&fit=crop"
-                      alt="Chocolate truffles"
+                  <img
+                      src="/images/steak.png"
+                      alt="Grilled steak"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
