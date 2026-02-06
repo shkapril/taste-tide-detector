@@ -15,7 +15,7 @@ export interface QuizItem {
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
 }
 
-export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'buttery';
+export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich';
 
 // Sweet comparisons (comparing sweetness preferences)
 export const sweetItems: QuizItem[] = [
@@ -417,7 +417,7 @@ export const saltyItems: QuizItem[] = [
   },
 ];
 
-// Rich comparisons (creaminess/heaviness)
+// Rich & Buttery comparisons (creaminess/heaviness/butter)
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
@@ -437,18 +437,18 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-3',
-    optionA: { name: 'Creamy Mushroom Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Tomato Soup', image: 'https://images.unsplash.com/photo-1629978767625-e6e6a5e33c91?w=600&h=600&fit=crop' },
+    optionA: { name: 'Croissant', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Baguette', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
     intensityA: 9,
-    intensityB: 3,
+    intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'rich-4',
-    optionA: { name: 'Beef Wellington', image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=600&fit=crop' },
-    optionB: { name: 'Grilled Steak', image: 'https://images.unsplash.com/photo-1546833998-877b37c2e5c6?w=600&h=600&fit=crop' },
-    intensityA: 10,
-    intensityB: 6,
+    optionA: { name: 'Butter Chicken', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=600&fit=crop' },
+    optionB: { name: 'Tandoori Chicken', image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 3,
     dietary: ['all-good'],
   },
   {
@@ -461,11 +461,11 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-6',
-    optionA: { name: 'Avocado Toast', image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
-    intensityA: 5,
+    optionA: { name: 'Garlic Butter Bread', image: 'https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Bread', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    intensityA: 7,
     intensityB: 1,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'rich-7',
@@ -485,122 +485,6 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-9',
-    optionA: { name: 'Mac & Cheese', image: 'https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Pasta', image: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=600&h=600&fit=crop' },
-    intensityA: 7,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'rich-10',
-    optionA: { name: 'Peanut Butter', image: 'https://images.unsplash.com/photo-1587823356547-7d7e6e97c5ad?w=600&h=600&fit=crop' },
-    optionB: { name: 'Jam', image: 'https://images.unsplash.com/photo-1563639139824-dc70f8f55e2f?w=600&h=600&fit=crop' },
-    intensityA: 6,
-    intensityB: 2,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'rich-11',
-    optionA: { name: 'Risotto', image: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&h=600&fit=crop' },
-    optionB: { name: 'Steamed Rice', image: 'https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=600&h=600&fit=crop' },
-    intensityA: 7,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'rich-12',
-    optionA: { name: 'Carbonara', image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=600&fit=crop' },
-    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 3,
-    dietary: ['all-good'],
-  },
-];
-
-// Buttery comparisons
-export const butteryItems: QuizItem[] = [
-  {
-    id: 'buttery-1',
-    optionA: { name: 'Croissant', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop' },
-    optionB: { name: 'Baguette', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-2',
-    optionA: { name: 'Butter Chicken', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=600&fit=crop' },
-    optionB: { name: 'Tandoori Chicken', image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 3,
-    dietary: ['all-good'],
-  },
-  {
-    id: 'buttery-3',
-    optionA: { name: 'Buttered Lobster', image: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=600&h=600&fit=crop' },
-    optionB: { name: 'Grilled Shrimp', image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 3,
-    dietary: ['pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-4',
-    optionA: { name: 'Brioche', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
-    optionB: { name: 'Sourdough', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-5',
-    optionA: { name: 'Garlic Butter Bread', image: 'https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Bread', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
-    intensityA: 7,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-6',
-    optionA: { name: 'Shortbread', image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop' },
-    optionB: { name: 'Graham Crackers', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-7',
-    optionA: { name: 'Movie Popcorn', image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-8',
-    optionA: { name: 'Hollandaise Sauce', image: 'https://images.unsplash.com/photo-1608039829572-9b0c93c01c9c?w=600&h=600&fit=crop' },
-    optionB: { name: 'Vinaigrette', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-9',
-    optionA: { name: 'Pound Cake', image: 'https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=600&h=600&fit=crop' },
-    optionB: { name: 'Angel Food Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 2,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
-    id: 'buttery-10',
-    optionA: { name: 'Béarnaise Steak', image: 'https://images.unsplash.com/photo-1546833998-877b37c2e5c6?w=600&h=600&fit=crop' },
-    optionB: { name: 'Grilled Steak', image: 'https://images.unsplash.com/photo-1546833998-877b37c2e5c6?w=600&h=600&fit=crop' },
-    intensityA: 9,
-    intensityB: 4,
-    dietary: ['all-good'],
-  },
-  {
-    id: 'buttery-11',
     optionA: { name: 'Mashed Potatoes', image: 'https://images.unsplash.com/photo-1600438388498-93a618a5eda1?w=600&h=600&fit=crop' },
     optionB: { name: 'Baked Potato', image: 'https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=600&h=600&fit=crop' },
     intensityA: 7,
@@ -608,7 +492,23 @@ export const butteryItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'buttery-12',
+    id: 'rich-10',
+    optionA: { name: 'Carbonara', image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=600&fit=crop' },
+    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 3,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'rich-11',
+    optionA: { name: 'Movie Popcorn', image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-12',
     optionA: { name: 'Danish Pastry', image: 'https://images.unsplash.com/photo-1509365390695-33aee754301f?w=600&h=600&fit=crop' },
     optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop' },
     intensityA: 8,
@@ -617,13 +517,15 @@ export const butteryItems: QuizItem[] = [
   },
 ];
 
+// Buttery comparisons (merged into richItems, kept for reference)
+// Items have been combined with richItems above
+
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
   sweet: sweetItems,
   sour: sourItems,
   bitter: bitterItems,
   salty: saltyItems,
   rich: richItems,
-  buttery: butteryItems,
 };
 
 export const quizLabels: Record<QuizType, { label: string; lowLabel: string; highLabel: string }> = {
@@ -631,8 +533,7 @@ export const quizLabels: Record<QuizType, { label: string; lowLabel: string; hig
   sour: { label: 'Sour', lowLabel: 'Mild', highLabel: 'Tangy' },
   bitter: { label: 'Bitter', lowLabel: 'Subtle', highLabel: 'Bold' },
   salty: { label: 'Salty', lowLabel: 'Light', highLabel: 'Savory' },
-  rich: { label: 'Rich', lowLabel: 'Light', highLabel: 'Indulgent' },
-  buttery: { label: 'Buttery', lowLabel: 'Light', highLabel: 'Decadent' },
+  rich: { label: 'Rich & Buttery', lowLabel: 'Light', highLabel: 'Decadent' },
 };
 
 export interface TasteProfile {
