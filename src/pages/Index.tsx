@@ -160,8 +160,8 @@ const Index = () => {
                     transition={{ delay: 0.6 }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1548741487-18d363dc4469?w=160&h=200&fit=crop"
-                      alt="White chocolate"
+                      src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=160&h=200&fit=crop"
+                      alt="Chocolate cake"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
