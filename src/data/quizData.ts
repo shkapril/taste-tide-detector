@@ -322,6 +322,14 @@ export const bitterItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'bitter-13',
+    optionA: { name: 'Espresso', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&h=600&fit=crop' },
+    optionB: { name: 'Americano', image: 'https://images.unsplash.com/photo-1551030173-122aabc4489c?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 5,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Salty comparisons
