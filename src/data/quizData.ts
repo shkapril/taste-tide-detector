@@ -307,14 +307,6 @@ export const bitterItems: QuizItem[] = [
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'bitter-11',
-    optionA: { name: 'Tonic Water', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
-    optionB: { name: 'Soda Water', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
-    intensityA: 6,
-    intensityB: 1,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
     id: 'bitter-12',
     optionA: { name: 'Endive', image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&h=600&fit=crop' },
     optionB: { name: 'Butter Lettuce', image: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=600&h=600&fit=crop' },
