@@ -308,7 +308,7 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-12',
-    optionA: { name: 'Endive', image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&h=600&fit=crop' },
+    optionA: { name: 'Endive', image: '/images/endive.png' },
     optionB: { name: 'Butter Lettuce', image: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
