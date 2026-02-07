@@ -277,7 +277,7 @@ export const bitterItems: QuizItem[] = [
   {
     id: 'bitter-7',
     optionA: { name: 'Brussels Sprouts', image: 'https://images.unsplash.com/photo-1438118907704-7718ee9a191a?w=600&h=600&fit=crop' },
-    optionB: { name: 'Broccoli', image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Broccoli', image: '/images/broccoli.png' },
     intensityA: 5,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
