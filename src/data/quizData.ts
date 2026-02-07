@@ -292,10 +292,10 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-9',
-    optionA: { name: 'Campari Cocktail', image: 'https://images.unsplash.com/photo-1536935338788-846e57b887f2?w=600&h=600&fit=crop' },
-    optionB: { name: 'Margarita', image: 'https://images.unsplash.com/photo-1556855810-ac404aa91e85?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 2,
+    optionA: { name: 'Green Tea', image: '/images/green_tea.png' },
+    optionB: { name: 'Black Tea', image: '/images/black_tea.png' },
+    intensityA: 4,
+    intensityB: 6,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
