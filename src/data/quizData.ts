@@ -268,7 +268,7 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-6',
-    optionA: { name: 'Kale Salad', image: 'https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?w=600&h=600&fit=crop' },
+    optionA: { name: 'Kale Salad', image: '/images/kale_salad.png' },
     optionB: { name: 'Spinach Salad', image: '/images/spinach_salad.png' },
     intensityA: 6,
     intensityB: 2,
