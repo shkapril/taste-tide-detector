@@ -103,7 +103,7 @@ const Index = () => {
                   <span className="block text-gradient">Taste Level?</span>
                 </h1>
                 <p className="text-muted-foreground text-lg max-w-sm mx-auto leading-relaxed">
-                  Swipe through delicious treats to discover your true taste preference
+                  Click through food and find out your true taste preference
                 </p>
               </motion.div>
 
