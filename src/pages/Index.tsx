@@ -68,41 +68,41 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Hero Section */}
-            <div className="relative px-6 pt-12 pb-8">
-              {/* Decorative elements */}
+            <div className="relative px-8 pt-16 pb-10">
+              {/* Subtle decorative elements */}
               <motion.div
-                className="absolute top-20 right-8 w-20 h-20 rounded-full bg-primary/20 blur-2xl"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute top-24 right-10 w-32 h-32 rounded-full bg-accent/10 blur-3xl"
+                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.div
-                className="absolute top-40 left-4 w-16 h-16 rounded-full bg-accent/30 blur-xl"
-                animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                className="absolute top-48 left-6 w-24 h-24 rounded-full bg-primary/8 blur-2xl"
+                animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 5, repeat: Infinity, delay: 1, ease: "easeInOut" }}
               />
 
               {/* Logo / Title */}
               <motion.div
-                className="text-center mb-8"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.div
-                  className="inline-block text-5xl mb-4"
-                  animate={{ rotate: [0, -5, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  className="inline-block text-4xl mb-6 opacity-80"
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  🍫
+                  ✦
                 </motion.div>
-                <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 leading-tight">
+                <h1 className="text-5xl md:text-6xl font-display text-foreground mb-5 leading-[1.1] tracking-tight">
                   What's Your
-                  <span className="block text-gradient">Taste Level?</span>
+                  <span className="block text-gradient italic">Taste Level?</span>
                 </h1>
-                <p className="text-muted-foreground text-lg max-w-sm mx-auto leading-relaxed">
+                <p className="text-muted-foreground text-base max-w-xs mx-auto leading-relaxed tracking-wide">
                   Click through food and find out your true taste preference
                 </p>
               </motion.div>
@@ -209,44 +209,44 @@ const Index = () => {
 
               {/* CTA Button */}
               <motion.div
-                className="text-center mb-12"
+                className="text-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Button
                   onClick={() => setStep(1)}
                   size="lg"
-                  className="h-14 px-8 text-lg font-medium shadow-lg"
+                  className="h-14 px-10 text-base font-medium tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   Start the Quiz
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
-                <p className="text-sm text-muted-foreground mt-3">
-                  Takes only 2 minutes • 12 questions
+                <p className="text-xs text-muted-foreground mt-4 tracking-widest uppercase">
+                  2 min • 12 questions
                 </p>
               </motion.div>
             </div>
 
             {/* Features Section */}
-            <div className="px-6 pb-12">
-              <div className="space-y-4">
+            <div className="px-8 pb-16">
+              <div className="space-y-3">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
-                    className="flex items-start gap-4 p-4 bg-card rounded-xl card-shadow"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.7 + index * 0.1 }}
+                    className="flex items-start gap-5 p-5 bg-card/60 backdrop-blur-sm rounded-2xl chic-border"
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-primary" />
+                    <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-5 h-5 text-foreground/70" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">
+                      <h3 className="font-display text-lg text-foreground mb-0.5">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -256,9 +256,9 @@ const Index = () => {
             </div>
 
             {/* Footer */}
-            <footer className="px-6 pb-8 text-center">
-              <p className="text-xs text-muted-foreground">
-                🌍 Join thousands discovering their taste profile
+            <footer className="px-8 pb-10 text-center">
+              <p className="text-xs text-muted-foreground/60 tracking-widest uppercase">
+                Join thousands discovering their taste
               </p>
             </footer>
           </motion.div>
@@ -270,54 +270,64 @@ const Index = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
-            className="min-h-screen px-6 pt-12 pb-8"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="min-h-screen px-8 pt-14 pb-10"
           >
             {/* Header */}
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-10">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setStep(0)}
-                className="mr-2"
+                className="mr-3 rounded-full"
               >
                 <ArrowLeft className="w-5 h-5" />
               </Button>
               <div className="flex-1">
-                <h2 className="text-2xl font-display font-bold text-foreground">
+                <h2 className="text-3xl font-display text-foreground tracking-tight">
                   Choose Your Quiz
                 </h2>
               </div>
             </div>
 
             {/* Quiz Type Options */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-3 mb-10">
               {quizOptions.map((option, index) => (
                 <motion.button
                   key={option.value}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{ delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => setSelectedQuiz(option.value)}
-                  className={`relative p-5 rounded-2xl border-2 text-left transition-all ${
+                  className={`relative p-5 rounded-2xl text-left transition-all duration-300 ${
                     selectedQuiz === option.value
-                      ? 'border-primary bg-primary/10'
-                      : 'border-border bg-card hover:border-primary/50'
+                      ? 'bg-primary text-primary-foreground shadow-md'
+                      : 'bg-card chic-border hover:bg-secondary/50'
                   }`}
                 >
                   {/* Completion indicator */}
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-4 right-4">
                     {completedQuizzes.includes(option.value) ? (
-                      <div className="w-6 h-6 rounded-full bg-success flex items-center justify-center">
-                        <Check className="w-4 h-4 text-success-foreground" />
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                        selectedQuiz === option.value ? 'bg-primary-foreground/20' : 'bg-success'
+                      }`}>
+                        <Check className={`w-3 h-3 ${
+                          selectedQuiz === option.value ? 'text-primary-foreground' : 'text-success-foreground'
+                        }`} />
                       </div>
                     ) : (
-                      <Circle className="w-6 h-6 text-muted-foreground/40" strokeWidth={1.5} />
+                      <Circle className={`w-5 h-5 ${
+                        selectedQuiz === option.value ? 'text-primary-foreground/40' : 'text-muted-foreground/30'
+                      }`} strokeWidth={1.5} />
                     )}
                   </div>
-                  <span className="text-2xl mb-2 block">{option.emoji}</span>
-                  <span className="font-semibold text-foreground block">{option.label}</span>
-                  <span className="text-xs text-muted-foreground">{option.description}</span>
+                  <span className="text-xl mb-2 block">{option.emoji}</span>
+                  <span className={`font-display text-lg block mb-0.5 ${
+                    selectedQuiz === option.value ? 'text-primary-foreground' : 'text-foreground'
+                  }`}>{option.label}</span>
+                  <span className={`text-xs leading-relaxed ${
+                    selectedQuiz === option.value ? 'text-primary-foreground/70' : 'text-muted-foreground'
+                  }`}>{option.description}</span>
                 </motion.button>
               ))}
             </div>
@@ -326,16 +336,16 @@ const Index = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Button
                 onClick={handleStartQuiz}
                 disabled={!selectedQuiz}
                 size="lg"
-                className="w-full h-14 text-lg font-medium"
+                className="w-full h-14 text-base font-medium tracking-wide rounded-full"
               >
                 Start Quiz
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-3" />
               </Button>
             </motion.div>
           </motion.div>
