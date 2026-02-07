@@ -56,7 +56,7 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
             <div className="absolute inset-0 bg-success/0 group-hover:bg-success/20 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
-              <h3 className="font-display text-lg font-semibold text-white text-center leading-tight">
+              <h3 className="font-sans text-base font-medium text-white text-center leading-tight">
                 {item.optionA.name}
               </h3>
             </div>
@@ -86,7 +86,7 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
             <div className="absolute inset-0 bg-success/0 group-hover:bg-success/20 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
-              <h3 className="font-display text-lg font-semibold text-white text-center leading-tight">
+              <h3 className="font-sans text-base font-medium text-white text-center leading-tight">
                 {item.optionB.name}
               </h3>
             </div>
