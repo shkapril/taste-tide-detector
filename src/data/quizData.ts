@@ -285,7 +285,7 @@ export const bitterItems: QuizItem[] = [
   {
     id: 'bitter-8',
     optionA: { name: 'Green Tea', image: '/images/green_tea.png' },
-    optionB: { name: 'Chamomile Tea', image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&h=600&fit=crop' },
+    optionB: { name: 'Chamomile Tea', image: '/images/chamomile_tea.png' },
     intensityA: 4,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
