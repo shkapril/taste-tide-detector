@@ -155,15 +155,6 @@ export const sweetItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
     isBranchQuestion: true,
   },
-  // Coffee drinks chain (less sweet)
-  {
-    id: 'sweet-12',
-    optionA: { name: 'Matcha Latte', image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&h=600&fit=crop' },
-    optionB: { name: 'Black Coffee', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=600&fit=crop' },
-    intensityA: 4,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
 ];
 
 // Sour comparisons
