@@ -225,7 +225,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-3',
-    optionA: { name: 'Kimchi', image: 'https://images.unsplash.com/photo-1583224994076-36a6e5c14438?w=600&h=600&fit=crop' },
+    optionA: { name: 'Kimchi', image: '/images/kimchi.png' },
     optionB: { name: 'Coleslaw', image: 'https://images.unsplash.com/photo-1625938145744-533e82abcc94?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 2,
@@ -689,7 +689,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-11',
-    optionA: { name: 'Spicy Kimchi', image: 'https://images.unsplash.com/photo-1583224994076-36a6e5c14438?w=600&h=600&fit=crop' },
+    optionA: { name: 'Spicy Kimchi', image: '/images/kimchi.png' },
     optionB: { name: 'Pickled Vegetables', image: 'https://images.unsplash.com/photo-1602099819679-dfab5cc87347?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 1,
