@@ -9,6 +9,7 @@ import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
 interface Answer {
   item: QuizItem;
   chosenIntensity: number;
+  addedBranchIds?: string[]; // Track which branch questions were added after this answer
 }
 
 interface LocationState {
@@ -22,20 +23,28 @@ const Quiz = () => {
   
   const quizType = state?.quizType || 'sweet';
   
-  const quizItems = useMemo(() => {
+  // Get base quiz items (excluding branch questions)
+  const baseQuizItems = useMemo(() => {
+    const allItems = quizDataMap[quizType] || quizDataMap.sweet;
+    return allItems.filter(item => !item.isBranchQuestion);
+  }, [quizType]);
+
+  // Get all items including branch questions for lookup
+  const allQuizItems = useMemo(() => {
     return quizDataMap[quizType] || quizDataMap.sweet;
   }, [quizType]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [exitDirection, setExitDirection] = useState<'left' | 'right' | null>(null);
+  const [dynamicQuestions, setDynamicQuestions] = useState<QuizItem[]>([...baseQuizItems]);
 
-  const currentItem = quizItems[currentIndex];
-  const nextItem = quizItems[currentIndex + 1];
+  const currentItem = dynamicQuestions[currentIndex];
+  const nextItem = dynamicQuestions[currentIndex + 1];
   const labels = quizLabels[quizType];
 
   const handleSwipe = useCallback((direction: 'left' | 'right') => {
-    if (currentIndex >= quizItems.length) return;
+    if (currentIndex >= dynamicQuestions.length) return;
 
     // Right swipe = prefer option A, Left swipe = prefer option B
     const chosenIntensity = direction === 'right' 
@@ -44,11 +53,30 @@ const Quiz = () => {
     
     setExitDirection(direction);
     
-    const newAnswers = [...answers, { item: currentItem, chosenIntensity }];
+    // Check for branching logic
+    const branchIds = direction === 'right' ? currentItem.branchOnA : currentItem.branchOnB;
+    let newDynamicQuestions = [...dynamicQuestions];
+    
+    if (branchIds && branchIds.length > 0) {
+      // Find the branch questions and insert them after the current question
+      const branchQuestions = branchIds
+        .map(id => allQuizItems.find(item => item.id === id))
+        .filter((item): item is QuizItem => item !== undefined);
+      
+      // Insert branch questions right after the current question
+      newDynamicQuestions = [
+        ...dynamicQuestions.slice(0, currentIndex + 1),
+        ...branchQuestions,
+        ...dynamicQuestions.slice(currentIndex + 1)
+      ];
+      setDynamicQuestions(newDynamicQuestions);
+    }
+
+    const newAnswers = [...answers, { item: currentItem, chosenIntensity, addedBranchIds: branchIds }];
     setAnswers(newAnswers);
 
     setTimeout(() => {
-      if (currentIndex + 1 >= quizItems.length) {
+      if (currentIndex + 1 >= newDynamicQuestions.length) {
         // Calculate average intensity from all choices
         const avgIntensity = newAnswers.reduce((sum, a) => sum + a.chosenIntensity, 0) / newAnswers.length;
         
@@ -65,13 +93,23 @@ const Quiz = () => {
         setExitDirection(null);
       }
     }, 200);
-  }, [currentIndex, answers, currentItem, navigate, quizItems.length, quizType]);
+  }, [currentIndex, answers, currentItem, navigate, dynamicQuestions, allQuizItems, quizType]);
 
   const handleUndo = useCallback(() => {
     if (answers.length === 0) return;
+    
+    const lastAnswer = answers[answers.length - 1];
+    
+    // If the last answer added branch questions, we need to remove them
+    if (lastAnswer.addedBranchIds && lastAnswer.addedBranchIds.length > 0) {
+      setDynamicQuestions(prev => 
+        prev.filter(item => !lastAnswer.addedBranchIds?.includes(item.id))
+      );
+    }
+    
     setAnswers(prev => prev.slice(0, -1));
     setCurrentIndex(prev => prev - 1);
-  }, [answers.length]);
+  }, [answers]);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -91,7 +129,7 @@ const Quiz = () => {
 
       {/* Progress */}
       <div className="px-6">
-        <ProgressBar current={currentIndex + 1} total={quizItems.length} />
+        <ProgressBar current={currentIndex + 1} total={dynamicQuestions.length} />
       </div>
 
       {/* Card Stack */}
