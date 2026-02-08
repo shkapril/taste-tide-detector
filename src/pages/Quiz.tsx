@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import SwipeCard from '@/components/SwipeCard';
 import ActionButtons from '@/components/ActionButtons';
 import ProgressBar from '@/components/ProgressBar';
+import { Button } from '@/components/ui/button';
 import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
 
 interface Answer {
@@ -111,6 +112,12 @@ const Quiz = () => {
     setCurrentIndex(prev => prev - 1);
   }, [answers]);
 
+  const handleRestart = useCallback(() => {
+    setCurrentIndex(0);
+    setAnswers([]);
+    setDynamicQuestions([...baseQuizItems]);
+  }, [baseQuizItems]);
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
@@ -160,11 +167,22 @@ const Quiz = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="px-6 pb-8">
+      <div className="px-6 pb-4">
         <ActionButtons
           onUndo={handleUndo}
           canUndo={answers.length > 0}
         />
+      </div>
+
+      {/* Restart Button */}
+      <div className="px-6 pb-8">
+        <Button
+          variant="ghost"
+          onClick={handleRestart}
+          className="w-full text-muted-foreground hover:text-foreground"
+        >
+          Take quiz again
+        </Button>
       </div>
     </div>
   );
