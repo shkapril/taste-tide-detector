@@ -217,7 +217,7 @@ const Index = () => {
                 <Button
                   onClick={() => setStep(1)}
                   size="lg"
-                  className="h-14 px-10 text-base font-medium tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+                  className="h-14 px-10 text-lg font-display tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   Start the Quiz
                   <ArrowRight className="w-4 h-4 ml-3" />
