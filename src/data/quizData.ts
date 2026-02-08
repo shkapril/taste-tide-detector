@@ -13,6 +13,10 @@ export interface QuizItem {
   intensityA: number; // 1-10 scale
   intensityB: number; // 1-10 scale
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
+  // Branching logic: conditional questions based on user choices
+  branchOnA?: string[]; // Question IDs to add if user chooses option A
+  branchOnB?: string[]; // Question IDs to add if user chooses option B
+  isBranchQuestion?: boolean; // If true, this question is only shown via branching
 }
 
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
@@ -20,7 +24,7 @@ export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 // Sweet comparisons (comparing sweetness preferences)
 // Key items overlap across questions to help users calibrate their preferences
 export const sweetItems: QuizItem[] = [
-  // Milk Chocolate appears 3 times at different matchups
+  // Chocolate branching chain
   {
     id: 'sweet-1',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
@@ -28,6 +32,7 @@ export const sweetItems: QuizItem[] = [
     intensityA: 9,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    branchOnA: ['sweet-branch-white-caramel', 'sweet-branch-caramel-milk'], // If user chooses White Chocolate
   },
   {
     id: 'sweet-2',
@@ -36,14 +41,37 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    branchOnB: ['sweet-branch-dark-70-85'], // If user chooses Dark Chocolate
   },
+  // Branch question: White Chocolate vs Caramel (only shows if user chose White Chocolate)
   {
-    id: 'sweet-3',
+    id: 'sweet-branch-white-caramel',
+    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
+    optionB: { name: 'Caramel', image: '/images/caramel.png' },
+    intensityA: 9,
+    intensityB: 6,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
+  },
+  // Branch question: Caramel vs Milk Chocolate (only shows if user chose White Chocolate)
+  {
+    id: 'sweet-branch-caramel-milk',
+    optionA: { name: 'Caramel', image: '/images/caramel.png' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    intensityA: 6,
+    intensityB: 7,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
+  },
+  // Branch question: Dark Chocolate 70% vs 85% (only shows if user chose Dark Chocolate)
+  {
+    id: 'sweet-branch-dark-70-85',
     optionA: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
     optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
   },
   // Cheesecake appears 2 times
   {
