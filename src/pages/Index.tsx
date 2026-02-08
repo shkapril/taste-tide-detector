@@ -301,7 +301,7 @@ const Index = () => {
                   onClick={() => setSelectedQuiz(option.value)}
                   className={`relative p-5 rounded-2xl text-left transition-all duration-300 ${
                     selectedQuiz === option.value
-                      ? 'bg-primary text-primary-foreground shadow-md'
+                      ? 'bg-gradient-to-br from-primary via-primary/90 to-accent text-primary-foreground shadow-md'
                       : 'bg-card chic-border hover:bg-secondary/50'
                   }`}
                 >
