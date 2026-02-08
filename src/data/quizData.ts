@@ -124,7 +124,7 @@ export const sweetItems: QuizItem[] = [
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
-  // Tiramisu chain
+  // Tiramisu chain with branching
   {
     id: 'sweet-10',
     optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
@@ -132,14 +132,28 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    branchOnA: ['sweet-branch-creme-mont'], // If user chooses Crème Brûlée
+    branchOnB: ['sweet-branch-tiramisu-mont'], // If user chooses Tiramisu
   },
+  // Branch question: Crème Brûlée vs Mont Blanc (only shows if user chose Crème Brûlée)
   {
-    id: 'sweet-11',
+    id: 'sweet-branch-creme-mont',
+    optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
+    optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
+  },
+  // Branch question: Tiramisu vs Mont Blanc (only shows if user chose Tiramisu)
+  {
+    id: 'sweet-branch-tiramisu-mont',
     optionA: { name: 'Tiramisu', image: '/images/tiramisu.png' },
     optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
     intensityA: 5,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
   },
   // Coffee drinks chain (less sweet)
   {
