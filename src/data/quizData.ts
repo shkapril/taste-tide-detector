@@ -32,7 +32,7 @@ export const sweetItems: QuizItem[] = [
     intensityA: 9,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    branchOnA: ['sweet-branch-white-caramel', 'sweet-branch-caramel-milk'], // If user chooses White Chocolate
+    branchOnA: ['sweet-branch-white-caramel', 'sweet-branch-caramel-milk', 'sweet-branch-white-baklava'], // If user chooses White Chocolate - no Dark comparison
   },
   {
     id: 'sweet-2',
@@ -63,6 +63,16 @@ export const sweetItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
     isBranchQuestion: true,
   },
+  // Branch question: White Chocolate vs Baklava (only shows if user chose White Chocolate)
+  {
+    id: 'sweet-branch-white-baklava',
+    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
+    optionB: { name: 'Baklava', image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 8,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
+  },
   // Branch question: Dark Chocolate 70% vs 85% (only shows if user chose Dark Chocolate)
   {
     id: 'sweet-branch-dark-70-85',
@@ -72,6 +82,44 @@ export const sweetItems: QuizItem[] = [
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
     isBranchQuestion: true,
+  },
+  // Cookie comparison with branching
+  {
+    id: 'sweet-13',
+    optionA: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Oat Cookie', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 4,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    branchOnB: ['sweet-branch-oat-biscotti'], // If user chooses Oat Cookie
+  },
+  // Branch question: Oat Cookie vs Biscotti (only shows if user chose Oat Cookie)
+  {
+    id: 'sweet-branch-oat-biscotti',
+    optionA: { name: 'Oat Cookie', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
+    intensityA: 4,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
+  },
+  // Pancakes vs Bagel
+  {
+    id: 'sweet-14',
+    optionA: { name: 'Pancakes', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop' },
+    optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1585445490387-f47934b73b54?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  // Cupcakes vs Muffins
+  {
+    id: 'sweet-15',
+    optionA: { name: 'Cupcake', image: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&h=600&fit=crop' },
+    optionB: { name: 'Muffin', image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 5,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   // Cheesecake appears 2 times
   {
