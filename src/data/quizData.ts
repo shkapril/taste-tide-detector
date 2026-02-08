@@ -234,7 +234,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-4',
     optionA: { name: 'Green Apple', image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=600&h=600&fit=crop' },
-    optionB: { name: 'Red Apple', image: 'https://images.unsplash.com/photo-1568702846914-96b305d2uj98?w=600&h=600&fit=crop' },
+    optionB: { name: 'Red Apple', image: '/images/red_apples.png' },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
