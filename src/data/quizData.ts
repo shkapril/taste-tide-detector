@@ -87,7 +87,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-13',
     optionA: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
-    optionB: { name: 'Oat Cookie', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -96,7 +96,7 @@ export const sweetItems: QuizItem[] = [
   // Branch question: Oat Cookie vs Biscotti (only shows if user chose Oat Cookie)
   {
     id: 'sweet-branch-oat-biscotti',
-    optionA: { name: 'Oat Cookie', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&h=600&fit=crop' },
+    optionA: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
     optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
     intensityA: 4,
     intensityB: 3,
