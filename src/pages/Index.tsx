@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AllergySelection from '@/components/AllergySelection';
+import { Allergen } from '@/data/allergens';
 
 type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
@@ -27,6 +29,7 @@ const Index = () => {
   const [step, setStep] = useState(locationState?.startAtQuizSelection ? 1 : 0);
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
+  const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem('completedQuizzes');
@@ -55,8 +58,16 @@ const Index = () => {
 
   const handleStartQuiz = () => {
     if (selectedQuiz) {
-      navigate('/quiz', { state: { quizType: selectedQuiz } });
+      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies } });
     }
+  };
+
+  const handleToggleAllergy = (allergen: Allergen) => {
+    setSelectedAllergies(prev =>
+      prev.includes(allergen)
+        ? prev.filter(a => a !== allergen)
+        : [...prev, allergen]
+    );
   };
 
   return (
@@ -339,16 +350,25 @@ const Index = () => {
               transition={{ delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Button
-                onClick={handleStartQuiz}
+                onClick={() => { if (selectedQuiz) setStep(2); }}
                 disabled={!selectedQuiz}
                 size="lg"
                 className="w-full h-14 text-base font-medium tracking-wide rounded-full"
               >
-                Start Quiz
+                Continue
                 <ArrowRight className="w-4 h-4 ml-3" />
               </Button>
             </motion.div>
           </motion.div>
+        )}
+
+        {step === 2 && (
+          <AllergySelection
+            selectedAllergies={selectedAllergies}
+            onToggleAllergy={handleToggleAllergy}
+            onBack={() => setStep(1)}
+            onContinue={handleStartQuiz}
+          />
         )}
       </AnimatePresence>
     </div>
