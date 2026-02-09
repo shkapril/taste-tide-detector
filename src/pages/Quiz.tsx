@@ -6,15 +6,17 @@ import ActionButtons from '@/components/ActionButtons';
 import ProgressBar from '@/components/ProgressBar';
 import { Button } from '@/components/ui/button';
 import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
+import { Allergen, shouldFilterItem } from '@/data/allergens';
 
 interface Answer {
   item: QuizItem;
   chosenIntensity: number;
-  addedBranchIds?: string[]; // Track which branch questions were added after this answer
+  addedBranchIds?: string[];
 }
 
 interface LocationState {
   quizType?: QuizType;
+  allergies?: Allergen[];
 }
 
 const Quiz = () => {
