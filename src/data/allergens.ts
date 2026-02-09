@@ -1,7 +1,8 @@
 export type Allergen = 
   | 'dairy' 
   | 'gluten' 
-  | 'nuts' 
+  | 'tree_nuts' 
+  | 'peanuts'
   | 'eggs' 
   | 'shellfish' 
   | 'fish' 
@@ -12,7 +13,8 @@ export type Allergen =
 export const allergenInfo: { value: Allergen; label: string; emoji: string; hasCustomInput?: boolean }[] = [
   { value: 'dairy', label: 'Dairy', emoji: '🥛' },
   { value: 'gluten', label: 'Gluten', emoji: '🌾' },
-  { value: 'nuts', label: 'Nuts', emoji: '🥜', hasCustomInput: true },
+  { value: 'tree_nuts', label: 'Tree Nuts', emoji: '🌰', hasCustomInput: true },
+  { value: 'peanuts', label: 'Peanuts', emoji: '🥜' },
   { value: 'eggs', label: 'Eggs', emoji: '🥚' },
   { value: 'shellfish', label: 'Shellfish', emoji: '🦐' },
   { value: 'fish', label: 'Fish', emoji: '🐟' },
