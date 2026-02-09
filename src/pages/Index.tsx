@@ -26,7 +26,7 @@ const Index = () => {
   const location = useLocation();
   const locationState = location.state as IndexLocationState | null;
   
-  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 1 : 0);
+  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 2 : 0);
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
@@ -276,6 +276,15 @@ const Index = () => {
         )}
 
         {step === 1 && (
+          <AllergySelection
+            selectedAllergies={selectedAllergies}
+            onToggleAllergy={handleToggleAllergy}
+            onBack={() => setStep(0)}
+            onContinue={() => setStep(2)}
+          />
+        )}
+
+        {step === 2 && (
           <motion.div
             key="quiz-type"
             initial={{ opacity: 0, x: 50 }}
@@ -289,7 +298,7 @@ const Index = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setStep(0)}
+                onClick={() => setStep(1)}
                 className="mr-3 rounded-full"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -350,25 +359,16 @@ const Index = () => {
               transition={{ delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Button
-                onClick={() => { if (selectedQuiz) setStep(2); }}
+                onClick={handleStartQuiz}
                 disabled={!selectedQuiz}
                 size="lg"
                 className="w-full h-14 text-base font-medium tracking-wide rounded-full"
               >
-                Continue
+                Start Quiz
                 <ArrowRight className="w-4 h-4 ml-3" />
               </Button>
             </motion.div>
           </motion.div>
-        )}
-
-        {step === 2 && (
-          <AllergySelection
-            selectedAllergies={selectedAllergies}
-            onToggleAllergy={handleToggleAllergy}
-            onBack={() => setStep(1)}
-            onContinue={handleStartQuiz}
-          />
         )}
       </AnimatePresence>
     </div>
