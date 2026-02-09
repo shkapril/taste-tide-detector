@@ -58,8 +58,16 @@ const Index = () => {
 
   const handleStartQuiz = () => {
     if (selectedQuiz) {
-      navigate('/quiz', { state: { quizType: selectedQuiz } });
+      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies } });
     }
+  };
+
+  const handleToggleAllergy = (allergen: Allergen) => {
+    setSelectedAllergies(prev =>
+      prev.includes(allergen)
+        ? prev.filter(a => a !== allergen)
+        : [...prev, allergen]
+    );
   };
 
   return (
