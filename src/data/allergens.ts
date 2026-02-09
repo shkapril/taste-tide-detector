@@ -84,7 +84,7 @@ const allergenMap: Record<string, Allergen[]> = {
 
   // NUTS
   'baklava': ['nuts', 'gluten'],
-  'peanut butter': ['peanuts'],
+  'peanut butter': ['nuts'],
 
   // EGGS
   // (most baked goods already listed above)
