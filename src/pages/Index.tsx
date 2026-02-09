@@ -304,9 +304,12 @@ const Index = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Button>
               <div className="flex-1">
-                <h2 className="text-3xl font-display text-foreground tracking-tight">
+              <h2 className="text-3xl font-display text-foreground tracking-tight">
                   Choose Your Quiz
                 </h2>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                  Some foods can be made in different ways. Answer based on versions you usually eat or would choose that fit your dietary habits.
+                </p>
               </div>
             </div>
 
