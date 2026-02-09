@@ -38,9 +38,9 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
       </div>
 
       <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
-        Select anything you avoid.
+        Select anything you avoid including allergies. Choose based on your daily eating habits.
         <br />
-        Choose based on your daily eating habits. We'll hide foods containing those ingredients and tailor the quiz for you.
+        We'll hide foods containing those ingredients and tailor the quiz for you.
       </p>
 
       {/* Allergy Options */}
