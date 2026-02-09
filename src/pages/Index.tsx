@@ -26,7 +26,7 @@ const Index = () => {
   const location = useLocation();
   const locationState = location.state as IndexLocationState | null;
   
-  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 1 : 0);
+  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 2 : 0);
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
