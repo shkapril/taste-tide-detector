@@ -1,7 +1,8 @@
 export type Allergen = 
   | 'dairy' 
   | 'gluten' 
-  | 'nuts' 
+  | 'tree_nuts' 
+  | 'peanuts'
   | 'eggs' 
   | 'shellfish' 
   | 'fish' 
@@ -12,7 +13,8 @@ export type Allergen =
 export const allergenInfo: { value: Allergen; label: string; emoji: string; hasCustomInput?: boolean }[] = [
   { value: 'dairy', label: 'Dairy', emoji: '🥛' },
   { value: 'gluten', label: 'Gluten', emoji: '🌾' },
-  { value: 'nuts', label: 'Nuts', emoji: '🥜', hasCustomInput: true },
+  { value: 'tree_nuts', label: 'Tree Nuts', emoji: '🌰', hasCustomInput: true },
+  { value: 'peanuts', label: 'Peanuts', emoji: '🥜' },
   { value: 'eggs', label: 'Eggs', emoji: '🥚' },
   { value: 'shellfish', label: 'Shellfish', emoji: '🦐' },
   { value: 'fish', label: 'Fish', emoji: '🐟' },
@@ -30,17 +32,17 @@ const allergenMap: Record<string, Allergen[]> = {
   'cheesecake': ['dairy', 'gluten', 'eggs'],
   'chocolate cake': ['dairy', 'gluten', 'eggs'],
   'carrot cake': ['dairy', 'gluten', 'eggs'],
-  'french macaron': ['dairy', 'eggs', 'nuts'],
+  'french macaron': ['dairy', 'eggs', 'tree_nuts'],
   'crème brûlée': ['dairy', 'eggs'],
   'tiramisu': ['dairy', 'eggs', 'gluten'],
-  'mont blanc': ['dairy', 'nuts'],
+  'mont blanc': ['dairy', 'tree_nuts'],
   'glazed donut': ['dairy', 'gluten', 'eggs'],
   'cupcake': ['dairy', 'gluten', 'eggs'],
   'muffin': ['dairy', 'gluten', 'eggs'],
   'pancakes': ['dairy', 'gluten', 'eggs'],
   'chocolate cookie': ['dairy', 'gluten', 'eggs'],
   'oat cookie': ['dairy', 'gluten', 'eggs'],
-  'biscotti': ['gluten', 'eggs', 'nuts'],
+  'biscotti': ['gluten', 'eggs', 'tree_nuts'],
   'chocolate mousse': ['dairy', 'eggs'],
   'ice cream': ['dairy', 'eggs'],
   'latte': ['dairy'],
@@ -83,8 +85,8 @@ const allergenMap: Record<string, Allergen[]> = {
   'tonkotsu ramen': ['gluten', 'eggs', 'soy'],
 
   // NUTS
-  'baklava': ['nuts', 'gluten'],
-  'peanut butter': ['nuts'],
+  'baklava': ['tree_nuts', 'gluten'],
+  'peanut butter': ['peanuts'],
 
   // EGGS
   // (most baked goods already listed above)
@@ -112,8 +114,8 @@ const allergenMap: Record<string, Allergen[]> = {
   'nashville hot chicken': ['gluten', 'eggs'],
   'fried chicken': ['gluten', 'eggs'],
   'vindaloo': ['dairy'],
-  'korma': ['dairy', 'nuts'],
-  'coconut curry': ['nuts'],
+  'korma': ['dairy', 'tree_nuts'],
+  'coconut curry': ['tree_nuts'],
   'thai green curry': ['fish'],
 };
 

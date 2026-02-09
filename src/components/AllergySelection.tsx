@@ -82,7 +82,7 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
                 {allergen.hasCustomInput && (
                   <input
                     type="text"
-                    placeholder={allergen.value === 'nuts' ? 'e.g. almonds, cashews' : allergen.value === 'fruits' ? 'e.g. kiwi, mango' : 'e.g. sesame, sunflower'}
+                    placeholder={allergen.value === 'tree_nuts' ? 'e.g. almonds, cashews' : allergen.value === 'fruits' ? 'e.g. kiwi, mango' : 'e.g. sesame, sunflower'}
                     value={customInputs[allergen.value] || ''}
                     onClick={(e) => e.stopPropagation()}
                     onChange={(e) => handleCustomInputChange(allergen.value, e.target.value)}
