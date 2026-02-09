@@ -32,7 +32,7 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         </Button>
         <div className="flex-1">
           <h2 className="text-3xl font-display text-foreground tracking-tight">
-            Any Allergies?
+            Anything You Avoid?
           </h2>
         </div>
       </div>
