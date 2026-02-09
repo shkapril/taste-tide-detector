@@ -549,7 +549,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-6',
-    optionA: { name: 'Garlic Butter Bread', image: 'https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=600&h=600&fit=crop' },
+    optionA: { name: 'Garlic Butter Bread', image: '/images/garlic_butter_bread.png' },
     optionB: { name: 'Plain Bread', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 1,
