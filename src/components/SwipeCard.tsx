@@ -31,7 +31,7 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
     >
       <div className="relative overflow-hidden rounded-2xl card-shadow bg-card">
         {/* VS Header */}
-        <div className="bg-primary/10 px-4 py-3 text-center">
+        <div className="bg-accent/30 px-4 py-3 text-center">
           <span className="text-sm font-medium text-primary uppercase tracking-wider">
             Tap your preference
           </span>
