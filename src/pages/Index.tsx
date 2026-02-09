@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Sparkles, Users, ChartBar, Check, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AllergySelection from '@/components/AllergySelection';
+import { Allergen } from '@/data/allergens';
 
 type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
