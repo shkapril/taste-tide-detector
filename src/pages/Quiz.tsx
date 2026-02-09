@@ -174,14 +174,21 @@ const Quiz = () => {
         />
       </div>
 
-      {/* Restart Button */}
-      <div className="px-6 pb-8">
+      {/* Bottom Buttons */}
+      <div className="px-6 pb-8 space-y-2">
         <Button
           variant="ghost"
           onClick={handleRestart}
           className="w-full text-muted-foreground hover:text-foreground"
         >
           Take quiz again
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+          className="w-full text-muted-foreground hover:text-foreground"
+        >
+          ← Back to taste quizzes
         </Button>
       </div>
     </div>
