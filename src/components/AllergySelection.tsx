@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, allergenInfo } from '@/data/allergens';
@@ -11,6 +12,12 @@ interface AllergySelectionProps {
 }
 
 const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContinue }: AllergySelectionProps) => {
+  const [customInputs, setCustomInputs] = useState<Record<string, string>>({});
+
+  const handleCustomInputChange = (allergen: Allergen, value: string) => {
+    setCustomInputs(prev => ({ ...prev, [allergen]: value }));
+  };
+
   return (
     <motion.div
       key="allergy-selection"
@@ -48,23 +55,48 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         {allergenInfo.map((allergen, index) => {
           const isSelected = selectedAllergies.includes(allergen.value);
           return (
-            <motion.button
+            <motion.div
               key={allergen.value}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              onClick={() => onToggleAllergy(allergen.value)}
-              className={`relative p-4 rounded-2xl text-left transition-all duration-300 ${
-                isSelected
-                  ? 'bg-destructive/10 border-2 border-destructive/40 shadow-sm'
-                  : 'bg-card chic-border hover:bg-secondary/50'
-              }`}
             >
-              <span className="text-xl mb-1 block">{allergen.emoji}</span>
-              <span className={`font-display text-base block ${
-                isSelected ? 'text-destructive' : 'text-foreground'
-              }`}>{allergen.label}</span>
-            </motion.button>
+              <button
+                onClick={() => onToggleAllergy(allergen.value)}
+                className={`relative w-full p-4 rounded-2xl text-left transition-all duration-300 ${
+                  isSelected
+                    ? 'bg-destructive/10 border-2 border-destructive/40 shadow-sm'
+                    : 'bg-card chic-border hover:bg-secondary/50'
+                }`}
+              >
+                <span className="text-xl mb-1 block">{allergen.emoji}</span>
+                <span className={`font-display text-base block ${
+                  isSelected ? 'text-destructive' : 'text-foreground'
+                }`}>{allergen.label}</span>
+              </button>
+
+              {/* Custom text input for nuts, fruits, seeds */}
+              <AnimatePresence>
+                {isSelected && allergen.hasCustomInput && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <input
+                      type="text"
+                      placeholder={`e.g. ${allergen.value === 'nuts' ? 'almonds, cashews' : allergen.value === 'fruits' ? 'kiwi, mango' : 'sesame, sunflower'}`}
+                      value={customInputs[allergen.value] || ''}
+                      onChange={(e) => handleCustomInputChange(allergen.value, e.target.value)}
+                      className="w-full mt-2 px-3 py-2 text-sm rounded-xl bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground/50 outline-none focus:border-destructive/40 transition-colors"
+                      maxLength={100}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           );
         })}
       </div>

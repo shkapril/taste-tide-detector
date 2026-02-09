@@ -6,17 +6,19 @@ export type Allergen =
   | 'shellfish' 
   | 'fish' 
   | 'soy' 
-  | 'peanuts';
+  | 'fruits'
+  | 'seeds';
 
-export const allergenInfo: { value: Allergen; label: string; emoji: string }[] = [
+export const allergenInfo: { value: Allergen; label: string; emoji: string; hasCustomInput?: boolean }[] = [
   { value: 'dairy', label: 'Dairy', emoji: '🥛' },
   { value: 'gluten', label: 'Gluten', emoji: '🌾' },
-  { value: 'nuts', label: 'Tree Nuts', emoji: '🥜' },
+  { value: 'nuts', label: 'Nuts', emoji: '🥜', hasCustomInput: true },
   { value: 'eggs', label: 'Eggs', emoji: '🥚' },
   { value: 'shellfish', label: 'Shellfish', emoji: '🦐' },
   { value: 'fish', label: 'Fish', emoji: '🐟' },
   { value: 'soy', label: 'Soy', emoji: '🫘' },
-  { value: 'peanuts', label: 'Peanuts', emoji: '🥜' },
+  { value: 'fruits', label: 'Fruits', emoji: '🍎', hasCustomInput: true },
+  { value: 'seeds', label: 'Seeds', emoji: '🌻', hasCustomInput: true },
 ];
 
 // Maps food names (lowercase) to their allergens
@@ -82,7 +84,7 @@ const allergenMap: Record<string, Allergen[]> = {
 
   // NUTS
   'baklava': ['nuts', 'gluten'],
-  'peanut butter': ['peanuts'],
+  'peanut butter': ['nuts'],
 
   // EGGS
   // (most baked goods already listed above)
