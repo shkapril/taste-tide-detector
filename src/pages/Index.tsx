@@ -29,6 +29,7 @@ const Index = () => {
   const [step, setStep] = useState(locationState?.startAtQuizSelection ? 1 : 0);
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
+  const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem('completedQuizzes');
