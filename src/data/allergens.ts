@@ -42,7 +42,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'pancakes': ['dairy', 'gluten', 'eggs'],
   'chocolate cookie': ['dairy', 'gluten', 'eggs'],
   'oat cookie': ['dairy', 'gluten', 'eggs'],
-  'biscotti': ['gluten', 'eggs', 'nuts'],
+  'biscotti': ['gluten', 'eggs', 'tree_nuts'],
   'chocolate mousse': ['dairy', 'eggs'],
   'ice cream': ['dairy', 'eggs'],
   'latte': ['dairy'],
