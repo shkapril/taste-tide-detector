@@ -509,8 +509,8 @@ export const saltyItems: QuizItem[] = [
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
-    optionA: { name: 'Brie Cheese', image: 'https://images.unsplash.com/photo-1634487359989-3e90c9432133?w=600&h=600&fit=crop' },
-    optionB: { name: 'Goat Cheese', image: 'https://images.unsplash.com/photo-1559561853-08451507cbe7?w=600&h=600&fit=crop' },
+    optionA: { name: 'Chicken Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mushroom Soup', image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
