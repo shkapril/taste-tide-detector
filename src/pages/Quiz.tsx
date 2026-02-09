@@ -23,17 +23,21 @@ const Quiz = () => {
   const state = location.state as LocationState | null;
   
   const quizType = state?.quizType || 'sweet';
+  const allergies = state?.allergies || [];
   
-  // Get base quiz items (excluding branch questions)
+  // Get base quiz items (excluding branch questions), filtered by allergies
   const baseQuizItems = useMemo(() => {
     const allItems = quizDataMap[quizType] || quizDataMap.sweet;
-    return allItems.filter(item => !item.isBranchQuestion);
-  }, [quizType]);
+    return allItems
+      .filter(item => !item.isBranchQuestion)
+      .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies));
+  }, [quizType, allergies]);
 
-  // Get all items including branch questions for lookup
+  // Get all items including branch questions for lookup (also filtered)
   const allQuizItems = useMemo(() => {
-    return quizDataMap[quizType] || quizDataMap.sweet;
-  }, [quizType]);
+    const items = quizDataMap[quizType] || quizDataMap.sweet;
+    return items.filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies));
+  }, [quizType, allergies]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
