@@ -85,8 +85,8 @@ const allergenMap: Record<string, Allergen[]> = {
   'tonkotsu ramen': ['gluten', 'eggs', 'soy'],
 
   // NUTS
-  'baklava': ['nuts', 'gluten'],
-  'peanut butter': ['nuts'],
+  'baklava': ['tree_nuts', 'gluten'],
+  'peanut butter': ['peanuts'],
 
   // EGGS
   // (most baked goods already listed above)
