@@ -119,7 +119,7 @@ const Quiz = () => {
   }, [baseQuizItems]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col overflow-y-auto">
       {/* Header */}
       <header className="px-6 pt-8 pb-4">
         <motion.h1 
