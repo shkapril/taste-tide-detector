@@ -573,7 +573,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-9',
-    optionA: { name: 'Mashed Potatoes', image: 'https://images.unsplash.com/photo-1600438388498-93a618a5eda1?w=600&h=600&fit=crop' },
+    optionA: { name: 'Mashed Potatoes', image: '/images/mashed_potato.png' },
     optionB: { name: 'Baked Potato', image: 'https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 2,
