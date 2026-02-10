@@ -69,7 +69,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'cream cheese': ['dairy'],
   'vanilla pudding': ['dairy', 'eggs'],
   'greek yogurt': ['dairy'],
-  'chicken soup': ['eggs'],
+  'chicken soup': ['eggs', 'meat'],
   'mushroom soup': ['dairy'],
 
   // GLUTEN
