@@ -131,10 +131,6 @@ const allergenMap: Record<string, Allergen[]> = {
 
   // MEAT / POULTRY
   'steak': ['meat'],
-  'butter chicken': ['dairy', 'meat'],
-  'chicken soup': ['eggs', 'meat'],
-  'eggs benedict (creamy hollandaise sauce)': ['dairy', 'eggs', 'gluten'],
-  'carbonara': ['dairy', 'eggs', 'gluten', 'meat'],
 };
 
 /**
