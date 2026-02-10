@@ -22,7 +22,7 @@ const Results = () => {
   const labels = quizLabels[quizType];
   const profile = state ? getTasteProfile(state.averageIntensity, quizType) : null;
 
-  // Mark quiz as completed
+  // Mark quiz as completed and save score
   useEffect(() => {
     if (!state) return;
     const stored = localStorage.getItem('completedQuizzes');
@@ -31,6 +31,10 @@ const Results = () => {
       completed.push(quizType);
       localStorage.setItem('completedQuizzes', JSON.stringify(completed));
     }
+    // Save individual quiz score
+    const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
+    scores[quizType] = state.averageIntensity;
+    localStorage.setItem('quizScores', JSON.stringify(scores));
   }, [quizType, state]);
 
   if (!state || !profile) {

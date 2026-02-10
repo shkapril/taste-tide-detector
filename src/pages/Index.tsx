@@ -43,11 +43,13 @@ const Index = () => {
       icon: Users,
       title: 'Compare Globally',
       description: 'See how your palate ranks among others worldwide',
+      onClick: undefined as (() => void) | undefined,
     },
     {
       icon: ChartBar,
       title: 'Personalized Profile',
       description: 'Get insights into your unique taste preferences',
+      onClick: () => navigate('/profile'),
     },
   ];
 
@@ -240,10 +242,11 @@ const Index = () => {
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
-                    className="flex items-start gap-5 p-5 bg-card/60 backdrop-blur-sm rounded-2xl chic-border"
+                    className={`flex items-start gap-5 p-5 bg-card/60 backdrop-blur-sm rounded-2xl chic-border ${feature.onClick ? 'cursor-pointer hover:bg-card/80 transition-colors' : ''}`}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    onClick={feature.onClick}
                   >
                     <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-foreground/70" />
