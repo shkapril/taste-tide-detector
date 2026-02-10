@@ -8,7 +8,8 @@ export type Allergen =
   | 'fish' 
   | 'soy' 
   | 'fruits'
-  | 'seeds';
+  | 'seeds'
+  | 'meat';
 
 export const allergenInfo: { value: Allergen; label: string; emoji: string; hasCustomInput?: boolean }[] = [
   { value: 'dairy', label: 'Dairy', emoji: '🥛' },
