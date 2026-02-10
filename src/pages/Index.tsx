@@ -40,11 +40,6 @@ const Index = () => {
 
   const features = [
     {
-      icon: Sparkles,
-      title: 'Discover Your Taste',
-      description: 'Find out where you fall on the flavor spectrum',
-    },
-    {
       icon: Users,
       title: 'Compare Globally',
       description: 'See how your palate ranks among others worldwide',
