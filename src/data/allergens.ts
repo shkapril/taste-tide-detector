@@ -8,7 +8,8 @@ export type Allergen =
   | 'fish' 
   | 'soy' 
   | 'fruits'
-  | 'seeds';
+  | 'seeds'
+  | 'meat';
 
 export const allergenInfo: { value: Allergen; label: string; emoji: string; hasCustomInput?: boolean }[] = [
   { value: 'dairy', label: 'Dairy', emoji: '🥛' },
@@ -21,6 +22,7 @@ export const allergenInfo: { value: Allergen; label: string; emoji: string; hasC
   { value: 'soy', label: 'Soy', emoji: '🫘' },
   { value: 'fruits', label: 'Fruits', emoji: '🍎', hasCustomInput: true },
   { value: 'seeds', label: 'Seeds', emoji: '🌻', hasCustomInput: true },
+  { value: 'meat', label: 'Meat / Poultry', emoji: '🥩' },
 ];
 
 // Maps food names (lowercase) to their allergens
@@ -54,12 +56,12 @@ const allergenMap: Record<string, Allergen[]> = {
   'marinara pasta': ['gluten'],
   'croissant': ['dairy', 'gluten', 'eggs'],
   'plain croissant': ['dairy', 'gluten', 'eggs'],
-  'butter chicken': ['dairy'],
+  'butter chicken': ['dairy', 'meat'],
   'garlic butter bread': ['dairy', 'gluten'],
   'eggs benedict (creamy hollandaise sauce)': ['dairy', 'eggs', 'gluten'],
   'poached eggs': ['eggs'],
   'mashed potatoes': ['dairy'],
-  'carbonara': ['dairy', 'eggs', 'gluten'],
+  'carbonara': ['dairy', 'eggs', 'gluten', 'meat'],
   'movie popcorn': ['dairy'],
   'danish pastry': ['dairy', 'gluten', 'eggs'],
   'mozzarella sticks': ['dairy', 'gluten'],
@@ -67,7 +69,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'cream cheese': ['dairy'],
   'vanilla pudding': ['dairy', 'eggs'],
   'greek yogurt': ['dairy'],
-  'chicken soup': ['eggs'],
+  'chicken soup': ['eggs', 'meat'],
   'mushroom soup': ['dairy'],
 
   // GLUTEN
@@ -118,14 +120,17 @@ const allergenMap: Record<string, Allergen[]> = {
   'fresh lemon': ['fruits'],
   
   // Spicy items with allergens
-  'ghost pepper wings': ['gluten'],
-  'bbq wings': ['gluten'],
-  'nashville hot chicken': ['gluten', 'eggs'],
-  'fried chicken': ['gluten', 'eggs'],
-  'vindaloo': ['dairy'],
-  'korma': ['dairy', 'tree_nuts'],
+  'ghost pepper wings': ['gluten', 'meat'],
+  'bbq wings': ['gluten', 'meat'],
+  'nashville hot chicken': ['gluten', 'eggs', 'meat'],
+  'fried chicken': ['gluten', 'eggs', 'meat'],
+  'vindaloo': ['dairy', 'meat'],
+  'korma': ['dairy', 'tree_nuts', 'meat'],
   'coconut curry': ['tree_nuts'],
   'thai green curry': ['fish'],
+
+  // MEAT / POULTRY
+  'steak': ['meat'],
 };
 
 /**
