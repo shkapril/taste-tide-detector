@@ -43,11 +43,13 @@ const Index = () => {
       icon: Users,
       title: 'Compare Globally',
       description: 'See how your palate ranks among others worldwide',
+      onClick: undefined as (() => void) | undefined,
     },
     {
       icon: ChartBar,
       title: 'Personalized Profile',
       description: 'Get insights into your unique taste preferences',
+      onClick: () => navigate('/profile'),
     },
   ];
 
