@@ -120,14 +120,21 @@ const allergenMap: Record<string, Allergen[]> = {
   'fresh lemon': ['fruits'],
   
   // Spicy items with allergens
-  'ghost pepper wings': ['gluten'],
-  'bbq wings': ['gluten'],
-  'nashville hot chicken': ['gluten', 'eggs'],
-  'fried chicken': ['gluten', 'eggs'],
-  'vindaloo': ['dairy'],
-  'korma': ['dairy', 'tree_nuts'],
+  'ghost pepper wings': ['gluten', 'meat'],
+  'bbq wings': ['gluten', 'meat'],
+  'nashville hot chicken': ['gluten', 'eggs', 'meat'],
+  'fried chicken': ['gluten', 'eggs', 'meat'],
+  'vindaloo': ['dairy', 'meat'],
+  'korma': ['dairy', 'tree_nuts', 'meat'],
   'coconut curry': ['tree_nuts'],
   'thai green curry': ['fish'],
+
+  // MEAT / POULTRY
+  'steak': ['meat'],
+  'butter chicken': ['dairy', 'meat'],
+  'chicken soup': ['eggs', 'meat'],
+  'eggs benedict (creamy hollandaise sauce)': ['dairy', 'eggs', 'gluten'],
+  'carbonara': ['dairy', 'eggs', 'gluten', 'meat'],
 };
 
 /**
