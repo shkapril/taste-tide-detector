@@ -230,7 +230,7 @@ const Index = () => {
                   size="lg"
                   className="h-14 px-10 text-lg font-display tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  Start
+                  Discover Your Taste
                   <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4 tracking-widest uppercase">
