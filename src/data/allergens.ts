@@ -22,6 +22,7 @@ export const allergenInfo: { value: Allergen; label: string; emoji: string; hasC
   { value: 'soy', label: 'Soy', emoji: '🫘' },
   { value: 'fruits', label: 'Fruits', emoji: '🍎', hasCustomInput: true },
   { value: 'seeds', label: 'Seeds', emoji: '🌻', hasCustomInput: true },
+  { value: 'meat', label: 'Meat / Poultry', emoji: '🥩' },
 ];
 
 // Maps food names (lowercase) to their allergens
