@@ -100,26 +100,33 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: allergenInfo.length * 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-2"
         >
-          <div className={`relative w-full p-4 rounded-2xl text-left transition-all duration-300 ${
-            customInputs['others']
-              ? 'bg-destructive/10 border-2 border-destructive/40 shadow-sm'
-              : 'bg-card chic-border'
-          }`}>
+          <button
+            onClick={() => {
+              if (!customInputs['others']) {
+                setCustomInputs(prev => ({ ...prev, others: '' }));
+              }
+            }}
+            className={`relative w-full h-full p-4 rounded-2xl text-left transition-all duration-300 ${
+              customInputs['others']
+                ? 'bg-destructive/10 border-2 border-destructive/40 shadow-sm'
+                : 'bg-card chic-border hover:bg-secondary/50'
+            }`}
+          >
             <span className="text-xl mb-1 block">✏️</span>
             <span className={`font-display text-base block ${
               customInputs['others'] ? 'text-destructive' : 'text-foreground'
             }`}>Others</span>
             <input
               type="text"
-              placeholder="e.g. corn, celery, mustard"
+              placeholder="e.g. corn, celery"
               value={customInputs['others'] || ''}
+              onClick={(e) => e.stopPropagation()}
               onChange={(e) => setCustomInputs(prev => ({ ...prev, others: e.target.value }))}
               className="w-full mt-2 px-2 py-1.5 text-xs rounded-lg bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground/40 outline-none focus:border-destructive/40 transition-colors"
               maxLength={200}
             />
-          </div>
+          </button>
         </motion.div>
       </div>
 
