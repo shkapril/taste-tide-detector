@@ -276,6 +276,14 @@ export const sourItems: QuizItem[] = [
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'sour-14',
+    optionA: { name: 'Buffalo Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
+    optionB: { name: 'BBQ Wings', image: 'https://images.unsplash.com/photo-1608039829572-25e8182a7a01?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['all-good'],
+  },
 ];
 
 // Bitter comparisons
