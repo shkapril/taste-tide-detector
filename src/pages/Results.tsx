@@ -101,25 +101,6 @@ const Results = () => {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="bg-secondary/50 rounded-xl p-4 text-center">
-              <p className="text-2xl font-display font-bold text-foreground">
-                {state.totalAnswered}
-              </p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                Questions
-              </p>
-            </div>
-            <div className="bg-secondary/50 rounded-xl p-4 text-center">
-              <p className="text-2xl font-display font-bold text-foreground">
-                {profile.level.toFixed(1)}/10
-              </p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                {labels.label} Level
-              </p>
-            </div>
-          </div>
         </motion.div>
 
         {/* Spectrum Chart */}
