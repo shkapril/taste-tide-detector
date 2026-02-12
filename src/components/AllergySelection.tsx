@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, allergenInfo } from '@/data/allergens';
+import halalLogo from '@/assets/halal-logo.png';
 
 export type EatingStyle = 'vegetarian' | 'vegan' | 'pescatarian' | 'halal' | 'kosher';
 
@@ -10,7 +11,7 @@ const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
   { value: 'vegetarian', label: 'Vegetarian', emoji: '🥬' },
   { value: 'vegan', label: 'Vegan', emoji: '🌱' },
   { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
-  { value: 'halal', label: 'Halal', emoji: '🍖' },
+  { value: 'halal', label: 'Halal', emoji: '' },
   { value: 'kosher', label: 'Kosher', emoji: '✡️' },
 ];
 
@@ -90,7 +91,11 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
                     : 'bg-card chic-border hover:bg-secondary/50 text-foreground'
                 }`}
               >
-                {style.emoji} {style.label}
+                {style.value === 'halal' ? (
+                  <img src={halalLogo} alt="Halal" className="w-4 h-4 inline-block" />
+                ) : (
+                  style.emoji
+                )}{' '}{style.label}
               </motion.button>
             );
           })}
