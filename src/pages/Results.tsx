@@ -139,7 +139,16 @@ const Results = () => {
           size="lg"
         >
           <RotateCcw className="w-5 h-5 mr-2" />
-          Take Quiz Again
+          Try Again
+        </Button>
+
+        <Button
+          onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+          variant="ghost"
+          className="w-full h-14 text-lg font-medium"
+          size="lg"
+        >
+          Try Other Quizzes
         </Button>
       </motion.div>
     </div>
