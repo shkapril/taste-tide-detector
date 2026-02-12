@@ -4,6 +4,16 @@ import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, allergenInfo } from '@/data/allergens';
 
+export type EatingStyle = 'vegetarian' | 'vegan' | 'pescatarian' | 'halal' | 'kosher';
+
+const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
+  { value: 'vegetarian', label: 'Vegetarian', emoji: '🥬' },
+  { value: 'vegan', label: 'Vegan', emoji: '🌱' },
+  { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
+  { value: 'halal', label: 'Halal', emoji: '🍖' },
+  { value: 'kosher', label: 'Kosher', emoji: '✡️' },
+];
+
 interface AllergySelectionProps {
   selectedAllergies: Allergen[];
   onToggleAllergy: (allergen: Allergen) => void;
@@ -13,6 +23,13 @@ interface AllergySelectionProps {
 
 const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContinue }: AllergySelectionProps) => {
   const [customInputs, setCustomInputs] = useState<Record<string, string>>({});
+  const [selectedStyles, setSelectedStyles] = useState<EatingStyle[]>([]);
+
+  const toggleStyle = (style: EatingStyle) => {
+    setSelectedStyles(prev =>
+      prev.includes(style) ? prev.filter(s => s !== style) : [...prev, style]
+    );
+  };
 
   const handleCustomInputChange = (allergen: Allergen, value: string) => {
     setCustomInputs(prev => ({ ...prev, [allergen]: value }));
@@ -48,11 +65,37 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         </div>
       </div>
 
-      <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
+      <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
         Select anything you avoid including allergies. Choose based on your daily eating habits.
         <br />
         We'll hide foods containing those ingredients and tailor the quiz for you.
       </p>
+
+      {/* Eating Style */}
+      <div className="mb-6">
+        <h3 className="font-display text-lg text-foreground mb-3">Eating Style</h3>
+        <div className="flex flex-wrap gap-2">
+          {eatingStyles.map((style, index) => {
+            const isActive = selectedStyles.includes(style.value);
+            return (
+              <motion.button
+                key={style.value}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                onClick={() => toggleStyle(style.value)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  isActive
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'bg-card chic-border hover:bg-secondary/50 text-foreground'
+                }`}
+              >
+                {style.emoji} {style.label}
+              </motion.button>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Allergy Options */}
       <div className="grid grid-cols-2 gap-3 mb-8">
