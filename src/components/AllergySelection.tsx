@@ -185,7 +185,7 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         >
           {selectedAllergies.length > 0 
             ? `Continue (${selectedAllergies.length} selected)` 
-            : 'No Allergies — Continue'}
+            : 'Continue'}
           <ArrowRight className="w-4 h-4 ml-3" />
         </Button>
       </motion.div>
