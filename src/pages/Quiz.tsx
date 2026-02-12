@@ -30,9 +30,17 @@ const Quiz = () => {
   // Get base quiz items (excluding branch questions), filtered by allergies
   const baseQuizItems = useMemo(() => {
     const allItems = quizDataMap[quizType] || quizDataMap.sweet;
-    return allItems
+    const filtered = allItems
       .filter(item => !item.isBranchQuestion)
       .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies));
+    
+    // For sweet quiz, randomly sample 12 from the full pool
+    if (quizType === 'sweet' && filtered.length > 12) {
+      const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, 12);
+    }
+    
+    return filtered;
   }, [quizType, allergies]);
 
   // Get all items including branch questions for lookup (also filtered)
