@@ -314,14 +314,16 @@ export const bitterItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    branchOnA: ['bitter-branch-coffee-espresso'],
   },
   {
-    id: 'bitter-1b',
+    id: 'bitter-branch-coffee-espresso',
     optionA: { name: 'Black Coffee', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=600&fit=crop' },
     optionB: { name: 'Espresso', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 9,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    isBranchQuestion: true,
   },
   {
     id: 'bitter-2',
