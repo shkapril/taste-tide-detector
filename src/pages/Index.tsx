@@ -32,10 +32,8 @@ const Index = () => {
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem('completedQuizzes');
-    if (stored) {
-      setCompletedQuizzes(JSON.parse(stored));
-    }
+    const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
+    setCompletedQuizzes(Object.keys(scores) as QuizType[]);
   }, []);
 
   const features = [
