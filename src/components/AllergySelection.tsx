@@ -122,17 +122,6 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
                     isSelected ? 'text-destructive' : 'text-foreground'
                   }`}>{allergen.label}</span>
                 </div>
-                {allergen.hasCustomInput && (
-                  <input
-                    type="text"
-                    placeholder={allergen.value === 'tree_nuts' ? 'e.g. almonds, cashews' : allergen.value === 'fruits' ? 'e.g. kiwi, mango' : 'e.g. sesame, sunflower'}
-                    value={customInputs[allergen.value] || ''}
-                    onClick={(e) => e.stopPropagation()}
-                    onChange={(e) => handleCustomInputChange(allergen.value, e.target.value)}
-                    className="w-full mt-2 px-2 py-1.5 text-xs rounded-lg bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground/40 outline-none focus:border-destructive/40 transition-colors"
-                    maxLength={100}
-                  />
-                )}
               </button>
             </motion.div>
           );
@@ -146,9 +135,14 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         >
           <button
             onClick={() => {
-              if (!customInputs['others']) {
-                setCustomInputs(prev => ({ ...prev, others: '' }));
-              }
+              setCustomInputs(prev => {
+                const has = !!prev['others'];
+                if (has) {
+                  const { others, ...rest } = prev;
+                  return rest;
+                }
+                return { ...prev, others: 'yes' };
+              });
             }}
             className={`relative w-full h-full p-4 rounded-2xl text-left transition-all duration-300 ${
               customInputs['others']
@@ -160,15 +154,6 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
             <span className={`font-display text-base block ${
               customInputs['others'] ? 'text-destructive' : 'text-foreground'
             }`}>Others</span>
-            <input
-              type="text"
-              placeholder="e.g. corn, celery"
-              value={customInputs['others'] || ''}
-              onClick={(e) => e.stopPropagation()}
-              onChange={(e) => setCustomInputs(prev => ({ ...prev, others: e.target.value }))}
-              className="w-full mt-2 px-2 py-1.5 text-xs rounded-lg bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground/40 outline-none focus:border-destructive/40 transition-colors"
-              maxLength={200}
-            />
           </button>
         </motion.div>
       </div>
