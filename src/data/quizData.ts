@@ -206,7 +206,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-5',
-    optionA: { name: 'Pickles', image: 'https://images.unsplash.com/photo-1602099819679-dfab5cc87347?w=600&h=600&fit=crop' },
+    optionA: { name: 'Pickles', image: '/images/pickles.png' },
     optionB: { name: 'Cucumber', image: 'https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 1,
