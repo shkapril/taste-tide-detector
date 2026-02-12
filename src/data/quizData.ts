@@ -667,9 +667,9 @@ export const spicyItems: QuizItem[] = [
   {
     id: 'spicy-8',
     optionA: { name: 'Wasabi', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
-    optionB: { name: 'Soy Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mustard', image: 'https://images.unsplash.com/photo-1528750717929-32abb73d3bd9?w=600&h=600&fit=crop' },
     intensityA: 8,
-    intensityB: 1,
+    intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
