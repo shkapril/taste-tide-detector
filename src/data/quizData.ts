@@ -591,7 +591,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-12',
     optionA: { name: 'Danish Pastry', image: '/images/danish_pastry.png' },
-    optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop' },
+    optionB: { name: 'Bagel', image: '/images/bagel.png' },
     intensityA: 8,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
