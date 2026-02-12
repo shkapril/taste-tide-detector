@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Allergen, allergenInfo } from '@/data/allergens';
 import halalLogo from '@/assets/halal-logo.png';
 
-export type EatingStyle = 'vegetarian' | 'vegan' | 'pescatarian' | 'halal' | 'kosher';
+export type EatingStyle = 'all-good' | 'vegetarian' | 'vegan' | 'pescatarian' | 'halal' | 'kosher';
 
 const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
+  { value: 'all-good', label: 'All Good', emoji: '😋' },
   { value: 'vegetarian', label: 'Vegetarian', emoji: '🥬' },
   { value: 'vegan', label: 'Vegan', emoji: '🌱' },
   { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
