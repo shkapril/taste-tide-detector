@@ -333,7 +333,7 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-4',
-    optionA: { name: 'Arugula/Rocket', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=600&fit=crop' },
+    optionA: { name: 'Arugula/Rocket', image: '/images/arugula.png' },
     optionB: { name: 'Iceberg Lettuce', image: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
