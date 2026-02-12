@@ -24,7 +24,6 @@ export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 // Sweet comparisons (comparing sweetness preferences)
 // Key items overlap across questions to help users calibrate their preferences
 export const sweetItems: QuizItem[] = [
-  // Chocolate branching chain
   {
     id: 'sweet-1',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
@@ -32,7 +31,6 @@ export const sweetItems: QuizItem[] = [
     intensityA: 9,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    branchOnA: ['sweet-branch-white-caramel', 'sweet-branch-caramel-milk', 'sweet-branch-white-baklava'], // If user chooses White Chocolate - no Dark comparison
   },
   {
     id: 'sweet-2',
@@ -41,87 +39,39 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    // branchOnB removed: Dark Chocolate 70% vs 85% kept in data for random sampling only
   },
-  // Branch question: White Chocolate vs Caramel (only shows if user chose White Chocolate)
   {
-    id: 'sweet-branch-white-caramel',
+    id: 'sweet-3',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
     optionB: { name: 'Caramel', image: '/images/caramel.png' },
     intensityA: 9,
     intensityB: 6,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
-  // Branch question: Caramel vs Milk Chocolate (only shows if user chose White Chocolate)
   {
-    id: 'sweet-branch-caramel-milk',
+    id: 'sweet-3b',
     optionA: { name: 'Caramel', image: '/images/caramel.png' },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
-  // Branch question: White Chocolate vs Baklava (only shows if user chose White Chocolate)
   {
-    id: 'sweet-branch-white-baklava',
+    id: 'sweet-3c',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
     optionB: { name: 'Baklava', image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
-  // Branch question: Dark Chocolate 70% vs 85% (only shows if user chose Dark Chocolate)
   {
-    id: 'sweet-branch-dark-70-85',
+    id: 'sweet-3d',
     optionA: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
     optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
-  // Cookie comparison with branching
-  {
-    id: 'sweet-13',
-    optionA: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
-    optionB: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
-    intensityA: 7,
-    intensityB: 4,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    branchOnB: ['sweet-branch-oat-biscotti'], // If user chooses Oat Cookie
-  },
-  // Branch question: Oat Cookie vs Biscotti (only shows if user chose Oat Cookie)
-  {
-    id: 'sweet-branch-oat-biscotti',
-    optionA: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
-    optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
-    intensityA: 4,
-    intensityB: 3,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
-  },
-  // Pancakes vs Bagel
-  {
-    id: 'sweet-14',
-    optionA: { name: 'Pancakes', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop' },
-    optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1585445490387-f47934b73b54?w=600&h=600&fit=crop' },
-    intensityA: 7,
-    intensityB: 3,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  // Cupcakes vs Muffins
-  {
-    id: 'sweet-15',
-    optionA: { name: 'Cupcake', image: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&h=600&fit=crop' },
-    optionB: { name: 'Muffin', image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 5,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  // Cheesecake appears 2 times
   {
     id: 'sweet-4',
     optionA: { name: 'Chocolate Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop' },
@@ -138,7 +88,6 @@ export const sweetItems: QuizItem[] = [
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
-  // Cotton Candy & Caramel chain
   {
     id: 'sweet-6',
     optionA: { name: 'Cotton Candy', image: '/images/cotton_candy.png' },
@@ -155,7 +104,6 @@ export const sweetItems: QuizItem[] = [
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
-  // Glazed Donut chain
   {
     id: 'sweet-8',
     optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png' },
@@ -172,7 +120,6 @@ export const sweetItems: QuizItem[] = [
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
-  // Tiramisu chain with branching
   {
     id: 'sweet-10',
     optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
@@ -180,28 +127,54 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    branchOnA: ['sweet-branch-creme-mont'], // If user chooses Crème Brûlée
-    branchOnB: ['sweet-branch-tiramisu-mont'], // If user chooses Tiramisu
   },
-  // Branch question: Crème Brûlée vs Mont Blanc (only shows if user chose Crème Brûlée)
   {
-    id: 'sweet-branch-creme-mont',
+    id: 'sweet-10b',
     optionA: { name: 'Crème Brûlée', image: '/images/creme_brulee.png' },
     optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
     intensityA: 7,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
-  // Branch question: Tiramisu vs Mont Blanc (only shows if user chose Tiramisu)
   {
-    id: 'sweet-branch-tiramisu-mont',
+    id: 'sweet-10c',
     optionA: { name: 'Tiramisu', image: '/images/tiramisu.png' },
     optionB: { name: 'Mont Blanc', image: '/images/mont_blanc.png' },
     intensityA: 5,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
+  },
+  {
+    id: 'sweet-11',
+    optionA: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
+    intensityA: 7,
+    intensityB: 4,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-11b',
+    optionA: { name: 'Oat Cookie', image: '/images/oat_cookies.png' },
+    optionB: { name: 'Biscotti', image: '/images/biscotti.png' },
+    intensityA: 4,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-12',
+    optionA: { name: 'Pancakes', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop' },
+    optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1585445490387-f47934b73b54?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-13',
+    optionA: { name: 'Cupcake', image: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&h=600&fit=crop' },
+    optionB: { name: 'Muffin', image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 5,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
