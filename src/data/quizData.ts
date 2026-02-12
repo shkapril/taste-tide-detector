@@ -246,7 +246,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-10',
-    optionA: { name: 'Tamarind Candy', image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=600&fit=crop' },
+    optionA: { name: 'Lemon Candy', image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=600&fit=crop' },
     optionB: { name: 'Caramel Candy', image: 'https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 1,
