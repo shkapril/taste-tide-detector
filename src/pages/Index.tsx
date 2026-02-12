@@ -366,6 +366,14 @@ const Index = () => {
                 Start Quiz
                 <ArrowRight className="w-4 h-4 ml-3" />
               </Button>
+              <Button
+                onClick={() => navigate('/profile')}
+                variant="ghost"
+                size="lg"
+                className="w-full h-12 text-base font-medium tracking-wide rounded-full bg-white text-foreground hover:bg-white/80"
+              >
+                See My Taste Level
+              </Button>
             </motion.div>
           </motion.div>
         )}
