@@ -41,7 +41,7 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
-    branchOnB: ['sweet-branch-dark-70-85'], // If user chooses Dark Chocolate
+    // branchOnB removed: Dark Chocolate 70% vs 85% kept in data for random sampling only
   },
   // Branch question: White Chocolate vs Caramel (only shows if user chose White Chocolate)
   {
