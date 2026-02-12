@@ -172,7 +172,7 @@ const AllergySelection = ({ selectedAllergies, onToggleAllergy, onBack, onContin
         >
           <ShieldCheck className="w-5 h-5 text-muted-foreground flex-shrink-0" />
           <p className="text-sm text-muted-foreground">
-            No allergies? Just tap continue — you'll see all food options.
+            No restrictions? Just tap continue — you'll see all food options.
           </p>
         </motion.div>
       )}
