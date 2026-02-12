@@ -135,7 +135,7 @@ const Results = () => {
         <Button
           onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
           variant="outline"
-          className="w-full h-14 text-lg font-medium"
+          className="w-full h-14 text-lg font-medium bg-primary/15 border-primary/30 text-primary hover:bg-primary/25"
           size="lg"
         >
           <RotateCcw className="w-5 h-5 mr-2" />
@@ -145,7 +145,7 @@ const Results = () => {
         <Button
           onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
           variant="ghost"
-          className="w-full h-14 text-lg font-medium"
+          className="w-full h-14 text-lg font-medium bg-white text-foreground hover:bg-white/80"
           size="lg"
         >
           Try Other Quizzes
