@@ -503,7 +503,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
     optionA: { name: 'Chicken Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Mushroom Soup', image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mushroom Soup', image: '/images/mushroom_soup.png' },
     intensityA: 9,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
