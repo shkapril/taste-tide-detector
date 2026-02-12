@@ -382,7 +382,7 @@ export const bitterItems: QuizItem[] = [
   {
     id: 'bitter-10',
     optionA: { name: 'Radicchio', image: '/images/radicchio.png' },
-    optionB: { name: 'Romaine Lettuce', image: 'https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?w=600&h=600&fit=crop' },
+    optionB: { name: 'Romaine Lettuce', image: '/images/romaine.png' },
     intensityA: 7,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
