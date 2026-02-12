@@ -197,14 +197,6 @@ export const sourItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
-    id: 'sour-3',
-    optionA: { name: 'Kimchi', image: '/images/kimchi.png' },
-    optionB: { name: 'Coleslaw', image: '/images/coleslaw.png' },
-    intensityA: 7,
-    intensityB: 2,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
     id: 'sour-4',
     optionA: { name: 'Green Apple', image: '/images/green_apples.png' },
     optionB: { name: 'Red Apple', image: '/images/red_apples.png' },
@@ -682,8 +674,8 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-11',
-    optionA: { name: 'Spicy Kimchi', image: '/images/kimchi.png' },
-    optionB: { name: 'Pickled Vegetables', image: 'https://images.unsplash.com/photo-1602099819679-dfab5cc87347?w=600&h=600&fit=crop' },
+    optionA: { name: 'Kimchi', image: '/images/kimchi.png' },
+    optionB: { name: 'Coleslaw', image: '/images/coleslaw.png' },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
