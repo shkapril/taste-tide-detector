@@ -190,7 +190,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-2',
-    optionA: { name: 'Sour Gummy Worms', image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=600&fit=crop' },
+    optionA: { name: 'Sour Gummy Worms', image: '/images/sour_gummy_worms.png' },
     optionB: { name: 'Sweet Gummy Bears', image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 2,
