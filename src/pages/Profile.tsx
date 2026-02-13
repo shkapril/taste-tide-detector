@@ -125,7 +125,7 @@ const Profile = () => {
           <h3 className="text-lg font-display font-semibold text-foreground mb-4">
             Taste Levels
           </h3>
-          <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-3">
             {allQuizTypes.map((q, i) => {
               const score = scores[q.type];
               const label = quizLabels[q.type];
