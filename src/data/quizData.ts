@@ -522,7 +522,7 @@ export const richItems: QuizItem[] = [
     optionB: { name: 'Mushroom Soup', image: '/images/mushroom_soup.png' },
     intensityA: 9,
     intensityB: 4,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+    dietary: ['all-good'],
   },
   {
     id: 'rich-2',
