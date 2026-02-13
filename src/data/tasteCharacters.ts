@@ -4,6 +4,8 @@ export interface TasteCharacter {
   name: string;
   emoji: string;
   description: string;
+  /** Optional character illustration */
+  image?: string;
   /** Ideal score profile on 0-10 scale for each taste dimension */
   idealScores: Partial<Record<QuizType, number>>;
 }
@@ -14,6 +16,7 @@ export const tasteCharacters: TasteCharacter[] = [
     name: 'India',
     emoji: '🇮🇳',
     description: 'Bold spice meets deep richness — your palate craves fiery, indulgent flavors.',
+    image: '/src/assets/characters/india.png',
     idealScores: { spicy: 9, rich: 8, salty: 5, sweet: 3, sour: 3, bitter: 3 },
   },
   // 2. Korea – high spicy + high umami + sweet(4) + sour(4) + rich(2)

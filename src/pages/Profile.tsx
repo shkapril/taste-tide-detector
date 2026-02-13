@@ -60,13 +60,23 @@ const Profile = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <motion.div
-            className="text-6xl mb-4"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            {character.emoji}
-          </motion.div>
+          {character.image ? (
+            <motion.img
+              src={character.image}
+              alt={character.name}
+              className="w-32 h-32 mx-auto mb-4 rounded-2xl object-cover shadow-lg"
+              animate={{ scale: [1, 1.03, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          ) : (
+            <motion.div
+              className="text-6xl mb-4"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              {character.emoji}
+            </motion.div>
+          )}
           <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">
             Your character ({completedCount}/6 quizzes)
           </p>
