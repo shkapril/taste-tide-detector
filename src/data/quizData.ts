@@ -518,11 +518,11 @@ export const saltyItems: QuizItem[] = [
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
-    optionA: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    optionA: { name: 'Clear Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
     optionB: { name: 'Mushroom Soup', image: '/images/mushroom_soup.png' },
-    intensityA: 9,
+    intensityA: 2,
     intensityB: 4,
-    dietary: ['all-good'],
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'rich-2',
