@@ -135,7 +135,10 @@ const fallback: TasteCharacter = {
  * between the user's scores and each character's ideal profile.
  */
 export const getCharacter = (scores: Partial<Record<QuizType, number>>): TasteCharacter => {
-  if (Object.keys(scores).length === 0) return fallback;
+  const completedCount = Object.keys(scores).length;
+
+  // Show newcomer until all 6 quizzes are done
+  if (completedCount < 6) return fallback;
 
   let bestMatch = tasteCharacters[0];
   let bestDist = Infinity;
@@ -143,7 +146,7 @@ export const getCharacter = (scores: Partial<Record<QuizType, number>>): TasteCh
   for (const char of tasteCharacters) {
     let dist = 0;
     for (const key of Object.keys(char.idealScores) as QuizType[]) {
-      const userVal = scores[key] ?? 5; // default to middle if quiz not taken
+      const userVal = scores[key] ?? 5;
       const idealVal = char.idealScores[key] ?? 5;
       dist += (userVal - idealVal) ** 2;
     }
