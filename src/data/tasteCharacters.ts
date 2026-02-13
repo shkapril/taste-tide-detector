@@ -4,13 +4,9 @@ export interface TasteCharacter {
   name: string;
   emoji: string;
   description: string;
-  condition: (scores: Partial<Record<QuizType, number>>) => boolean;
+  /** Ideal score profile on 0-10 scale for each taste dimension */
+  idealScores: Partial<Record<QuizType, number>>;
 }
-
-const s = (scores: Partial<Record<QuizType, number>>, key: QuizType) => scores[key] ?? 0;
-const high = (v: number) => v >= 7;
-const mid = (v: number) => v >= 4 && v < 7;
-const low = (v: number) => v < 4;
 
 export const tasteCharacters: TasteCharacter[] = [
   // 1. India – high spicy + high rich
@@ -18,134 +14,144 @@ export const tasteCharacters: TasteCharacter[] = [
     name: 'India',
     emoji: '🇮🇳',
     description: 'Bold spice meets deep richness — your palate craves fiery, indulgent flavors.',
-    condition: (sc) => high(s(sc, 'spicy')) && high(s(sc, 'rich')) && !high(s(sc, 'salty')),
+    idealScores: { spicy: 9, rich: 8, salty: 5, sweet: 3, sour: 3, bitter: 3 },
   },
   // 2. Korea – high spicy + high umami + sweet(4) + sour(4) + rich(2)
   {
     name: 'Korea',
     emoji: '🇰🇷',
     description: 'Spicy and savory with sweet-sour balance — fermented, bold, and layered.',
-    condition: (sc) =>
-      high(s(sc, 'spicy')) && high(s(sc, 'salty')) && s(sc, 'sweet') <= 5 && s(sc, 'sour') <= 5,
+    idealScores: { spicy: 8, salty: 9, sweet: 4, sour: 4, rich: 2, bitter: 2 },
   },
   // 3. Indonesia – high spicy + high rich + high umami
   {
     name: 'Indonesia',
     emoji: '🇮🇩',
     description: 'A triple threat of spice, richness, and umami — complex and aromatic.',
-    condition: (sc) => high(s(sc, 'spicy')) && high(s(sc, 'rich')) && high(s(sc, 'salty')),
+    idealScores: { spicy: 9, rich: 8, salty: 8, sweet: 4, sour: 3, bitter: 2 },
   },
   // 4. Thailand – high spicy + high sour + herbal/bitter
   {
     name: 'Thailand',
     emoji: '🇹🇭',
     description: 'Fiery spice meets sharp sourness with herbal undertones — fresh and electrifying.',
-    condition: (sc) => high(s(sc, 'spicy')) && high(s(sc, 'sour')),
+    idealScores: { spicy: 9, sour: 9, bitter: 5, sweet: 4, salty: 5, rich: 3 },
   },
   // 5. Mexico – moderate spicy + high umami + medium sour
   {
     name: 'Mexico',
     emoji: '🇲🇽',
     description: 'Warm spice, deep umami, and tangy notes — earthy and vibrant.',
-    condition: (sc) => mid(s(sc, 'spicy')) && high(s(sc, 'salty')) && mid(s(sc, 'sour')),
+    idealScores: { spicy: 6, salty: 8, sour: 5, rich: 4, sweet: 3, bitter: 3 },
   },
   // 6. Japan – subtle sweet(5) + high umami + rich(3) + sour(4)
   {
     name: 'Japan',
     emoji: '🇯🇵',
     description: 'Delicate sweetness, masterful umami, and subtle balance — refined and precise.',
-    condition: (sc) =>
-      high(s(sc, 'salty')) && s(sc, 'sweet') >= 4 && s(sc, 'sweet') <= 6 && !high(s(sc, 'spicy')),
+    idealScores: { salty: 9, sweet: 5, rich: 3, sour: 4, spicy: 2, bitter: 3 },
   },
   // 7. US – high sweet + high rich + high salty
   {
     name: 'United States',
     emoji: '🇺🇸',
     description: 'Sweet, rich, and salty — go big or go home with bold, indulgent flavors.',
-    condition: (sc) => high(s(sc, 'sweet')) && high(s(sc, 'rich')) && high(s(sc, 'salty')),
+    idealScores: { sweet: 9, rich: 9, salty: 8, spicy: 3, sour: 2, bitter: 2 },
   },
-  // 8. Vietnam – high sour(8) + high umami + low rich
+  // 8. Vietnam – high sour + high umami + low rich
   {
     name: 'Vietnam',
     emoji: '🇻🇳',
     description: 'Bright sourness, clean umami, and light freshness — spicy, light, and vibrant.',
-    condition: (sc) => high(s(sc, 'sour')) && high(s(sc, 'salty')) && low(s(sc, 'rich')),
+    idealScores: { sour: 8, salty: 8, rich: 2, spicy: 5, sweet: 3, bitter: 2 },
   },
   // 9. Greece – rich + mild sour
   {
     name: 'Greece',
     emoji: '🇬🇷',
     description: 'Rich and gently tangy — Mediterranean warmth in every bite.',
-    condition: (sc) => high(s(sc, 'rich')) && mid(s(sc, 'sour')) && !high(s(sc, 'salty')),
+    idealScores: { rich: 8, sour: 5, salty: 5, sweet: 4, spicy: 2, bitter: 3 },
   },
   // 10. France – high rich + high umami + low spicy
   {
     name: 'France',
     emoji: '🇫🇷',
     description: 'Luxurious richness and deep umami with no need for heat — elegant and savory.',
-    condition: (sc) => high(s(sc, 'rich')) && high(s(sc, 'salty')) && low(s(sc, 'spicy')),
+    idealScores: { rich: 9, salty: 8, spicy: 2, sweet: 4, sour: 3, bitter: 4 },
   },
   // 11. Italy – rich(8) + umami(8) + sour(5) + bitter(6) + sweet(4) + spicy(4)
   {
     name: 'Italy',
     emoji: '🇮🇹',
     description: 'A symphony of all flavors — rich, savory, with bitter and sour accents.',
-    condition: (sc) => {
-      const vals = Object.values(sc).filter((v): v is number => v !== undefined);
-      return vals.length >= 4 && high(s(sc, 'rich')) && high(s(sc, 'salty')) && s(sc, 'bitter') >= 5;
-    },
+    idealScores: { rich: 8, salty: 8, sour: 5, bitter: 6, sweet: 4, spicy: 4 },
   },
   // 12. Spain – spicy(3) + sour(4) + rich(6) + umami(10)
   {
     name: 'Spain',
     emoji: '🇪🇸',
     description: 'Sky-high umami with moderate richness — bold savory with subtle complexity.',
-    condition: (sc) => s(sc, 'salty') >= 8 && mid(s(sc, 'rich')) && !high(s(sc, 'spicy')),
+    idealScores: { salty: 10, rich: 6, sour: 4, spicy: 3, sweet: 3, bitter: 3 },
   },
   // 13. Turkey – low spicy, mild sour, medium rich, high umami, medium bitter
   {
     name: 'Turkey',
     emoji: '🇹🇷',
     description: 'Savory warmth with gentle spice and earthy bitterness — welcoming and layered.',
-    condition: (sc) =>
-      high(s(sc, 'salty')) && low(s(sc, 'spicy')) && mid(s(sc, 'bitter')) && mid(s(sc, 'rich')),
+    idealScores: { salty: 8, rich: 5, bitter: 5, sour: 4, spicy: 3, sweet: 3 },
   },
   // 14. Peru – high sour + slight bitter
   {
     name: 'Peru',
     emoji: '🇵🇪',
     description: 'Bright, tangy, and slightly bitter — citrus-forward and refreshing.',
-    condition: (sc) => high(s(sc, 'sour')) && s(sc, 'bitter') >= 3 && s(sc, 'bitter') <= 5,
+    idealScores: { sour: 9, bitter: 4, salty: 5, spicy: 4, sweet: 3, rich: 3 },
   },
-  // 15. China – umami(8) + rich(6) + bitter(4) + sweet(5)
+  // 15. China – umami(8) + rich(6) + bitter(4) + sour(mild) + sweet(5)
   {
     name: 'China',
     emoji: '🇨🇳',
     description: 'Deep umami, balanced richness, and a touch of everything — harmonious complexity.',
-    condition: (sc) =>
-      high(s(sc, 'salty')) && mid(s(sc, 'rich')) && s(sc, 'bitter') >= 3 && mid(s(sc, 'sweet')),
+    idealScores: { salty: 8, rich: 6, bitter: 4, sweet: 5, sour: 4, spicy: 4 },
   },
-  // 16. Belgium – highest sweet (fallback for sweet lovers)
+  // 16. Belgium – highest sweet
   {
     name: 'Belgium',
     emoji: '🇧🇪',
     description: 'The sweetest palate of all — chocolate, waffles, and pure sugar bliss.',
-    condition: (sc) => high(s(sc, 'sweet')),
+    idealScores: { sweet: 10, rich: 7, salty: 4, bitter: 3, sour: 2, spicy: 1 },
   },
 ];
 
-// Fallback character if nothing matches
 const fallback: TasteCharacter = {
   name: 'The Newcomer',
   emoji: '✨',
   description: 'Your taste journey just begins — Start exploring!',
-  condition: () => true,
+  idealScores: {},
 };
 
+/**
+ * Find the closest matching country character using Euclidean distance
+ * between the user's scores and each character's ideal profile.
+ */
 export const getCharacter = (scores: Partial<Record<QuizType, number>>): TasteCharacter => {
   if (Object.keys(scores).length === 0) return fallback;
+
+  let bestMatch = tasteCharacters[0];
+  let bestDist = Infinity;
+
   for (const char of tasteCharacters) {
-    if (char.condition(scores)) return char;
+    let dist = 0;
+    for (const key of Object.keys(char.idealScores) as QuizType[]) {
+      const userVal = scores[key] ?? 5; // default to middle if quiz not taken
+      const idealVal = char.idealScores[key] ?? 5;
+      dist += (userVal - idealVal) ** 2;
+    }
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestMatch = char;
+    }
   }
-  return fallback;
+
+  return bestMatch;
 };
