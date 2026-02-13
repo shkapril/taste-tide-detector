@@ -364,7 +364,7 @@ const Index = () => {
                 onClick={handleStartQuiz}
                 disabled={!selectedQuiz}
                 size="lg"
-                className="w-full h-14 text-base font-medium tracking-wide rounded-full"
+                className="w-full h-14 text-base font-medium tracking-wide rounded-full disabled:opacity-100 disabled:bg-primary disabled:text-primary-foreground"
               >
                 Start Quiz
                 <ArrowRight className="w-4 h-4 ml-3" />
