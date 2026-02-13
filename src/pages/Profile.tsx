@@ -78,7 +78,7 @@ const Profile = () => {
             </motion.div>
           )}
           <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">
-            Your character ({completedCount}/6 quizzes)
+            Your character
           </p>
           <h2 className="text-3xl font-display font-bold text-foreground mb-2">
             {character.name}
