@@ -66,7 +66,7 @@ const Profile = () => {
             <motion.img
               src={character.image}
               alt={character.name}
-              className="w-32 h-32 mx-auto mb-4 rounded-2xl object-cover shadow-lg"
+               className="w-48 h-48 mx-auto mb-4 rounded-2xl object-cover shadow-lg"
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             />
@@ -79,9 +79,6 @@ const Profile = () => {
               {character.emoji}
             </motion.div>
           )}
-          <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">
-            Your character
-          </p>
           <h2 className="text-3xl font-display font-bold text-foreground mb-2">
             {character.name}
           </h2>
