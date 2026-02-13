@@ -87,9 +87,6 @@ const Profile = () => {
               <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
                 {character.description}
               </p>
-              <p className="text-xs text-muted-foreground/60 mt-4">
-                1 of 16 possible characters
-              </p>
             </>
           ) : (
             <>
