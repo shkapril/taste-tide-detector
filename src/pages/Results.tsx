@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
+import chefImage from '@/assets/chef.png';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
 import { getTasteProfile, QuizType, quizLabels, TasteProfile } from '@/data/quizData';
@@ -21,16 +22,16 @@ const AnalyzingScreen = () => (
     exit={{ opacity: 0, scale: 0.95 }}
     transition={{ duration: 0.4 }}
   >
-    <motion.div
-      className="text-8xl mb-8"
+    <motion.img
+      src={chefImage}
+      alt="Chef analyzing"
+      className="w-32 h-32 object-contain mb-8"
       animate={{ 
         y: [0, -12, 0],
         rotate: [0, -5, 5, 0],
       }}
       transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
-    >
-      👨‍🍳
-    </motion.div>
+    />
     <motion.h2
       className="text-2xl font-display font-bold text-foreground mb-4"
       initial={{ opacity: 0, y: 10 }}
