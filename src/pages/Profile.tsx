@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Share2 } from 'lucide-react';
@@ -16,6 +17,7 @@ const allQuizTypes: { type: QuizType; emoji: string }[] = [
 
 const Profile = () => {
   const navigate = useNavigate();
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const scores: Partial<Record<QuizType, number>> = JSON.parse(
     localStorage.getItem('quizScores') || '{}'
   );
