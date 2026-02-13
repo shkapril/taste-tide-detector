@@ -58,7 +58,7 @@ const Profile = () => {
       <div className="flex-1 px-6 py-4 space-y-6">
         {/* Character Card */}
         <motion.div
-          className="bg-card rounded-2xl p-8 card-shadow text-center"
+          className="rounded-2xl p-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
