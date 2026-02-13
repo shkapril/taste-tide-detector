@@ -331,10 +331,10 @@ const Index = () => {
                   <div className="absolute top-4 right-4">
                     {completedQuizzes.includes(option.value) ? (
                       <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                        selectedQuiz === option.value ? 'bg-primary-foreground/20' : 'bg-success'
+                        selectedQuiz === option.value ? 'bg-primary-foreground/20' : 'bg-accent'
                       }`}>
                         <Check className={`w-3 h-3 ${
-                          selectedQuiz === option.value ? 'text-primary-foreground' : 'text-success-foreground'
+                          selectedQuiz === option.value ? 'text-primary-foreground' : 'text-accent-foreground'
                         }`} />
                       </div>
                     ) : (
