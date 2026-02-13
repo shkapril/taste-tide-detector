@@ -62,52 +62,60 @@ const Profile = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          {character.image ? (
-            <motion.img
-              src={character.image}
-              alt={character.name}
-               className="w-48 h-48 mx-auto mb-4 rounded-2xl object-cover shadow-lg"
-              animate={{ scale: [1, 1.03, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            />
+          {completedCount >= 6 ? (
+            <>
+              {character.image ? (
+                <motion.img
+                  src={character.image}
+                  alt={character.name}
+                  className="w-48 h-48 mx-auto mb-4 rounded-2xl object-cover shadow-lg"
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                />
+              ) : (
+                <motion.div
+                  className="text-6xl mb-4"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  {character.emoji}
+                </motion.div>
+              )}
+              <h2 className="text-3xl font-display font-bold text-foreground mb-2">
+                {character.name}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                {character.description}
+              </p>
+              <p className="text-xs text-muted-foreground/60 mt-4">
+                1 of 16 possible characters
+              </p>
+            </>
           ) : (
-            <motion.div
-              className="text-6xl mb-4"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              {character.emoji}
-            </motion.div>
-          )}
-          <h2 className="text-3xl font-display font-bold text-foreground mb-2">
-            {character.name}
-          </h2>
-          <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
-            {character.description}
-          </p>
-          {completedCount >= 6 && (
-            <p className="text-xs text-muted-foreground/60 mt-4">
-              1 of 16 possible characters
-            </p>
-          )}
-          {completedCount === 0 && (
-            <Button
-              onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
-              size="lg"
-              className="mt-6 w-full h-12 text-base font-medium tracking-wide rounded-full"
-            >
-              Start a Quiz
-            </Button>
-          )}
-          {completedCount > 0 && completedCount < 6 && (
-            <Button
-              onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
-              variant="outline"
-              size="lg"
-              className="mt-6 w-full h-12 text-base font-medium tracking-wide rounded-full"
-            >
-              Keep Exploring ({completedCount}/6)
-            </Button>
+            <>
+              <motion.div
+                className="text-6xl mb-4"
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                🔒
+              </motion.div>
+              <h2 className="text-2xl font-display font-bold text-foreground mb-2">
+                Mystery Character
+              </h2>
+              <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                {completedCount === 0
+                  ? 'Complete all 6 taste quizzes to reveal your country character!'
+                  : `${completedCount}/6 quizzes done — keep going to unlock your character!`}
+              </p>
+              <Button
+                onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+                size="lg"
+                className="mt-6 w-full h-12 text-base font-medium tracking-wide rounded-full"
+              >
+                {completedCount === 0 ? 'Start a Quiz' : `Keep Exploring (${completedCount}/6)`}
+              </Button>
+            </>
           )}
         </motion.div>
 
