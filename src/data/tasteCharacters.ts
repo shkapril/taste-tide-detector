@@ -66,6 +66,7 @@ export const tasteCharacters: TasteCharacter[] = [
     name: 'Vietnam',
     emoji: '🇻🇳',
     description: 'Bright sourness, clean umami, and light freshness — spicy, light, and vibrant.',
+    image: '/src/assets/characters/vietnam.png',
     idealScores: { sour: 8, salty: 8, rich: 2, spicy: 5, sweet: 3, bitter: 2 },
   },
   // 9. Greece – rich + mild sour
