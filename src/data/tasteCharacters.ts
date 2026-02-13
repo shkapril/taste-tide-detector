@@ -80,6 +80,7 @@ export const tasteCharacters: TasteCharacter[] = [
     name: 'France',
     emoji: '🇫🇷',
     description: 'Luxurious richness and deep umami with no need for heat — elegant and savory.',
+    image: '/src/assets/characters/france.png',
     idealScores: { rich: 9, salty: 8, spicy: 2, sweet: 4, sour: 3, bitter: 4 },
   },
   // 11. Italy – rich(8) + umami(8) + sour(5) + bitter(6) + sweet(4) + spicy(4)
