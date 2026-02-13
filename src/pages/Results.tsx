@@ -150,6 +150,15 @@ const Results = () => {
         >
           Try Other Quizzes
         </Button>
+
+        <Button
+          onClick={() => navigate('/profile')}
+          variant="ghost"
+          className="w-full h-14 text-lg font-medium text-primary hover:text-primary/80"
+          size="lg"
+        >
+          See My Taste Level
+        </Button>
       </motion.div>
     </div>
   );
