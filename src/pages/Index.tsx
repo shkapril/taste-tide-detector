@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Users, ChartBar, Check, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AllergySelection from '@/components/AllergySelection';
-import { Allergen } from '@/data/allergens';
+import { Allergen, EatingStyle } from '@/data/allergens';
 
 type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
 
@@ -30,6 +30,7 @@ const Index = () => {
   const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
   const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
+  const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
 
   useEffect(() => {
     const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
@@ -47,7 +48,7 @@ const Index = () => {
 
   const handleStartQuiz = () => {
     if (selectedQuiz) {
-      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies } });
+      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
     }
   };
 
@@ -56,6 +57,12 @@ const Index = () => {
       prev.includes(allergen)
         ? prev.filter(a => a !== allergen)
         : [...prev, allergen]
+    );
+  };
+
+  const handleToggleEatingStyle = (style: EatingStyle) => {
+    setSelectedEatingStyles(prev =>
+      prev.includes(style) ? prev.filter(s => s !== style) : [...prev, style]
     );
   };
 
@@ -268,7 +275,9 @@ const Index = () => {
         {step === 1 && (
           <AllergySelection
             selectedAllergies={selectedAllergies}
+            selectedEatingStyles={selectedEatingStyles}
             onToggleAllergy={handleToggleAllergy}
+            onToggleEatingStyle={handleToggleEatingStyle}
             onBack={() => setStep(0)}
             onContinue={() => setStep(2)}
           />

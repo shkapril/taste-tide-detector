@@ -6,7 +6,7 @@ import ActionButtons from '@/components/ActionButtons';
 import ProgressBar from '@/components/ProgressBar';
 import { Button } from '@/components/ui/button';
 import { quizDataMap, QuizItem, QuizType, quizLabels } from '@/data/quizData';
-import { Allergen, shouldFilterItem } from '@/data/allergens';
+import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet } from '@/data/allergens';
 
 interface Answer {
   item: QuizItem;
@@ -17,6 +17,7 @@ interface Answer {
 interface LocationState {
   quizType?: QuizType;
   allergies?: Allergen[];
+  eatingStyles?: EatingStyle[];
 }
 
 const Quiz = () => {
@@ -26,13 +27,15 @@ const Quiz = () => {
   
   const quizType = state?.quizType || 'sweet';
   const allergies = state?.allergies || [];
+  const eatingStyles = state?.eatingStyles || [];
   
   // Get base quiz items (excluding branch questions), filtered by allergies
   const baseQuizItems = useMemo(() => {
     const allItems = quizDataMap[quizType] || quizDataMap.sweet;
     const filtered = allItems
       .filter(item => !item.isBranchQuestion)
-      .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies));
+      .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies))
+      .filter(item => !shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles));
     
     // For sweet quiz, randomly sample 12 from the full pool
     if (quizType === 'sweet' && filtered.length > 12) {
@@ -41,13 +44,15 @@ const Quiz = () => {
     }
     
     return filtered;
-  }, [quizType, allergies]);
+  }, [quizType, allergies, eatingStyles]);
 
   // Get all items including branch questions for lookup (also filtered)
   const allQuizItems = useMemo(() => {
     const items = quizDataMap[quizType] || quizDataMap.sweet;
-    return items.filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies));
-  }, [quizType, allergies]);
+    return items
+      .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies))
+      .filter(item => !shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles));
+  }, [quizType, allergies, eatingStyles]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
