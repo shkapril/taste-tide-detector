@@ -76,9 +76,20 @@ const Profile = () => {
           <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
             {character.description}
           </p>
-          <p className="text-xs text-muted-foreground/60 mt-4">
-            1 of 16 possible characters
-          </p>
+          {completedCount > 0 && (
+            <p className="text-xs text-muted-foreground/60 mt-4">
+              1 of 16 possible characters
+            </p>
+          )}
+          {completedCount === 0 && (
+            <Button
+              onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+              size="lg"
+              className="mt-6 w-full h-12 text-base font-medium tracking-wide rounded-full"
+            >
+              Start a Quiz
+            </Button>
+          )}
         </motion.div>
 
         {/* Taste Levels */}

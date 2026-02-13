@@ -138,7 +138,7 @@ export const tasteCharacters: TasteCharacter[] = [
 const fallback: TasteCharacter = {
   name: 'The Newcomer',
   emoji: '✨',
-  description: 'Your taste journey is just beginning — keep exploring!',
+  description: 'Your taste journey just begins — Start exploring!',
   condition: () => true,
 };
 
