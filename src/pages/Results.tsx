@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
@@ -13,10 +13,50 @@ interface LocationState {
   quizType: QuizType;
 }
 
+const AnalyzingScreen = () => (
+  <motion.div
+    className="min-h-screen bg-background flex flex-col items-center justify-center"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0, scale: 0.95 }}
+    transition={{ duration: 0.4 }}
+  >
+    <motion.div
+      className="text-8xl mb-8"
+      animate={{ 
+        y: [0, -12, 0],
+        rotate: [0, -5, 5, 0],
+      }}
+      transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+    >
+      👨‍🍳
+    </motion.div>
+    <motion.h2
+      className="text-2xl font-display font-bold text-foreground mb-4"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+    >
+      Analyzing...
+    </motion.h2>
+    <div className="flex gap-1.5">
+      {[0, 1, 2].map(i => (
+        <motion.div
+          key={i}
+          className="w-2.5 h-2.5 rounded-full bg-primary"
+          animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.2 }}
+        />
+      ))}
+    </div>
+  </motion.div>
+);
+
 const Results = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
+  const [isAnalyzing, setIsAnalyzing] = useState(true);
 
   const quizType = state?.quizType || 'sweet';
   const labels = quizLabels[quizType];
@@ -31,11 +71,16 @@ const Results = () => {
       completed.push(quizType);
       localStorage.setItem('completedQuizzes', JSON.stringify(completed));
     }
-    // Save individual quiz score
     const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
     scores[quizType] = state.averageIntensity;
     localStorage.setItem('quizScores', JSON.stringify(scores));
   }, [quizType, state]);
+
+  // Loading timer
+  useEffect(() => {
+    const timer = setTimeout(() => setIsAnalyzing(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   if (!state || !profile) {
     return <Navigate to="/" replace />;
@@ -60,107 +105,116 @@ const Results = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="px-6 pt-8 pb-4">
+    <AnimatePresence mode="wait">
+      {isAnalyzing ? (
+        <AnalyzingScreen key="analyzing" />
+      ) : (
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          key="results"
+          className="min-h-screen bg-background flex flex-col"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Results Ready!</span>
-          </div>
-        </motion.div>
-      </header>
-
-      {/* Main Content */}
-      <div className="flex-1 px-6 py-4">
-        {/* Profile Card */}
-        <motion.div
-          className="bg-card rounded-2xl p-8 card-shadow mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="text-center mb-6">
+          {/* Header */}
+          <header className="px-6 pt-8 pb-4">
             <motion.div
-              className="text-6xl mb-4"
-              animate={{ rotate: [0, -10, 10, 0] }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
             >
-              {profile.emoji}
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-medium">Results Ready!</span>
+              </div>
             </motion.div>
-            <h1 className="text-3xl font-display font-bold text-foreground mb-2">
-              {profile.label}
-            </h1>
-            <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
-              {profile.description}
-            </p>
+          </header>
+
+          {/* Main Content */}
+          <div className="flex-1 px-6 py-4">
+            <motion.div
+              className="bg-card rounded-2xl p-8 card-shadow mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="text-center mb-6">
+                <motion.div
+                  className="text-6xl mb-4"
+                  animate={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  {profile.emoji}
+                </motion.div>
+                <h1 className="text-3xl font-display font-bold text-foreground mb-2">
+                  {profile.label}
+                </h1>
+                <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                  {profile.description}
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
+                Your {labels.label} Spectrum
+              </h2>
+              <ResultsChart profile={profile} labels={labels} />
+            </motion.div>
           </div>
 
+          {/* Action Buttons */}
+          <motion.div
+            className="px-6 pb-8 space-y-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <Button
+              onClick={handleShare}
+              className="w-full h-14 text-lg font-medium"
+              size="lg"
+            >
+              <Share2 className="w-5 h-5 mr-2" />
+              Share Your Results
+            </Button>
+            
+            <Button
+              onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+              variant="outline"
+              className="w-full h-14 text-lg font-medium bg-primary/15 border-primary/30 text-primary hover:bg-primary/25"
+              size="lg"
+            >
+              <RotateCcw className="w-5 h-5 mr-2" />
+              Try Again
+            </Button>
+
+            <Button
+              onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+              variant="ghost"
+              className="w-full h-14 text-lg font-medium bg-white text-foreground hover:bg-white/80"
+              size="lg"
+            >
+              Try Other Quizzes
+            </Button>
+
+            <Button
+              onClick={() => navigate('/profile')}
+              variant="ghost"
+              className="w-full h-14 text-lg font-medium text-primary hover:text-primary/80"
+              size="lg"
+            >
+              See My Taste Level
+            </Button>
+          </motion.div>
         </motion.div>
-
-        {/* Spectrum Chart */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
-            Your {labels.label} Spectrum
-          </h2>
-          <ResultsChart profile={profile} labels={labels} />
-        </motion.div>
-      </div>
-
-      {/* Action Buttons */}
-      <motion.div
-        className="px-6 pb-8 space-y-3"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-      >
-        <Button
-          onClick={handleShare}
-          className="w-full h-14 text-lg font-medium"
-          size="lg"
-        >
-          <Share2 className="w-5 h-5 mr-2" />
-          Share Your Results
-        </Button>
-        
-        <Button
-          onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
-          variant="outline"
-          className="w-full h-14 text-lg font-medium bg-primary/15 border-primary/30 text-primary hover:bg-primary/25"
-          size="lg"
-        >
-          <RotateCcw className="w-5 h-5 mr-2" />
-          Try Again
-        </Button>
-
-        <Button
-          onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
-          variant="ghost"
-          className="w-full h-14 text-lg font-medium bg-white text-foreground hover:bg-white/80"
-          size="lg"
-        >
-          Try Other Quizzes
-        </Button>
-
-        <Button
-          onClick={() => navigate('/profile')}
-          variant="ghost"
-          className="w-full h-14 text-lg font-medium text-primary hover:text-primary/80"
-          size="lg"
-        >
-          See My Taste Level
-        </Button>
-      </motion.div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 };
 
