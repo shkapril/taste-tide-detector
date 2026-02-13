@@ -115,6 +115,7 @@ export const tasteCharacters: TasteCharacter[] = [
     name: 'China',
     emoji: '🇨🇳',
     description: 'Deep umami, balanced richness, and a touch of everything — harmonious complexity.',
+    image: '/src/assets/characters/china.png',
     idealScores: { salty: 8, rich: 6, bitter: 4, sweet: 5, sour: 4, spicy: 4 },
   },
   // 16. Belgium – highest sweet
