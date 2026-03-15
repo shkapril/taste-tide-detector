@@ -37,8 +37,8 @@ const Quiz = () => {
       .filter(item => !shouldFilterItem(item.optionA.name, item.optionB.name, allergies))
       .filter(item => !shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles));
     
-    // For sweet quiz, randomly sample 12 from the full pool
-    if (quizType === 'sweet' && filtered.length > 12) {
+    // Randomly sample 12 from the full pool for all quiz types
+    if (filtered.length > 12) {
       const shuffled = [...filtered].sort(() => Math.random() - 0.5);
       return shuffled.slice(0, 12);
     }
