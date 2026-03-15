@@ -574,7 +574,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-8',
-    optionA: { name: 'Chocolate Mousse', image: 'https://images.unsplash.com/photo-1511715282680-fbf93a50e721?w=600&h=600&fit=crop' },
+    optionA: { name: 'Chocolate Mousse', image: '/images/chocolate_mousse.png' },
     optionB: { name: 'Fruit Salad', image: 'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 1,
