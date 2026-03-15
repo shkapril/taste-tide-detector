@@ -16,7 +16,8 @@ interface LocationState {
 
 const AnalyzingScreen = () => (
   <motion.div
-    className="min-h-screen bg-background flex flex-col items-center justify-center"
+    className="min-h-screen flex flex-col items-center justify-end relative overflow-hidden"
+    style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0, scale: 0.95 }}
@@ -25,30 +26,29 @@ const AnalyzingScreen = () => (
     <motion.img
       src={chefImage}
       alt="Chef analyzing"
-      className="w-32 h-32 object-contain mb-8"
-      animate={{ 
-        y: [0, -12, 0],
-        rotate: [0, -5, 5, 0],
-      }}
-      transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+      className="w-full max-w-md object-contain drop-shadow-2xl"
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
     />
-    <motion.h2
-      className="text-2xl font-display font-bold text-foreground mb-4"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-    >
-      Analyzing...
-    </motion.h2>
-    <div className="flex gap-1.5">
-      {[0, 1, 2].map(i => (
-        <motion.div
-          key={i}
-          className="w-2.5 h-2.5 rounded-full bg-primary"
-          animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.2 }}
-        />
-      ))}
+    <div className="absolute top-1/4 left-0 right-0 flex flex-col items-center">
+      <motion.h2
+        className="text-3xl font-display font-bold text-white/90 mb-4 tracking-wide"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        Analyzing...
+      </motion.h2>
+      <div className="flex gap-2">
+        {[0, 1, 2].map(i => (
+          <motion.div
+            key={i}
+            className="w-2.5 h-2.5 rounded-full bg-white/70"
+            animate={{ scale: [1, 1.4, 1], opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.2 }}
+          />
+        ))}
+      </div>
     </div>
   </motion.div>
 );
