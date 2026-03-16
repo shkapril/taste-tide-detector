@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
@@ -6,9 +7,9 @@ interface ActionButtonsProps {
   canUndo?: boolean;
 }
 
-const ActionButtons = ({ onUndo, canUndo }: ActionButtonsProps) => {
+const ActionButtons = forwardRef<HTMLDivElement, ActionButtonsProps>(({ onUndo, canUndo }, ref) => {
   return (
-    <div className="flex items-center justify-center mt-8">
+    <div ref={ref} className="flex items-center justify-center mt-8">
       {onUndo && (
         <motion.button
           whileHover={{ scale: 1.1 }}
@@ -22,6 +23,8 @@ const ActionButtons = ({ onUndo, canUndo }: ActionButtonsProps) => {
       )}
     </div>
   );
-};
+});
+
+ActionButtons.displayName = 'ActionButtons';
 
 export default ActionButtons;
