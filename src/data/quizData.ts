@@ -1,3 +1,5 @@
+import prosciuttoImg from '@/assets/prosciutto.png';
+
 export interface QuizItem {
   id: string;
   optionA: {
