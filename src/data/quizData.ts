@@ -612,6 +612,30 @@ export const richItems: QuizItem[] = [
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'rich-13',
+    optionA: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    optionB: { name: 'Alfredo Pasta', image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=600&h=600&fit=crop' },
+    intensityA: 3,
+    intensityB: 8,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-14',
+    optionA: { name: 'Poached Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionB: { name: 'Scrambled Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    intensityA: 3,
+    intensityB: 7,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-15',
+    optionA: { name: 'Roasted Chicken', image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=600&fit=crop' },
+    optionB: { name: 'Korean Fried Chicken', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop' },
+    intensityA: 4,
+    intensityB: 8,
+    dietary: ['all-good'],
+  },
 ];
 
 // Spicy comparisons (heat tolerance)
