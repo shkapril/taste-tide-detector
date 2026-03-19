@@ -438,7 +438,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-3',
     optionA: { name: 'Parmesan', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
-    optionB: { name: 'Mozzarella', image: 'https://images.unsplash.com/photo-1505575967455-40e256f73376?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mozzarella', image: mozzarellaImg },
     intensityA: 7,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
