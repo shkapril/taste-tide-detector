@@ -597,14 +597,6 @@ export const richItems: QuizItem[] = [
     dietary: ['all-good'],
   },
   {
-    id: 'rich-11',
-    optionA: { name: 'Movie Popcorn', image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 1,
-    dietary: ['vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
     id: 'rich-12',
     optionA: { name: 'Danish Pastry', image: '/images/danish_pastry.png' },
     optionB: { name: 'Bagel', image: '/images/bagel.png' },
