@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
@@ -7,12 +7,6 @@ import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
 import { getCharacter } from '@/data/tasteCharacters';
 import type { TasteVector7 } from '@/data/foodDataset';
-
-interface LocationState {
-  uxScores: Record<string, number>;
-  internalMean: TasteVector7;
-  totalAnswered: number;
-}
 
 const AnalyzingScreen = () => (
   <motion.div
@@ -54,40 +48,55 @@ const AnalyzingScreen = () => (
 );
 
 const Results = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const state = location.state as LocationState | null;
   const [isAnalyzing, setIsAnalyzing] = useState(true);
-
-  const uxScores = state?.uxScores;
-  const internalMean = state?.internalMean;
-  const character = internalMean ? getCharacter(internalMean) : null;
-
-  // Save results to localStorage
-  useEffect(() => {
-    if (!state) return;
-    localStorage.setItem('tasteDNA', JSON.stringify({
-      uxScores: state.uxScores,
-      internalMean: state.internalMean,
-      completedAt: Date.now(),
-    }));
-    // Also save in old format for backward compat with profile
-    const scores: Record<string, number> = {};
-    for (const [k, v] of Object.entries(state.uxScores)) {
-      scores[k] = v;
-    }
-    localStorage.setItem('quizScores', JSON.stringify(scores));
-    localStorage.setItem('completedQuizzes', JSON.stringify(['sweet', 'sour', 'bitter', 'salty', 'rich', 'spicy']));
-  }, [state]);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsAnalyzing(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
-  if (!state || !uxScores) {
+  // Load scores from localStorage
+  const savedScores: Record<string, number> = JSON.parse(localStorage.getItem('quizScores') || '{}');
+  const completedQuizzes: string[] = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');
+
+  const hasResults = completedQuizzes.length > 0;
+
+  if (!hasResults) {
     return <Navigate to="/" replace />;
   }
+
+  // Build UX scores (0-10 scale) for display
+  const uxScores: Record<string, number> = {
+    sweet: savedScores.sweet ?? 5,
+    sour: savedScores.sour ?? 5,
+    rich: savedScores.rich ?? 5,
+    bitter: savedScores.bitter ?? 5,
+    salty: savedScores.salty ?? 5,
+    spicy: savedScores.spicy ?? 5,
+  };
+
+  // Build 7D internal vector (0-100 scale) for character matching
+  const internalMean: TasteVector7 = {
+    sweet: (uxScores.sweet) * 10,
+    sour: (uxScores.sour) * 10,
+    rich: (uxScores.rich) * 10,
+    bitter: (uxScores.bitter) * 10,
+    salty: (uxScores.salty) * 10,
+    spicy: (uxScores.spicy) * 10,
+    umami: ((uxScores.rich + uxScores.salty) / 2) * 10, // Estimate umami from rich + salty
+  };
+
+  const character = getCharacter(internalMean);
+
+  // Save taste DNA for profile page
+  useEffect(() => {
+    localStorage.setItem('tasteDNA', JSON.stringify({
+      uxScores,
+      internalMean,
+      completedAt: Date.now(),
+    }));
+  }, []);
 
   const handleShare = async () => {
     const lines = Object.entries(uxScores)
@@ -102,6 +111,13 @@ const Results = () => {
     } else {
       navigator.clipboard.writeText(text);
     }
+  };
+
+  const handleRetake = () => {
+    localStorage.removeItem('quizScores');
+    localStorage.removeItem('completedQuizzes');
+    localStorage.removeItem('tasteDNA');
+    navigate('/');
   };
 
   return (
@@ -182,13 +198,13 @@ const Results = () => {
             </Button>
 
             <Button
-              onClick={() => navigate('/quiz', { state: { allergies: [], eatingStyles: [] } })}
+              onClick={handleRetake}
               variant="outline"
               className="w-full h-14 text-lg font-medium bg-primary/15 border-primary/30 text-primary hover:bg-primary/25"
               size="lg"
             >
               <RotateCcw className="w-5 h-5 mr-2" />
-              Retake Quiz
+              Retake All Quizzes
             </Button>
 
             <Button

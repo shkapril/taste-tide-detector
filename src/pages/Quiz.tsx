@@ -1,33 +1,113 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import SwipeCard from '@/components/SwipeCard';
 import ActionButtons from '@/components/ActionButtons';
 import ProgressBar from '@/components/ProgressBar';
 import { Button } from '@/components/ui/button';
-import { foodDataset } from '@/data/foodDataset';
-import { Allergen, EatingStyle } from '@/data/allergens';
 import {
-  BayesianState,
-  QuizPair,
-  createInitialState,
-  updateState,
-  selectNextPair,
-  filterFoods,
-  toUXScores,
-} from '@/lib/bayesianModel';
-import { motion } from 'framer-motion';
+  QuizItem,
+  QuizType,
+  quizDataMap,
+  quizLabels,
+} from '@/data/quizData';
+import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet } from '@/data/allergens';
 
 const TOTAL_QUESTIONS = 12;
 
 interface LocationState {
+  quizType: QuizType;
   allergies?: Allergen[];
   eatingStyles?: EatingStyle[];
 }
 
+// ── 1D Bayesian State ──
+interface BayesState {
+  mean: number;       // current estimate (1-10 scale)
+  uncertainty: number; // variance
+  questionsAnswered: number;
+}
+
+function createInitialState(): BayesState {
+  return { mean: 5, uncertainty: 3, questionsAnswered: 0 };
+}
+
+const NOISE = 2.5;
+
+function updateBayes(state: BayesState, chosenIntensity: number): BayesState {
+  const alpha = state.uncertainty / (state.uncertainty + NOISE);
+  const newMean = state.mean + alpha * (chosenIntensity - state.mean);
+  const newUnc = Math.max(0.3, state.uncertainty * (1 - alpha * 0.5));
+  return { mean: newMean, uncertainty: newUnc, questionsAnswered: state.questionsAnswered + 1 };
+}
+
+// ── Adaptive Question Selection ──
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function selectNextQuestion(
+  state: BayesState,
+  usedIds: Set<string>,
+  pool: QuizItem[]
+): QuizItem {
+  const available = pool.filter(q => !usedIds.has(q.id));
+  if (available.length === 0) {
+    // Fallback: allow re-use
+    return shuffle(pool)[0];
+  }
+
+  const q = state.questionsAnswered;
+
+  // Phase 1 (Q1-3): Random exploration
+  if (q < 3) {
+    return shuffle(available)[0];
+  }
+
+  // Phase 2 (Q4-10): Adaptive — pick items that bracket the current mean
+  if (q < 10) {
+    // Prefer items where one intensity is above mean and one below
+    const mean = state.mean;
+    const scored = available.map(item => {
+      const minI = Math.min(item.intensityA, item.intensityB);
+      const maxI = Math.max(item.intensityA, item.intensityB);
+      // Best: brackets the mean
+      const brackets = minI <= mean && maxI >= mean;
+      // Score: how well it straddles the mean
+      const spread = Math.abs(item.intensityA - item.intensityB);
+      const centerDist = Math.abs((item.intensityA + item.intensityB) / 2 - mean);
+      return {
+        item,
+        score: (brackets ? 10 : 0) + spread - centerDist,
+      };
+    });
+    scored.sort((a, b) => b.score - a.score);
+    // Pick from top 3 randomly for variety
+    const top = scored.slice(0, Math.min(3, scored.length));
+    return top[Math.floor(Math.random() * top.length)].item;
+  }
+
+  // Phase 3 (Q11-12): Refinement — pick items with intensities close to mean
+  const mean = state.mean;
+  const scored = available.map(item => {
+    const distA = Math.abs(item.intensityA - mean);
+    const distB = Math.abs(item.intensityB - mean);
+    return { item, score: distA + distB };
+  });
+  scored.sort((a, b) => a.score - b.score);
+  const top = scored.slice(0, Math.min(3, scored.length));
+  return top[Math.floor(Math.random() * top.length)].item;
+}
+
+// ── History for undo ──
 interface HistoryEntry {
-  pair: QuizPair;
-  state: BayesianState;
+  question: QuizItem;
+  state: BayesState;
   usedIds: Set<string>;
 }
 
@@ -35,62 +115,82 @@ const Quiz = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const locState = location.state as LocationState | null;
+
+  const quizType = locState?.quizType || 'sweet';
   const allergies = locState?.allergies || [];
   const eatingStyles = locState?.eatingStyles || [];
+  const labels = quizLabels[quizType];
 
-  // Filter foods once
-  const availableFoods = useMemo(
-    () => filterFoods(foodDataset, allergies, eatingStyles),
-    [allergies, eatingStyles]
-  );
+  // Filter pool based on allergies and eating styles
+  const pool = useMemo(() => {
+    const items = quizDataMap[quizType] || [];
+    return items.filter(item => {
+      if (shouldFilterItem(item.optionA.name, item.optionB.name, allergies)) return false;
+      if (shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles)) return false;
+      // Filter out branch questions (they'll be added dynamically)
+      if (item.isBranchQuestion) return false;
+      return true;
+    });
+  }, [quizType, allergies, eatingStyles]);
 
-  const [bayesState, setBayesState] = useState<BayesianState>(createInitialState);
+  const [bayesState, setBayesState] = useState<BayesState>(createInitialState);
   const [usedIds, setUsedIds] = useState<Set<string>>(new Set());
-  const [currentPair, setCurrentPair] = useState<QuizPair>(() =>
-    selectNextPair(createInitialState(), new Set(), availableFoods)
+  const [currentQuestion, setCurrentQuestion] = useState<QuizItem>(() =>
+    selectNextQuestion(createInitialState(), new Set(), pool)
   );
   const [questionNum, setQuestionNum] = useState(1);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
 
-  // Pre-compute next pair for the background card
-  const nextPairRef = useRef<QuizPair | null>(null);
+  // Pre-compute next question for background card
+  const previewQuestion = useMemo(() => {
+    if (questionNum >= TOTAL_QUESTIONS) return null;
+    const tempUsed = new Set(usedIds);
+    tempUsed.add(currentQuestion.id);
+    return selectNextQuestion(bayesState, tempUsed, pool);
+  }, [bayesState, usedIds, currentQuestion, questionNum, pool]);
 
   const handleSwipe = useCallback(
     (direction: 'left' | 'right') => {
-      // Save history for undo
-      setHistory(prev => [...prev, { pair: currentPair, state: bayesState, usedIds: new Set(usedIds) }]);
+      // Save history
+      setHistory(prev => [...prev, { question: currentQuestion, state: bayesState, usedIds: new Set(usedIds) }]);
 
       // right = chose A, left = chose B
-      const chosenFood = direction === 'right' ? currentPair.foodA : currentPair.foodB;
-      const newState = updateState(bayesState, chosenFood);
+      const chosenIntensity = direction === 'right' ? currentQuestion.intensityA : currentQuestion.intensityB;
+      const newState = updateBayes(bayesState, chosenIntensity);
 
-      // Track used food IDs
       const newUsed = new Set(usedIds);
-      newUsed.add(currentPair.foodA.id);
-      newUsed.add(currentPair.foodB.id);
+      newUsed.add(currentQuestion.id);
 
       setBayesState(newState);
       setUsedIds(newUsed);
 
       setTimeout(() => {
         if (questionNum >= TOTAL_QUESTIONS) {
-          // Navigate to results with the final Bayesian state
-          const uxScores = toUXScores(newState.mean);
-          navigate('/results', {
-            state: {
-              uxScores,
-              internalMean: newState.mean,
-              totalAnswered: TOTAL_QUESTIONS,
-            },
+          // Save score for this category
+          const score = newState.mean;
+          const savedScores = JSON.parse(localStorage.getItem('quizScores') || '{}');
+          savedScores[quizType] = score;
+          localStorage.setItem('quizScores', JSON.stringify(savedScores));
+
+          // Track completed quizzes
+          const completed = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');
+          if (!completed.includes(quizType)) {
+            completed.push(quizType);
+            localStorage.setItem('completedQuizzes', JSON.stringify(completed));
+          }
+
+          // Navigate to category result
+          navigate('/category-result', {
+            state: { quizType, score, allergies, eatingStyles },
           });
         } else {
-          const pair = selectNextPair(newState, newUsed, availableFoods);
-          setCurrentPair(pair);
+          const next = selectNextQuestion(newState, newUsed, pool);
+          setCurrentQuestion(next);
           setQuestionNum(prev => prev + 1);
         }
       }, 200);
     },
-    [bayesState, currentPair, usedIds, questionNum, navigate, availableFoods]
+    [bayesState, currentQuestion, usedIds, questionNum, navigate, pool, quizType, allergies, eatingStyles]
   );
 
   const handleUndo = useCallback(() => {
@@ -98,7 +198,7 @@ const Quiz = () => {
     const last = history[history.length - 1];
     setBayesState(last.state);
     setUsedIds(last.usedIds);
-    setCurrentPair(last.pair);
+    setCurrentQuestion(last.question);
     setQuestionNum(prev => prev - 1);
     setHistory(prev => prev.slice(0, -1));
   }, [history]);
@@ -107,19 +207,10 @@ const Quiz = () => {
     const initial = createInitialState();
     setBayesState(initial);
     setUsedIds(new Set());
-    setCurrentPair(selectNextPair(initial, new Set(), availableFoods));
+    setCurrentQuestion(selectNextQuestion(initial, new Set(), pool));
     setQuestionNum(1);
     setHistory([]);
-  }, [availableFoods]);
-
-  // Compute a preview next pair for the background card
-  const previewPair = useMemo(() => {
-    if (questionNum >= TOTAL_QUESTIONS) return null;
-    const tempUsed = new Set(usedIds);
-    tempUsed.add(currentPair.foodA.id);
-    tempUsed.add(currentPair.foodB.id);
-    return selectNextPair(bayesState, tempUsed, availableFoods);
-  }, [bayesState, usedIds, currentPair, questionNum, availableFoods]);
+  }, [pool]);
 
   return (
     <div className="min-h-screen bg-background flex flex-col overflow-y-auto">
@@ -129,7 +220,7 @@ const Quiz = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Taste DNA Quiz
+          {labels.label} Quiz
         </motion.h1>
         <p className="text-center text-muted-foreground text-sm mt-1">
           Tap the one you prefer
@@ -143,19 +234,19 @@ const Quiz = () => {
       <div className="flex-1 flex items-center justify-center px-6 py-4">
         <div className="relative w-full max-w-sm h-[500px]">
           <AnimatePresence mode="popLayout">
-            {previewPair && (
+            {previewQuestion && (
               <SwipeCard
-                key={`bg-${previewPair.foodA.id}-${previewPair.foodB.id}`}
-                optionA={{ name: previewPair.foodA.name, image: previewPair.foodA.image }}
-                optionB={{ name: previewPair.foodB.name, image: previewPair.foodB.image }}
+                key={`bg-${previewQuestion.id}`}
+                optionA={previewQuestion.optionA}
+                optionB={previewQuestion.optionB}
                 onSwipe={() => {}}
                 isTop={false}
               />
             )}
             <SwipeCard
-              key={`top-${currentPair.foodA.id}-${currentPair.foodB.id}-${questionNum}`}
-              optionA={{ name: currentPair.foodA.name, image: currentPair.foodA.image }}
-              optionB={{ name: currentPair.foodB.name, image: currentPair.foodB.image }}
+              key={`top-${currentQuestion.id}-${questionNum}`}
+              optionA={currentQuestion.optionA}
+              optionB={currentQuestion.optionB}
               onSwipe={handleSwipe}
               isTop={true}
             />
@@ -177,10 +268,10 @@ const Quiz = () => {
         </Button>
         <Button
           variant="ghost"
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/categories', { state: { allergies, eatingStyles } })}
           className="w-full text-muted-foreground hover:text-foreground"
         >
-          ← Back to home
+          ← Back to categories
         </Button>
       </div>
     </div>
