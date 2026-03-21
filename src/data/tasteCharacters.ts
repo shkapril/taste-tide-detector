@@ -7,6 +7,7 @@ import greeceImg from '@/assets/greece_character.png';
 import usImg from '@/assets/US_bear2.png';
 import chinaImg from '@/assets/china_panda.png';
 import japanImg from '@/assets/Japan.png';
+import belgiumImg from '@/assets/Belgium.png';
 
 export interface TasteCharacter {
   name: string;
