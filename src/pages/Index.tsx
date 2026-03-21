@@ -1,41 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft, Users, ChartBar, Check, Circle } from 'lucide-react';
+import { ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AllergySelection from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
 
-type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
-
-const quizOptions: { value: QuizType; label: string; emoji: string; description: string }[] = [
-  { value: 'sweet', label: 'Sweet', emoji: '🍫', description: 'Chocolate, desserts & treats' },
-  { value: 'sour', label: 'Sour', emoji: '🍋', description: 'Citrus, tangy & tart' },
-  { value: 'bitter', label: 'Bitter', emoji: '☕', description: 'Coffee, dark greens & cocoa' },
-  { value: 'salty', label: 'Salty', emoji: '🧂', description: 'Savory snacks & umami' },
-  { value: 'rich', label: 'Rich & Buttery', emoji: '🧈', description: 'Creamy, indulgent & pastries' },
-  { value: 'spicy', label: 'Spicy', emoji: '🌶️', description: 'Hot peppers, chili & heat' },
-];
-
-interface IndexLocationState {
-  startAtQuizSelection?: boolean;
-}
-
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const locationState = location.state as IndexLocationState | null;
   
-  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 2 : 0);
-  const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
-  const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
+  const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
   const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
-
-  useEffect(() => {
-    const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
-    setCompletedQuizzes(Object.keys(scores) as QuizType[]);
-  }, []);
 
   const features = [
     {
