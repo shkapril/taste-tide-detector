@@ -3,6 +3,7 @@ import turkeyCatImg from '@/assets/Turkey_cat.png';
 import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 import koreaImg from '@/assets/tiger_korea.png';
 import indiaImg from '@/assets/India-chinchilla.png';
+import greeceImg from '@/assets/greece_character.png';
 
 export interface TasteCharacter {
   name: string;
