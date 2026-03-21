@@ -151,26 +151,44 @@ const Results = () => {
             {/* Character Card */}
             {character && (
               <motion.div
-                className="bg-card rounded-2xl p-8 card-shadow mb-8"
+                className="rounded-2xl overflow-hidden card-shadow mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="text-center mb-2">
-                  <motion.div
-                    className="text-6xl mb-4"
-                    animate={{ rotate: [0, -10, 10, 0] }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                  >
-                    {character.emoji}
-                  </motion.div>
-                  <h1 className="text-3xl font-display font-bold text-foreground mb-2">
-                    {character.name}
-                  </h1>
-                  <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
-                    {character.description}
-                  </p>
-                </div>
+                {character.image ? (
+                  <div className="relative">
+                    <img
+                      src={character.image}
+                      alt={character.name}
+                      className="w-full aspect-square object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-6 pt-16">
+                      <h1 className="text-3xl font-display font-bold text-white mb-1">
+                        {character.emoji} {character.name}
+                      </h1>
+                      <p className="text-white/80 text-sm leading-relaxed max-w-sm">
+                        {character.description}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-card p-8 text-center">
+                    <motion.div
+                      className="text-6xl mb-4"
+                      animate={{ rotate: [0, -10, 10, 0] }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                      {character.emoji}
+                    </motion.div>
+                    <h1 className="text-3xl font-display font-bold text-foreground mb-2">
+                      {character.name}
+                    </h1>
+                    <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                      {character.description}
+                    </p>
+                  </div>
+                )}
               </motion.div>
             )}
 
