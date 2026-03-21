@@ -24,9 +24,7 @@ const Index = () => {
   ];
 
   const handleStartQuiz = () => {
-    if (selectedQuiz) {
-      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
-    }
+    navigate('/quiz', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
   };
 
   const handleToggleAllergy = (allergen: Allergen) => {
