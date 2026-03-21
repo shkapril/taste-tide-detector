@@ -17,6 +17,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'India',
     emoji: '🇮🇳',
+    image: indiaImg,
     description: 'Bold spice meets deep richness — your palate craves fiery, indulgent flavors.',
     idealScores: { sweet: 30, sour: 10, rich: 70, bitter: 10, salty: 40, spicy: 90, umami: 80 },
   },
