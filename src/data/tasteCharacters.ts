@@ -2,6 +2,7 @@ import type { TasteVector7 } from './foodDataset';
 import turkeyCatImg from '@/assets/Turkey_cat.png';
 import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 import koreaImg from '@/assets/tiger_korea.png';
+import indiaImg from '@/assets/India-chinchilla.png';
 
 export interface TasteCharacter {
   name: string;
@@ -16,6 +17,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'India',
     emoji: '🇮🇳',
+    image: indiaImg,
     description: 'Bold spice meets deep richness — your palate craves fiery, indulgent flavors.',
     idealScores: { sweet: 30, sour: 10, rich: 70, bitter: 10, salty: 40, spicy: 90, umami: 80 },
   },
