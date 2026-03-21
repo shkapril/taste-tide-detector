@@ -13,7 +13,7 @@ import {
 } from '@/data/quizData';
 import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet } from '@/data/allergens';
 
-const TOTAL_QUESTIONS = 12;
+const TOTAL_QUESTIONS = 8;
 
 interface LocationState {
   quizType: QuizType;

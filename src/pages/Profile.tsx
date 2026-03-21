@@ -146,7 +146,7 @@ const Profile = () => {
                     Discover Your Taste DNA
                   </h2>
                   <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                    Take the 12-question taste quiz to reveal your unique flavor profile!
+                    Take the 8-question taste quiz to reveal your unique flavor profile!
                   </p>
                   <Button
                     onClick={() => navigate('/')}

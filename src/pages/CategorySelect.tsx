@@ -20,7 +20,7 @@ const categories: { type: QuizType; label: string; emoji: string; color: string 
   { type: 'spicy', label: 'Spicy', emoji: '🌶️', color: 'bg-red-500/15 border-red-500/30' },
 ];
 
-const QUESTIONS_PER_QUIZ = 12;
+const QUESTIONS_PER_QUIZ = 8;
 
 const CategorySelect = () => {
   const navigate = useNavigate();
