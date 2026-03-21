@@ -4,6 +4,7 @@ import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 import koreaImg from '@/assets/tiger_korea.png';
 import indiaImg from '@/assets/India-chinchilla.png';
 import greeceImg from '@/assets/greece_character.png';
+import usImg from '@/assets/US_bear2.png';
 
 export interface TasteCharacter {
   name: string;
@@ -56,6 +57,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'United States',
     emoji: '🇺🇸',
+    image: usImg,
     description: 'Sweet, rich, and salty — go big or go home with bold, indulgent flavors.',
     idealScores: { sweet: 80, sour: 20, rich: 70, bitter: 10, salty: 60, spicy: 20, umami: 40 },
   },
