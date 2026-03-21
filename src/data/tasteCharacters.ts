@@ -7,6 +7,7 @@ import greeceImg from '@/assets/greece_character.png';
 import usImg from '@/assets/US_bear2.png';
 import chinaImg from '@/assets/china_panda.png';
 import japanImg from '@/assets/Japan.png';
+import belgiumImg from '@/assets/Belgium.png';
 
 export interface TasteCharacter {
   name: string;
@@ -119,6 +120,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Belgium',
     emoji: '🇧🇪',
+    image: belgiumImg,
     description: 'The sweetest palate of all — chocolate, waffles, and pure sugar bliss.',
     idealScores: { sweet: 90, sour: 10, rich: 60, bitter: 10, salty: 30, spicy: 10, umami: 40 },
   },
