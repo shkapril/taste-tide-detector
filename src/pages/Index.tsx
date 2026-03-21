@@ -205,7 +205,7 @@ const Index = () => {
                   <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                  2 min • 12 questions
+                  2 min • 8 questions
                 </p>
               </motion.div>
             </div>
