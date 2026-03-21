@@ -6,6 +6,7 @@ import indiaImg from '@/assets/India-chinchilla.png';
 import greeceImg from '@/assets/greece_character.png';
 import usImg from '@/assets/US_bear2.png';
 import chinaImg from '@/assets/china_panda.png';
+import japanImg from '@/assets/Japan.png';
 
 export interface TasteCharacter {
   name: string;
@@ -52,6 +53,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Japan',
     emoji: '🇯🇵',
+    image: japanImg,
     description: 'Delicate sweetness, masterful umami, and subtle balance — refined and precise.',
     idealScores: { sweet: 50, sour: 20, rich: 40, bitter: 10, salty: 30, spicy: 10, umami: 90 },
   },
