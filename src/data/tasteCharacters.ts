@@ -4,6 +4,7 @@ import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 import koreaImg from '@/assets/tiger_korea.png';
 import indiaImg from '@/assets/India-chinchilla.png';
 import greeceImg from '@/assets/greece_character.png';
+import usImg from '@/assets/US_bear2.png';
 
 export interface TasteCharacter {
   name: string;
