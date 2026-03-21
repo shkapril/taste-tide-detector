@@ -110,6 +110,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'China',
     emoji: '🇨🇳',
+    image: chinaImg,
     description: 'Deep umami, balanced richness, and a touch of everything — harmonious complexity.',
     idealScores: { sweet: 30, sour: 30, rich: 70, bitter: 10, salty: 40, spicy: 30, umami: 80 },
   },
