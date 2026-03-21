@@ -3,6 +3,7 @@ import turkeyCatImg from '@/assets/Turkey_cat.png';
 import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 import koreaImg from '@/assets/tiger_korea.png';
 import indiaImg from '@/assets/India-chinchilla.png';
+import greeceImg from '@/assets/greece_character.png';
 
 export interface TasteCharacter {
   name: string;
@@ -68,6 +69,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Greece',
     emoji: '🇬🇷',
+    image: greeceImg,
     description: 'Rich and gently tangy — Mediterranean warmth in every bite.',
     idealScores: { sweet: 30, sour: 40, rich: 60, bitter: 10, salty: 40, spicy: 10, umami: 50 },
   },
