@@ -1,4 +1,5 @@
 import type { TasteVector7 } from './foodDataset';
+import turkeyCatImg from '@/assets/Turkey_cat.png';
 
 export interface TasteCharacter {
   name: string;
