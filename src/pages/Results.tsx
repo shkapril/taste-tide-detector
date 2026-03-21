@@ -62,10 +62,6 @@ const Results = () => {
 
   const hasResults = completedQuizzes.length > 0;
 
-  if (!hasResults) {
-    return <Navigate to="/" replace />;
-  }
-
   // Build UX scores (0-10 scale) for display
   const uxScores: Record<string, number> = {
     sweet: savedScores.sweet ?? 5,
@@ -84,19 +80,24 @@ const Results = () => {
     bitter: (uxScores.bitter) * 10,
     salty: (uxScores.salty) * 10,
     spicy: (uxScores.spicy) * 10,
-    umami: ((uxScores.rich + uxScores.salty) / 2) * 10, // Estimate umami from rich + salty
+    umami: ((uxScores.rich + uxScores.salty) / 2) * 10,
   };
 
   const character = getCharacter(internalMean);
 
   // Save taste DNA for profile page
   useEffect(() => {
+    if (!hasResults) return;
     localStorage.setItem('tasteDNA', JSON.stringify({
       uxScores,
       internalMean,
       completedAt: Date.now(),
     }));
-  }, []);
+  }, [hasResults]);
+
+  if (!hasResults) {
+    return <Navigate to="/" replace />;
+  }
 
   const handleShare = async () => {
     const lines = Object.entries(uxScores)
