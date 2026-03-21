@@ -1,4 +1,5 @@
 import type { TasteVector7 } from './foodDataset';
+import turkeyCatImg from '@/assets/Turkey_cat.png';
 
 export interface TasteCharacter {
   name: string;
@@ -85,6 +86,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Turkey',
     emoji: '🇹🇷',
+    image: turkeyCatImg,
     description: 'Savory warmth with gentle spice and earthy bitterness — welcoming and layered.',
     idealScores: { sweet: 30, sour: 20, rich: 60, bitter: 20, salty: 40, spicy: 0, umami: 50 },
   },
