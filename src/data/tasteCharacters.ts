@@ -1,5 +1,6 @@
 import type { TasteVector7 } from './foodDataset';
 import turkeyCatImg from '@/assets/Turkey_cat.png';
+import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
 
 export interface TasteCharacter {
   name: string;
@@ -56,6 +57,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Vietnam',
     emoji: '🇻🇳',
+    image: vietnamImg,
     description: 'Bright sourness, clean umami, and light freshness — spicy, light, and vibrant.',
     idealScores: { sweet: 30, sour: 60, rich: 40, bitter: 10, salty: 30, spicy: 20, umami: 70 },
   },
