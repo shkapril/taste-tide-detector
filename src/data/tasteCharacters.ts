@@ -1,6 +1,7 @@
 import type { TasteVector7 } from './foodDataset';
 import turkeyCatImg from '@/assets/Turkey_cat.png';
 import vietnamImg from '@/assets/vietnam-water_buffalo_V.png';
+import koreaImg from '@/assets/tiger_korea.png';
 
 export interface TasteCharacter {
   name: string;
