@@ -69,6 +69,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Greece',
     emoji: '🇬🇷',
+    image: greeceImg,
     description: 'Rich and gently tangy — Mediterranean warmth in every bite.',
     idealScores: { sweet: 30, sour: 40, rich: 60, bitter: 10, salty: 40, spicy: 10, umami: 50 },
   },
