@@ -120,6 +120,7 @@ export const tasteCharacters: TasteCharacter[] = [
   {
     name: 'Belgium',
     emoji: '🇧🇪',
+    image: belgiumImg,
     description: 'The sweetest palate of all — chocolate, waffles, and pure sugar bliss.',
     idealScores: { sweet: 90, sour: 10, rich: 60, bitter: 10, salty: 30, spicy: 10, umami: 40 },
   },
