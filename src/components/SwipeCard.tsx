@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
-import { QuizItem } from '@/data/quizData';
 
 interface SwipeCardProps {
-  item: QuizItem;
+  optionA: { name: string; image: string };
+  optionB: { name: string; image: string };
   onSwipe: (direction: 'left' | 'right') => void;
   isTop: boolean;
 }
 
-const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
+const SwipeCard = ({ optionA, optionB, onSwipe, isTop }: SwipeCardProps) => {
   const handleChooseA = () => {
     if (!isTop) return;
-    onSwipe('right'); // Choosing A = swipe right
+    onSwipe('right');
   };
 
   const handleChooseB = () => {
     if (!isTop) return;
-    onSwipe('left'); // Choosing B = swipe left
+    onSwipe('left');
   };
 
   return (
@@ -23,21 +23,15 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
       className="absolute w-full"
       initial={{ scale: isTop ? 1 : 0.95, y: isTop ? 0 : 10, opacity: isTop ? 1 : 0.5 }}
       animate={{ scale: isTop ? 1 : 0.95, y: isTop ? 0 : 10, opacity: isTop ? 1 : 0.5 }}
-      exit={{ 
-        opacity: 0,
-        scale: 0.9,
-        transition: { duration: 0.3 }
-      }}
+      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
     >
       <div className="relative overflow-hidden rounded-2xl card-shadow bg-card">
-        {/* VS Header */}
         <div className="bg-accent/30 px-4 py-3 text-center">
           <span className="text-sm font-medium text-primary uppercase tracking-wider">
             Tap your preference
           </span>
         </div>
 
-        {/* Two images side by side */}
         <div className="relative flex">
           {/* Option A (Left) */}
           <motion.button
@@ -48,8 +42,8 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             whileTap={isTop ? { scale: 0.98 } : {}}
           >
             <img
-              src={item.optionA.image}
-              alt={item.optionA.name}
+              src={optionA.image}
+              alt={optionA.name}
               className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
               draggable={false}
             />
@@ -57,7 +51,7 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             <div className="absolute inset-0 bg-success/0 group-hover:bg-success/20 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
               <h3 className="font-sans text-base font-medium text-white text-center leading-tight">
-                {item.optionA.name}
+                {optionA.name}
               </h3>
             </div>
           </motion.button>
@@ -78,8 +72,8 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             whileTap={isTop ? { scale: 0.98 } : {}}
           >
             <img
-              src={item.optionB.image}
-              alt={item.optionB.name}
+              src={optionB.image}
+              alt={optionB.name}
               className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
               draggable={false}
             />
@@ -87,7 +81,7 @@ const SwipeCard = ({ item, onSwipe, isTop }: SwipeCardProps) => {
             <div className="absolute inset-0 bg-success/0 group-hover:bg-success/20 transition-colors duration-200" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
               <h3 className="font-sans text-base font-medium text-white text-center leading-tight">
-                {item.optionB.name}
+                {optionB.name}
               </h3>
             </div>
           </motion.button>

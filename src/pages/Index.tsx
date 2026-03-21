@@ -1,41 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft, Users, ChartBar, Check, Circle } from 'lucide-react';
+import { ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AllergySelection from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
 
-type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
-
-const quizOptions: { value: QuizType; label: string; emoji: string; description: string }[] = [
-  { value: 'sweet', label: 'Sweet', emoji: '🍫', description: 'Chocolate, desserts & treats' },
-  { value: 'sour', label: 'Sour', emoji: '🍋', description: 'Citrus, tangy & tart' },
-  { value: 'bitter', label: 'Bitter', emoji: '☕', description: 'Coffee, dark greens & cocoa' },
-  { value: 'salty', label: 'Salty', emoji: '🧂', description: 'Savory snacks & umami' },
-  { value: 'rich', label: 'Rich & Buttery', emoji: '🧈', description: 'Creamy, indulgent & pastries' },
-  { value: 'spicy', label: 'Spicy', emoji: '🌶️', description: 'Hot peppers, chili & heat' },
-];
-
-interface IndexLocationState {
-  startAtQuizSelection?: boolean;
-}
-
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const locationState = location.state as IndexLocationState | null;
   
-  const [step, setStep] = useState(locationState?.startAtQuizSelection ? 2 : 0);
-  const [selectedQuiz, setSelectedQuiz] = useState<QuizType | null>(null);
-  const [completedQuizzes, setCompletedQuizzes] = useState<QuizType[]>([]);
+  const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
   const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
-
-  useEffect(() => {
-    const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
-    setCompletedQuizzes(Object.keys(scores) as QuizType[]);
-  }, []);
 
   const features = [
     {
@@ -47,9 +24,7 @@ const Index = () => {
   ];
 
   const handleStartQuiz = () => {
-    if (selectedQuiz) {
-      navigate('/quiz', { state: { quizType: selectedQuiz, allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
-    }
+    navigate('/quiz', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
   };
 
   const handleToggleAllergy = (allergen: Allergen) => {
@@ -279,106 +254,8 @@ const Index = () => {
             onToggleAllergy={handleToggleAllergy}
             onToggleEatingStyle={handleToggleEatingStyle}
             onBack={() => setStep(0)}
-            onContinue={() => setStep(2)}
+            onContinue={handleStartQuiz}
           />
-        )}
-
-        {step === 2 && (
-          <motion.div
-            key="quiz-type"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="min-h-screen px-8 pt-14 pb-10"
-          >
-            {/* Header */}
-            <div className="flex items-center mb-10">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setStep(1)}
-                className="mr-3 rounded-full"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-              <div className="flex-1">
-              <h2 className="text-3xl font-display text-foreground tracking-tight">
-                  Choose Your Quiz
-                </h2>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                  Some foods can be made in different ways. Answer based on versions you usually eat or would choose that fit your dietary habits.
-                </p>
-              </div>
-            </div>
-
-            {/* Quiz Type Options */}
-            <div className="grid grid-cols-2 gap-3 mb-10">
-              {quizOptions.map((option, index) => (
-                <motion.button
-                  key={option.value}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                  onClick={() => setSelectedQuiz(option.value)}
-                  className={`relative p-5 rounded-2xl text-left transition-all duration-300 ${
-                    selectedQuiz === option.value
-                      ? 'bg-gradient-to-br from-primary via-primary/90 to-primary/70 text-primary-foreground shadow-md'
-                      : 'bg-card chic-border hover:bg-secondary/50'
-                  }`}
-                >
-                  {/* Completion indicator */}
-                  <div className="absolute top-4 right-4">
-                    {completedQuizzes.includes(option.value) ? (
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                        selectedQuiz === option.value ? 'bg-primary-foreground/20' : 'bg-accent'
-                      }`}>
-                        <Check className={`w-3 h-3 ${
-                          selectedQuiz === option.value ? 'text-primary-foreground' : 'text-accent-foreground'
-                        }`} />
-                      </div>
-                    ) : (
-                      <Circle className={`w-5 h-5 ${
-                        selectedQuiz === option.value ? 'text-primary-foreground/40' : 'text-muted-foreground/30'
-                      }`} strokeWidth={1.5} />
-                    )}
-                  </div>
-                  <span className="text-xl mb-2 block">{option.emoji}</span>
-                  <span className={`font-display text-lg block mb-0.5 ${
-                    selectedQuiz === option.value ? 'text-primary-foreground' : 'text-foreground'
-                  }`}>{option.label}</span>
-                  <span className={`text-xs leading-relaxed ${
-                    selectedQuiz === option.value ? 'text-primary-foreground/70' : 'text-muted-foreground'
-                  }`}>{option.description}</span>
-                </motion.button>
-              ))}
-            </div>
-
-            {/* Start Quiz Button */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Button
-                onClick={handleStartQuiz}
-                disabled={!selectedQuiz}
-                size="lg"
-                className="w-full h-14 text-base font-medium tracking-wide rounded-full disabled:opacity-100 disabled:bg-primary disabled:text-primary-foreground"
-              >
-                Start Quiz
-                <ArrowRight className="w-4 h-4 ml-3" />
-              </Button>
-              <Button
-                onClick={() => navigate('/profile')}
-                variant="ghost"
-                size="lg"
-                className="w-full h-12 text-base font-medium tracking-wide rounded-full bg-white text-foreground hover:bg-white/80"
-              >
-                See My Taste Level
-              </Button>
-            </motion.div>
-          </motion.div>
         )}
       </AnimatePresence>
     </div>

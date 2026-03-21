@@ -3,45 +3,38 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { QuizType, quizLabels } from '@/data/quizData';
+import ResultsChart from '@/components/ResultsChart';
 import { getCharacter } from '@/data/tasteCharacters';
 import chefImage from '@/assets/chef.png';
-
-const allQuizTypes: { type: QuizType; emoji: string }[] = [
-  { type: 'sweet', emoji: '🍫' },
-  { type: 'sour', emoji: '🍋' },
-  { type: 'bitter', emoji: '☕' },
-  { type: 'salty', emoji: '🧂' },
-  { type: 'rich', emoji: '🧈' },
-  { type: 'spicy', emoji: '🌶️' },
-];
+import type { TasteVector7 } from '@/data/foodDataset';
 
 const Profile = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(true);
   const navigate = useNavigate();
+
   useEffect(() => { window.scrollTo(0, 0); }, []);
   useEffect(() => {
     const timer = setTimeout(() => setIsAnalyzing(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-  const scores: Partial<Record<QuizType, number>> = JSON.parse(
-    localStorage.getItem('quizScores') || '{}'
-  );
-  const completedCount = Object.keys(scores).length;
-  const character = getCharacter(scores);
+
+  // Load saved taste DNA
+  const saved = JSON.parse(localStorage.getItem('tasteDNA') || 'null');
+  const uxScores: Record<string, number> | null = saved?.uxScores || null;
+  const internalMean: TasteVector7 | null = saved?.internalMean || null;
+  const character = internalMean ? getCharacter(internalMean) : null;
+  const hasResults = !!uxScores;
 
   const handleShare = async () => {
-    const lines = allQuizTypes
-      .filter(q => scores[q.type] !== undefined)
-      .map(q => `${q.emoji} ${quizLabels[q.type].label}: ${scores[q.type]!.toFixed(1)}/10`)
+    if (!uxScores || !character) return;
+    const lines = Object.entries(uxScores)
+      .map(([k, v]) => `${k}: ${(v as number).toFixed(1)}/10`)
       .join('\n');
-
-    const text = `🍽️ My Taste Character: ${character.emoji} ${character.name}\n\n${lines}\n\nDiscover your taste at ${window.location.origin}`;
+    const text = `🧬 My Taste DNA: ${character.emoji} ${character.name}\n\n${lines}\n\nDiscover yours at ${window.location.origin}`;
 
     if (navigator.share) {
-      try {
-        await navigator.share({ title: 'My Taste Profile', text, url: window.location.origin });
-      } catch { /* cancelled */ }
+      try { await navigator.share({ title: 'My Taste DNA', text, url: window.location.origin }); }
+      catch { /* cancelled */ }
     } else {
       await navigator.clipboard.writeText(text);
     }
@@ -63,9 +56,7 @@ const Profile = () => {
             src={chefImage}
             alt="Chef analyzing"
             className="w-full max-w-md object-contain drop-shadow-2xl"
-            animate={{
-              y: [0, -8, 0],
-            }}
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           />
           <div className="absolute top-1/4 left-0 right-0 flex flex-col items-center">
@@ -75,7 +66,7 @@ const Profile = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Analyzing...
+              Loading Profile...
             </motion.h2>
             <div className="flex gap-2">
               {[0, 1, 2].map(i => (
@@ -104,7 +95,7 @@ const Profile = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Button>
               <h1 className="text-2xl font-display tracking-tight text-foreground">
-                Your Taste Profile
+                Your Taste DNA
               </h1>
             </div>
           </header>
@@ -116,7 +107,7 @@ const Profile = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {completedCount >= 6 ? (
+              {hasResults && character ? (
                 <>
                   {character.image ? (
                     <motion.img
@@ -149,76 +140,38 @@ const Profile = () => {
                     animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    🔒
+                    🧬
                   </motion.div>
                   <h2 className="text-2xl font-display font-bold text-foreground mb-2">
-                    Mystery Character
+                    Discover Your Taste DNA
                   </h2>
                   <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                    {completedCount === 0
-                      ? 'Complete all 6 taste quizzes to reveal your country character!'
-                      : `${completedCount}/6 quizzes done — keep going to unlock your character!`}
+                    Take the 12-question taste quiz to reveal your unique flavor profile!
                   </p>
                   <Button
-                    onClick={() => navigate('/', { state: { startAtQuizSelection: true } })}
+                    onClick={() => navigate('/')}
                     size="lg"
                     className="mt-6 w-full h-12 text-base font-medium tracking-wide rounded-full"
                   >
-                    {completedCount === 0 ? 'Start a Quiz' : `Keep Exploring (${completedCount}/6)`}
+                    Start the Quiz
                   </Button>
                 </>
               )}
             </motion.div>
 
             {/* Taste Levels */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h3 className="text-lg font-display font-semibold text-foreground mb-4">
-                Taste Levels
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {allQuizTypes.map((q, i) => {
-                  const score = scores[q.type];
-                  const label = quizLabels[q.type];
-                  return (
-                    <motion.div
-                      key={q.type}
-                      className="bg-card rounded-xl p-4 chic-border"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + i * 0.05 }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg">{q.emoji}</span>
-                          <span className="font-display text-sm text-foreground">{label.label}</span>
-                        </div>
-                        {score !== undefined ? (
-                          <span className="text-sm font-medium text-primary">{score.toFixed(1)}/10</span>
-                        ) : (
-                          <span className="text-xs text-muted-foreground">Not taken</span>
-                        )}
-                      </div>
-                      <div className="h-2 rounded-full bg-secondary overflow-hidden">
-                        <motion.div
-                          className="h-full rounded-full bg-primary"
-                          initial={{ width: 0 }}
-                          animate={{ width: score !== undefined ? `${(score / 10) * 100}%` : '0%' }}
-                          transition={{ duration: 0.8, delay: 0.5 + i * 0.05 }}
-                        />
-                      </div>
-                      <div className="flex justify-between mt-1">
-                        <span className="text-[10px] text-muted-foreground">{label.lowLabel}</span>
-                        <span className="text-[10px] text-muted-foreground">{label.highLabel}</span>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </motion.div>
+            {hasResults && uxScores && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-lg font-display font-semibold text-foreground mb-4">
+                  Taste Spectrum
+                </h3>
+                <ResultsChart scores={uxScores} />
+              </motion.div>
+            )}
           </div>
 
           {/* Share Button */}
@@ -232,14 +185,14 @@ const Profile = () => {
               onClick={handleShare}
               size="lg"
               className="w-full h-14 text-base font-medium tracking-wide rounded-full"
-              disabled={completedCount === 0}
+              disabled={!hasResults}
             >
               <Share2 className="w-5 h-5 mr-2" />
-              Share My Taste Profile
+              Share My Taste DNA
             </Button>
-            {completedCount === 0 && (
+            {!hasResults && (
               <p className="text-xs text-muted-foreground text-center mt-3">
-                Complete at least one quiz to share your profile
+                Complete the quiz to share your profile
               </p>
             )}
           </motion.div>
