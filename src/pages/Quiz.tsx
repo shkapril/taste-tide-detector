@@ -197,7 +197,7 @@ const Quiz = () => {
         }
       }, 200);
     },
-    [bayesState, currentQuestion, usedIds, questionNum, navigate, pool, quizType, allergies, eatingStyles]
+    [bayesState, currentQuestion, usedIds, questionNum, navigate, pool, quizType, allergies, eatingStyles, blockedIngredients]
   );
 
   const handleUndo = useCallback(() => {
