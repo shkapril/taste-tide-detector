@@ -188,7 +188,7 @@ const Quiz = () => {
 
           // Navigate to category result
           navigate('/category-result', {
-            state: { quizType, score, allergies, eatingStyles },
+            state: { quizType, score, allergies, eatingStyles, blockedIngredients },
           });
         } else {
           const next = selectNextQuestion(newState, newUsed, pool);
