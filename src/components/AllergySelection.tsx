@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Allergen, allergenInfo, EatingStyle } from '@/data/allergens';
+import { Allergen, EatingStyle } from '@/data/allergens';
 import IngredientPicker from '@/components/IngredientPicker';
 import halalLogo from '@/assets/halal-logo.png';
 
@@ -27,14 +26,6 @@ interface AllergySelectionProps {
 }
 
 const AllergySelection = ({ selectedAllergies, selectedEatingStyles, selectedIngredients, onToggleAllergy, onToggleEatingStyle, onToggleIngredient, onBack, onContinue }: AllergySelectionProps) => {
-  const [customInputs, setCustomInputs] = useState<Record<string, string>>({});
-
-  const handleCustomInputChange = (allergen: Allergen, value: string) => {
-    // Auto-select if user starts typing
-    if (value.length > 0 && !selectedAllergies.includes(allergen)) {
-      onToggleAllergy(allergen);
-    }
-  };
 
   return (
     <motion.div
