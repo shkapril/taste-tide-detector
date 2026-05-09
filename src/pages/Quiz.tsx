@@ -12,6 +12,7 @@ import {
   quizLabels,
 } from '@/data/quizData';
 import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet } from '@/data/allergens';
+import { foodContainsBlockedIngredient } from '@/data/foodIngredients';
 
 const TOTAL_QUESTIONS = 8;
 
@@ -19,6 +20,7 @@ interface LocationState {
   quizType: QuizType;
   allergies?: Allergen[];
   eatingStyles?: EatingStyle[];
+  blockedIngredients?: string[];
 }
 
 // ── 1D Bayesian State ──
@@ -119,19 +121,24 @@ const Quiz = () => {
   const quizType = locState?.quizType || 'sweet';
   const allergies = locState?.allergies || [];
   const eatingStyles = locState?.eatingStyles || [];
+  const blockedIngredients = locState?.blockedIngredients || [];
   const labels = quizLabels[quizType];
 
-  // Filter pool based on allergies and eating styles
+  // Filter pool based on allergies, eating styles, and specific blocked ingredients
   const pool = useMemo(() => {
     const items = quizDataMap[quizType] || [];
     return items.filter(item => {
       if (shouldFilterItem(item.optionA.name, item.optionB.name, allergies)) return false;
       if (shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles)) return false;
+      if (
+        foodContainsBlockedIngredient(item.optionA.name, blockedIngredients) ||
+        foodContainsBlockedIngredient(item.optionB.name, blockedIngredients)
+      ) return false;
       // Filter out branch questions (they'll be added dynamically)
       if (item.isBranchQuestion) return false;
       return true;
     });
-  }, [quizType, allergies, eatingStyles]);
+  }, [quizType, allergies, eatingStyles, blockedIngredients]);
 
   const [bayesState, setBayesState] = useState<BayesState>(createInitialState);
   const [usedIds, setUsedIds] = useState<Set<string>>(new Set());
@@ -181,7 +188,7 @@ const Quiz = () => {
 
           // Navigate to category result
           navigate('/category-result', {
-            state: { quizType, score, allergies, eatingStyles },
+            state: { quizType, score, allergies, eatingStyles, blockedIngredients },
           });
         } else {
           const next = selectNextQuestion(newState, newUsed, pool);
@@ -190,7 +197,7 @@ const Quiz = () => {
         }
       }, 200);
     },
-    [bayesState, currentQuestion, usedIds, questionNum, navigate, pool, quizType, allergies, eatingStyles]
+    [bayesState, currentQuestion, usedIds, questionNum, navigate, pool, quizType, allergies, eatingStyles, blockedIngredients]
   );
 
   const handleUndo = useCallback(() => {
@@ -268,7 +275,7 @@ const Quiz = () => {
         </Button>
         <Button
           variant="ghost"
-          onClick={() => navigate('/categories', { state: { allergies, eatingStyles } })}
+          onClick={() => navigate('/categories', { state: { allergies, eatingStyles, blockedIngredients } })}
           className="w-full text-muted-foreground hover:text-foreground"
         >
           ← Back to categories
