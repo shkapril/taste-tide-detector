@@ -67,7 +67,7 @@ const CategoryResult = () => {
 
   if (!state) return <Navigate to="/" replace />;
 
-  const { quizType, score, allergies = [], eatingStyles = [] } = state;
+  const { quizType, score, allergies = [], eatingStyles = [], blockedIngredients = [] } = state;
   const labels = quizLabels[quizType];
   const profile = getTasteProfile(score, quizType);
   const completed = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');
@@ -166,7 +166,7 @@ const CategoryResult = () => {
               </Button>
             ) : (
               <Button
-                onClick={() => navigate('/categories', { state: { allergies, eatingStyles } })}
+                onClick={() => navigate('/categories', { state: { allergies, eatingStyles, blockedIngredients } })}
                 className="w-full h-14 text-lg font-medium"
                 size="lg"
               >
@@ -175,7 +175,7 @@ const CategoryResult = () => {
               </Button>
             )}
             <Button
-              onClick={() => navigate('/quiz', { state: { quizType, allergies, eatingStyles } })}
+              onClick={() => navigate('/quiz', { state: { quizType, allergies, eatingStyles, blockedIngredients } })}
               variant="outline"
               className="w-full h-12"
             >
