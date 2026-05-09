@@ -16,7 +16,7 @@ const categoryLabel: Record<IngredientCategory, string> = {
   seafood: '🦐 Seafood',
 };
 
-const categoryOrder: IngredientCategory[] = ['fruits', 'vegetables', 'meat', 'fish', 'seafood'];
+const categoryOrder: IngredientCategory[] = ['fish', 'fruits', 'meat', 'seafood', 'vegetables'];
 
 const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   const [query, setQuery] = useState('');
