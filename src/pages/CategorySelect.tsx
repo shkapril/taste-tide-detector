@@ -9,6 +9,7 @@ import type { Allergen, EatingStyle } from '@/data/allergens';
 interface LocationState {
   allergies?: Allergen[];
   eatingStyles?: EatingStyle[];
+  blockedIngredients?: string[];
 }
 
 const categories: { type: QuizType; label: string; emoji: string; color: string }[] = [
@@ -28,6 +29,7 @@ const CategorySelect = () => {
   const locState = location.state as LocationState | null;
   const allergies = locState?.allergies || [];
   const eatingStyles = locState?.eatingStyles || [];
+  const blockedIngredients = locState?.blockedIngredients || [];
 
   const [completedQuizzes, setCompletedQuizzes] = useState<string[]>([]);
 
@@ -40,7 +42,7 @@ const CategorySelect = () => {
 
   const handleSelectCategory = (type: QuizType) => {
     navigate('/quiz', {
-      state: { quizType: type, allergies, eatingStyles },
+      state: { quizType: type, allergies, eatingStyles, blockedIngredients },
     });
   };
 

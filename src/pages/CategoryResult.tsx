@@ -12,6 +12,7 @@ interface LocationState {
   score: number;
   allergies?: Allergen[];
   eatingStyles?: EatingStyle[];
+  blockedIngredients?: string[];
 }
 
 const AnalyzingScreen = () => (
