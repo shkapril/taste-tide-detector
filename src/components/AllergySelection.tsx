@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, allergenInfo, EatingStyle } from '@/data/allergens';
+import IngredientPicker from '@/components/IngredientPicker';
 import halalLogo from '@/assets/halal-logo.png';
 
 const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
@@ -17,13 +18,15 @@ const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
 interface AllergySelectionProps {
   selectedAllergies: Allergen[];
   selectedEatingStyles: EatingStyle[];
+  selectedIngredients: string[];
   onToggleAllergy: (allergen: Allergen) => void;
   onToggleEatingStyle: (style: EatingStyle) => void;
+  onToggleIngredient: (slug: string) => void;
   onBack: () => void;
   onContinue: () => void;
 }
 
-const AllergySelection = ({ selectedAllergies, selectedEatingStyles, onToggleAllergy, onToggleEatingStyle, onBack, onContinue }: AllergySelectionProps) => {
+const AllergySelection = ({ selectedAllergies, selectedEatingStyles, selectedIngredients, onToggleAllergy, onToggleEatingStyle, onToggleIngredient, onBack, onContinue }: AllergySelectionProps) => {
   const [customInputs, setCustomInputs] = useState<Record<string, string>>({});
 
   const handleCustomInputChange = (allergen: Allergen, value: string) => {
