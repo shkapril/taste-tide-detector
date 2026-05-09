@@ -98,6 +98,15 @@ const AllergySelection = ({ selectedAllergies, selectedEatingStyles, selectedIng
         </div>
       </div>
 
+      {/* Specific ingredient avoidances */}
+      <div className="mb-6">
+        <h3 className="font-display text-lg text-foreground mb-1">Specific Ingredients to Avoid</h3>
+        <p className="text-xs text-muted-foreground mb-3">
+          Search any ingredient (e.g. apple, shrimp). We'll hide every dish that contains it.
+        </p>
+        <IngredientPicker selected={selectedIngredients} onToggle={onToggleIngredient} />
+      </div>
+
       {/* Allergy Options */}
       <div className="grid grid-cols-2 gap-3 mb-8">
         {allergenInfo.map((allergen, index) => {

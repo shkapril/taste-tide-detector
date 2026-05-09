@@ -13,6 +13,7 @@ const Index = () => {
   const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
   const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
+  const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   const features = [
     {
@@ -24,7 +25,13 @@ const Index = () => {
   ];
 
   const handleStartQuiz = () => {
-    navigate('/categories', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles } });
+    navigate('/categories', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles, blockedIngredients: selectedIngredients } });
+  };
+
+  const handleToggleIngredient = (slug: string) => {
+    setSelectedIngredients(prev =>
+      prev.includes(slug) ? prev.filter(s => s !== slug) : [...prev, slug]
+    );
   };
 
   const handleToggleAllergy = (allergen: Allergen) => {
@@ -251,8 +258,10 @@ const Index = () => {
           <AllergySelection
             selectedAllergies={selectedAllergies}
             selectedEatingStyles={selectedEatingStyles}
+            selectedIngredients={selectedIngredients}
             onToggleAllergy={handleToggleAllergy}
             onToggleEatingStyle={handleToggleEatingStyle}
+            onToggleIngredient={handleToggleIngredient}
             onBack={() => setStep(0)}
             onContinue={handleStartQuiz}
           />
