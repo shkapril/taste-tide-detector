@@ -275,7 +275,7 @@ const Quiz = () => {
         </Button>
         <Button
           variant="ghost"
-          onClick={() => navigate('/categories', { state: { allergies, eatingStyles } })}
+          onClick={() => navigate('/categories', { state: { allergies, eatingStyles, blockedIngredients } })}
           className="w-full text-muted-foreground hover:text-foreground"
         >
           ← Back to categories
