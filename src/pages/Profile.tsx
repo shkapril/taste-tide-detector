@@ -169,7 +169,10 @@ const Profile = () => {
                 <h3 className="text-lg font-display font-semibold text-foreground mb-4">
                   Taste Spectrum
                 </h3>
-                <ResultsChart scores={uxScores} />
+                <HexRadarChart scores={uxScores} />
+                <div className="mt-8">
+                  <ResultsChart scores={uxScores} />
+                </div>
               </motion.div>
             )}
           </div>
