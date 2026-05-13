@@ -181,6 +181,7 @@ export const sweetItems: QuizItem[] = [
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  {
     id: 'sweet-14',
     optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
     optionB: { name: 'Honey', image: '/images/honey.png' },
