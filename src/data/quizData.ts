@@ -526,6 +526,14 @@ export const saltyItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'salty-13',
+    optionA: { name: 'Salted Caramel', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    optionB: { name: 'Caramel', image: caramelImg },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['vegetarian', 'all-good'],
+  },
 ];
 
 // Rich & Buttery comparisons (creaminess/heaviness/butter)
