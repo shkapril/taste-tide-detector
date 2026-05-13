@@ -1,6 +1,7 @@
 import prosciuttoImg from '@/assets/prosciutto.png';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel-candy.png';
+import lemonCandyImg from '@/assets/lemon-candy.png';
 
 export interface QuizItem {
   id: string;
@@ -250,7 +251,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-10',
-    optionA: { name: 'Lemon Candy', image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=600&fit=crop' },
+    optionA: { name: 'Lemon Candy', image: lemonCandyImg },
     optionB: { name: 'Caramel Candy', image: caramelImg },
     intensityA: 8,
     intensityB: 1,
