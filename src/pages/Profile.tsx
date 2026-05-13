@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Share2 } from 'lucide-react';
+import { ArrowLeft, Share2, Link as LinkIcon, Download, MessageCircle, Check } from 'lucide-react';
+import { toPng } from 'html-to-image';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { toast } from '@/hooks/use-toast';
 import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';
 import { getCharacter } from '@/data/tasteCharacters';
@@ -26,20 +29,49 @@ const Profile = () => {
   const character = internalMean ? getCharacter(internalMean) : null;
   const hasResults = !!uxScores;
 
-  const handleShare = async () => {
-    if (!uxScores || !character) return;
-    const lines = Object.entries(uxScores)
-      .map(([k, v]) => `${k}: ${(v as number).toFixed(1)}/10`)
-      .join('\n');
-    const text = `🧬 My Taste DNA: ${character.emoji} ${character.name}\n\n${lines}\n\nDiscover yours at ${window.location.origin}`;
+  const [shareOpen, setShareOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const shareCardRef = useRef<HTMLDivElement>(null);
 
-    if (navigator.share) {
-      try { await navigator.share({ title: 'My Taste DNA', text, url: window.location.origin }); }
-      catch { /* cancelled */ }
-    } else {
-      await navigator.clipboard.writeText(text);
+  const shareUrl = typeof window !== 'undefined' ? window.location.origin : '';
+  const shareText = character
+    ? `🧬 My Taste DNA: ${character.emoji} ${character.name} — Discover yours at ${shareUrl}`
+    : `Discover your Taste DNA at ${shareUrl}`;
+
+  const handleCopyLink = async () => {
+    await navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    toast({ title: 'Link copied!' });
+    setTimeout(() => setCopied(false), 1800);
+  };
+
+  const handleDownloadImage = async () => {
+    if (!shareCardRef.current) return;
+    try {
+      const dataUrl = await toPng(shareCardRef.current, { cacheBust: true, pixelRatio: 2, backgroundColor: '#ffffff' });
+      const link = document.createElement('a');
+      link.download = `taste-dna-${character?.name?.replace(/\s+/g, '-').toLowerCase() || 'profile'}.png`;
+      link.href = dataUrl;
+      link.click();
+      toast({ title: 'Image downloaded' });
+    } catch {
+      toast({ title: 'Could not download image', variant: 'destructive' });
     }
   };
+
+  const openExternal = (url: string) => window.open(url, '_blank', 'noopener,noreferrer');
+
+  const handleKakao = () =>
+    openExternal(`https://story.kakao.com/share?url=${encodeURIComponent(shareUrl)}`);
+  const handleWeChat = () => {
+    // WeChat has no web share URL — copy link and prompt to paste
+    navigator.clipboard.writeText(shareText);
+    toast({ title: 'Link copied — paste in WeChat to share' });
+  };
+  const handleWhatsApp = () =>
+    openExternal(`https://wa.me/?text=${encodeURIComponent(shareText)}`);
+
+  const handleShare = () => setShareOpen(true);
 
   return (
     <AnimatePresence mode="wait">
@@ -102,12 +134,13 @@ const Profile = () => {
           </header>
 
           <div className="flex-1 px-6 py-4 space-y-6">
-            {/* Character Card */}
-            <motion.div
-              className="rounded-2xl p-8 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
+            <div ref={shareCardRef} className="bg-background space-y-6 rounded-2xl">
+              {/* Character Card */}
+              <motion.div
+                className="rounded-2xl p-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
               {hasResults && character ? (
                 <>
                   {character.image ? (
@@ -158,24 +191,26 @@ const Profile = () => {
                   </Button>
                 </>
               )}
-            </motion.div>
-
-            {/* Taste Levels */}
-            {hasResults && uxScores && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <h3 className="text-lg font-display font-semibold text-foreground mb-4">
-                  Taste Spectrum
-                </h3>
-                <HexRadarChart scores={uxScores} />
-                <div className="mt-8">
-                  <ResultsChart scores={uxScores} />
-                </div>
               </motion.div>
-            )}
+
+              {/* Taste Levels */}
+              {hasResults && uxScores && (
+                <motion.div
+                  className="px-6 pb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-4">
+                    Taste Spectrum
+                  </h3>
+                  <HexRadarChart scores={uxScores} />
+                  <div className="mt-8">
+                    <ResultsChart scores={uxScores} />
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </div>
 
           {/* Share Button */}
@@ -200,6 +235,55 @@ const Profile = () => {
               </p>
             )}
           </motion.div>
+
+          {/* Share Dialog */}
+          <Dialog open={shareOpen} onOpenChange={setShareOpen}>
+            <DialogContent className="sm:max-w-sm rounded-2xl">
+              <DialogHeader>
+                <DialogTitle className="font-display">Share your Taste DNA</DialogTitle>
+              </DialogHeader>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <button
+                  onClick={handleCopyLink}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
+                >
+                  {copied ? <Check className="w-6 h-6 text-primary" /> : <LinkIcon className="w-6 h-6" />}
+                  <span className="text-sm">{copied ? 'Copied' : 'Copy link'}</span>
+                </button>
+                <button
+                  onClick={handleDownloadImage}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
+                >
+                  <Download className="w-6 h-6" />
+                  <span className="text-sm">Download image</span>
+                </button>
+                <button
+                  onClick={handleKakao}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#FEE500', color: '#3C1E1E' }}
+                >
+                  <span className="text-lg font-bold">K</span>
+                  <span className="text-sm font-medium">KakaoTalk</span>
+                </button>
+                <button
+                  onClick={handleWeChat}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#07C160' }}
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  <span className="text-sm font-medium">WeChat</span>
+                </button>
+                <button
+                  onClick={handleWhatsApp}
+                  className="col-span-2 flex items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#25D366' }}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span className="text-sm font-medium">WhatsApp</span>
+                </button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </motion.div>
       )}
     </AnimatePresence>
