@@ -1,5 +1,6 @@
 import prosciuttoImg from '@/assets/prosciutto.png';
 import mozzarellaImg from '@/assets/mozzarella.png';
+import caramelImg from '@/assets/caramel-candy.png';
 
 export interface QuizItem {
   id: string;
@@ -46,14 +47,14 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-3',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
-    optionB: { name: 'Caramel', image: '/images/caramel.png' },
+    optionB: { name: 'Caramel', image: caramelImg },
     intensityA: 9,
     intensityB: 6,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'sweet-3b',
-    optionA: { name: 'Caramel', image: '/images/caramel.png' },
+    optionA: { name: 'Caramel', image: caramelImg },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 7,
@@ -94,14 +95,14 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-6',
     optionA: { name: 'Cotton Candy', image: '/images/cotton_candy.png' },
-    optionB: { name: 'Caramel', image: '/images/caramel.png' },
+    optionB: { name: 'Caramel', image: caramelImg },
     intensityA: 10,
     intensityB: 6,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'sweet-7',
-    optionA: { name: 'Caramel', image: '/images/caramel.png' },
+    optionA: { name: 'Caramel', image: caramelImg },
     optionB: { name: 'Honey', image: '/images/honey.png' },
     intensityA: 6,
     intensityB: 8,
@@ -250,7 +251,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-10',
     optionA: { name: 'Lemon Candy', image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&h=600&fit=crop' },
-    optionB: { name: 'Caramel Candy', image: 'https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=600&h=600&fit=crop' },
+    optionB: { name: 'Caramel Candy', image: caramelImg },
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
