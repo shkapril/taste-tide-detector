@@ -5,6 +5,7 @@ import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
+import HexRadarChart from '@/components/HexRadarChart';
 import { getCharacter } from '@/data/tasteCharacters';
 import type { TasteVector7 } from '@/data/foodDataset';
 
