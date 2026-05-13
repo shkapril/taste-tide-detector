@@ -89,7 +89,7 @@ const Index = () => {
                 </motion.div>
                 <h1 className="text-5xl md:text-6xl font-display text-foreground mb-5 leading-[1.1] tracking-tight">
                   What's Your
-                  <span className="block text-gradient italic">Taste Level?</span>
+                  <span className="block italic text-primary">Taste Level?</span>
                 </h1>
                 <p className="text-muted-foreground text-base max-w-xs mx-auto leading-relaxed tracking-wide">
                   Click through food and find out your true taste preference
