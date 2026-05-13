@@ -1,5 +1,6 @@
 import prosciuttoImg from '@/assets/prosciutto.png';
 import mozzarellaImg from '@/assets/mozzarella.png';
+import caramelImg from '@/assets/caramel-candy.png';
 
 export interface QuizItem {
   id: string;
