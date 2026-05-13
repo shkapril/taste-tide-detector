@@ -235,6 +235,55 @@ const Profile = () => {
               </p>
             )}
           </motion.div>
+
+          {/* Share Dialog */}
+          <Dialog open={shareOpen} onOpenChange={setShareOpen}>
+            <DialogContent className="sm:max-w-sm rounded-2xl">
+              <DialogHeader>
+                <DialogTitle className="font-display">Share your Taste DNA</DialogTitle>
+              </DialogHeader>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <button
+                  onClick={handleCopyLink}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
+                >
+                  {copied ? <Check className="w-6 h-6 text-primary" /> : <LinkIcon className="w-6 h-6" />}
+                  <span className="text-sm">{copied ? 'Copied' : 'Copy link'}</span>
+                </button>
+                <button
+                  onClick={handleDownloadImage}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
+                >
+                  <Download className="w-6 h-6" />
+                  <span className="text-sm">Download image</span>
+                </button>
+                <button
+                  onClick={handleKakao}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#FEE500', color: '#3C1E1E' }}
+                >
+                  <span className="text-lg font-bold">K</span>
+                  <span className="text-sm font-medium">KakaoTalk</span>
+                </button>
+                <button
+                  onClick={handleWeChat}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#07C160' }}
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  <span className="text-sm font-medium">WeChat</span>
+                </button>
+                <button
+                  onClick={handleWhatsApp}
+                  className="col-span-2 flex items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: '#25D366' }}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span className="text-sm font-medium">WhatsApp</span>
+                </button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </motion.div>
       )}
     </AnimatePresence>
