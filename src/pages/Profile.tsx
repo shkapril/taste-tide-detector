@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
+import HexRadarChart from '@/components/HexRadarChart';
 import { getCharacter } from '@/data/tasteCharacters';
 import chefImage from '@/assets/chef.png';
 import type { TasteVector7 } from '@/data/foodDataset';
@@ -169,7 +170,10 @@ const Profile = () => {
                 <h3 className="text-lg font-display font-semibold text-foreground mb-4">
                   Taste Spectrum
                 </h3>
-                <ResultsChart scores={uxScores} />
+                <HexRadarChart scores={uxScores} />
+                <div className="mt-8">
+                  <ResultsChart scores={uxScores} />
+                </div>
               </motion.div>
             )}
           </div>

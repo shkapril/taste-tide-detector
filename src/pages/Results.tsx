@@ -5,6 +5,7 @@ import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
+import HexRadarChart from '@/components/HexRadarChart';
 import { getCharacter } from '@/data/tasteCharacters';
 import type { TasteVector7 } from '@/data/foodDataset';
 
@@ -201,7 +202,10 @@ const Results = () => {
               <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
                 Your Taste Spectrum
               </h2>
-              <ResultsChart scores={uxScores} />
+              <HexRadarChart scores={uxScores} />
+              <div className="mt-8">
+                <ResultsChart scores={uxScores} />
+              </div>
             </motion.div>
           </div>
 
