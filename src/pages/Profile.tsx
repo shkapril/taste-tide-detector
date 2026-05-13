@@ -134,12 +134,13 @@ const Profile = () => {
           </header>
 
           <div className="flex-1 px-6 py-4 space-y-6">
-            {/* Character Card */}
-            <motion.div
-              className="rounded-2xl p-8 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
+            <div ref={shareCardRef} className="bg-background space-y-6 rounded-2xl">
+              {/* Character Card */}
+              <motion.div
+                className="rounded-2xl p-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
               {hasResults && character ? (
                 <>
                   {character.image ? (
@@ -190,24 +191,26 @@ const Profile = () => {
                   </Button>
                 </>
               )}
-            </motion.div>
-
-            {/* Taste Levels */}
-            {hasResults && uxScores && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <h3 className="text-lg font-display font-semibold text-foreground mb-4">
-                  Taste Spectrum
-                </h3>
-                <HexRadarChart scores={uxScores} />
-                <div className="mt-8">
-                  <ResultsChart scores={uxScores} />
-                </div>
               </motion.div>
-            )}
+
+              {/* Taste Levels */}
+              {hasResults && uxScores && (
+                <motion.div
+                  className="px-6 pb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-4">
+                    Taste Spectrum
+                  </h3>
+                  <HexRadarChart scores={uxScores} />
+                  <div className="mt-8">
+                    <ResultsChart scores={uxScores} />
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </div>
 
           {/* Share Button */}
