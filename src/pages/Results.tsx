@@ -201,7 +201,10 @@ const Results = () => {
               <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
                 Your Taste Spectrum
               </h2>
-              <ResultsChart scores={uxScores} />
+              <HexRadarChart scores={uxScores} />
+              <div className="mt-8">
+                <ResultsChart scores={uxScores} />
+              </div>
             </motion.div>
           </div>
 
