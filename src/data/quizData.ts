@@ -2,6 +2,7 @@ import prosciuttoImg from '@/assets/prosciutto.png';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel-candy.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
+import fetaCheeseImg from '@/assets/feta-cheese.png';
 
 export interface QuizItem {
   id: string;
@@ -471,7 +472,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-6',
-    optionA: { name: 'Feta Cheese', image: 'https://images.unsplash.com/photo-1626957341926-98752fc2ba90?w=600&h=600&fit=crop' },
+    optionA: { name: 'Feta Cheese', image: fetaCheeseImg },
     optionB: { name: 'Ricotta', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 1,
