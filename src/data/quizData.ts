@@ -244,9 +244,9 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-8',
     optionA: { name: 'Greek Yogurt', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
-    optionB: { name: 'Vanilla Pudding', image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Yogurt', image: 'https://images.unsplash.com/photo-1562059390-a761a084768e?w=600&h=600&fit=crop' },
     intensityA: 5,
-    intensityB: 1,
+    intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
