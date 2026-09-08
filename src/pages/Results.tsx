@@ -64,13 +64,14 @@ const Results = () => {
   const hasResults = completedQuizzes.length > 0;
 
   // Build UX scores (0-10 scale) for display
+  // Only completed quiz categories show their actual score; uncompleted categories are fixed at 0
   const uxScores: Record<string, number> = {
-    sweet: savedScores.sweet ?? 5,
-    sour: savedScores.sour ?? 5,
-    rich: savedScores.rich ?? 5,
-    bitter: savedScores.bitter ?? 5,
-    salty: savedScores.salty ?? 5,
-    spicy: savedScores.spicy ?? 5,
+    sweet: completedQuizzes.includes('sweet') ? (savedScores.sweet ?? 5) : 0,
+    sour: completedQuizzes.includes('sour') ? (savedScores.sour ?? 5) : 0,
+    rich: completedQuizzes.includes('rich') ? (savedScores.rich ?? 5) : 0,
+    bitter: completedQuizzes.includes('bitter') ? (savedScores.bitter ?? 5) : 0,
+    salty: completedQuizzes.includes('salty') ? (savedScores.salty ?? 5) : 0,
+    spicy: completedQuizzes.includes('spicy') ? (savedScores.spicy ?? 5) : 0,
   };
 
   // Build 7D internal vector (0-100 scale) for character matching

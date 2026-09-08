@@ -1,6 +1,6 @@
 import prosciuttoImg from '@/assets/prosciutto.png';
 import mozzarellaImg from '@/assets/mozzarella.png';
-import caramelImg from '@/assets/caramel-candy.png';
+import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
 import fetaCheeseImg from '@/assets/feta-cheese.png';
 
@@ -261,7 +261,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-10',
     optionA: { name: 'Lemon Candy', image: lemonCandyImg },
-    optionB: { name: 'Caramel Candy', image: caramelImg },
+    optionB: { name: 'Caramel', image: caramelImg },
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
