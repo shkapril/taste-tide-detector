@@ -922,6 +922,22 @@ export const umamiItems: QuizItem[] = [
     intensityB: 4,
     dietary: ['all-good'],
   },
+  {
+    id: 'umami-22',
+    optionA: { name: 'Pollock Roe (Mentaiko)', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-23',
+    optionA: { name: 'Anchovy', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionB: { name: 'Olive', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
