@@ -160,6 +160,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'spicy tuna roll': ['tuna', 'fish_generic', 'chili_pepper'],
   'grilled fish': ['fish_generic'],
   'anchovies': ['anchovy', 'fish_generic'],
+  'anchovy': ['anchovy', 'fish_generic'],
   'california roll': ['crab'],
 
   // Pasta / bread / sauces (incl. tomato/garlic ingredients)
@@ -171,6 +172,11 @@ export const foodIngredientMap: Record<string, string[]> = {
   'anchovy pasta': ['anchovy', 'fish_generic', 'garlic', 'olive'],
   'mushroom cream pasta': ['mushroom', 'garlic'],
   'classic carbonara with pork': ['pork', 'bacon'],
+
+  // Pollock roe / mentaiko
+  'pollock roe': ['pollock_roe'],
+  'mentaiko': ['pollock_roe'],
+  'mentaiko pasta': ['pollock_roe', 'fish_generic'],
 
   // Eggs benedict & misc
   'eggs benedict (creamy hollandaise sauce)': ['lemon'],
