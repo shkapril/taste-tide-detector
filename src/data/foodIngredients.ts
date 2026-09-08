@@ -75,6 +75,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'salmon', label: 'Salmon', category: 'fish' },
   { slug: 'tuna', label: 'Tuna', category: 'fish' },
   { slug: 'anchovy', label: 'Anchovy', category: 'fish' },
+  { slug: 'dashi', label: 'Dashi', category: 'fish' },
   { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish' },
 
   // SEAFOOD
