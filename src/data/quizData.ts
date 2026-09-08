@@ -906,6 +906,22 @@ export const umamiItems: QuizItem[] = [
     intensityB: 4,
     dietary: ['pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-20',
+    optionA: { name: 'Mushroom Cream Pasta', image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop' },
+    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 4,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-21',
+    optionA: { name: 'Classic Carbonara with Pork', image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=600&fit=crop' },
+    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 4,
+    dietary: ['all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
