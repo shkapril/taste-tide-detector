@@ -76,6 +76,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'tuna', label: 'Tuna', category: 'fish' },
   { slug: 'anchovy', label: 'Anchovy', category: 'fish' },
   { slug: 'dashi', label: 'Dashi', category: 'fish' },
+  { slug: 'katsuobushi', label: 'Katsuobushi', category: 'fish' },
   { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish' },
 
   // SEAFOOD
@@ -183,6 +184,7 @@ export const foodIngredientMap: Record<string, string[]> = {
 
   // Umami additions
   'dashi': ['dashi', 'fish_generic'],
+  'katsuobushi': ['katsuobushi', 'fish_generic'],
   'natto': ['natto'],
   'porcini mushrooms': ['porcini', 'mushroom'],
   'truffle oil': ['truffle', 'olive'],
