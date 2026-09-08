@@ -84,6 +84,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'lobster', label: 'Lobster', category: 'seafood' },
   { slug: 'octopus', label: 'Octopus', category: 'seafood' },
   { slug: 'squid', label: 'Squid', category: 'seafood' },
+  { slug: 'pollock_roe', label: 'Pollock Roe (Mentaiko)', category: 'seafood' },
 ];
 
 // ── Per-food ingredient breakdown (lowercase food name → slug list) ──
