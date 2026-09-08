@@ -75,6 +75,8 @@ const Results = () => {
     umami: completedQuizzes.includes('umami') ? (savedScores.umami ?? 5) : 0,
   };
 
+  const allCompleted = completedQuizzes.length >= 7;
+
   // Build 7D internal vector (0-100 scale) for character matching
   const internalMean: TasteVector7 = {
     sweet: (uxScores.sweet) * 10,
