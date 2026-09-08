@@ -177,7 +177,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'porcini mushrooms': ['porcini', 'mushroom'],
   'truffle oil': ['truffle', 'olive'],
   'shiitake miso': ['shiitake', 'mushroom'],
-  'plain miso': ['miso'],
+  'plain miso': [],
   'shiitake mushrooms': ['shiitake', 'mushroom'],
   'button mushrooms': ['mushroom'],
 };
