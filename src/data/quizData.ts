@@ -890,6 +890,14 @@ export const umamiItems: QuizItem[] = [
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-18',
+    optionA: { name: 'Sun-dried Tomato', image: 'https://images.unsplash.com/photo-1592187270271-9a4e6e4e0e2a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Tomato', image: 'https://images.unsplash.com/photo-1592924357228-91a030470d0c?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 3,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
