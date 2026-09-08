@@ -898,6 +898,14 @@ export const umamiItems: QuizItem[] = [
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-19',
+    optionA: { name: 'Anchovy Pasta', image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=600&fit=crop' },
+    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 4,
+    dietary: ['pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
