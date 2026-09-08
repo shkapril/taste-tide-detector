@@ -75,6 +75,8 @@ const Results = () => {
     umami: completedQuizzes.includes('umami') ? (savedScores.umami ?? 5) : 0,
   };
 
+  const allCompleted = completedQuizzes.length >= 7;
+
   // Build 7D internal vector (0-100 scale) for character matching
   const internalMean: TasteVector7 = {
     sweet: (uxScores.sweet) * 10,
@@ -202,10 +204,10 @@ const Results = () => {
               transition={{ delay: 0.4 }}
             >
               <h2 className="text-lg font-display font-semibold text-center text-foreground mb-6">
-                Your Taste Spectrum
+                {allCompleted ? 'Your Taste Spectrum' : 'Your Partial Taste Results'}
               </h2>
-              <HexRadarChart scores={uxScores} />
-              <div className="mt-8">
+              {allCompleted && <HexRadarChart scores={uxScores} />}
+              <div className={allCompleted ? 'mt-8' : ''}>
                 <ResultsChart scores={uxScores} />
               </div>
             </motion.div>
