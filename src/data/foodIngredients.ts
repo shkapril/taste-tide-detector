@@ -167,6 +167,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'alfredo pasta': ['garlic'],
   'garlic butter bread': ['garlic'],
   'pad thai': ['onion', 'garlic'],
+  'anchovy pasta': ['anchovy', 'fish_generic', 'garlic', 'olive'],
 
   // Eggs benedict & misc
   'eggs benedict (creamy hollandaise sauce)': ['lemon'],
