@@ -170,6 +170,16 @@ export const foodIngredientMap: Record<string, string[]> = {
 
   // Eggs benedict & misc
   'eggs benedict (creamy hollandaise sauce)': ['lemon'],
+
+  // Umami additions
+  'dashi': ['dashi', 'fish_generic'],
+  'natto': ['natto'],
+  'porcini mushrooms': ['porcini', 'mushroom'],
+  'truffle oil': ['truffle', 'olive'],
+  'shiitake miso': ['shiitake', 'mushroom'],
+  'plain miso': ['miso'],
+  'shiitake mushrooms': ['shiitake', 'mushroom'],
+  'button mushrooms': ['mushroom'],
 };
 
 // Lower-cased lookup helper
