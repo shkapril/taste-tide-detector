@@ -22,24 +22,25 @@ const HexRadarChart = ({ scores, size = 320 }: HexRadarChartProps) => {
   const radius = size * 0.32;
   const labelRadius = radius + 28;
   const rings = 4;
+  const axisCount = axes.length;
 
   // angle: start at top, go clockwise
-  const angleFor = (i: number) => (Math.PI * 2 * i) / 6 - Math.PI / 2;
+  const angleFor = (i: number) => (Math.PI * 2 * i) / axisCount - Math.PI / 2;
 
   const pointAt = (i: number, r: number) => {
     const a = angleFor(i);
     return [cx + Math.cos(a) * r, cy + Math.sin(a) * r] as const;
   };
 
-  // Grid hexagons
+  // Grid polygons
   const ringPaths = Array.from({ length: rings }, (_, ri) => {
     const r = (radius * (ri + 1)) / rings;
-    const pts = Array.from({ length: 6 }, (_, i) => pointAt(i, r));
+    const pts = Array.from({ length: axisCount }, (_, i) => pointAt(i, r));
     return pts.map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(' ');
   });
 
   // Spokes
-  const spokes = Array.from({ length: 6 }, (_, i) => pointAt(i, radius));
+  const spokes = Array.from({ length: axisCount }, (_, i) => pointAt(i, radius));
 
   // Data polygon
   const dataPts = axes.map((ax, i) => {
