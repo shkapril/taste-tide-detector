@@ -850,6 +850,46 @@ export const umamiItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['all-good'],
   },
+  {
+    id: 'umami-13',
+    optionA: { name: 'Dashi', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Vegetable Broth', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-14',
+    optionA: { name: 'Natto', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-15',
+    optionA: { name: 'Porcini Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    optionB: { name: 'Button Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 3,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-16',
+    optionA: { name: 'Truffle Oil', image: 'https://images.unsplash.com/photo-1604329760661-e71e83bb5f6e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Olive Oil', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-17',
+    optionA: { name: 'Shiitake Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 4,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {

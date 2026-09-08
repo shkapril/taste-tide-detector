@@ -50,6 +50,10 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'radicchio', label: 'Radicchio', category: 'vegetables' },
   { slug: 'cucumber', label: 'Cucumber', category: 'vegetables' },
   { slug: 'mushroom', label: 'Mushroom', category: 'vegetables' },
+  { slug: 'shiitake', label: 'Shiitake', category: 'vegetables' },
+  { slug: 'porcini', label: 'Porcini', category: 'vegetables' },
+  { slug: 'truffle', label: 'Truffle', category: 'vegetables' },
+  { slug: 'natto', label: 'Natto', category: 'vegetables' },
   { slug: 'brussels_sprouts', label: 'Brussels Sprouts', category: 'vegetables' },
   { slug: 'jalapeno', label: 'Jalapeño', category: 'vegetables' },
   { slug: 'bell_pepper', label: 'Bell Pepper', category: 'vegetables' },
@@ -71,6 +75,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'salmon', label: 'Salmon', category: 'fish' },
   { slug: 'tuna', label: 'Tuna', category: 'fish' },
   { slug: 'anchovy', label: 'Anchovy', category: 'fish' },
+  { slug: 'dashi', label: 'Dashi', category: 'fish' },
   { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish' },
 
   // SEAFOOD
@@ -165,6 +170,16 @@ export const foodIngredientMap: Record<string, string[]> = {
 
   // Eggs benedict & misc
   'eggs benedict (creamy hollandaise sauce)': ['lemon'],
+
+  // Umami additions
+  'dashi': ['dashi', 'fish_generic'],
+  'natto': ['natto'],
+  'porcini mushrooms': ['porcini', 'mushroom'],
+  'truffle oil': ['truffle', 'olive'],
+  'shiitake miso': ['shiitake', 'mushroom'],
+  'plain miso': [],
+  'shiitake mushrooms': ['shiitake', 'mushroom'],
+  'button mushrooms': ['mushroom'],
 };
 
 // Lower-cased lookup helper
