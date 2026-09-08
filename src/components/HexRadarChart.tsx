@@ -13,6 +13,7 @@ const axes: { key: string; label: string }[] = [
   { key: 'bitter', label: 'bitterness' },
   { key: 'sour', label: 'sourness' },
   { key: 'spicy', label: 'spiciness' },
+  { key: 'umami', label: 'umami' },
 ];
 
 const HexRadarChart = ({ scores, size = 320 }: HexRadarChartProps) => {

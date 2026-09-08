@@ -25,7 +25,7 @@ export interface QuizItem {
   isBranchQuestion?: boolean; // If true, this question is only shown via branching
 }
 
-export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
+export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
 
 // Sweet comparisons (comparing sweetness preferences)
 // Key items overlap across questions to help users calibrate their preferences
