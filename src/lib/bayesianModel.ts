@@ -191,7 +191,7 @@ export function selectNextPair(
   return selectRefinementPair(state, available);
 }
 
-/** Convert 7D internal vector (0-100) to 6D UX scores (0-10 scale) for display */
+/** Convert 7D internal vector (0-100) to 7D UX scores (0-10 scale) for display */
 export function toUXScores(mean: TasteVector7): Record<string, number> {
   return {
     sweet: mean.sweet / 10,
@@ -200,5 +200,6 @@ export function toUXScores(mean: TasteVector7): Record<string, number> {
     bitter: mean.bitter / 10,
     salty: mean.salty / 10,
     spicy: mean.spicy / 10,
+    umami: mean.umami / 10,
   };
 }

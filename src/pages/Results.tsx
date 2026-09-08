@@ -72,6 +72,7 @@ const Results = () => {
     bitter: completedQuizzes.includes('bitter') ? (savedScores.bitter ?? 5) : 0,
     salty: completedQuizzes.includes('salty') ? (savedScores.salty ?? 5) : 0,
     spicy: completedQuizzes.includes('spicy') ? (savedScores.spicy ?? 5) : 0,
+    umami: completedQuizzes.includes('umami') ? (savedScores.umami ?? 5) : 0,
   };
 
   // Build 7D internal vector (0-100 scale) for character matching
@@ -82,7 +83,7 @@ const Results = () => {
     bitter: (uxScores.bitter) * 10,
     salty: (uxScores.salty) * 10,
     spicy: (uxScores.spicy) * 10,
-    umami: ((uxScores.rich + uxScores.salty) / 2) * 10,
+    umami: (uxScores.umami) * 10,
   };
 
   const character = getCharacter(internalMean);

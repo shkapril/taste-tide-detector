@@ -25,7 +25,7 @@ export interface QuizItem {
   isBranchQuestion?: boolean; // If true, this question is only shown via branching
 }
 
-export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy';
+export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
 
 // Sweet comparisons (comparing sweetness preferences)
 // Key items overlap across questions to help users calibrate their preferences
@@ -752,6 +752,106 @@ export const spicyItems: QuizItem[] = [
   },
 ];
 
+// Umami comparisons (savory depth)
+export const umamiItems: QuizItem[] = [
+  {
+    id: 'umami-1',
+    optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Clear Broth', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-2',
+    optionA: { name: 'Parmesan Cheese', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mozzarella', image: mozzarellaImg },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-3',
+    optionA: { name: 'Anchovies', image: 'https://images.unsplash.com/photo-1599084993091-6c4fd023714a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Grilled White Fish', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-4',
+    optionA: { name: 'Soy Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionB: { name: 'Rice Vinegar', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
+    intensityA: 10,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-5',
+    optionA: { name: 'Shiitake Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    optionB: { name: 'Button Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 3,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-6',
+    optionA: { name: 'Sun-dried Tomatoes', image: 'https://images.unsplash.com/photo-1592187270271-9a4e6e4e0e2a?w=600&h=600&fit=crop' },
+    optionB: { name: 'Fresh Tomatoes', image: 'https://images.unsplash.com/photo-1592924357228-91a030470d0c?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-7',
+    optionA: { name: 'Seaweed Snacks', image: 'https://images.unsplash.com/photo-1590759485510-0a1d02fcd0c6?w=600&h=600&fit=crop' },
+    optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-8',
+    optionA: { name: 'Bacon', image: 'https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?w=600&h=600&fit=crop' },
+    optionB: { name: 'Turkey Breast', image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 2,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'umami-9',
+    optionA: { name: 'Aged Cheddar', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionB: { name: 'Cream Cheese', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 2,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-10',
+    optionA: { name: 'Fish Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionB: { name: 'Lime Juice', image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-11',
+    optionA: { name: 'Marmite', image: 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=600&h=600&fit=crop' },
+    optionB: { name: 'Honey', image: '/images/honey.png' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-12',
+    optionA: { name: 'Beef Stew', image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop' },
+    optionB: { name: 'Steamed Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 1,
+    dietary: ['all-good'],
+  },
+];
+
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
   sweet: sweetItems,
   sour: sourItems,
@@ -759,6 +859,7 @@ export const quizDataMap: Record<QuizType, QuizItem[]> = {
   salty: saltyItems,
   rich: richItems,
   spicy: spicyItems,
+  umami: umamiItems,
 };
 
 export const quizLabels: Record<QuizType, { label: string; lowLabel: string; highLabel: string }> = {
@@ -768,6 +869,7 @@ export const quizLabels: Record<QuizType, { label: string; lowLabel: string; hig
   salty: { label: 'Salty', lowLabel: 'Light', highLabel: 'Savory' },
   rich: { label: 'Rich & Buttery', lowLabel: 'Light', highLabel: 'Decadent' },
   spicy: { label: 'Spicy', lowLabel: 'Mild', highLabel: 'Fire' },
+  umami: { label: 'Umami', lowLabel: 'Subtle', highLabel: 'Savory Depth' },
 };
 
 export interface TasteProfile {

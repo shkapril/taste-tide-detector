@@ -12,6 +12,7 @@ const dimensionConfig: { key: string; label: string; emoji: string; color: strin
   { key: 'bitter', label: 'Bitter', emoji: '☕', color: 'bg-stone-500' },
   { key: 'salty', label: 'Salty', emoji: '🧂', color: 'bg-blue-400' },
   { key: 'spicy', label: 'Spicy', emoji: '🌶️', color: 'bg-red-500' },
+  { key: 'umami', label: 'Umami', emoji: '🥫', color: 'bg-amber-700' },
 ];
 
 const ResultsChart = ({ scores }: ResultsChartProps) => {

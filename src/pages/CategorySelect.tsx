@@ -19,6 +19,7 @@ const categories: { type: QuizType; label: string; emoji: string; color: string 
   { type: 'bitter', label: 'Bitter', emoji: '☕', color: 'bg-stone-500/15 border-stone-500/30' },
   { type: 'salty', label: 'Salty', emoji: '🧂', color: 'bg-blue-500/15 border-blue-500/30' },
   { type: 'spicy', label: 'Spicy', emoji: '🌶️', color: 'bg-red-500/15 border-red-500/30' },
+  { type: 'umami', label: 'Umami', emoji: '🥫', color: 'bg-amber-700/15 border-amber-700/30' },
 ];
 
 const QUESTIONS_PER_QUIZ = 8;
@@ -38,7 +39,7 @@ const CategorySelect = () => {
     setCompletedQuizzes(saved);
   }, []);
 
-  const allCompleted = completedQuizzes.length >= 6;
+  const allCompleted = completedQuizzes.length >= 7;
 
   const handleSelectCategory = (type: QuizType) => {
     navigate('/quiz', {
@@ -62,18 +63,18 @@ const CategorySelect = () => {
           </h1>
         </div>
         <p className="text-muted-foreground text-sm">
-          Complete all 6 taste quizzes to discover your Taste DNA
+          Complete all 7 taste quizzes to discover your Taste DNA
         </p>
         <div className="mt-3 flex items-center gap-2">
           <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-primary rounded-full"
-              animate={{ width: `${(completedQuizzes.length / 6) * 100}%` }}
+              animate={{ width: `${(completedQuizzes.length / 7) * 100}%` }}
               transition={{ duration: 0.5 }}
             />
           </div>
           <span className="text-xs font-medium text-muted-foreground">
-            {completedQuizzes.length}/6
+            {completedQuizzes.length}/7
           </span>
         </div>
       </header>

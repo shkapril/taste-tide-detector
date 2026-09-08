@@ -71,7 +71,7 @@ const CategoryResult = () => {
   const labels = quizLabels[quizType];
   const profile = getTasteProfile(score, quizType);
   const completed = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');
-  const allDone = completed.length >= 6;
+  const allDone = completed.length >= 7;
 
   return (
     <AnimatePresence mode="wait">
@@ -146,7 +146,7 @@ const CategoryResult = () => {
             >
               {allDone
                 ? 'All quizzes complete! View your full Taste DNA.'
-                : `${completed.length} of 6 categories complete`}
+                : `${completed.length} of 7 categories complete`}
             </motion.p>
           </div>
 
