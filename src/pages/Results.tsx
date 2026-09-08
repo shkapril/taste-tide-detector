@@ -153,8 +153,8 @@ const Results = () => {
           </header>
 
           <div className="flex-1 px-6 py-4">
-            {/* Character Card */}
-            {character && (
+            {/* Character Card — only shown when all categories are complete */}
+            {allCompleted && character && (
               <motion.div
                 className="rounded-2xl overflow-hidden card-shadow mb-8"
                 initial={{ opacity: 0, y: 30 }}
