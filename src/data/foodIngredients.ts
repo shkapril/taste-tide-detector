@@ -190,6 +190,8 @@ export const foodIngredientMap: Record<string, string[]> = {
   'katsuobushi': ['katsuobushi', 'fish_generic'],
   'butter': ['butter'],
   'garlic butter': ['butter', 'garlic'],
+  'seaweed butter': ['butter', 'seaweed'],
+  'truffle butter': ['butter', 'truffle'],
   'natto': ['natto'],
   'porcini mushrooms': ['porcini', 'mushroom'],
   'truffle oil': ['truffle', 'olive'],
