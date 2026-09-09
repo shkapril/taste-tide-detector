@@ -64,6 +64,7 @@ export const ingredientCatalog: Ingredient[] = [
 
   // DAIRY
   { slug: 'butter', label: 'Butter', category: 'dairy' },
+  { slug: 'egg', label: 'Egg', category: 'dairy' },
 
   // MEAT
   { slug: 'chicken', label: 'Chicken', category: 'meat' },
@@ -183,7 +184,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'mentaiko pasta': ['pollock_roe', 'fish_generic'],
 
   // Eggs benedict & misc
-  'eggs benedict (creamy hollandaise sauce)': ['lemon'],
+  'eggs benedict (creamy hollandaise sauce)': ['lemon', 'butter', 'egg'],
 
   // Umami additions
   'dashi': ['dashi', 'fish_generic'],
