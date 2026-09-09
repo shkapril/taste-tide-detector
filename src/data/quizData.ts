@@ -946,6 +946,14 @@ export const umamiItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-25',
+    optionA: { name: 'Garlic Butter', image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&h=600&fit=crop' },
+    optionB: { name: 'Butter', image: 'https://images.unsplash.com/photo-1628088062854-d187c5a5b122?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 4,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
