@@ -9,7 +9,7 @@
  * user is allergic to (e.g. apple allergy → hide every food with apple).
  */
 
-export type IngredientCategory = 'vegetables' | 'fruits' | 'meat' | 'fish' | 'seafood';
+export type IngredientCategory = 'vegetables' | 'fruits' | 'meat' | 'fish' | 'seafood' | 'dairy';
 
 export interface Ingredient {
   slug: string;
@@ -61,6 +61,9 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'olive', label: 'Olive', category: 'vegetables' },
   { slug: 'ginger', label: 'Ginger', category: 'vegetables' },
   { slug: 'seaweed', label: 'Seaweed', category: 'vegetables' },
+
+  // DAIRY
+  { slug: 'butter', label: 'Butter', category: 'dairy' },
 
   // MEAT
   { slug: 'chicken', label: 'Chicken', category: 'meat' },
@@ -185,6 +188,8 @@ export const foodIngredientMap: Record<string, string[]> = {
   // Umami additions
   'dashi': ['dashi', 'fish_generic'],
   'katsuobushi': ['katsuobushi', 'fish_generic'],
+  'butter': ['butter'],
+  'garlic butter': ['butter', 'garlic'],
   'natto': ['natto'],
   'porcini mushrooms': ['porcini', 'mushroom'],
   'truffle oil': ['truffle', 'olive'],

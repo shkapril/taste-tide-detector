@@ -9,6 +9,7 @@ interface IngredientPickerProps {
 }
 
 const categoryLabel: Record<IngredientCategory, string> = {
+  dairy: '🥛 Dairy',
   fruits: '🍎 Fruits',
   vegetables: '🥬 Vegetables',
   meat: '🥩 Meat & Poultry',
@@ -16,7 +17,7 @@ const categoryLabel: Record<IngredientCategory, string> = {
   seafood: '🦐 Seafood',
 };
 
-const categoryOrder: IngredientCategory[] = ['fish', 'fruits', 'meat', 'seafood', 'vegetables'];
+const categoryOrder: IngredientCategory[] = ['dairy', 'fish', 'fruits', 'meat', 'seafood', 'vegetables'];
 
 const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   const [query, setQuery] = useState('');
