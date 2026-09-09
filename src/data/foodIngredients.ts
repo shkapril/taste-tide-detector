@@ -64,6 +64,7 @@ export const ingredientCatalog: Ingredient[] = [
 
   // DAIRY
   { slug: 'butter', label: 'Butter', category: 'dairy' },
+  { slug: 'egg', label: 'Egg', category: 'dairy' },
 
   // MEAT
   { slug: 'chicken', label: 'Chicken', category: 'meat' },
