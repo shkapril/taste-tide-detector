@@ -26,7 +26,7 @@ export const tasteCharacters: TasteCharacter[] = [
     emoji: '🇮🇳',
     image: indiaImg,
     description: 'Bold spice meets deep richness — your palate craves fiery, indulgent flavors.',
-    idealScores: { sweet: 30, sour: 10, rich: 70, bitter: 10, salty: 40, spicy: 90, umami: 80 },
+    idealScores: { sweet: 30, sour: 30, rich: 70, bitter: 10, salty: 40, spicy: 90, umami: 50 },
   },
   {
     name: 'Korea',
@@ -58,7 +58,7 @@ export const tasteCharacters: TasteCharacter[] = [
     emoji: '🇯🇵',
     image: japanImg,
     description: 'Delicate sweetness, masterful umami, and subtle balance — refined and precise.',
-    idealScores: { sweet: 50, sour: 20, rich: 40, bitter: 10, salty: 30, spicy: 10, umami: 90 },
+    idealScores: { sweet: 50, sour: 20, rich: 40, bitter: 10, salty: 50, spicy: 10, umami: 90 },
   },
   {
     name: 'United States',
@@ -115,17 +115,11 @@ export const tasteCharacters: TasteCharacter[] = [
     idealScores: { sweet: 30, sour: 20, rich: 60, bitter: 20, salty: 40, spicy: 0, umami: 50 },
   },
   {
-    name: 'Peru',
-    emoji: '🇵🇪',
-    description: 'Bright, tangy, and slightly bitter — citrus-forward and refreshing.',
-    idealScores: { sweet: 30, sour: 60, rich: 40, bitter: 20, salty: 30, spicy: 10, umami: 50 },
-  },
-  {
     name: 'China',
     emoji: '🇨🇳',
     image: chinaImg,
     description: 'Deep umami, balanced richness, and a touch of everything — harmonious complexity.',
-    idealScores: { sweet: 30, sour: 30, rich: 70, bitter: 10, salty: 40, spicy: 30, umami: 80 },
+    idealScores: { sweet: 30, sour: 30, rich: 70, bitter: 10, salty: 40, spicy: 50, umami: 80 },
   },
   {
     name: 'Belgium',
