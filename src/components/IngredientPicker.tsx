@@ -80,23 +80,46 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
         )}
       </div>
 
+      {/* Add your own ingredient */}
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={custom}
+          onChange={e => setCustom(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              handleAddCustom();
+            }
+          }}
+          placeholder="Not on the list? Type it here…"
+          maxLength={40}
+          className="flex-1 h-11 px-4 rounded-full bg-card chic-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+        />
+        <button
+          type="button"
+          onClick={handleAddCustom}
+          disabled={!canAddCustom}
+          className="h-11 px-4 rounded-full bg-primary text-primary-foreground text-sm font-medium inline-flex items-center gap-1 disabled:opacity-40 transition-opacity"
+        >
+          <Plus className="w-4 h-4" />
+          Add
+        </button>
+      </div>
+
       {/* Selected pills */}
       {selected.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          {selected.map(slug => {
-            const ing = ingredientCatalog.find(i => i.slug === slug);
-            if (!ing) return null;
-            return (
-              <button
-                key={slug}
-                onClick={() => onToggle(slug)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-destructive/10 border border-destructive/40 text-xs font-medium text-destructive"
-              >
-                {ing.label}
-                <X className="w-3 h-3" />
-              </button>
-            );
-          })}
+          {selected.map(slug => (
+            <button
+              key={slug}
+              onClick={() => onToggle(slug)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-destructive/10 border border-destructive/40 text-xs font-medium text-destructive"
+            >
+              {ingredientLabel(slug)}
+              <X className="w-3 h-3" />
+            </button>
+          ))}
         </div>
       )}
 
