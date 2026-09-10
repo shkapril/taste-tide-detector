@@ -3,15 +3,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, EatingStyle } from '@/data/allergens';
 import IngredientPicker from '@/components/IngredientPicker';
-import halalLogo from '@/assets/halal-logo.png';
 
 const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
   { value: 'all-good', label: 'All Good', emoji: '😋' },
   { value: 'vegetarian', label: 'Vegetarian', emoji: '🥬' },
   { value: 'vegan', label: 'Vegan', emoji: '🌱' },
   { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
-  { value: 'halal', label: 'Halal', emoji: '' },
-  { value: 'kosher', label: 'Kosher', emoji: '✡️' },
 ];
 
 interface AllergySelectionProps {
@@ -78,11 +75,7 @@ const AllergySelection = ({ selectedAllergies, selectedEatingStyles, selectedIng
                     : 'bg-card chic-border hover:bg-secondary/50 text-foreground'
                 }`}
               >
-                {style.value === 'halal' ? (
-                  <img src={halalLogo} alt="Halal" className="w-4 h-4 inline-block" />
-                ) : (
-                  style.emoji
-                )}{' '}{style.label}
+                {style.emoji}{' '}{style.label}
               </motion.button>
             );
           })}

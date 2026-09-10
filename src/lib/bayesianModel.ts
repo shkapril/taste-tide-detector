@@ -70,10 +70,6 @@ function isDietaryCompatible(food: FoodItem, styles: EatingStyle[]): boolean {
     if (s === 'vegan' && food.dietary !== 'vegan') return false;
     if (s === 'vegetarian' && food.dietary === 'all') return false;
     if (s === 'pescatarian' && food.dietary === 'all') return false;
-    // halal/kosher: skip meat items that are flagged
-    if (s === 'halal' || s === 'kosher') {
-      if (food.dietary === 'all') return false; // rough filter for meat items
-    }
   }
   return true;
 }
