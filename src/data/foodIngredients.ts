@@ -216,7 +216,30 @@ export function foodContainsBlockedIngredient(
 ): boolean {
   if (blocked.length === 0) return false;
   const ingredients = getFoodIngredients(foodName);
-  if (ingredients.length === 0) return false;
   const blockedSet = new Set(blocked);
-  return ingredients.some(i => blockedSet.has(i));
+  if (ingredients.length > 0 && ingredients.some(i => blockedSet.has(i))) return true;
+
+  // Custom (user-typed) ingredients are not in the catalog: fall back to
+  // matching the typed word against the food name itself.
+  const catalogSlugs = new Set(ingredientCatalog.map(i => i.slug));
+  const lowerName = foodName.toLowerCase();
+  return blocked.some(slug => {
+    if (catalogSlugs.has(slug)) return false;
+    const term = slug.replace(/_/g, ' ').trim();
+    return term.length > 1 && lowerName.includes(term);
+  });
+}
+
+/** Turns free text into a stable slug for a custom ingredient. */
+export function toIngredientSlug(text: string): string {
+  return text.trim().toLowerCase().replace(/\s+/g, '_');
+}
+
+/** Human-readable label for any slug, catalog or custom. */
+export function ingredientLabel(slug: string): string {
+  const found = ingredientCatalog.find(i => i.slug === slug);
+  if (found) return found.label;
+  return slug
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
 }
