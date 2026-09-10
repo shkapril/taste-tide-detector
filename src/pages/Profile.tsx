@@ -231,6 +231,17 @@ const Profile = () => {
               <Share2 className="w-5 h-5 mr-2" />
               Share My Taste DNA
             </Button>
+
+            <Button
+              onClick={() => setInfoOpen(true)}
+              size="lg"
+              variant="outline"
+              className="w-full h-14 mt-3 text-base font-medium tracking-wide rounded-full"
+              disabled={!hasResults}
+            >
+              <BarChart3 className="w-5 h-5 mr-2" />
+              More Information
+            </Button>
             {!hasResults && (
               <p className="text-xs text-muted-foreground text-center mt-3">
                 Complete the quiz to share your profile
