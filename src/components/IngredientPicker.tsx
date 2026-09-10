@@ -1,7 +1,12 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X } from 'lucide-react';
-import { ingredientCatalog, IngredientCategory } from '@/data/foodIngredients';
+import { Plus, Search, X } from 'lucide-react';
+import {
+  ingredientCatalog,
+  IngredientCategory,
+  ingredientLabel,
+  toIngredientSlug,
+} from '@/data/foodIngredients';
 
 interface IngredientPickerProps {
   selected: string[];
