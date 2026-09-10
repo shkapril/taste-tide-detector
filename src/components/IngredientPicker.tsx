@@ -45,6 +45,17 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
 
   const selectedSet = new Set(selected);
 
+  const [custom, setCustom] = useState('');
+  const customSlug = toIngredientSlug(custom);
+  const canAddCustom =
+    customSlug.length > 1 && !selectedSet.has(customSlug);
+
+  const handleAddCustom = () => {
+    if (!canAddCustom) return;
+    onToggle(customSlug);
+    setCustom('');
+  };
+
   return (
     <div className="space-y-4">
       {/* Search bar */}
