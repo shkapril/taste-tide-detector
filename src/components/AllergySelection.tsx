@@ -75,11 +75,7 @@ const AllergySelection = ({ selectedAllergies, selectedEatingStyles, selectedIng
                     : 'bg-card chic-border hover:bg-secondary/50 text-foreground'
                 }`}
               >
-                {style.value === 'halal' ? (
-                  <img src={halalLogo} alt="Halal" className="w-4 h-4 inline-block" />
-                ) : (
-                  style.emoji
-                )}{' '}{style.label}
+                {style.emoji}{' '}{style.label}
               </motion.button>
             );
           })}
