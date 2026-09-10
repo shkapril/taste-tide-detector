@@ -3,15 +3,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Allergen, EatingStyle } from '@/data/allergens';
 import IngredientPicker from '@/components/IngredientPicker';
-import halalLogo from '@/assets/halal-logo.png';
 
 const eatingStyles: { value: EatingStyle; label: string; emoji: string }[] = [
   { value: 'all-good', label: 'All Good', emoji: '😋' },
   { value: 'vegetarian', label: 'Vegetarian', emoji: '🥬' },
   { value: 'vegan', label: 'Vegan', emoji: '🌱' },
   { value: 'pescatarian', label: 'Pescatarian', emoji: '🐟' },
-  { value: 'halal', label: 'Halal', emoji: '' },
-  { value: 'kosher', label: 'Kosher', emoji: '✡️' },
 ];
 
 interface AllergySelectionProps {

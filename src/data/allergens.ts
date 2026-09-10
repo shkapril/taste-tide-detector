@@ -1,4 +1,4 @@
-export type EatingStyle = 'all-good' | 'vegetarian' | 'vegan' | 'pescatarian' | 'halal' | 'kosher';
+export type EatingStyle = 'all-good' | 'vegetarian' | 'vegan' | 'pescatarian';
 
 export type Allergen = 
   | 'dairy' 
@@ -142,37 +142,9 @@ export function getFoodAllergens(foodName: string): Allergen[] {
   return allergenMap[foodName.toLowerCase()] || [];
 }
 
-// Foods that are NOT halal (pork products, alcohol)
-const nonHalalFoods = new Set([
-  'bacon', 'prosciutto', 'carbonara',
-  'ipa beer', 'lager beer',
-  'tonkotsu ramen',
-]);
-
-// Foods that are NOT kosher (pork, shellfish, meat+dairy combos)
-const nonKosherFoods = new Set([
-  'bacon', 'prosciutto', 'carbonara',
-  'california roll',          // imitation crab / shellfish
-  'butter chicken',           // meat + dairy
-  'tonkotsu ramen',           // pork broth
-  'vindaloo',                 // traditionally pork in Goan cuisine
-  'korma',                    // meat + dairy (cream)
-]);
-
-/**
- * Check if a food name conflicts with the given eating style.
- */
-function foodConflictsWithStyle(foodName: string, style: EatingStyle): boolean {
-  const lower = foodName.toLowerCase();
-  if (style === 'halal') return nonHalalFoods.has(lower);
-  if (style === 'kosher') return nonKosherFoods.has(lower);
-  return false;
-}
-
 /**
  * Check if a quiz item should be filtered out based on user's eating style.
  * For vegetarian/vegan/pescatarian: uses the dietary tag on the item.
- * For halal/kosher: uses dietary tag + name-based exclusion lists.
  */
 export function shouldFilterByDiet(
   itemDietary: string[],
@@ -185,18 +157,8 @@ export function shouldFilterByDiet(
   for (const style of eatingStyles) {
     if (style === 'all-good') continue;
 
-    if (style === 'halal' || style === 'kosher') {
-      // First check dietary tags (veg/vegan items are always halal/kosher)
-      const hasCompatibleBase = itemDietary.includes('vegan') || itemDietary.includes('vegetarian') || itemDietary.includes('pescatarian');
-      if (!hasCompatibleBase && !itemDietary.includes('all-good')) return true;
-      // Then check name-based exclusions for meat items
-      if (foodConflictsWithStyle(optionAName, style) || foodConflictsWithStyle(optionBName, style)) {
-        return true;
-      }
-    } else {
-      // vegetarian, vegan, pescatarian: use dietary tag
-      if (!itemDietary.includes(style)) return true;
-    }
+    // vegetarian, vegan, pescatarian: use dietary tag
+    if (!itemDietary.includes(style)) return true;
   }
 
   return false;
