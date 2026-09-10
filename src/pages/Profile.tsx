@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Share2, Link as LinkIcon, Download, MessageCircle, Check } from 'lucide-react';
+import { ArrowLeft, Share2, Link as LinkIcon, Download, MessageCircle, Check, BarChart3 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from '@/hooks/use-toast';
 import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';
+import TasteComparison from '@/components/TasteComparison';
 import { getCharacter } from '@/data/tasteCharacters';
 import chefImage from '@/assets/chef.png';
 import type { TasteVector7 } from '@/data/foodDataset';
@@ -30,6 +31,7 @@ const Profile = () => {
   const hasResults = !!uxScores;
 
   const [shareOpen, setShareOpen] = useState(false);
+  const [infoOpen, setInfoOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareCardRef = useRef<HTMLDivElement>(null);
 
@@ -229,6 +231,17 @@ const Profile = () => {
               <Share2 className="w-5 h-5 mr-2" />
               Share My Taste DNA
             </Button>
+
+            <Button
+              onClick={() => setInfoOpen(true)}
+              size="lg"
+              variant="outline"
+              className="w-full h-14 mt-3 text-base font-medium tracking-wide rounded-full"
+              disabled={!hasResults}
+            >
+              <BarChart3 className="w-5 h-5 mr-2" />
+              More Information
+            </Button>
             {!hasResults && (
               <p className="text-xs text-muted-foreground text-center mt-3">
                 Complete the quiz to share your profile
@@ -282,6 +295,16 @@ const Profile = () => {
                   <span className="text-sm font-medium">WhatsApp</span>
                 </button>
               </div>
+            </DialogContent>
+          </Dialog>
+
+          {/* Comparison Dialog */}
+          <Dialog open={infoOpen} onOpenChange={setInfoOpen}>
+            <DialogContent className="sm:max-w-md rounded-2xl max-h-[85vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="font-display">How you compare</DialogTitle>
+              </DialogHeader>
+              {uxScores && <TasteComparison scores={uxScores} />}
             </DialogContent>
           </Dialog>
         </motion.div>
