@@ -297,6 +297,16 @@ const Profile = () => {
               </div>
             </DialogContent>
           </Dialog>
+
+          {/* Comparison Dialog */}
+          <Dialog open={infoOpen} onOpenChange={setInfoOpen}>
+            <DialogContent className="sm:max-w-md rounded-2xl max-h-[85vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="font-display">How you compare</DialogTitle>
+              </DialogHeader>
+              {uxScores && <TasteComparison scores={uxScores} />}
+            </DialogContent>
+          </Dialog>
         </motion.div>
       )}
     </AnimatePresence>
