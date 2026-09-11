@@ -398,6 +398,36 @@ export function foodContainsBlockedIngredient(
   });
 }
 
+/**
+ * Default blocked ingredients preselected for an eating style.
+ * - vegan: dairy & egg, meat, fish, seafood, honey
+ * - vegetarian: meat, fish, seafood
+ * - pescatarian: meat & poultry
+ * - all-good: nothing
+ */
+export function defaultAvoidancesForStyle(
+  style: 'all-good' | 'vegetarian' | 'vegan' | 'pescatarian'
+): string[] {
+  const byCat = (cat: IngredientCategory) =>
+    ingredientCatalog.filter(i => i.category === cat).map(i => i.slug);
+  switch (style) {
+    case 'vegan':
+      return [
+        ...byCat('dairy'),
+        ...byCat('meat'),
+        ...byCat('fish'),
+        ...byCat('seafood'),
+        'honey',
+      ];
+    case 'vegetarian':
+      return [...byCat('meat'), ...byCat('fish'), ...byCat('seafood')];
+    case 'pescatarian':
+      return byCat('meat');
+    default:
+      return [];
+  }
+}
+
 /** Turns free text into a stable slug for a custom ingredient. */
 export function toIngredientSlug(text: string): string {
   return text.trim().toLowerCase().replace(/\s+/g, '_');
