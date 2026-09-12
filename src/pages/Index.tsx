@@ -25,12 +25,36 @@ const Index = () => {
     },
   ];
 
+  const savePreferences = (style: EatingStyle | null, ingredients: string[]) => {
+    localStorage.setItem(
+      'tastePreferences',
+      JSON.stringify({
+        eatingStyle: style,
+        blockedIngredients: ingredients,
+        savedAt: Date.now(),
+      })
+    );
+  };
+
   const handleStartQuiz = () => {
+    savePreferences(eatingStyle, selectedIngredients);
     navigate('/categories', {
       state: {
         allergies: selectedAllergies,
         eatingStyles: eatingStyle ? [eatingStyle] : [],
         blockedIngredients: selectedIngredients,
+      },
+    });
+  };
+
+  const handleSkipAllIngredients = () => {
+    setSelectedIngredients([]);
+    savePreferences(eatingStyle, []);
+    navigate('/categories', {
+      state: {
+        allergies: selectedAllergies,
+        eatingStyles: eatingStyle ? [eatingStyle] : [],
+        blockedIngredients: [],
       },
     });
   };
