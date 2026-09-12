@@ -162,8 +162,10 @@ const Quiz = () => {
 
   const handleSwipe = useCallback(
     (direction: 'left' | 'right') => {
+      if (!currentQuestion) return;
       // Save history
       setHistory(prev => [...prev, { question: currentQuestion, state: bayesState, usedIds: new Set(usedIds) }]);
+
 
       // right = chose A, left = chose B
       const chosenIntensity = direction === 'right' ? currentQuestion.intensityA : currentQuestion.intensityB;
