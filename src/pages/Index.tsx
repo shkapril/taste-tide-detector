@@ -68,6 +68,7 @@ const Index = () => {
   const handleSelectEatingStyle = (style: EatingStyle) => {
     setEatingStyle(style);
     setSelectedIngredients(defaultAvoidancesForStyle(style));
+    setStep(2);
   };
 
   return (
