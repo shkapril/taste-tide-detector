@@ -30,19 +30,11 @@ export interface Ingredient {
 export const ingredientCatalog: Ingredient[] = [
   // FRUITS
   { slug: 'apple', label: 'Apple', category: 'fruits' },
-  { slug: 'lemon', label: 'Lemon', category: 'fruits' },
-  { slug: 'lime', label: 'Lime', category: 'fruits' },
-  { slug: 'orange', label: 'Orange', category: 'fruits' },
-  { slug: 'grapefruit', label: 'Grapefruit', category: 'fruits' },
+  { slug: 'kiwi', label: 'Kiwi', category: 'fruits' },
   { slug: 'mango', label: 'Mango', category: 'fruits' },
-  { slug: 'grape', label: 'Grape', category: 'fruits' },
-  { slug: 'passion_fruit', label: 'Passion Fruit', category: 'fruits' },
-  { slug: 'coconut', label: 'Coconut', category: 'fruits' },
-  { slug: 'banana', label: 'Banana', category: 'fruits' },
+  { slug: 'peach', label: 'Peach', category: 'fruits' },
+  { slug: 'pear', label: 'Pear', category: 'fruits' },
   { slug: 'strawberry', label: 'Strawberry', category: 'fruits' },
-  { slug: 'pineapple', label: 'Pineapple', category: 'fruits' },
-  { slug: 'chestnut_puree', label: 'Chestnut', category: 'fruits' },
-  { slug: 'raisin', label: 'Raisin', category: 'fruits' },
 
   // VEGETABLES
   { slug: 'tomato', label: 'Tomato', category: 'vegetables' },
