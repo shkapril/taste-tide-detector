@@ -26,13 +26,13 @@ const categoryLabel: Record<IngredientCategory, string> = {
 
 const categoryOrder: IngredientCategory[] = [
   'dairy',
-  'fish_seafood',
-  'fruits',
-  'grains',
   'meat',
+  'fish_seafood',
   'nuts',
-  'other',
+  'fruits',
   'vegetables',
+  'grains',
+  'other',
 ];
 
 const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
