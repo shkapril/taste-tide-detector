@@ -38,23 +38,8 @@ const categoryOrder: IngredientCategory[] = [
 ];
 
 const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
-  const [query, setQuery] = useState('');
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return ingredientCatalog;
-    return ingredientCatalog.filter(i =>
-      i.label.toLowerCase().includes(q) || i.slug.includes(q)
-    );
-  }, [query]);
-
-  const grouped = useMemo(() => {
-    const map: Record<string, typeof ingredientCatalog> = {};
-    for (const ing of filtered) {
-      (map[ing.category] ||= []).push(ing);
-    }
-    return map;
-  }, [filtered]);
+  const [custom, setCustom] = useState('');
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const selectedSet = new Set(selected);
   const catalogSlugs = useMemo(
@@ -63,15 +48,37 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   );
   const customSelected = selected.filter(slug => !catalogSlugs.has(slug));
 
-  const [custom, setCustom] = useState('');
   const customSlug = toIngredientSlug(custom);
-  const canAddCustom =
-    customSlug.length > 1 && !selectedSet.has(customSlug);
+  const canAddCustom = customSlug.length > 1 && !selectedSet.has(customSlug);
+
+  const suggestions = useMemo(() => {
+    const q = custom.trim().toLowerCase();
+    if (q.length === 0) return [];
+    return ingredientCatalog
+      .filter(
+        i => i.label.toLowerCase().startsWith(q) && !selectedSet.has(i.slug)
+      )
+      .slice(0, 8);
+  }, [custom, selectedSet]);
+
+  const grouped = useMemo(() => {
+    const map: Record<string, typeof ingredientCatalog> = {};
+    for (const ing of ingredientCatalog) {
+      (map[ing.category] ||= []).push(ing);
+    }
+    return map;
+  }, []);
 
   const handleAddCustom = () => {
     if (!canAddCustom) return;
     onToggle(customSlug);
     setCustom('');
+  };
+
+  const handleSelectSuggestion = (slug: string) => {
+    onToggle(slug);
+    setCustom('');
+    setShowSuggestions(false);
   };
 
   return (
