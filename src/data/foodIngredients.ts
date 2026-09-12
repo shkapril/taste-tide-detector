@@ -70,12 +70,9 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'katsuobushi', label: 'Katsuobushi', category: 'fish_seafood' },
   { slug: 'fish_sauce', label: 'Fish Sauce', category: 'fish_seafood' },
   { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish_seafood' },
-  { slug: 'shrimp', label: 'Shrimp', category: 'fish_seafood' },
-  { slug: 'crab', label: 'Crab', category: 'fish_seafood' },
-  { slug: 'lobster', label: 'Lobster', category: 'fish_seafood' },
   { slug: 'octopus', label: 'Octopus', category: 'fish_seafood' },
   { slug: 'squid', label: 'Squid', category: 'fish_seafood' },
-  { slug: 'pollock_roe', label: 'Pollock Roe (Mentaiko)', category: 'fish_seafood' },
+  { slug: 'shellfish', label: 'Shellfish', category: 'fish_seafood' },
 
   // NUTS
   { slug: 'almond', label: 'Almond', category: 'nuts' },
