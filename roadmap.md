@@ -7,3 +7,4 @@
 5. ✅ Hide character card on partial results page
 6. ✅ Replace search bar with autocomplete on the "Not on the list" input
 7. ✅ Auto-save eating style and blocked ingredients to my profile after finishing ingredient selection
+8. 🔄 Sort searching-section options alphabetically (in progress)
