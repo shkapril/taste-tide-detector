@@ -3,16 +3,17 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AllergySelection from '@/components/AllergySelection';
+import { EatingStyleSelection, IngredientSelection } from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
+import { defaultAvoidancesForStyle } from '@/data/foodIngredients';
 
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
-  const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
+  const [eatingStyle, setEatingStyle] = useState<EatingStyle | null>(null);
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   const features = [
@@ -25,7 +26,13 @@ const Index = () => {
   ];
 
   const handleStartQuiz = () => {
-    navigate('/categories', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles, blockedIngredients: selectedIngredients } });
+    navigate('/categories', {
+      state: {
+        allergies: selectedAllergies,
+        eatingStyles: eatingStyle ? [eatingStyle] : [],
+        blockedIngredients: selectedIngredients,
+      },
+    });
   };
 
   const handleToggleIngredient = (slug: string) => {
@@ -34,18 +41,9 @@ const Index = () => {
     );
   };
 
-  const handleToggleAllergy = (allergen: Allergen) => {
-    setSelectedAllergies(prev =>
-      prev.includes(allergen)
-        ? prev.filter(a => a !== allergen)
-        : [...prev, allergen]
-    );
-  };
-
-  const handleToggleEatingStyle = (style: EatingStyle) => {
-    setSelectedEatingStyles(prev =>
-      prev.includes(style) ? prev.filter(s => s !== style) : [...prev, style]
-    );
+  const handleSelectEatingStyle = (style: EatingStyle) => {
+    setEatingStyle(style);
+    setSelectedIngredients(defaultAvoidancesForStyle(style));
   };
 
   return (
@@ -255,14 +253,23 @@ const Index = () => {
         )}
 
         {step === 1 && (
-          <AllergySelection
-            selectedAllergies={selectedAllergies}
-            selectedEatingStyles={selectedEatingStyles}
-            selectedIngredients={selectedIngredients}
-            onToggleAllergy={handleToggleAllergy}
-            onToggleEatingStyle={handleToggleEatingStyle}
-            onToggleIngredient={handleToggleIngredient}
+          <EatingStyleSelection
+            selected={eatingStyle}
+            onSelect={handleSelectEatingStyle}
             onBack={() => setStep(0)}
+            onContinue={() => setStep(2)}
+          />
+        )}
+
+        {step === 2 && (
+          <IngredientSelection
+            selectedIngredients={selectedIngredients}
+            onToggleIngredient={handleToggleIngredient}
+            onSkipAll={() => {
+              setSelectedIngredients([]);
+              handleStartQuiz();
+            }}
+            onBack={() => setStep(1)}
             onContinue={handleStartQuiz}
           />
         )}
