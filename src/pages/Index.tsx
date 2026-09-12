@@ -3,16 +3,17 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import AllergySelection from '@/components/AllergySelection';
+import { EatingStyleSelection, IngredientSelection } from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
+import { defaultAvoidancesForStyle } from '@/data/foodIngredients';
 
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
-  const [selectedEatingStyles, setSelectedEatingStyles] = useState<EatingStyle[]>([]);
+  const [eatingStyle, setEatingStyle] = useState<EatingStyle | null>(null);
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   const features = [
