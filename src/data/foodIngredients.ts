@@ -98,22 +98,20 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'lamb', label: 'Lamb', category: 'meat' },
   { slug: 'gelatin', label: 'Gelatin', category: 'meat' },
 
-  // FISH
-  { slug: 'salmon', label: 'Salmon', category: 'fish' },
-  { slug: 'tuna', label: 'Tuna', category: 'fish' },
-  { slug: 'anchovy', label: 'Anchovy', category: 'fish' },
-  { slug: 'dashi', label: 'Dashi', category: 'fish' },
-  { slug: 'katsuobushi', label: 'Katsuobushi', category: 'fish' },
-  { slug: 'fish_sauce', label: 'Fish Sauce', category: 'fish' },
-  { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish' },
-
-  // SEAFOOD
-  { slug: 'shrimp', label: 'Shrimp', category: 'seafood' },
-  { slug: 'crab', label: 'Crab', category: 'seafood' },
-  { slug: 'lobster', label: 'Lobster', category: 'seafood' },
-  { slug: 'octopus', label: 'Octopus', category: 'seafood' },
-  { slug: 'squid', label: 'Squid', category: 'seafood' },
-  { slug: 'pollock_roe', label: 'Pollock Roe (Mentaiko)', category: 'seafood' },
+  // FISH & SEAFOOD
+  { slug: 'salmon', label: 'Salmon', category: 'fish_seafood' },
+  { slug: 'tuna', label: 'Tuna', category: 'fish_seafood' },
+  { slug: 'anchovy', label: 'Anchovy', category: 'fish_seafood' },
+  { slug: 'dashi', label: 'Dashi', category: 'fish_seafood' },
+  { slug: 'katsuobushi', label: 'Katsuobushi', category: 'fish_seafood' },
+  { slug: 'fish_sauce', label: 'Fish Sauce', category: 'fish_seafood' },
+  { slug: 'fish_generic', label: 'Fish (generic)', category: 'fish_seafood' },
+  { slug: 'shrimp', label: 'Shrimp', category: 'fish_seafood' },
+  { slug: 'crab', label: 'Crab', category: 'fish_seafood' },
+  { slug: 'lobster', label: 'Lobster', category: 'fish_seafood' },
+  { slug: 'octopus', label: 'Octopus', category: 'fish_seafood' },
+  { slug: 'squid', label: 'Squid', category: 'fish_seafood' },
+  { slug: 'pollock_roe', label: 'Pollock Roe (Mentaiko)', category: 'fish_seafood' },
 
   // GRAINS
   { slug: 'wheat_flour', label: 'Wheat Flour', category: 'grains' },
