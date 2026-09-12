@@ -281,7 +281,6 @@ const Index = () => {
             selected={eatingStyle}
             onSelect={handleSelectEatingStyle}
             onBack={() => setStep(0)}
-            onContinue={() => setStep(2)}
           />
         )}
 
