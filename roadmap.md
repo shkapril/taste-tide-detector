@@ -5,3 +5,5 @@
 3. ✅ Update partial results to show only completed quiz categories; uncompleted categories fixed at 0
 4. ✅ Add Umami as a quiz category with 🥫 emoji
 5. ✅ Hide character card on partial results page
+6. ✅ Replace search bar with autocomplete on the "Not on the list" input
+7. ✅ Auto-save eating style and blocked ingredients to my profile after finishing ingredient selection

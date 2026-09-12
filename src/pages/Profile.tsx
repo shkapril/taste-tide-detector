@@ -10,8 +10,10 @@ import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';
 import TasteComparison from '@/components/TasteComparison';
 import { getCharacter } from '@/data/tasteCharacters';
+import { ingredientLabel } from '@/data/foodIngredients';
 import chefImage from '@/assets/chef.png';
 import type { TasteVector7 } from '@/data/foodDataset';
+import type { EatingStyle } from '@/data/allergens';
 
 const Profile = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(true);
@@ -29,6 +31,19 @@ const Profile = () => {
   const internalMean: TasteVector7 | null = saved?.internalMean || null;
   const character = internalMean ? getCharacter(internalMean) : null;
   const hasResults = !!uxScores;
+
+  // Load saved dietary preferences
+  const prefs = JSON.parse(localStorage.getItem('tastePreferences') || 'null');
+  const savedEatingStyle: EatingStyle | null = prefs?.eatingStyle || null;
+  const savedBlocked: string[] = prefs?.blockedIngredients || [];
+  const hasPreferences = !!savedEatingStyle || savedBlocked.length > 0;
+
+  const styleLabel: Record<EatingStyle, string> = {
+    'all-good': 'All Good',
+    vegetarian: 'Vegetarian',
+    vegan: 'Vegan',
+    pescatarian: 'Pescatarian',
+  };
 
   const [shareOpen, setShareOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
@@ -209,6 +224,47 @@ const Profile = () => {
                   <HexRadarChart scores={uxScores} />
                   <div className="mt-8">
                     <ResultsChart scores={uxScores} />
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Dietary Preferences */}
+              {hasPreferences && (
+                <motion.div
+                  className="px-6 pb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3 className="text-lg font-display font-semibold text-foreground mb-4">
+                    My Dietary Preferences
+                  </h3>
+                  <div className="space-y-3">
+                    {savedEatingStyle && (
+                      <div className="flex items-center justify-between py-2 border-b border-border/60">
+                        <span className="text-sm text-muted-foreground">Eating style</span>
+                        <span className="text-sm font-medium text-foreground">
+                          {styleLabel[savedEatingStyle]}
+                        </span>
+                      </div>
+                    )}
+                    {savedBlocked.length > 0 && (
+                      <div>
+                        <span className="text-sm text-muted-foreground block mb-2">
+                          Ingredients I avoid
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          {savedBlocked.map(slug => (
+                            <span
+                              key={slug}
+                              className="inline-flex items-center px-2.5 py-1 rounded-full bg-destructive/10 border border-destructive/30 text-xs font-medium text-destructive"
+                            >
+                              {ingredientLabel(slug)}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}
