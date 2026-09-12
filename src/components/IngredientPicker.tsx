@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Search, X } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import {
   ingredientCatalog,
   IngredientCategory,
