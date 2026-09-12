@@ -15,25 +15,23 @@ interface IngredientPickerProps {
 
 const categoryLabel: Record<IngredientCategory, string> = {
   dairy: '🥛 Dairy & Egg',
-  fish: '🐟 Fish',
+  fish_seafood: '🐟 Fish & Seafood',
   fruits: '🍎 Fruits',
   grains: '🌾 Grains & Bread',
   meat: '🥩 Meat & Poultry',
   nuts: '🥜 Nuts & Seeds',
   other: '🧂 Pantry & Other',
-  seafood: '🦐 Seafood',
   vegetables: '🥬 Vegetables',
 };
 
 const categoryOrder: IngredientCategory[] = [
   'dairy',
-  'fish',
+  'fish_seafood',
   'fruits',
   'grains',
   'meat',
   'nuts',
   'other',
-  'seafood',
   'vegetables',
 ];
 
