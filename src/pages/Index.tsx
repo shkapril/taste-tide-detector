@@ -13,8 +13,13 @@ const Index = () => {
 
   const [step, setStep] = useState(0);
   const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>([]);
-  const [eatingStyle, setEatingStyle] = useState<EatingStyle | null>(null);
-  const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
+  // Restore previously saved dietary preferences so they keep applying
+  // to every new quiz run (also shown on the Profile page).
+  const [savedPrefs] = useState<{ eatingStyle: EatingStyle | null; blockedIngredients: string[] } | null>(() =>
+    JSON.parse(localStorage.getItem('tastePreferences') || 'null')
+  );
+  const [eatingStyle, setEatingStyle] = useState<EatingStyle | null>(savedPrefs?.eatingStyle || null);
+  const [selectedIngredients, setSelectedIngredients] = useState<string[]>(savedPrefs?.blockedIngredients || []);
 
   const features = [
     {
