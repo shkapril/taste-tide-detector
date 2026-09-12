@@ -122,7 +122,6 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'oat', label: 'Oat', category: 'grains' },
   { slug: 'barley', label: 'Barley', category: 'grains' },
   { slug: 'corn', label: 'Corn', category: 'grains' },
-  { slug: 'yeast', label: 'Yeast', category: 'grains' },
 
   // NUTS
   { slug: 'almond', label: 'Almond', category: 'nuts' },
@@ -131,20 +130,12 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'peanut', label: 'Peanut', category: 'nuts' },
   { slug: 'sesame', label: 'Sesame', category: 'nuts' },
 
-  // SAUCE & OTHER
-  { slug: 'sugar', label: 'Sugar', category: 'other' },
-  { slug: 'honey', label: 'Honey', category: 'other' },
-  { slug: 'cocoa', label: 'Cocoa', category: 'other' },
-  { slug: 'chocolate', label: 'Chocolate', category: 'other' },
-  { slug: 'vanilla', label: 'Vanilla', category: 'other' },
-  { slug: 'coffee', label: 'Coffee', category: 'other' },
-  { slug: 'tea', label: 'Tea', category: 'other' },
-  { slug: 'soy_sauce', label: 'Soy Sauce', category: 'other' },
-  { slug: 'miso', label: 'Miso', category: 'other' },
-  { slug: 'mustard', label: 'Mustard', category: 'other' },
-  { slug: 'alcohol', label: 'Alcohol', category: 'other' },
-  { slug: 'yeast_extract', label: 'Yeast Extract (Marmite)', category: 'other' },
-  { slug: 'olive_oil', label: 'Olive Oil', category: 'other' },
+  // SAUCE & OTHER — shown in the searching section, not the category grid
+  { slug: 'honey', label: 'Honey', category: 'other', searchOnly: true },
+  { slug: 'soy_sauce', label: 'Soy Sauce', category: 'other', searchOnly: true },
+  { slug: 'miso', label: 'Miso', category: 'other', searchOnly: true },
+  { slug: 'mustard', label: 'Mustard', category: 'other', searchOnly: true },
+  { slug: 'alcohol', label: 'Alcohol', category: 'other', searchOnly: true },
 ];
 
 // ── Per-food ingredient breakdown (lowercase food name → slug list) ──
