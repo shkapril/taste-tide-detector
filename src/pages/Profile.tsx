@@ -32,6 +32,19 @@ const Profile = () => {
   const character = internalMean ? getCharacter(internalMean) : null;
   const hasResults = !!uxScores;
 
+  // Load saved dietary preferences
+  const prefs = JSON.parse(localStorage.getItem('tastePreferences') || 'null');
+  const savedEatingStyle: EatingStyle | null = prefs?.eatingStyle || null;
+  const savedBlocked: string[] = prefs?.blockedIngredients || [];
+  const hasPreferences = !!savedEatingStyle || savedBlocked.length > 0;
+
+  const styleLabel: Record<EatingStyle, string> = {
+    'all-good': 'All Good',
+    vegetarian: 'Vegetarian',
+    vegan: 'Vegan',
+    pescatarian: 'Pescatarian',
+  };
+
   const [shareOpen, setShareOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [copied, setCopied] = useState(false);
