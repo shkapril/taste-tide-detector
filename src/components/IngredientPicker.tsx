@@ -57,6 +57,11 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   }, [filtered]);
 
   const selectedSet = new Set(selected);
+  const catalogSlugs = useMemo(
+    () => new Set(ingredientCatalog.map(i => i.slug)),
+    []
+  );
+  const customSelected = selected.filter(slug => !catalogSlugs.has(slug));
 
   const [custom, setCustom] = useState('');
   const customSlug = toIngredientSlug(custom);
@@ -120,10 +125,10 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
         </button>
       </div>
 
-      {/* Selected pills */}
-      {selected.length > 0 && (
+      {/* Selected pills — only custom (not-on-the-list) ingredients */}
+      {customSelected.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          {selected.map(slug => (
+          {customSelected.map(slug => (
             <button
               key={slug}
               onClick={() => onToggle(slug)}
