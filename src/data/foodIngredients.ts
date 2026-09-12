@@ -23,6 +23,8 @@ export interface Ingredient {
   slug: string;
   label: string;
   category: IngredientCategory;
+  /** If true, the ingredient is hidden from the category grid but still searchable. */
+  searchOnly?: boolean;
 }
 
 // ── Master ingredient catalog (for the picker UI) ──
