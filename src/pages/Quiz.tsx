@@ -245,6 +245,14 @@ const Quiz = () => {
       </div>
 
       <div className="flex-1 flex items-center justify-center px-6 py-4">
+        {!currentQuestion ? (
+          <div className="w-full max-w-sm text-center space-y-3">
+            <p className="text-foreground font-display text-xl">No dishes left to compare</p>
+            <p className="text-muted-foreground text-sm">
+              Your avoided ingredients rule out every option in this category. Try removing a few.
+            </p>
+          </div>
+        ) : (
         <div className="relative w-full max-w-sm h-[500px]">
           <AnimatePresence mode="popLayout">
             {previewQuestion && (
@@ -263,6 +271,7 @@ const Quiz = () => {
               onSwipe={handleSwipe}
               isTop={true}
             />
+
           </AnimatePresence>
         </div>
       </div>
