@@ -131,10 +131,6 @@ export const IngredientSelection = ({ selectedIngredients, onToggleIngredient, o
         I eat everything — Skip
       </motion.button>
 
-      <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
-        Or pick the specific ingredients you avoid. We'll hide every dish that contains them.
-      </p>
-
       {/* Ingredient picker */}
       <div className="mb-6">
         <IngredientPicker selected={selectedIngredients} onToggle={onToggleIngredient} />
