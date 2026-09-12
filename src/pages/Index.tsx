@@ -26,7 +26,13 @@ const Index = () => {
   ];
 
   const handleStartQuiz = () => {
-    navigate('/categories', { state: { allergies: selectedAllergies, eatingStyles: selectedEatingStyles, blockedIngredients: selectedIngredients } });
+    navigate('/categories', {
+      state: {
+        allergies: selectedAllergies,
+        eatingStyles: eatingStyle ? [eatingStyle] : [],
+        blockedIngredients: selectedIngredients,
+      },
+    });
   };
 
   const handleToggleIngredient = (slug: string) => {
@@ -35,18 +41,9 @@ const Index = () => {
     );
   };
 
-  const handleToggleAllergy = (allergen: Allergen) => {
-    setSelectedAllergies(prev =>
-      prev.includes(allergen)
-        ? prev.filter(a => a !== allergen)
-        : [...prev, allergen]
-    );
-  };
-
-  const handleToggleEatingStyle = (style: EatingStyle) => {
-    setSelectedEatingStyles(prev =>
-      prev.includes(style) ? prev.filter(s => s !== style) : [...prev, style]
-    );
+  const handleSelectEatingStyle = (style: EatingStyle) => {
+    setEatingStyle(style);
+    setSelectedIngredients(defaultAvoidancesForStyle(style));
   };
 
   return (
