@@ -144,7 +144,7 @@ const Quiz = () => {
 
   const [bayesState, setBayesState] = useState<BayesState>(createInitialState);
   const [usedIds, setUsedIds] = useState<Set<string>>(new Set());
-  const [currentQuestion, setCurrentQuestion] = useState<QuizItem>(() =>
+  const [currentQuestion, setCurrentQuestion] = useState<QuizItem | null>(() =>
     selectNextQuestion(createInitialState(), new Set(), pool)
   );
   const [questionNum, setQuestionNum] = useState(1);
@@ -152,11 +152,13 @@ const Quiz = () => {
 
   // Pre-compute next question for background card
   const previewQuestion = useMemo(() => {
-    if (questionNum >= TOTAL_QUESTIONS) return null;
+    if (questionNum >= TOTAL_QUESTIONS || !currentQuestion) return null;
     const tempUsed = new Set(usedIds);
     tempUsed.add(currentQuestion.id);
     return selectNextQuestion(bayesState, tempUsed, pool);
   }, [bayesState, usedIds, currentQuestion, questionNum, pool]);
+
+
 
   const handleSwipe = useCallback(
     (direction: 'left' | 'right') => {
