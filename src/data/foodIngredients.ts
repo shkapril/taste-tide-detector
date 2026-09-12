@@ -15,7 +15,6 @@ export type IngredientCategory =
   | 'meat'
   | 'fish_seafood'
   | 'dairy'
-  | 'grains'
   | 'nuts'
   | 'other';
 
@@ -113,16 +112,6 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'squid', label: 'Squid', category: 'fish_seafood' },
   { slug: 'pollock_roe', label: 'Pollock Roe (Mentaiko)', category: 'fish_seafood' },
 
-  // GRAINS
-  { slug: 'wheat_flour', label: 'Wheat Flour', category: 'grains' },
-  { slug: 'bread', label: 'Bread', category: 'grains' },
-  { slug: 'pasta', label: 'Pasta', category: 'grains' },
-  { slug: 'noodles', label: 'Noodles', category: 'grains' },
-  { slug: 'rice', label: 'Rice', category: 'grains' },
-  { slug: 'oat', label: 'Oat', category: 'grains' },
-  { slug: 'barley', label: 'Barley', category: 'grains' },
-  { slug: 'corn', label: 'Corn', category: 'grains' },
-
   // NUTS
   { slug: 'almond', label: 'Almond', category: 'nuts' },
   { slug: 'walnut', label: 'Walnut', category: 'nuts' },
@@ -136,6 +125,9 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'miso', label: 'Miso', category: 'other', searchOnly: true },
   { slug: 'mustard', label: 'Mustard', category: 'other', searchOnly: true },
   { slug: 'alcohol', label: 'Alcohol', category: 'other', searchOnly: true },
+  { slug: 'corn', label: 'Corn', category: 'other', searchOnly: true },
+  { slug: 'oat', label: 'Oat', category: 'other', searchOnly: true },
+  { slug: 'yeast', label: 'Yeast', category: 'other', searchOnly: true },
 ];
 
 // ── Per-food ingredient breakdown (lowercase food name → slug list) ──
