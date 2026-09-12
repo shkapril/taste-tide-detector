@@ -82,7 +82,9 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'walnut', label: 'Walnut', category: 'nuts' },
   { slug: 'pistachio', label: 'Pistachio', category: 'nuts' },
   { slug: 'peanut', label: 'Peanut', category: 'nuts' },
+  { slug: 'pine_nuts', label: 'Pine Nuts', category: 'nuts' },
   { slug: 'sesame', label: 'Sesame', category: 'nuts' },
+
 
   // SAUCE & OTHER — shown in the searching section, not the category grid
   { slug: 'honey', label: 'Honey', category: 'other', searchOnly: true },
