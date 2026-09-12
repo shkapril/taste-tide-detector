@@ -80,22 +80,6 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyle
         })}
       </div>
 
-      {/* Continue Button */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <Button
-          onClick={onContinue}
-          disabled={!selected}
-          size="lg"
-          className="w-full h-14 text-base font-medium tracking-wide rounded-full"
-        >
-          Continue
-          <ArrowRight className="w-4 h-4 ml-3" />
-        </Button>
-      </motion.div>
     </motion.div>
   );
 };
