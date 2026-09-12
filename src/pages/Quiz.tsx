@@ -274,7 +274,9 @@ const Quiz = () => {
 
           </AnimatePresence>
         </div>
+        )}
       </div>
+
 
       <div className="px-6 pb-4">
         <ActionButtons onUndo={handleUndo} canUndo={history.length > 0} />
