@@ -289,10 +289,7 @@ const Index = () => {
           <IngredientSelection
             selectedIngredients={selectedIngredients}
             onToggleIngredient={handleToggleIngredient}
-            onSkipAll={() => {
-              setSelectedIngredients([]);
-              handleStartQuiz();
-            }}
+            onSkipAll={handleSkipAllIngredients}
             onBack={() => setStep(1)}
             onContinue={handleStartQuiz}
           />
