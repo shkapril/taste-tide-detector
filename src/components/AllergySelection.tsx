@@ -15,10 +15,9 @@ interface EatingStyleSelectionProps {
   selected: EatingStyle | null;
   onSelect: (style: EatingStyle) => void;
   onBack: () => void;
-  onContinue: () => void;
 }
 
-export const EatingStyleSelection = ({ selected, onSelect, onBack, onContinue }: EatingStyleSelectionProps) => {
+export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyleSelectionProps) => {
   return (
     <motion.div
       key="eating-style-selection"
@@ -81,22 +80,6 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack, onContinue }:
         })}
       </div>
 
-      {/* Continue Button */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <Button
-          onClick={onContinue}
-          disabled={!selected}
-          size="lg"
-          className="w-full h-14 text-base font-medium tracking-wide rounded-full"
-        >
-          Continue
-          <ArrowRight className="w-4 h-4 ml-3" />
-        </Button>
-      </motion.div>
     </motion.div>
   );
 };

@@ -68,6 +68,7 @@ const Index = () => {
   const handleSelectEatingStyle = (style: EatingStyle) => {
     setEatingStyle(style);
     setSelectedIngredients(defaultAvoidancesForStyle(style));
+    setStep(2);
   };
 
   return (
@@ -281,7 +282,6 @@ const Index = () => {
             selected={eatingStyle}
             onSelect={handleSelectEatingStyle}
             onBack={() => setStep(0)}
-            onContinue={() => setStep(2)}
           />
         )}
 
