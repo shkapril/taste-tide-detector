@@ -20,7 +20,7 @@ const categoryLabel: Record<IngredientCategory, string> = {
   grains: '🌾 Grains & Bread',
   meat: '🥩 Meat & Poultry',
   nuts: '🥜 Nuts & Seeds',
-  other: '🧂 Pantry & Other',
+  other: '🧂 Sauce & Other',
   vegetables: '🥬 Vegetables',
 };
 
