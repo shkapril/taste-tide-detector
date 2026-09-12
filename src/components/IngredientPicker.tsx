@@ -44,7 +44,13 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
     () => new Set(ingredientCatalog.map(i => i.slug)),
     []
   );
-  const customSelected = selected.filter(slug => !catalogSlugs.has(slug));
+  const searchOnlySlugs = useMemo(
+    () => new Set(ingredientCatalog.filter(i => i.searchOnly).map(i => i.slug)),
+    []
+  );
+  const customSelected = selected.filter(
+    slug => !catalogSlugs.has(slug) || searchOnlySlugs.has(slug)
+  );
 
   const customSlug = toIngredientSlug(custom);
   const canAddCustom = customSlug.length > 1 && !selectedSet.has(customSlug);
@@ -54,18 +60,22 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
     []
   );
   const searchOnlyItems = useMemo(
-    () => ingredientCatalog.filter(i => i.searchOnly && !selectedSet.has(i.slug)),
+    () =>
+      ingredientCatalog
+        .filter(i => i.searchOnly && !selectedSet.has(i.slug))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     [selectedSet]
   );
 
   const suggestions = useMemo(() => {
     const q = custom.trim().toLowerCase();
-    if (q.length === 0) return searchOnlyItems.slice(0, 8);
-    return ingredientCatalog
-      .filter(
-        i => i.label.toLowerCase().startsWith(q) && !selectedSet.has(i.slug)
-      )
-      .slice(0, 8);
+    const base =
+      q.length === 0
+        ? searchOnlyItems
+        : ingredientCatalog.filter(
+            i => i.label.toLowerCase().startsWith(q) && !selectedSet.has(i.slug)
+          );
+    return base.sort((a, b) => a.label.localeCompare(b.label)).slice(0, 8);
   }, [custom, selectedSet, searchOnlyItems]);
 
   const grouped = useMemo(() => {
