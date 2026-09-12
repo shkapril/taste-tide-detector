@@ -87,14 +87,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'milk', label: 'Milk', category: 'dairy' },
   { slug: 'cream', label: 'Cream', category: 'dairy' },
   { slug: 'yogurt', label: 'Yogurt', category: 'dairy' },
-  { slug: 'cheese', label: 'Cheese (generic)', category: 'dairy' },
-  { slug: 'cream_cheese', label: 'Cream Cheese', category: 'dairy' },
-  { slug: 'mascarpone', label: 'Mascarpone', category: 'dairy' },
-  { slug: 'ricotta', label: 'Ricotta', category: 'dairy' },
-  { slug: 'mozzarella', label: 'Mozzarella', category: 'dairy' },
-  { slug: 'parmesan', label: 'Parmesan', category: 'dairy' },
-  { slug: 'cheddar', label: 'Cheddar', category: 'dairy' },
-  { slug: 'feta', label: 'Feta', category: 'dairy' },
+  { slug: 'cheese', label: 'Cheese', category: 'dairy' },
 
   // MEAT
   { slug: 'chicken', label: 'Chicken', category: 'meat' },
@@ -369,6 +362,26 @@ export const foodIngredientMap: Record<string, string[]> = {
   'lager beer': ['alcohol', 'barley', 'yeast', 'wheat_flour'],
   'sparkling water': [],
 };
+
+// Ensure every food that contains a specific cheese also maps to the generic
+// "cheese" ingredient, so blocking generic cheese hides all cheese dishes.
+const SPECIFIC_CHEESE_SLUGS = new Set([
+  'cream_cheese',
+  'mascarpone',
+  'ricotta',
+  'mozzarella',
+  'parmesan',
+  'cheddar',
+  'feta',
+]);
+for (const ingredients of Object.values(foodIngredientMap)) {
+  if (
+    ingredients.some(i => SPECIFIC_CHEESE_SLUGS.has(i)) &&
+    !ingredients.includes('cheese')
+  ) {
+    ingredients.push('cheese');
+  }
+}
 
 // Lower-cased lookup helper
 export function getFoodIngredients(foodName: string): string[] {
