@@ -57,12 +57,14 @@ function selectNextQuestion(
   state: BayesState,
   usedIds: Set<string>,
   pool: QuizItem[]
-): QuizItem {
+): QuizItem | null {
+  if (pool.length === 0) return null;
   const available = pool.filter(q => !usedIds.has(q.id));
   if (available.length === 0) {
     // Fallback: allow re-use
     return shuffle(pool)[0];
   }
+
 
   const q = state.questionsAnswered;
 
@@ -142,7 +144,7 @@ const Quiz = () => {
 
   const [bayesState, setBayesState] = useState<BayesState>(createInitialState);
   const [usedIds, setUsedIds] = useState<Set<string>>(new Set());
-  const [currentQuestion, setCurrentQuestion] = useState<QuizItem>(() =>
+  const [currentQuestion, setCurrentQuestion] = useState<QuizItem | null>(() =>
     selectNextQuestion(createInitialState(), new Set(), pool)
   );
   const [questionNum, setQuestionNum] = useState(1);
@@ -150,16 +152,20 @@ const Quiz = () => {
 
   // Pre-compute next question for background card
   const previewQuestion = useMemo(() => {
-    if (questionNum >= TOTAL_QUESTIONS) return null;
+    if (questionNum >= TOTAL_QUESTIONS || !currentQuestion) return null;
     const tempUsed = new Set(usedIds);
     tempUsed.add(currentQuestion.id);
     return selectNextQuestion(bayesState, tempUsed, pool);
   }, [bayesState, usedIds, currentQuestion, questionNum, pool]);
 
+
+
   const handleSwipe = useCallback(
     (direction: 'left' | 'right') => {
+      if (!currentQuestion) return;
       // Save history
       setHistory(prev => [...prev, { question: currentQuestion, state: bayesState, usedIds: new Set(usedIds) }]);
+
 
       // right = chose A, left = chose B
       const chosenIntensity = direction === 'right' ? currentQuestion.intensityA : currentQuestion.intensityB;
@@ -239,6 +245,14 @@ const Quiz = () => {
       </div>
 
       <div className="flex-1 flex items-center justify-center px-6 py-4">
+        {!currentQuestion ? (
+          <div className="w-full max-w-sm text-center space-y-3">
+            <p className="text-foreground font-display text-xl">No dishes left to compare</p>
+            <p className="text-muted-foreground text-sm">
+              Your avoided ingredients rule out every option in this category. Try removing a few.
+            </p>
+          </div>
+        ) : (
         <div className="relative w-full max-w-sm h-[500px]">
           <AnimatePresence mode="popLayout">
             {previewQuestion && (
@@ -257,9 +271,12 @@ const Quiz = () => {
               onSwipe={handleSwipe}
               isTop={true}
             />
+
           </AnimatePresence>
         </div>
+        )}
       </div>
+
 
       <div className="px-6 pb-4">
         <ActionButtons onUndo={handleUndo} canUndo={history.length > 0} />
