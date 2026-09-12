@@ -57,6 +57,11 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   }, [filtered]);
 
   const selectedSet = new Set(selected);
+  const catalogSlugs = useMemo(
+    () => new Set(ingredientCatalog.map(i => i.slug)),
+    []
+  );
+  const customSelected = selected.filter(slug => !catalogSlugs.has(slug));
 
   const [custom, setCustom] = useState('');
   const customSlug = toIngredientSlug(custom);
