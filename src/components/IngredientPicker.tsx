@@ -17,7 +17,7 @@ const categoryLabel: Record<IngredientCategory, string> = {
   dairy: '🥛 Dairy & Egg',
   fish_seafood: '🐟 Fish & Seafood',
   fruits: '🍎 Fruits',
-  grains: '🌾 Grains & Bread',
+  grains: '🌾 Grains',
   meat: '🥩 Meat & Poultry',
   nuts: '🥜 Nuts & Seeds',
   other: '🧂 Sauce & Other',
