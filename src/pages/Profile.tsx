@@ -10,8 +10,10 @@ import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';
 import TasteComparison from '@/components/TasteComparison';
 import { getCharacter } from '@/data/tasteCharacters';
+import { ingredientLabel } from '@/data/foodIngredients';
 import chefImage from '@/assets/chef.png';
 import type { TasteVector7 } from '@/data/foodDataset';
+import type { EatingStyle } from '@/data/allergens';
 
 const Profile = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(true);
