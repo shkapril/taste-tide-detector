@@ -131,7 +131,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'peanut', label: 'Peanut', category: 'nuts' },
   { slug: 'sesame', label: 'Sesame', category: 'nuts' },
 
-  // OTHER
+  // SAUCE & OTHER
   { slug: 'sugar', label: 'Sugar', category: 'other' },
   { slug: 'honey', label: 'Honey', category: 'other' },
   { slug: 'cocoa', label: 'Cocoa', category: 'other' },
