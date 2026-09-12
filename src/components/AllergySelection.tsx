@@ -15,10 +15,9 @@ interface EatingStyleSelectionProps {
   selected: EatingStyle | null;
   onSelect: (style: EatingStyle) => void;
   onBack: () => void;
-  onContinue: () => void;
 }
 
-export const EatingStyleSelection = ({ selected, onSelect, onBack, onContinue }: EatingStyleSelectionProps) => {
+export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyleSelectionProps) => {
   return (
     <motion.div
       key="eating-style-selection"
