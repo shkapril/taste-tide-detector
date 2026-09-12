@@ -87,14 +87,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'milk', label: 'Milk', category: 'dairy' },
   { slug: 'cream', label: 'Cream', category: 'dairy' },
   { slug: 'yogurt', label: 'Yogurt', category: 'dairy' },
-  { slug: 'cheese', label: 'Cheese (generic)', category: 'dairy' },
-  { slug: 'cream_cheese', label: 'Cream Cheese', category: 'dairy' },
-  { slug: 'mascarpone', label: 'Mascarpone', category: 'dairy' },
-  { slug: 'ricotta', label: 'Ricotta', category: 'dairy' },
-  { slug: 'mozzarella', label: 'Mozzarella', category: 'dairy' },
-  { slug: 'parmesan', label: 'Parmesan', category: 'dairy' },
-  { slug: 'cheddar', label: 'Cheddar', category: 'dairy' },
-  { slug: 'feta', label: 'Feta', category: 'dairy' },
+  { slug: 'cheese', label: 'Cheese', category: 'dairy' },
 
   // MEAT
   { slug: 'chicken', label: 'Chicken', category: 'meat' },
