@@ -425,12 +425,11 @@ export function defaultAvoidancesForStyle(
       return [
         ...byCat('dairy'),
         ...byCat('meat'),
-        ...byCat('fish'),
-        ...byCat('seafood'),
+        ...byCat('fish_seafood'),
         'honey',
       ];
     case 'vegetarian':
-      return [...byCat('meat'), ...byCat('fish'), ...byCat('seafood')];
+      return [...byCat('meat'), ...byCat('fish_seafood')];
     case 'pescatarian':
       return byCat('meat');
     default:
