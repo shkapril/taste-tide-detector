@@ -196,11 +196,6 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
             );
           })}
         </AnimatePresence>
-        {filtered.length === 0 && (
-          <p className="text-sm text-muted-foreground text-center py-4">
-            No ingredients match "{query}"
-          </p>
-        )}
       </div>
     </div>
   );
