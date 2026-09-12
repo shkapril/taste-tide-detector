@@ -49,23 +49,32 @@ const IngredientPicker = ({ selected, onToggle }: IngredientPickerProps) => {
   const customSlug = toIngredientSlug(custom);
   const canAddCustom = customSlug.length > 1 && !selectedSet.has(customSlug);
 
+  const gridCatalog = useMemo(
+    () => ingredientCatalog.filter(i => !i.searchOnly),
+    []
+  );
+  const searchOnlyItems = useMemo(
+    () => ingredientCatalog.filter(i => i.searchOnly && !selectedSet.has(i.slug)),
+    [selectedSet]
+  );
+
   const suggestions = useMemo(() => {
     const q = custom.trim().toLowerCase();
-    if (q.length === 0) return [];
+    if (q.length === 0) return searchOnlyItems.slice(0, 8);
     return ingredientCatalog
       .filter(
         i => i.label.toLowerCase().startsWith(q) && !selectedSet.has(i.slug)
       )
       .slice(0, 8);
-  }, [custom, selectedSet]);
+  }, [custom, selectedSet, searchOnlyItems]);
 
   const grouped = useMemo(() => {
     const map: Record<string, typeof ingredientCatalog> = {};
-    for (const ing of ingredientCatalog) {
+    for (const ing of gridCatalog) {
       (map[ing.category] ||= []).push(ing);
     }
     return map;
-  }, []);
+  }, [gridCatalog]);
 
   const handleAddCustom = () => {
     if (!canAddCustom) return;
