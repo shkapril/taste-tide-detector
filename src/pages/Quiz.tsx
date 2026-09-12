@@ -57,12 +57,14 @@ function selectNextQuestion(
   state: BayesState,
   usedIds: Set<string>,
   pool: QuizItem[]
-): QuizItem {
+): QuizItem | null {
+  if (pool.length === 0) return null;
   const available = pool.filter(q => !usedIds.has(q.id));
   if (available.length === 0) {
     // Fallback: allow re-use
     return shuffle(pool)[0];
   }
+
 
   const q = state.questionsAnswered;
 
