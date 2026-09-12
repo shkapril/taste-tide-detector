@@ -51,7 +51,6 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'garlic', label: 'Garlic', category: 'vegetables' },
   { slug: 'carrot', label: 'Carrot', category: 'vegetables' },
   { slug: 'mushroom', label: 'Mushroom', category: 'vegetables' },
-  { slug: 'natto', label: 'Natto', category: 'vegetables' },
   { slug: 'soybean', label: 'Soybean', category: 'vegetables' },
   { slug: 'celery', label: 'Celery', category: 'vegetables' },
 
