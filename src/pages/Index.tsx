@@ -253,14 +253,23 @@ const Index = () => {
         )}
 
         {step === 1 && (
-          <AllergySelection
-            selectedAllergies={selectedAllergies}
-            selectedEatingStyles={selectedEatingStyles}
-            selectedIngredients={selectedIngredients}
-            onToggleAllergy={handleToggleAllergy}
-            onToggleEatingStyle={handleToggleEatingStyle}
-            onToggleIngredient={handleToggleIngredient}
+          <EatingStyleSelection
+            selected={eatingStyle}
+            onSelect={handleSelectEatingStyle}
             onBack={() => setStep(0)}
+            onContinue={() => setStep(2)}
+          />
+        )}
+
+        {step === 2 && (
+          <IngredientSelection
+            selectedIngredients={selectedIngredients}
+            onToggleIngredient={handleToggleIngredient}
+            onSkipAll={() => {
+              setSelectedIngredients([]);
+              handleStartQuiz();
+            }}
+            onBack={() => setStep(1)}
             onContinue={handleStartQuiz}
           />
         )}
