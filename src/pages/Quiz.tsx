@@ -65,7 +65,6 @@ function selectNextQuestion(
     return shuffle(pool)[0];
   }
 
-
   const q = state.questionsAnswered;
 
   // Phase 1 (Q1-3): Random exploration
@@ -73,37 +72,25 @@ function selectNextQuestion(
     return shuffle(available)[0];
   }
 
-  // Phase 2 (Q4-10): Adaptive — pick items that bracket the current mean
-  if (q < 10) {
-    // Prefer items where one intensity is above mean and one below
-    const mean = state.mean;
-    const scored = available.map(item => {
-      const minI = Math.min(item.intensityA, item.intensityB);
-      const maxI = Math.max(item.intensityA, item.intensityB);
-      // Best: brackets the mean
-      const brackets = minI <= mean && maxI >= mean;
-      // Score: how well it straddles the mean
-      const spread = Math.abs(item.intensityA - item.intensityB);
-      const centerDist = Math.abs((item.intensityA + item.intensityB) / 2 - mean);
-      return {
-        item,
-        score: (brackets ? 10 : 0) + spread - centerDist,
-      };
-    });
-    scored.sort((a, b) => b.score - a.score);
-    // Pick from top 3 randomly for variety
-    const top = scored.slice(0, Math.min(3, scored.length));
-    return top[Math.floor(Math.random() * top.length)].item;
-  }
-
-  // Phase 3 (Q11-12): Refinement — pick items with intensities close to mean
+  // Phase 2 (Q4-8): Adaptive — handles the rest of the questions.
+  // Picks items that bracket the current mean; as the mean stabilises,
+  // this naturally selects more precise (narrower) comparisons.
   const mean = state.mean;
   const scored = available.map(item => {
-    const distA = Math.abs(item.intensityA - mean);
-    const distB = Math.abs(item.intensityB - mean);
-    return { item, score: distA + distB };
+    const minI = Math.min(item.intensityA, item.intensityB);
+    const maxI = Math.max(item.intensityA, item.intensityB);
+    // Best: brackets the mean
+    const brackets = minI <= mean && maxI >= mean;
+    // Score: how well it straddles the mean
+    const spread = Math.abs(item.intensityA - item.intensityB);
+    const centerDist = Math.abs((item.intensityA + item.intensityB) / 2 - mean);
+    return {
+      item,
+      score: (brackets ? 10 : 0) + spread - centerDist,
+    };
   });
-  scored.sort((a, b) => a.score - b.score);
+  scored.sort((a, b) => b.score - a.score);
+  // Pick from top 3 randomly for variety
   const top = scored.slice(0, Math.min(3, scored.length));
   return top[Math.floor(Math.random() * top.length)].item;
 }
