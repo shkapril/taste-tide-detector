@@ -6,6 +6,7 @@ import fetaCheeseImg from '@/assets/feta-cheese.png';
 import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
 import brownieImg from '@/assets/brownie.jpg.asset.json';
 import fudgeImg from '@/assets/fudge.jpg.asset.json';
+import cucumberImg from '@/assets/cucumber.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
