@@ -7,6 +7,7 @@ import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
 import brownieImg from '@/assets/brownie.jpg.asset.json';
 import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.jpg.asset.json';
+import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -312,7 +313,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-11',
-    optionA: { name: 'Lime Ceviche', image: 'https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=600&h=600&fit=crop' },
+    optionA: { name: 'Lime Ceviche', image: limeCevicheImg.url },
     optionB: { name: 'Grilled Fish', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 1,
