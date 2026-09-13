@@ -489,7 +489,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-8',
     optionA: { name: 'Salted Pretzels', image: '/__l5e/assets-v1/5c3d5458-5071-4a8b-9c7f-7c931764b748/salted_pretzel.jpg' },
-    optionB: { name: 'Breadsticks', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
+    optionB: { name: 'Breadsticks', image: '/__l5e/assets-v1/4a9f0e32-63c2-405a-8aea-fcdb6bb5a9b7/breadstick.jpg' },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
