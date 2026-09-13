@@ -794,7 +794,7 @@ export const spicyItems: QuizItem[] = [
     optionB: { name: 'Roasted Cauliflower', image: 'https://images.unsplash.com/photo-1613743983303-b3e8991e050c?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 1,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    dietary: ['vegan', 'vegetarian', 'pescatarian'],
   },
 ];
 
