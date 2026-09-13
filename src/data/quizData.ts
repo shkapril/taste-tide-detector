@@ -52,7 +52,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-1c',
     optionA: { name: 'Caramel Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
-    optionB: { name: 'Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
+    optionB: { name: 'Popcorn', image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
