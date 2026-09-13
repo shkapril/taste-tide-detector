@@ -191,6 +191,14 @@ export const sweetItems: QuizItem[] = [
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'sweet-15',
+    optionA: { name: 'Almond Croissant', image: almondCroissantImg.url },
+    optionB: { name: 'Plain Croissant', image: '/images/plain_croissant.png' },
+    intensityA: 6,
+    intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Sour comparisons
