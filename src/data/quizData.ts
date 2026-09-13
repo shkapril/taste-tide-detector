@@ -4,6 +4,8 @@ import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
 import fetaCheeseImg from '@/assets/feta-cheese.png';
 import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
+import brownieImg from '@/assets/brownie.jpg.asset.json';
+import fudgeImg from '@/assets/fudge.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -197,6 +199,22 @@ export const sweetItems: QuizItem[] = [
     optionB: { name: 'Plain Croissant', image: '/images/plain_croissant.png' },
     intensityA: 6,
     intensityB: 3,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-16',
+    optionA: { name: 'Fudge', image: fudgeImg.url },
+    optionB: { name: 'Brownie', image: brownieImg.url },
+    intensityA: 9,
+    intensityB: 8,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-17',
+    optionA: { name: 'Brownie', image: brownieImg.url },
+    optionB: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
