@@ -42,6 +42,22 @@ export const sweetItems: QuizItem[] = [
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
+    id: 'sweet-1b',
+    optionA: { name: 'Fruit Flavored Yogurt', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
+    optionB: { name: 'Natural Yogurt', image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?w=600&h=600&fit=crop' },
+    intensityA: 5,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-1c',
+    optionA: { name: 'Caramel Popcorn', image: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop' },
+    optionB: { name: 'Popcorn', image: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=600&h=600&fit=crop' },
+    intensityA: 6,
+    intensityB: 2,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
     id: 'sweet-2',
     optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
     optionB: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
