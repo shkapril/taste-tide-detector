@@ -3,6 +3,7 @@ import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
 import fetaCheeseImg from '@/assets/feta-cheese.png';
+import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
