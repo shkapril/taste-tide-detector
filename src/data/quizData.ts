@@ -3,6 +3,7 @@ import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
 import fetaCheeseImg from '@/assets/feta-cheese.png';
+import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -188,6 +189,14 @@ export const sweetItems: QuizItem[] = [
     optionB: { name: 'Honey', image: '/images/honey.png' },
     intensityA: 7,
     intensityB: 8,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-15',
+    optionA: { name: 'Almond Croissant', image: almondCroissantImg.url },
+    optionB: { name: 'Plain Croissant', image: '/images/plain_croissant.png' },
+    intensityA: 6,
+    intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
