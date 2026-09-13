@@ -8,6 +8,7 @@ import brownieImg from '@/assets/brownie.jpg.asset.json';
 import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.jpg.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
+import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -338,7 +339,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-14',
     optionA: { name: 'Buffalo Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
-    optionB: { name: 'BBQ Wings', image: 'https://images.unsplash.com/photo-1608039829572-25e8182a7a01?w=600&h=600&fit=crop' },
+    optionB: { name: 'BBQ Wings', image: bbqWingsImg.url },
     intensityA: 7,
     intensityB: 3,
     dietary: ['all-good'],
@@ -702,7 +703,7 @@ export const spicyItems: QuizItem[] = [
   {
     id: 'spicy-1',
     optionA: { name: 'Ghost Pepper Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
-    optionB: { name: 'BBQ Wings', image: 'https://images.unsplash.com/photo-1608039829572-25e8182a7a01?w=600&h=600&fit=crop' },
+    optionB: { name: 'BBQ Wings', image: bbqWingsImg.url },
     intensityA: 10,
     intensityB: 2,
     dietary: ['all-good'],
