@@ -339,7 +339,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-14',
-    optionA: { name: 'Buffalo Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
+    optionA: { name: 'Buffalo Wings', image: buffaloWingsImg.url },
     optionB: { name: 'BBQ Wings', image: bbqWingsImg.url },
     intensityA: 7,
     intensityB: 3,
@@ -347,7 +347,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-15',
-    optionA: { name: 'Buffalo Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
+    optionA: { name: 'Buffalo Wings', image: buffaloWingsImg.url },
     optionB: { name: 'Nashville Hot Chicken', image: 'https://images.unsplash.com/photo-1626645738196-c2a72c7d6e3b?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 4,
