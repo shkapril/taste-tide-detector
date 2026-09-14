@@ -198,6 +198,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'lo mein': ['noodles', 'wheat_flour', 'soy_sauce', 'garlic', 'scallion', 'sesame'],
   'szechuan noodles': ['noodles', 'wheat_flour', 'szechuan_pepper', 'chili_pepper', 'garlic', 'soy_sauce', 'sesame'],
   'spicy ramen': ['noodles', 'wheat_flour', 'chili_pepper', 'garlic', 'soy_sauce', 'scallion', 'egg'],
+  'buldak hot chicken ramen': ['chicken', 'noodles', 'wheat_flour', 'chili_pepper', 'garlic', 'soy_sauce', 'sugar'],
   'tonkotsu ramen': ['noodles', 'wheat_flour', 'pork', 'garlic', 'scallion', 'egg', 'soy_sauce'],
   'plain rice': ['rice'],
   'rice cakes': ['rice'],
