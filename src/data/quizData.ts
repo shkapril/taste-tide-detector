@@ -10,6 +10,7 @@ import cucumberImg from '@/assets/cucumber.jpg.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
+import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -796,6 +797,14 @@ export const spicyItems: QuizItem[] = [
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian'],
+  },
+  {
+    id: 'spicy-13',
+    optionA: { name: 'Buldak Hot Chicken Ramen', image: buldakRamenImg.url },
+    optionB: { name: 'Spicy Ramen', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 7,
+    dietary: ['all-good'],
   },
 ];
 
