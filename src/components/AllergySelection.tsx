@@ -125,9 +125,9 @@ export const IngredientSelection = ({ selectedIngredients, onToggleIngredient, o
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: [0.22, 1, 0.36, 1] }}
         onClick={onSkipAll}
-        className="w-full flex items-center justify-center gap-2 h-14 mb-6 rounded-full bg-secondary/60 chic-border text-foreground font-medium hover:bg-secondary transition-colors"
+        className="w-full flex items-center justify-center gap-2 h-14 mb-6 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
       >
-        <Sparkles className="w-4 h-4 text-primary" />
+        <Sparkles className="w-4 h-4 text-primary-foreground" />
         I eat everything — Skip
       </motion.button>
 
