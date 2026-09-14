@@ -9,6 +9,7 @@ import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.jpg.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
+import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
