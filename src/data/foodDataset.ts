@@ -412,8 +412,8 @@ export const foodDataset: FoodItem[] = [
     dietary: 'vegan',
   },
   {
-    id: 'nashville_hot',
-    name: 'Nashville Hot Chicken',
+    id: 'nashville_spicy',
+    name: 'Nashville Spicy Chicken',
     image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=400&fit=crop',
     uxVector: { sweet: 10, sour: 5, rich: 40, bitter: 5, salty: 35, spicy: 80 },
     internalVector: { sweet: 10, sour: 5, rich: 40, bitter: 5, salty: 35, spicy: 80, umami: 45 },

@@ -124,7 +124,7 @@ const allergenMap: Record<string, Allergen[]> = {
   // Spicy items with allergens
   'ghost pepper wings': ['gluten', 'meat'],
   'bbq wings': ['gluten', 'meat'],
-  'nashville hot chicken': ['gluten', 'eggs', 'meat'],
+  'nashville spicy chicken': ['gluten', 'eggs', 'meat'],
   'fried chicken': ['gluten', 'eggs', 'meat'],
   'vindaloo': ['dairy', 'meat'],
   'korma': ['dairy', 'tree_nuts', 'meat'],
