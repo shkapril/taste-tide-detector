@@ -731,7 +731,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-4',
-    optionA: { name: 'Szechuan Noodles', image: sichuanNoodleImg.url },
+    optionA: { name: 'Sichuan Noodle', image: sichuanNoodleImg.url },
     optionB: { name: 'Lo Mein', image: 'https://images.unsplash.com/photo-1634864572865-1cf8ff8bd23d?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 2,
