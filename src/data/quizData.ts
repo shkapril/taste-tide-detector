@@ -530,7 +530,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-6',
-    optionA: { name: 'Feta Cheese', image: fetaCheeseImg },
+    optionA: { name: 'Feta Cheese', image: fetaCheeseImg.url },
     optionB: { name: 'Ricotta', image: ricottaImg.url },
     intensityA: 6,
     intensityB: 1,
