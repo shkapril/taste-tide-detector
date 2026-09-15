@@ -8,3 +8,6 @@
 6. ✅ Replace search bar with autocomplete on the "Not on the list" input
 7. ✅ Auto-save eating style and blocked ingredients to my profile after finishing ingredient selection
 8. ✅ Sort searching-section options alphabetically
+9. ✅ Use uploaded habanero_salsa.jpg for Habanero Salsa
+10. ✅ Rename Mild Salsa to Tomato Salsa with uploaded tomato_salsa.jpg
+11. ✅ Use uploaded wasabi.jpg for Wasabi
