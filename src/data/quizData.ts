@@ -14,6 +14,8 @@ import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
 import mustardImg from '@/assets/mustard.jpg.asset.json';
+import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
+import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
