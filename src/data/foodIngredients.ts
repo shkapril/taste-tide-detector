@@ -139,7 +139,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'seaweed snacks': ['seaweed', 'sesame', 'salt'],
   'jalapeño poppers': ['jalapeno', 'cream_cheese', 'wheat_flour', 'bacon'],
   'habanero salsa': ['chili_pepper', 'tomato', 'onion', 'garlic', 'lime'],
-  'mild salsa': ['tomato', 'onion', 'garlic', 'lime'],
+  'tomato salsa': ['tomato', 'onion', 'garlic', 'lime'],
   'olive': ['olive', 'salt'],
   'olives': ['olive', 'salt'],
   'olive oil': ['olive', 'olive_oil'],

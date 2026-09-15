@@ -741,8 +741,8 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-5',
-    optionA: { name: 'Habanero Salsa', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
-    optionB: { name: 'Mild Salsa', image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&h=600&fit=crop' },
+    optionA: { name: 'Habanero Salsa', image: habaneroSalsaImg.url },
+    optionB: { name: 'Tomato Salsa', image: tomatoSalsaImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
