@@ -18,6 +18,9 @@ import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 import baconImg from '@/assets/bacon.jpg.asset.json';
+import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
+import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
+import ricottaImg from '@/assets/ricotta_cheese.png.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -488,7 +491,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-1',
     optionA: { name: 'Salted Chips', image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Crackers', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Crackers', image: plainCrackerImg.url },
     intensityA: 7,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -528,7 +531,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-6',
     optionA: { name: 'Feta Cheese', image: fetaCheeseImg },
-    optionB: { name: 'Ricotta', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionB: { name: 'Ricotta', image: ricottaImg.url },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -583,7 +586,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-13',
-    optionA: { name: 'Salted Caramel', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    optionA: { name: 'Salted Caramel', image: saltedCaramelImg.url },
     optionB: { name: 'Caramel', image: caramelImg },
     intensityA: 6,
     intensityB: 1,

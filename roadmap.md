@@ -11,3 +11,7 @@
 9. ✅ Use uploaded habanero_salsa.jpg for Habanero Salsa
 10. ✅ Rename Mild Salsa to Tomato Salsa with uploaded tomato_salsa.jpg
 11. ✅ Use uploaded wasabi.jpg for Wasabi
+
+12. [x] Replace Salted Caramel image (salty-13) with uploaded photo
+13. [x] Replace Plain Crackers image with uploaded photo
+14. [x] Replace Ricotta image with uploaded photo
