@@ -16,6 +16,7 @@ import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
 import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
+import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -765,7 +766,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-8',
-    optionA: { name: 'Wasabi', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Wasabi', image: wasabiImg.url },
     optionB: { name: 'Mustard', image: mustardImg.url },
     intensityA: 8,
     intensityB: 4,
