@@ -17,6 +17,7 @@ import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 import wasabiImg from '@/assets/wasabi.jpg.asset.json';
+import baconImg from '@/assets/bacon.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
