@@ -17,6 +17,7 @@ import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 import wasabiImg from '@/assets/wasabi.jpg.asset.json';
+import baconImg from '@/assets/bacon.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -534,7 +535,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-7',
-    optionA: { name: 'Bacon', image: 'https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?w=600&h=600&fit=crop' },
+    optionA: { name: 'Bacon', image: baconImg.url },
     optionB: { name: 'Grilled Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 2,
@@ -874,7 +875,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-8',
-    optionA: { name: 'Bacon', image: 'https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?w=600&h=600&fit=crop' },
+    optionA: { name: 'Bacon', image: baconImg.url },
     optionB: { name: 'Turkey Breast', image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 2,
