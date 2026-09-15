@@ -1,4 +1,4 @@
-import prosciuttoImg from '@/assets/prosciutto.png';
+import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
