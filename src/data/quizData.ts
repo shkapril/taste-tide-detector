@@ -13,6 +13,7 @@ import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
+import mustardImg from '@/assets/mustard.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -763,7 +764,7 @@ export const spicyItems: QuizItem[] = [
   {
     id: 'spicy-8',
     optionA: { name: 'Wasabi', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
-    optionB: { name: 'Mustard', image: 'https://images.unsplash.com/photo-1528750717929-32abb73d3bd9?w=600&h=600&fit=crop' },
+    optionB: { name: 'Mustard', image: mustardImg.url },
     intensityA: 8,
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
