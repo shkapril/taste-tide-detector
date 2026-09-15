@@ -10,3 +10,4 @@
 8. ✅ Sort searching-section options alphabetically
 9. ✅ Use uploaded habanero_salsa.jpg for Habanero Salsa
 10. ✅ Rename Mild Salsa to Tomato Salsa with uploaded tomato_salsa.jpg
+11. ✅ Use uploaded wasabi.jpg for Wasabi
