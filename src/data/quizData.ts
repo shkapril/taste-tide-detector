@@ -12,6 +12,7 @@ import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
+import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -729,7 +730,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-4',
-    optionA: { name: 'Szechuan Noodles', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop' },
+    optionA: { name: 'Szechuan Noodles', image: sichuanNoodleImg.url },
     optionB: { name: 'Lo Mein', image: 'https://images.unsplash.com/photo-1634864572865-1cf8ff8bd23d?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 2,
