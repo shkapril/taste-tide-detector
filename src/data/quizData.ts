@@ -11,6 +11,7 @@ import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
+import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -349,7 +350,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-15',
     optionA: { name: 'Buffalo Wings', image: buffaloWingsImg.url },
-    optionB: { name: 'Nashville Hot Chicken', image: 'https://images.unsplash.com/photo-1626645738196-c2a72c7d6e3b?w=600&h=600&fit=crop' },
+    optionB: { name: 'Nashville Spicy Chicken', image: nashvilleImg.url },
     intensityA: 6,
     intensityB: 4,
     dietary: ['all-good'],
@@ -768,7 +769,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-9',
-    optionA: { name: 'Nashville Hot Chicken', image: 'https://images.unsplash.com/photo-1626645738196-c2a72c7d6e3b?w=600&h=600&fit=crop' },
+    optionA: { name: 'Nashville Spicy Chicken', image: nashvilleImg.url },
     optionB: { name: 'Fried Chicken', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 1,
