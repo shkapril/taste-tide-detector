@@ -1,4 +1,4 @@
-import prosciuttoImg from '@/assets/prosciutto.png';
+import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
 import lemonCandyImg from '@/assets/lemon-candy.png';
@@ -495,7 +495,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-2',
-    optionA: { name: 'Prosciutto', image: prosciuttoImg },
+    optionA: { name: 'Prosciutto', image: prosciuttoImg.url },
     optionB: { name: 'Roast Turkey', image: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 3,
