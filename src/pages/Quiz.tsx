@@ -12,7 +12,7 @@ import {
   quizLabels,
 } from '@/data/quizData';
 import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet, hasVeganOverride } from '@/data/allergens';
-import { foodContainsBlockedIngredient } from '@/data/foodIngredients';
+import { foodContainsBlockedIngredient, isVeganSafeFood } from '@/data/foodIngredients';
 
 const TOTAL_QUESTIONS = 8;
 
