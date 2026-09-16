@@ -116,7 +116,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-4',
-    optionA: { name: 'Chocolate Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop' },
+    optionA: { name: 'Chocolate Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop', vegan: true },
     optionB: { name: 'Cheesecake', image: '/images/cheese_cake.png' },
     intensityA: 8,
     intensityB: 6,
@@ -125,7 +125,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-5',
     optionA: { name: 'Cheesecake', image: '/images/cheese_cake.png' },
-    optionB: { name: 'Carrot Cake', image: '/images/carrot_cake.png' },
+    optionB: { name: 'Carrot Cake', image: '/images/carrot_cake.png', vegan: true },
     intensityA: 6,
     intensityB: 5,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
