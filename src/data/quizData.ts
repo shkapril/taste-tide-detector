@@ -53,7 +53,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-1',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
-    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 9,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -76,7 +76,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-2',
-    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     optionB: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 4,
@@ -93,7 +93,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-3b',
     optionA: { name: 'Caramel', image: caramelImg },
-    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 6,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -148,7 +148,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-8',
-    optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png' },
+    optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png', vegan: true },
     optionB: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 8,
@@ -204,7 +204,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-12',
-    optionA: { name: 'Pancakes', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop' },
+    optionA: { name: 'Pancakes', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop', vegan: true },
     optionB: { name: 'Bagel', image: 'https://images.unsplash.com/photo-1585445490387-f47934b73b54?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 3,
@@ -220,7 +220,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-14',
-    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     optionB: { name: 'Honey', image: '/images/honey.png' },
     intensityA: 7,
     intensityB: 8,
@@ -236,15 +236,15 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-16',
-    optionA: { name: 'Fudge', image: fudgeImg.url },
-    optionB: { name: 'Brownie', image: brownieImg.url },
+    optionA: { name: 'Fudge', image: fudgeImg.url, vegan: true },
+    optionB: { name: 'Brownie', image: brownieImg.url, vegan: true },
     intensityA: 9,
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'sweet-17',
-    optionA: { name: 'Brownie', image: brownieImg.url },
+    optionA: { name: 'Brownie', image: brownieImg.url, vegan: true },
     optionB: { name: 'Chocolate Cookie', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 7,
@@ -253,7 +253,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-18',
     optionA: { name: 'Date Palm', image: datePalmImg },
-    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 8,
     intensityB: 7,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -261,7 +261,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-19',
     optionA: { name: 'Coconut Cracker', image: coconutCrackerImg },
-    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 4,
     intensityB: 7,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
