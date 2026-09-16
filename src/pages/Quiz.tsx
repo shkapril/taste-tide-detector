@@ -123,8 +123,6 @@ const Quiz = () => {
         foodContainsBlockedIngredient(item.optionA.name, blockedIngredients) ||
         foodContainsBlockedIngredient(item.optionB.name, blockedIngredients)
       ) return false;
-      // Filter out branch questions (they'll be added dynamically)
-      if (item.isBranchQuestion) return false;
       return true;
     });
   }, [quizType, allergies, eatingStyles, blockedIngredients]);
