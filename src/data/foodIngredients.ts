@@ -229,6 +229,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'french macaron': ['almond', 'egg', 'sugar', 'butter'],
   'glazed donut': ['wheat_flour', 'yeast', 'sugar', 'egg', 'milk'],
   'cupcake': ['wheat_flour', 'egg', 'butter', 'sugar', 'milk'],
+  'banana bread': ['banana', 'wheat_flour', 'egg', 'sugar', 'butter', 'walnut'],
   'carrot cake': ['carrot', 'wheat_flour', 'egg', 'sugar', 'cream_cheese', 'walnut', 'raisin'],
   'chocolate cake': ['wheat_flour', 'cocoa', 'chocolate', 'egg', 'sugar', 'butter', 'milk'],
   'cheesecake': ['cream_cheese', 'cheese', 'egg', 'sugar', 'butter', 'wheat_flour'],
