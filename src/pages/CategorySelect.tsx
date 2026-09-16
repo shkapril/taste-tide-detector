@@ -48,10 +48,14 @@ const CategorySelect = () => {
   };
 
   const handleStartNewQuiz = () => {
-    const nextCategory = categories.find((cat) => !completedQuizzes.includes(cat.type));
-    if (nextCategory) {
-      handleSelectCategory(nextCategory.type);
-    }
+    // Reset all quiz progress so every category starts fresh
+    localStorage.removeItem('quizScores');
+    localStorage.removeItem('completedQuizzes');
+    localStorage.removeItem('tasteDNA');
+    setCompletedQuizzes([]);
+    navigate('/quiz', {
+      state: { quizType: 'sweet', allergies, eatingStyles, blockedIngredients },
+    });
   };
 
   const handleViewResults = () => {
