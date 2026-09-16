@@ -47,6 +47,13 @@ const CategorySelect = () => {
     });
   };
 
+  const handleStartNewQuiz = () => {
+    const nextCategory = categories.find((cat) => !completedQuizzes.includes(cat.type));
+    if (nextCategory) {
+      handleSelectCategory(nextCategory.type);
+    }
+  };
+
   const handleViewResults = () => {
     navigate('/results');
   };
