@@ -31,10 +31,12 @@ export interface QuizItem {
   optionA: {
     name: string;
     image: string;
+    vegan?: boolean; // true = treated as a "vegan version" of this option
   };
   optionB: {
     name: string;
     image: string;
+    vegan?: boolean; // true = treated as a "vegan version" of this option
   };
   // If user swipes right (prefers A), their intensity goes toward intensityA
   // If user swipes left (prefers B), their intensity goes toward intensityB
