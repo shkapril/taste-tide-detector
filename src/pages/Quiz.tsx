@@ -11,7 +11,7 @@ import {
   quizDataMap,
   quizLabels,
 } from '@/data/quizData';
-import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet } from '@/data/allergens';
+import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet, hasVeganOverride } from '@/data/allergens';
 import { foodContainsBlockedIngredient } from '@/data/foodIngredients';
 
 const TOTAL_QUESTIONS = 8;
@@ -118,11 +118,16 @@ const Quiz = () => {
     const items = quizDataMap[quizType] || [];
     return items.filter(item => {
       if (shouldFilterItem(item.optionA.name, item.optionB.name, allergies)) return false;
-      if (shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles)) return false;
-      if (
-        foodContainsBlockedIngredient(item.optionA.name, blockedIngredients) ||
-        foodContainsBlockedIngredient(item.optionB.name, blockedIngredients)
-      ) return false;
+      // A "vegan version" option is always shown to vegan users, overriding
+      // other dietary exclusions (dietary tag, blocked ingredients).
+      const veganOverride = hasVeganOverride(item.optionA.vegan, item.optionB.vegan, eatingStyles);
+      if (!veganOverride) {
+        if (shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles)) return false;
+        if (
+          foodContainsBlockedIngredient(item.optionA.name, blockedIngredients) ||
+          foodContainsBlockedIngredient(item.optionB.name, blockedIngredients)
+        ) return false;
+      }
       return true;
     });
   }, [quizType, allergies, eatingStyles, blockedIngredients]);

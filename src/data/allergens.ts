@@ -145,6 +145,19 @@ export function getFoodAllergens(foodName: string): Allergen[] {
 }
 
 /**
+ * When the user selected 'vegan', any option flagged with vegan: true is
+ * treated as a "vegan version" of that dish. Such items are always shown,
+ * overriding other dietary exclusions (blocked ingredients, dietary tags).
+ */
+export function hasVeganOverride(
+  optionAVegan: boolean | undefined,
+  optionBVegan: boolean | undefined,
+  eatingStyles: EatingStyle[]
+): boolean {
+  return eatingStyles.includes('vegan') && !!(optionAVegan || optionBVegan);
+}
+
+/**
  * Check if a quiz item should be filtered out based on user's eating style.
  * For vegetarian/vegan/pescatarian: uses the dietary tag on the item.
  */
