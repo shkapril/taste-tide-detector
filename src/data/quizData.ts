@@ -23,6 +23,8 @@ import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese.png.asset.json';
 import greekYogurtImg from '@/assets/greek-yogurt.jpg.asset.json';
 import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
+import datePalmImg from '@/assets/date_palm.png';
+import coconutCrackerImg from '@/assets/coconut_cracker.png';
 
 export interface QuizItem {
   id: string;
