@@ -25,6 +25,7 @@ import greekYogurtImg from '@/assets/greek-yogurt.jpg.asset.json';
 import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
 import datePalmImg from '@/assets/date_palm.png';
 import coconutCrackerImg from '@/assets/coconut_cracker.png';
+import bananaBreadImg from '@/assets/banana_bread.png';
 
 export interface QuizItem {
   id: string;
@@ -263,6 +264,14 @@ export const sweetItems: QuizItem[] = [
     optionA: { name: 'Coconut Cracker', image: coconutCrackerImg },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 4,
+    intensityB: 7,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-20',
+    optionA: { name: 'Banana Bread', image: bananaBreadImg, vegan: true },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
+    intensityA: 6,
     intensityB: 7,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
