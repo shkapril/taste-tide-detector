@@ -12,7 +12,7 @@ import {
   quizLabels,
 } from '@/data/quizData';
 import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet, hasVeganOverride } from '@/data/allergens';
-import { foodContainsBlockedIngredient } from '@/data/foodIngredients';
+import { foodContainsBlockedIngredient, isVeganSafeFood } from '@/data/foodIngredients';
 
 const TOTAL_QUESTIONS = 8;
 
@@ -120,7 +120,13 @@ const Quiz = () => {
       if (shouldFilterItem(item.optionA.name, item.optionB.name, allergies)) return false;
       // A "vegan version" option is always shown to vegan users, overriding
       // other dietary exclusions (dietary tag, blocked ingredients).
-      const veganOverride = hasVeganOverride(item.optionA.vegan, item.optionB.vegan, eatingStyles);
+      // The override only applies when BOTH options are acceptable to a vegan:
+      // either explicitly flagged vegan, or free of animal-derived ingredients.
+      const optionOk = (name: string, flagged?: boolean) => flagged || isVeganSafeFood(name);
+      const veganOverride =
+        hasVeganOverride(item.optionA.vegan, item.optionB.vegan, eatingStyles) &&
+        optionOk(item.optionA.name, item.optionA.vegan) &&
+        optionOk(item.optionB.name, item.optionB.vegan);
       if (!veganOverride) {
         if (shouldFilterByDiet(item.dietary, item.optionA.name, item.optionB.name, eatingStyles)) return false;
         if (
