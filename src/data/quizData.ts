@@ -39,10 +39,6 @@ export interface QuizItem {
   intensityA: number; // 1-10 scale
   intensityB: number; // 1-10 scale
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
-  // Branching logic: conditional questions based on user choices
-  branchOnA?: string[]; // Question IDs to add if user chooses option A
-  branchOnB?: string[]; // Question IDs to add if user chooses option B
-  isBranchQuestion?: boolean; // If true, this question is only shown via branching
 }
 
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
