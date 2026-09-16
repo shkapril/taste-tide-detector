@@ -39,10 +39,6 @@ export interface QuizItem {
   intensityA: number; // 1-10 scale
   intensityB: number; // 1-10 scale
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
-  // Branching logic: conditional questions based on user choices
-  branchOnA?: string[]; // Question IDs to add if user chooses option A
-  branchOnB?: string[]; // Question IDs to add if user chooses option B
-  isBranchQuestion?: boolean; // If true, this question is only shown via branching
 }
 
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
@@ -377,16 +373,6 @@ export const bitterItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-    branchOnA: ['bitter-branch-coffee-espresso'],
-  },
-  {
-    id: 'bitter-branch-coffee-espresso',
-    optionA: { name: 'Black Coffee', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Espresso', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 9,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
   {
     id: 'bitter-2',
@@ -395,16 +381,6 @@ export const bitterItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 5,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-    branchOnA: ['bitter-branch-85-vs-90'],
-  },
-  {
-    id: 'bitter-branch-85-vs-90',
-    optionA: { name: '85% Cacao', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
-    optionB: { name: '90% Cacao', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
-    intensityA: 8,
-    intensityB: 9,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-    isBranchQuestion: true,
   },
   {
     id: 'bitter-3',
