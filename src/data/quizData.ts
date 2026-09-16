@@ -26,6 +26,7 @@ import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
 import datePalmImg from '@/assets/date_palm.png';
 import coconutCrackerImg from '@/assets/coconut_cracker.png';
 import bananaBreadImg from '@/assets/banana_bread.png';
+import balsamicVinegarImg from '@/assets/balsamic_vinegar.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -361,7 +362,7 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-12',
-    optionA: { name: 'Balsamic Vinegar', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
+    optionA: { name: 'Balsamic Vinegar', image: balsamicVinegarImg.url },
     optionB: { name: 'Olive Oil', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
