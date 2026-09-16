@@ -125,13 +125,18 @@ const CategorySelect = () => {
           </motion.div>
         )}
         {!allCompleted && completedQuizzes.length > 0 && (
-          <Button
-            onClick={handleViewResults}
-            variant="outline"
-            className="w-full h-12 text-base"
-          >
-            View Partial Results
-          </Button>
+          <>
+            <Button onClick={handleStartNewQuiz} className="w-full h-12 text-base">
+              Start a New Quiz
+            </Button>
+            <Button
+              onClick={handleViewResults}
+              variant="outline"
+              className="w-full h-12 text-base"
+            >
+              View Partial Results
+            </Button>
+          </>
         )}
       </div>
     </div>
