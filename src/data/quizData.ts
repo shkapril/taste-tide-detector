@@ -913,7 +913,7 @@ export const umamiItems: QuizItem[] = [
     optionB: { name: 'Honey', image: '/images/honey.png' },
     intensityA: 8,
     intensityB: 1,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'umami-12',
