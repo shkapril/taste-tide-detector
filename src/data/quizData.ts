@@ -21,6 +21,8 @@ import baconImg from '@/assets/bacon.jpg.asset.json';
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese.png.asset.json';
+import greekYogurtImg from '@/assets/greek-yogurt.jpg.asset.json';
+import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -302,8 +304,8 @@ export const sourItems: QuizItem[] = [
   },
   {
     id: 'sour-8',
-    optionA: { name: 'Greek Yogurt', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Yogurt', image: 'https://images.unsplash.com/photo-1562059390-a761a084768e?w=600&h=600&fit=crop' },
+    optionA: { name: 'Greek Yogurt', image: greekYogurtImg.url },
+    optionB: { name: 'Plain Yogurt', image: plainYogurtImg.url },
     intensityA: 5,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
