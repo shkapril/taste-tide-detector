@@ -361,6 +361,15 @@ export function foodContainsBlockedIngredient(
 }
 
 /**
+ * True when a dish contains no animal-derived ingredient
+ * (dairy, egg, meat, fish/seafood, honey).
+ */
+export function isVeganSafeFood(foodName: string): boolean {
+  return !foodContainsBlockedIngredient(foodName, defaultAvoidancesForStyle('vegan'));
+}
+
+
+/**
  * Default blocked ingredients preselected for an eating style.
  * - vegan: dairy & egg, meat, fish, seafood, honey
  * - vegetarian: meat, fish, seafood
