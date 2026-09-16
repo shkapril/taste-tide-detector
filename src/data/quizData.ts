@@ -52,7 +52,7 @@ export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' 
 export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-1',
-    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
+    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png', vegan: true },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 9,
     intensityB: 7,
@@ -77,14 +77,14 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-2',
     optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
-    optionB: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    optionB: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop', vegan: true },
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
   {
     id: 'sweet-3',
-    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
+    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png', vegan: true },
     optionB: { name: 'Caramel', image: caramelImg },
     intensityA: 9,
     intensityB: 6,
@@ -100,7 +100,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-3c',
-    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png' },
+    optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png', vegan: true },
     optionB: { name: 'Baklava', image: '/images/baklava.png' },
     intensityA: 9,
     intensityB: 8,
@@ -108,8 +108,8 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-3d',
-    optionA: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
-    optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
+    optionA: { name: 'Dark Chocolate (70%)', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop', vegan: true },
+    optionB: { name: 'Dark Chocolate (85%)', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop', vegan: true },
     intensityA: 4,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -397,7 +397,7 @@ export const bitterItems: QuizItem[] = [
   {
     id: 'bitter-2',
     optionA: { name: '85% Cacao', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
-    optionB: { name: '70% Dark Chocolate', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop' },
+    optionB: { name: '70% Dark Chocolate', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop', vegan: true },
     intensityA: 8,
     intensityB: 5,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
