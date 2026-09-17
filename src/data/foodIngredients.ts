@@ -148,7 +148,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'sun-dried tomato': ['tomato', 'salt', 'olive_oil'],
   'sun-dried tomatoes': ['tomato', 'salt', 'olive_oil'],
   'wasabi': ['horseradish'],
-  'date palm': ['date'],
+  'date palm (medjool date)': ['date'],
   'coconut cracker': ['coconut', 'wheat_flour', 'sugar'],
 
   // ── Meat / poultry ──
