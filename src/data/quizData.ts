@@ -254,7 +254,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-18',
-    optionA: { name: 'Date Palm', image: datePalmImg },
+    optionA: { name: 'Date Palm (Medjool Date)', image: datePalmImg },
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 8,
     intensityB: 7,
