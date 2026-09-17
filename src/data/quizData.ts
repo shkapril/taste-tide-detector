@@ -27,6 +27,11 @@ import datePalmImg from '@/assets/date_palm.png';
 import coconutCrackerImg from '@/assets/coconut_cracker.png';
 import bananaBreadImg from '@/assets/banana_bread.png';
 import balsamicVinegarImg from '@/assets/balsamic_vinegar.jpg.asset.json';
+import avocadoToastImg from '@/assets/avocado_toast.png';
+import butterImg from '@/assets/butter.png';
+import oliveOilImg from '@/assets/olive_oil.png';
+import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
+import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png';
 
 export interface QuizItem {
   id: string;
