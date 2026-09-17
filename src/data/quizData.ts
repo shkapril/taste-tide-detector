@@ -716,6 +716,14 @@ export const richItems: QuizItem[] = [
     intensityB: 8,
     dietary: ['all-good'],
   },
+  {
+    id: 'rich-16',
+    optionA: { name: 'Coconut Curry', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop' },
+    optionB: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    intensityA: 8,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Spicy comparisons (heat tolerance)
