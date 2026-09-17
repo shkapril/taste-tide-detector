@@ -114,7 +114,6 @@ export const foodIngredientMap: Record<string, string[]> = {
   'lime ceviche': ['lime', 'fish_generic', 'onion', 'chili_pepper', 'salt'],
   'coconut curry': ['coconut', 'onion', 'garlic', 'ginger', 'chili_pepper'],
   'smashed avocado on toast': ['avocado', 'wheat_flour', 'lemon', 'salt'],
-  'butter': ['butter'],
   'butternut squash soup': ['butternut_squash', 'onion', 'cream', 'salt'],
   'peanut butter noodles': ['peanut', 'noodles', 'soy_sauce', 'sesame_oil'],
 
