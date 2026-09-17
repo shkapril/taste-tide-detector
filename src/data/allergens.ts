@@ -132,6 +132,11 @@ const allergenMap: Record<string, Allergen[]> = {
   'vindaloo': ['dairy', 'meat'],
   'korma': ['dairy', 'tree_nuts', 'meat'],
   'coconut curry': ['tree_nuts'],
+  'smashed avocado on toast': ['gluten'],
+  'butter': ['dairy'],
+  'olive oil': [],
+  'butternut squash soup': ['dairy'],
+  'peanut butter noodles': ['peanuts', 'gluten'],
   'thai green curry': ['fish'],
 
   // MEAT / POULTRY
