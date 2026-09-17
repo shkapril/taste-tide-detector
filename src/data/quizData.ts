@@ -729,6 +729,38 @@ export const richItems: QuizItem[] = [
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'rich-17',
+    optionA: { name: 'Smashed Avocado on Toast', image: avocadoToastImg },
+    optionB: { name: 'Plain Bread', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-18',
+    optionA: { name: 'Butter', image: butterImg },
+    optionB: { name: 'Olive Oil', image: oliveOilImg },
+    intensityA: 10,
+    intensityB: 5,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-19',
+    optionA: { name: 'Butternut Squash Soup', image: butternutSquashSoupImg },
+    optionB: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    intensityA: 6,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-20',
+    optionA: { name: 'Peanut Butter Noodles', image: peanutButterNoodleImg },
+    optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 3,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Spicy comparisons (heat tolerance)
