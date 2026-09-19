@@ -302,6 +302,22 @@ export const sweetItems: QuizItem[] = [
     intensityB: 6,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'sweet-23',
+    optionA: { name: 'Peach', image: '/images/peach.png' },
+    optionB: { name: 'Banana Bread', image: bananaBreadImg, vegan: true },
+    intensityA: 5,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-24',
+    optionA: { name: 'Mango', image: '/images/mango.png' },
+    optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
+    intensityA: 7,
+    intensityB: 7,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Sour comparisons

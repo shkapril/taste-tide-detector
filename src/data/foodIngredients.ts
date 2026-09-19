@@ -105,6 +105,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'orange': ['orange'],
   'orange juice': ['orange'],
   'grapefruit': ['grapefruit'],
+  'peach': ['peach'],
   'mango': ['mango'],
   'passion fruit': ['passion_fruit'],
   'grapes': ['grape'],
