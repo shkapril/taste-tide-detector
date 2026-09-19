@@ -1,3 +1,4 @@
+import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
@@ -879,7 +880,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-1',
     optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Clear Broth', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Clear Broth', image: clearTofuSoupImg.url },
     intensityA: 8,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
