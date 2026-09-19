@@ -122,6 +122,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'mango': ['fruits'],
   'passion fruit': ['fruits'],
   'grapefruit': ['fruits'],
+  'peach': ['fruits'],
   'fresh lemon': ['fruits'],
   
   // Spicy items with allergens
