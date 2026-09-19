@@ -991,7 +991,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-15',
     optionA: { name: 'Porcini Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
-    optionB: { name: 'Button Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    optionB: { name: 'Button Mushrooms', image: buttonMushroomImg.url },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
