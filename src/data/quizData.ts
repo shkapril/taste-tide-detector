@@ -28,6 +28,8 @@ import coconutCrackerImg from '@/assets/coconut_cracker.png';
 import bananaBreadImg from '@/assets/banana_bread.png';
 import balsamicVinegarImg from '@/assets/balsamic_vinegar.jpg.asset.json';
 import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
+import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
+import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
 const avocadoToastImg = avocadoToastAsset.url;
 import butterImg from '@/assets/butter.png';
 import oliveOilImg from '@/assets/olive_oil.png';
@@ -908,8 +910,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-5',
-    optionA: { name: 'Shiitake Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
-    optionB: { name: 'Button Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    optionA: { name: 'Shiitake Mushrooms', image: shiitakeMushroomImg.url },
+    optionB: { name: 'Button Mushrooms', image: buttonMushroomImg.url },
     intensityA: 7,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
