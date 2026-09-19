@@ -1,4 +1,5 @@
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
+import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
 import caramelImg from '@/assets/caramel.png';
@@ -1092,6 +1093,14 @@ export const umamiItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 4,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-28',
+    optionA: { name: 'Truffle Mushroom Paste', image: truffleMushroomPasteImg.url },
+    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
+    intensityA: 9,
+    intensityB: 2,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
