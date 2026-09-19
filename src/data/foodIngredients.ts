@@ -294,6 +294,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'plain miso': ['miso', 'soybean', 'salt'],
   'miso soup': ['miso', 'soybean', 'dashi', 'fish_generic', 'seaweed', 'scallion'],
   'truffle oil': ['truffle', 'olive', 'olive_oil'],
+  'truffle mushroom paste': ['truffle', 'mushroom', 'olive', 'olive_oil', 'salt'],
   'soy sauce': ['soy_sauce', 'soybean', 'wheat_flour', 'salt'],
   'teriyaki sauce': ['soy_sauce', 'soybean', 'sugar', 'ginger', 'garlic', 'alcohol'],
   'marmite': ['yeast_extract', 'yeast', 'salt'],
