@@ -129,9 +129,13 @@ const CategorySelect = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
+            className="space-y-3"
           >
             <Button onClick={handleViewResults} className="w-full h-14 text-lg font-medium" size="lg">
               🧬 See My Taste DNA
+            </Button>
+            <Button onClick={handleStartNewQuiz} variant="outline" className="w-full h-12 text-base">
+              Start the New Quizzes
             </Button>
           </motion.div>
         )}
