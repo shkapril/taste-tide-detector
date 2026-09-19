@@ -48,14 +48,12 @@ const CategorySelect = () => {
   };
 
   const handleStartNewQuiz = () => {
-    // Reset all quiz progress so every category starts fresh
+    // Reset all quiz progress and stay on this page so the user
+    // can pick whichever category they want to start with
     localStorage.removeItem('quizScores');
     localStorage.removeItem('completedQuizzes');
     localStorage.removeItem('tasteDNA');
     setCompletedQuizzes([]);
-    navigate('/quiz', {
-      state: { quizType: 'sweet', allergies, eatingStyles, blockedIngredients },
-    });
   };
 
   const handleViewResults = () => {
