@@ -448,7 +448,7 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-2',
-    optionA: { name: '85% Cacao', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop' },
+    optionA: { name: '85% Cacao', image: 'https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=600&h=600&fit=crop', vegan: true },
     optionB: { name: '70% Dark Chocolate', image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&h=600&fit=crop', vegan: true },
     intensityA: 8,
     intensityB: 5,
