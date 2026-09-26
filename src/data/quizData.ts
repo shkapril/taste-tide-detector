@@ -38,6 +38,7 @@ import bananaBreadImg from '@/assets/banana_bread.png';
 import balsamicVinegarImg from '@/assets/balsamic_vinegar_2.png.asset.json';
 import vegetableBrothImg from '@/assets/vegetable_broth.png.asset.json';
 import dashiImg from '@/assets/dashi.png.asset.json';
+import poachedEggImg from '@/assets/poached-egg.jpg.asset.json';
 import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
 import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
 import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
@@ -708,7 +709,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-7',
     optionA: { name: 'Eggs Benedict (creamy hollandaise sauce)', image: '/images/egg_benedict.png' },
-    optionB: { name: 'Poached Eggs', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionB: { name: 'Poached Eggs', image: poachedEggImg.url },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -755,7 +756,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-14',
-    optionA: { name: 'Poached Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionA: { name: 'Poached Egg', image: poachedEggImg.url },
     optionB: { name: 'Scrambled Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
     intensityA: 3,
     intensityB: 7,
