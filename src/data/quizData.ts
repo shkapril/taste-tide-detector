@@ -46,6 +46,8 @@ import butterImg from '@/assets/butter.png';
 import oliveOilImg from '@/assets/olive_oil.png';
 import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
 import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
+import whiteBreadAsset from '@/assets/white_bread.png.asset.json';
+const whiteBreadImg = whiteBreadAsset.url;
 
 export interface QuizItem {
   id: string;
@@ -390,7 +392,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-9',
     optionA: { name: 'Sourdough Bread', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
-    optionB: { name: 'White Bread', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    optionB: { name: 'White Bread', image: whiteBreadImg },
     intensityA: 4,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -822,6 +824,14 @@ export const richItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-23',
+    optionA: { name: 'Sourdough Bread', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
+    optionB: { name: 'Butter', image: butterImg },
+    intensityA: 2,
+    intensityB: 10,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
