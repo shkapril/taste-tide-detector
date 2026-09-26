@@ -974,14 +974,6 @@ export const umamiItems: QuizItem[] = [
     dietary: ['pescatarian', 'all-good'],
   },
   {
-    id: 'umami-4',
-    optionA: { name: 'Soy Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
-    optionB: { name: 'Rice Vinegar', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
-    intensityA: 10,
-    intensityB: 2,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
-  },
-  {
     id: 'umami-5',
     optionA: { name: 'Shiitake Mushrooms', image: shiitakeMushroomImg.url },
     optionB: { name: 'Button Mushrooms', image: buttonMushroomImg.url },
