@@ -19,6 +19,7 @@ import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.png.asset.json';
 import sparklingWaterImg from '@/assets/sparkling_water.png.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
+import limeJuiceImg from '@/assets/lime_juice.png.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
@@ -1032,7 +1033,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-10',
     optionA: { name: 'Fish Sauce', image: fishSauceImg.url },
-    optionB: { name: 'Lime Juice', image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&h=600&fit=crop' },
+    optionB: { name: 'Lime Juice', image: limeJuiceImg.url },
     intensityA: 9,
     intensityB: 1,
     dietary: ['pescatarian', 'all-good'],
