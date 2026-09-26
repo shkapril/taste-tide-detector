@@ -756,7 +756,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-14',
-    optionA: { name: 'Poached Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionA: { name: 'Poached Egg', image: poachedEggImg.url },
     optionB: { name: 'Scrambled Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
     intensityA: 3,
     intensityB: 7,
