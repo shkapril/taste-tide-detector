@@ -1118,8 +1118,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-22',
-    optionA: { name: 'Pollock Roe (Mentaiko)', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Salt Bread with Pollock Roe (Mentaiko)', image: saltBreadMentaikoImg },
+    optionB: { name: 'Salt Bread', image: saltBreadImg },
     intensityA: 9,
     intensityB: 1,
     dietary: ['pescatarian', 'all-good'],
