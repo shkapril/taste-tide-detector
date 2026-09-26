@@ -1011,7 +1011,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-7',
     optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
-    optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
+    optionB: { name: 'Rice Cakes', image: riceCakeImg },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
