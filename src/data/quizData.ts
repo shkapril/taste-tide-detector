@@ -1075,7 +1075,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-16',
-    optionA: { name: 'Truffle Oil', image: 'https://images.unsplash.com/photo-1604329760661-e71e83bb5f6e?w=600&h=600&fit=crop' },
+    optionA: { name: 'Truffle Oil', image: truffleOilImg },
     optionB: { name: 'Olive Oil', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 2,
