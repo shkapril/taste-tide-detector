@@ -42,7 +42,7 @@ const avocadoToastImg = avocadoToastAsset.url;
 import butterImg from '@/assets/butter.png';
 import oliveOilImg from '@/assets/olive_oil.png';
 import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
-import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png';
+import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
 
 export interface QuizItem {
   id: string;
@@ -798,7 +798,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-20',
-    optionA: { name: 'Peanut Butter Noodles', image: peanutButterNoodleImg },
+    optionA: { name: 'Peanut Butter Noodles', image: peanutButterNoodleImg.url },
     optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 3,
