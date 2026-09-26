@@ -43,6 +43,12 @@ import poachedEggImg from '@/assets/poached-egg.jpg.asset.json';
 import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
 import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
 import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
+import tomatoImg from '@/assets/tomato.jpg';
+import sunDriedTomatoImg from '@/assets/sun_dried_tomato.jpg';
+import saltBreadAsset from '@/assets/salt_bread.png.asset.json';
+import saltBreadMentaikoAsset from '@/assets/salt_bread_mentaiko.png.asset.json';
+const saltBreadImg = saltBreadAsset.url;
+const saltBreadMentaikoImg = saltBreadMentaikoAsset.url;
 const avocadoToastImg = avocadoToastAsset.url;
 import butterAsset from '@/assets/butter.png.asset.json';
 const butterImg = butterAsset.url;
@@ -1114,10 +1120,10 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-22',
-    optionA: { name: 'Pollock Roe (Mentaiko)', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Salt Bread with Pollock Roe (Mentaiko)', image: saltBreadMentaikoImg },
+    optionB: { name: 'Salt Bread', image: saltBreadImg },
     intensityA: 9,
-    intensityB: 1,
+    intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
   },
   {
@@ -1175,6 +1181,14 @@ export const umamiItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-30',
+    optionA: { name: 'Sun-Dried Tomatoes', image: sunDriedTomatoImg, vegan: true },
+    optionB: { name: 'Tomato', image: tomatoImg, vegan: true },
+    intensityA: 8,
+    intensityB: 3,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
