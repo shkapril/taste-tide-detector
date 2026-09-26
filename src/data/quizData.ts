@@ -1,3 +1,4 @@
+import orangeImg from '@/assets/orange.jpg.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
