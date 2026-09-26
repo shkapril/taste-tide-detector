@@ -3,6 +3,7 @@ import caramelPopcornImg from '@/assets/caramel_popcorn.png.asset.json';
 import popcornImg from '@/assets/popcorn.png.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
+import eggRoyaleImg from '@/assets/egg_royale.jpg';
 import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
@@ -813,6 +814,14 @@ export const richItems: QuizItem[] = [
     intensityA: 1,
     intensityB: 3,
     dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-22',
+    optionA: { name: 'Egg Royale', image: eggRoyaleImg },
+    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 

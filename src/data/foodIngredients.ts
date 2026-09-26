@@ -140,6 +140,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'mashed potatoes': ['potato', 'butter', 'milk', 'salt'],
   'vegetable broth': ['onion', 'carrot', 'celery', 'garlic', 'salt'],
   'clear broth': ['onion', 'carrot', 'celery', 'salt'],
+  'egg royale': ['egg', 'salmon', 'fish_generic', 'bread', 'wheat_flour', 'butter', 'milk'],
   'fish clear soup': ['fish_generic', 'scallion', 'seaweed', 'salt'],
   'fish broth soup': ['fish_generic', 'scallion', 'seaweed', 'salt'],
   'tofu soup': ['tofu', 'soybean', 'scallion', 'seaweed', 'salt'],
