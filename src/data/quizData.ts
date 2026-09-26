@@ -1121,7 +1121,7 @@ export const umamiItems: QuizItem[] = [
     optionA: { name: 'Salt Bread with Pollock Roe (Mentaiko)', image: saltBreadMentaikoImg },
     optionB: { name: 'Salt Bread', image: saltBreadImg },
     intensityA: 9,
-    intensityB: 1,
+    intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
   },
   {
