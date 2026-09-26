@@ -75,6 +75,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'chicken soup': ['eggs', 'meat'],
   'mushroom soup': ['dairy'],
   'fish clear soup': ['fish'],
+  'fish broth soup': ['fish'],
   'tofu soup': ['soy'],
 
   // GLUTEN
