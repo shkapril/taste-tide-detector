@@ -719,7 +719,7 @@ export const richItems: QuizItem[] = [
   },
   {
     id: 'rich-9',
-    optionA: { name: 'Mashed Potatoes', image: '/images/mashed_potato.png' },
+    optionA: { name: 'Mashed Potatoes', image: '/images/mashed_potato.png', vegan: true },
     optionB: { name: 'Baked Potato', image: '/images/baked_potato.png' },
     intensityA: 7,
     intensityB: 2,
