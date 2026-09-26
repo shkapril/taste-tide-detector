@@ -357,7 +357,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-6',
     optionA: { name: 'Kombucha', image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&h=600&fit=crop' },
-    optionB: { name: 'Sparkling Water', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
+    optionB: { name: 'Sparkling Water', image: sparklingWaterImg.url },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
