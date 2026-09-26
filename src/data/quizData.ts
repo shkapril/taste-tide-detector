@@ -53,6 +53,9 @@ const saltBreadMentaikoImg = saltBreadMentaikoAsset.url;
 const avocadoToastImg = avocadoToastAsset.url;
 import butterAsset from '@/assets/butter.png.asset.json';
 const butterImg = butterAsset.url;
+
+import katsuobushiAsset from '@/assets/katsuobushi.png.asset.json';
+const katsuobushiImg = katsuobushiAsset.url;
 import soySauceAsset from '@/assets/soy-sauce.png.asset.json';
 const soySauceImg = soySauceAsset.url;
 import truffleOilAsset from '@/assets/truffle_oil.png.asset.json';
