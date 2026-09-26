@@ -50,6 +50,8 @@ import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
 import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
 import whiteBreadAsset from '@/assets/white_bread.png.asset.json';
 const whiteBreadImg = whiteBreadAsset.url;
+import seaweedButterAsset from '@/assets/seaweed_butter.jpg.asset.json';
+const seaweedButterImg = seaweedButterAsset.url;
 
 export interface QuizItem {
   id: string;
