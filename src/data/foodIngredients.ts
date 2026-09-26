@@ -196,6 +196,8 @@ export const foodIngredientMap: Record<string, string[]> = {
   'pollock roe': ['pollock_roe', 'fish_generic', 'salt'],
   'mentaiko': ['pollock_roe', 'fish_generic', 'chili_pepper', 'salt'],
   'mentaiko pasta': ['pollock_roe', 'fish_generic', 'pasta', 'wheat_flour', 'butter', 'seaweed'],
+  'salt bread': ['bread', 'wheat_flour', 'yeast', 'butter', 'milk', 'salt'],
+  'salt bread with pollock roe (mentaiko)': ['pollock_roe', 'fish_generic', 'bread', 'wheat_flour', 'yeast', 'butter', 'milk', 'salt'],
 
   // ── Pasta / noodles / rice ──
   'marinara pasta': ['pasta', 'wheat_flour', 'tomato', 'garlic', 'basil', 'olive_oil'],
