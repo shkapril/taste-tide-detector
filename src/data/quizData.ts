@@ -119,7 +119,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-3c',
     optionA: { name: 'White Chocolate', image: '/images/white_chocolate.png', vegan: true },
-    optionB: { name: 'Baklava', image: '/images/baklava.png' },
+    optionB: { name: 'Baklava', image: '/images/baklava.png', vegan: true },
     intensityA: 9,
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
