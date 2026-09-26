@@ -1,4 +1,5 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
 import caramelPopcornImg from '@/assets/caramel_popcorn.png.asset.json';
 import popcornImg from '@/assets/popcorn.png.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
@@ -658,7 +659,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-12',
-    optionA: { name: 'Seaweed Snacks', image: 'https://images.unsplash.com/photo-1590759485510-0a1d02fcd0c6?w=600&h=600&fit=crop' },
+    optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
     optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 1,
@@ -1006,7 +1007,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-7',
-    optionA: { name: 'Seaweed Snacks', image: 'https://images.unsplash.com/photo-1590759485510-0a1d02fcd0c6?w=600&h=600&fit=crop' },
+    optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
     optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
     intensityA: 6,
     intensityB: 1,
