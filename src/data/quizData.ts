@@ -3,6 +3,7 @@ import caramelPopcornImg from '@/assets/caramel_popcorn.png.asset.json';
 import popcornImg from '@/assets/popcorn.png.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
+import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
@@ -1148,6 +1149,14 @@ export const umamiItems: QuizItem[] = [
     intensityA: 9,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-29',
+    optionA: { name: 'Fish Broth Soup', image: fishBrothSoupImg },
+    optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
+    intensityA: 8,
+    intensityB: 2,
+    dietary: ['pescatarian', 'all-good'],
   },
 ];
 

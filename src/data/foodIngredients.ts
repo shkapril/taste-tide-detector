@@ -141,6 +141,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'vegetable broth': ['onion', 'carrot', 'celery', 'garlic', 'salt'],
   'clear broth': ['onion', 'carrot', 'celery', 'salt'],
   'fish clear soup': ['fish_generic', 'scallion', 'seaweed', 'salt'],
+  'fish broth soup': ['fish_generic', 'scallion', 'seaweed', 'salt'],
   'tofu soup': ['tofu', 'soybean', 'scallion', 'seaweed', 'salt'],
   'mushroom soup': ['mushroom', 'onion', 'cream', 'butter'],
   'seaweed snacks': ['seaweed', 'sesame', 'salt'],
