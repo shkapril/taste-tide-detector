@@ -5,6 +5,7 @@ import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
 import eggRoyaleImg from '@/assets/egg_royale.jpg';
 import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg.asset.json';
+import baguetteImg from '@/assets/baguette.png.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
