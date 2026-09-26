@@ -300,7 +300,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-22',
-    optionA: { name: 'Orange', image: '/images/orange.png' },
+    optionA: { name: 'Orange', image: orangeImg.url },
     optionB: { name: 'Banana Bread', image: bananaBreadImg, vegan: true },
     intensityA: 4,
     intensityB: 6,
@@ -329,7 +329,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-1',
     optionA: { name: 'Fresh Lemon', image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&h=600&fit=crop' },
-    optionB: { name: 'Orange', image: '/images/orange.png' },
+    optionB: { name: 'Orange', image: orangeImg.url },
     intensityA: 10,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -477,7 +477,7 @@ export const bitterItems: QuizItem[] = [
   {
     id: 'bitter-5',
     optionA: { name: 'Grapefruit', image: 'https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?w=600&h=600&fit=crop' },
-    optionB: { name: 'Orange', image: '/images/orange.png' },
+    optionB: { name: 'Orange', image: orangeImg.url },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
