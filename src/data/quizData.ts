@@ -43,8 +43,9 @@ import poachedEggImg from '@/assets/poached-egg.jpg.asset.json';
 import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
 import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
 import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
-import tomatoImg from '@/assets/tomato.jpg';
-import sunDriedTomatoImg from '@/assets/sun_dried_tomato.jpg';
+import tomatoImg from '@/assets/tomato.png.asset.json';
+import sunDriedTomatoImg from '@/assets/sun_dried_tomato.png.asset.json';
+import fishSauceImg from '@/assets/fish_sauce.png.asset.json';
 import saltBreadAsset from '@/assets/salt_bread.png.asset.json';
 import saltBreadMentaikoAsset from '@/assets/salt_bread_mentaiko.png.asset.json';
 const saltBreadImg = saltBreadAsset.url;
@@ -992,8 +993,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-6',
-    optionA: { name: 'Sun-dried Tomatoes', image: 'https://images.unsplash.com/photo-1592187270271-9a4e6e4e0e2a?w=600&h=600&fit=crop' },
-    optionB: { name: 'Fresh Tomatoes', image: 'https://images.unsplash.com/photo-1592924357228-91a030470d0c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Sun-dried Tomatoes', image: sunDriedTomatoImg.url },
+    optionB: { name: 'Fresh Tomatoes', image: tomatoImg.url },
     intensityA: 7,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -1024,7 +1025,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-10',
-    optionA: { name: 'Fish Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionA: { name: 'Fish Sauce', image: fishSauceImg.url },
     optionB: { name: 'Lime Juice', image: 'https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 1,
@@ -1088,8 +1089,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-18',
-    optionA: { name: 'Sun-dried Tomato', image: 'https://images.unsplash.com/photo-1592187270271-9a4e6e4e0e2a?w=600&h=600&fit=crop' },
-    optionB: { name: 'Tomato', image: 'https://images.unsplash.com/photo-1592924357228-91a030470d0c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Sun-dried Tomato', image: sunDriedTomatoImg.url },
+    optionB: { name: 'Tomato', image: tomatoImg.url },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -1184,8 +1185,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-30',
-    optionA: { name: 'Sun-Dried Tomatoes', image: sunDriedTomatoImg, vegan: true },
-    optionB: { name: 'Tomato', image: tomatoImg, vegan: true },
+    optionA: { name: 'Sun-Dried Tomatoes', image: sunDriedTomatoImg.url, vegan: true },
+    optionB: { name: 'Tomato', image: tomatoImg.url, vegan: true },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
