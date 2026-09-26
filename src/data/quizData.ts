@@ -659,7 +659,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-12',
-    optionA: { name: 'Seaweed Snacks', image: 'https://images.unsplash.com/photo-1590759485510-0a1d02fcd0c6?w=600&h=600&fit=crop' },
+    optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
     optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 1,
