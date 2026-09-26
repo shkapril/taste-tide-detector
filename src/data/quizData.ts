@@ -44,7 +44,10 @@ import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
 import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
 import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
 const avocadoToastImg = avocadoToastAsset.url;
-import butterImg from '@/assets/butter.png';
+import butterAsset from '@/assets/butter.png.asset.json';
+const butterImg = butterAsset.url;
+import soySauceAsset from '@/assets/soy-sauce.png.asset.json';
+const soySauceImg = soySauceAsset.url;
 import oliveOilImg from '@/assets/olive_oil.png';
 import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
 import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
@@ -587,7 +590,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-5',
-    optionA: { name: 'Soy Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionA: { name: 'Soy Sauce', image: soySauceImg },
     optionB: { name: 'Teriyaki Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
     intensityA: 10,
     intensityB: 5,
