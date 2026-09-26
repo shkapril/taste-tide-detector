@@ -9,6 +9,7 @@ import almondCroissantImg from '@/assets/almond_croissant.jpg.asset.json';
 import brownieImg from '@/assets/brownie.jpg.asset.json';
 import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.jpg.asset.json';
+import sparklingWaterImg from '@/assets/sparkling_water.png.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
@@ -357,7 +358,7 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-6',
     optionA: { name: 'Kombucha', image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&h=600&fit=crop' },
-    optionB: { name: 'Sparkling Water', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=600&fit=crop' },
+    optionB: { name: 'Sparkling Water', image: sparklingWaterImg.url },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
