@@ -1152,7 +1152,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-29',
-    optionA: { name: 'Fish Broth Soup', image: fishBrothSoupImg },
+    optionA: { name: 'Fish Broth Soup', image: fishBrothSoupImg.url },
     optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 8,
     intensityB: 2,
