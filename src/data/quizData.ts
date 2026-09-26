@@ -5,6 +5,7 @@ import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
 import eggRoyaleImg from '@/assets/egg_royale.jpg';
 import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg.asset.json';
+import baguetteImg from '@/assets/baguette.png.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
@@ -677,7 +678,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-3',
     optionA: { name: 'Croissant', image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop' },
-    optionB: { name: 'Baguette', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    optionB: { name: 'Baguette', image: baguetteImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
