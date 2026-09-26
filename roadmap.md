@@ -15,3 +15,7 @@
 12. [x] Replace Salted Caramel image (salty-13) with uploaded photo
 13. [x] Replace Plain Crackers image with uploaded photo
 14. [x] Replace Ricotta image with uploaded photo
+
+- [x] Add Tomato vs Sun-Dried Tomatoes to the umami quiz
+- [x] Rename Pollock Roe to Salt Bread with Pollock Roe (Mentaiko) and add Salt Bread to the umami quiz
+- [x] Use uploaded photos for Salt Bread and Salt Bread with Pollock Roe
