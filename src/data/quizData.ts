@@ -58,6 +58,8 @@ const butterImg = butterAsset.url;
 
 import katsuobushiAsset from '@/assets/katsuobushi.png.asset.json';
 const katsuobushiImg = katsuobushiAsset.url;
+import riceCakeAsset from '@/assets/rice_cake.png.asset.json';
+const riceCakeImg = riceCakeAsset.url;
 import soySauceAsset from '@/assets/soy-sauce.png.asset.json';
 const soySauceImg = soySauceAsset.url;
 import truffleOilAsset from '@/assets/truffle_oil.png.asset.json';
@@ -661,7 +663,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-12',
     optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
-    optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
+    optionB: { name: 'Rice Cakes', image: riceCakeImg },
     intensityA: 4,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -1009,7 +1011,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-7',
     optionA: { name: 'Seaweed Snacks', image: seaweedSnackImg.url },
-    optionB: { name: 'Rice Cakes', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop' },
+    optionB: { name: 'Rice Cakes', image: riceCakeImg },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
