@@ -55,6 +55,8 @@ import butterAsset from '@/assets/butter.png.asset.json';
 const butterImg = butterAsset.url;
 import soySauceAsset from '@/assets/soy-sauce.png.asset.json';
 const soySauceImg = soySauceAsset.url;
+import truffleOilAsset from '@/assets/truffle_oil.png.asset.json';
+const truffleOilImg = truffleOilAsset.url;
 import oliveOilImg from '@/assets/olive_oil.png';
 import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
 import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
