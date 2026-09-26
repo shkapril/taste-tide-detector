@@ -53,6 +53,9 @@ const saltBreadMentaikoImg = saltBreadMentaikoAsset.url;
 const avocadoToastImg = avocadoToastAsset.url;
 import butterAsset from '@/assets/butter.png.asset.json';
 const butterImg = butterAsset.url;
+
+import katsuobushiAsset from '@/assets/katsuobushi.png.asset.json';
+const katsuobushiImg = katsuobushiAsset.url;
 import soySauceAsset from '@/assets/soy-sauce.png.asset.json';
 const soySauceImg = soySauceAsset.url;
 import truffleOilAsset from '@/assets/truffle_oil.png.asset.json';
@@ -1139,7 +1142,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-24',
-    optionA: { name: 'Katsuobushi', image: 'https://images.unsplash.com/photo-1569058242253-92a9c0a0d9a7?w=600&h=600&fit=crop' },
+    optionA: { name: 'Katsuobushi', image: katsuobushiImg },
     optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 1,
