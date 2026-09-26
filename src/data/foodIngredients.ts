@@ -44,6 +44,7 @@ export const ingredientCatalog: Ingredient[] = [
   { slug: 'carrot', label: 'Carrot', category: 'vegetables' },
   { slug: 'mushroom', label: 'Mushroom', category: 'vegetables' },
   { slug: 'soybean', label: 'Soybean', category: 'vegetables' },
+  { slug: 'tofu', label: 'Tofu', category: 'vegetables' },
   { slug: 'celery', label: 'Celery', category: 'vegetables' },
 
   // DAIRY & EGG
@@ -139,6 +140,8 @@ export const foodIngredientMap: Record<string, string[]> = {
   'mashed potatoes': ['potato', 'butter', 'milk', 'salt'],
   'vegetable broth': ['onion', 'carrot', 'celery', 'garlic', 'salt'],
   'clear broth': ['onion', 'carrot', 'celery', 'salt'],
+  'fish clear soup': ['fish_generic', 'scallion', 'seaweed', 'salt'],
+  'tofu soup': ['tofu', 'soybean', 'scallion', 'seaweed', 'salt'],
   'mushroom soup': ['mushroom', 'onion', 'cream', 'butter'],
   'seaweed snacks': ['seaweed', 'sesame', 'salt'],
   'jalapeño poppers': ['jalapeno', 'cream_cheese', 'wheat_flour', 'bacon'],

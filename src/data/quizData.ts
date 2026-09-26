@@ -2,6 +2,7 @@ import orangeImg from '@/assets/orange.jpg.asset.json';
 import caramelPopcornImg from '@/assets/caramel_popcorn.png.asset.json';
 import popcornImg from '@/assets/popcorn.png.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
+import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
 import prosciuttoImg from '@/assets/prosciutto.png.asset.json';
 import mozzarellaImg from '@/assets/mozzarella.png';
@@ -803,6 +804,14 @@ export const richItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'rich-21',
+    optionA: { name: 'Fish Clear Soup', image: fishClearSoupImg },
+    optionB: { name: 'Tofu Soup', image: clearTofuSoupImg.url },
+    intensityA: 1,
+    intensityB: 3,
+    dietary: ['pescatarian', 'all-good'],
   },
 ];
 
