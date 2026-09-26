@@ -614,7 +614,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-10',
-    optionA: { name: 'Miso Soup', image: vegetableBrothImg.url },
+    optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
     optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 6,
     intensityB: 2,
@@ -914,7 +914,7 @@ export const spicyItems: QuizItem[] = [
 export const umamiItems: QuizItem[] = [
   {
     id: 'umami-1',
-    optionA: { name: 'Miso Soup', image: vegetableBrothImg.url },
+    optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
     optionB: { name: 'Clear Broth', image: clearTofuSoupImg.url },
     intensityA: 8,
     intensityB: 2,
@@ -1010,7 +1010,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-13',
-    optionA: { name: 'Dashi', image: vegetableBrothImg.url },
+    optionA: { name: 'Dashi', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
     optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 9,
     intensityB: 2,
@@ -1042,8 +1042,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-17',
-    optionA: { name: 'Shiitake Miso', image: vegetableBrothImg.url },
-    optionB: { name: 'Plain Miso', image: vegetableBrothImg.url },
+    optionA: { name: 'Shiitake Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
