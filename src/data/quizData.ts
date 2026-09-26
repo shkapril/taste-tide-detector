@@ -29,7 +29,8 @@ import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
 import datePalmImg from '@/assets/date_palm.png';
 import coconutCrackerImg from '@/assets/coconut_cracker.png';
 import bananaBreadImg from '@/assets/banana_bread.png';
-import balsamicVinegarImg from '@/assets/balsamic_vinegar.jpg.asset.json';
+import balsamicVinegarImg from '@/assets/balsamic_vinegar_2.png.asset.json';
+import vegetableBrothImg from '@/assets/vegetable_broth.png.asset.json';
 import avocadoToastAsset from '@/assets/smashed_avocado_toast.png.asset.json';
 import shiitakeMushroomImg from '@/assets/shiitake_mushroom.jpg.asset.json';
 import buttonMushroomImg from '@/assets/button_mushroom.jpg.asset.json';
@@ -614,7 +615,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-10',
     optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Vegetable Broth', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -1010,7 +1011,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-13',
     optionA: { name: 'Dashi', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Vegetable Broth', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
