@@ -814,6 +814,14 @@ export const richItems: QuizItem[] = [
     intensityB: 3,
     dietary: ['pescatarian', 'all-good'],
   },
+  {
+    id: 'rich-22',
+    optionA: { name: 'Egg Royale', image: eggRoyaleImg },
+    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Spicy comparisons (heat tolerance)
