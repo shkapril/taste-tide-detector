@@ -1027,7 +1027,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-9',
-    optionA: { name: 'Aged Cheddar', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionA: { name: 'Aged Cheddar', image: agedCheddarImg.url },
     optionB: { name: 'Cream Cheese', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 2,
