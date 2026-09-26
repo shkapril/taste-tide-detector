@@ -709,7 +709,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-7',
     optionA: { name: 'Eggs Benedict (creamy hollandaise sauce)', image: '/images/egg_benedict.png' },
-    optionB: { name: 'Poached Eggs', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionB: { name: 'Poached Eggs', image: poachedEggImg.url },
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
