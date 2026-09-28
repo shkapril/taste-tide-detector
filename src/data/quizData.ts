@@ -1,5 +1,6 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
+import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
 import caramelPopcornImg from '@/assets/caramel_popcorn.png.asset.json';
 import popcornImg from '@/assets/popcorn.png.asset.json';
@@ -1075,7 +1076,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-15',
-    optionA: { name: 'Porcini Mushrooms', image: 'https://images.unsplash.com/photo-1576076567699-247103a75b10?w=600&h=600&fit=crop' },
+    optionA: { name: 'Porcini Mushrooms', image: porciniImg.url },
     optionB: { name: 'Button Mushrooms', image: buttonMushroomImg.url },
     intensityA: 8,
     intensityB: 3,
