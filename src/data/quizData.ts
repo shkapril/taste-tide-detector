@@ -1,4 +1,5 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
@@ -689,7 +690,7 @@ export const saltyItems: QuizItem[] = [
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
-    optionA: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    optionA: { name: 'Chicken Soup', image: chickenSoupImg.url },
     optionB: { name: 'Mushroom Soup', image: '/images/mushroom_soup.png', vegan: true },
     intensityA: 2,
     intensityB: 4,
@@ -802,7 +803,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-16',
     optionA: { name: 'Coconut Curry', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop', vegan: true },
-    optionB: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    optionB: { name: 'Chicken Soup', image: chickenSoupImg.url },
     intensityA: 8,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -826,7 +827,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-19',
     optionA: { name: 'Butternut Squash Soup', image: butternutSquashSoupImg, vegan: true },
-    optionB: { name: 'Chicken Soup', image: '/images/chicken_soup.png' },
+    optionB: { name: 'Chicken Soup', image: chickenSoupImg.url },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
