@@ -1,4 +1,6 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import edamameImg from '@/assets/edamame.png.asset.json';
+import nattoImg from '@/assets/natto.png.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
 import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
 import anchovyImg from '@/assets/anchovy.png.asset.json';
@@ -1131,8 +1133,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-14',
-    optionA: { name: 'Natto', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop', vegan: true },
-    optionB: { name: 'Edamame', image: 'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600&h=600&fit=crop', vegan: true },
+    optionA: { name: 'Natto', image: nattoImg.url, vegan: true },
+    optionB: { name: 'Edamame', image: edamameImg.url, vegan: true },
     intensityA: 8,
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
