@@ -1153,8 +1153,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-17',
-    optionA: { name: 'Shiitake Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Miso', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionA: { name: 'Shiitake Miso Soup', image: shiitakeMisoSoupImg.url },
+    optionB: { name: 'Plain Miso Soup', image: misoSoupPlainImg.url },
     intensityA: 8,
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
