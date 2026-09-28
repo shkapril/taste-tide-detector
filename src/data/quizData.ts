@@ -34,7 +34,6 @@ import fudgeImg from '@/assets/fudge.jpg.asset.json';
 import cucumberImg from '@/assets/cucumber.png.asset.json';
 import sparklingWaterImg from '@/assets/sparkling_water.png.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
-import limeJuiceImg from '@/assets/lime_juice.png.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
 import buffaloWingsImg from '@/assets/buffalo_wing.png.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
