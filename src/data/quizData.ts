@@ -1,5 +1,7 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
+import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
+import garlicShrimpPastaImg from '@/assets/garlic_shrimp_pasta.jpg';
 import padThaiImg from '@/assets/pad_thai.jpg';
 import padSeeEwImg from '@/assets/pad_see_ew.jpg';
 import boiledEggImg from '@/assets/boiled_egg.jpg';
@@ -648,10 +650,10 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-4',
-    optionA: { name: 'Anchovies', image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=600&fit=crop' },
-    optionB: { name: 'Fresh Salmon', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
+    optionA: { name: 'Anchovy Pasta', image: anchovyPastaImg },
+    optionB: { name: 'Garlic Shrimp Pasta', image: garlicShrimpPastaImg },
     intensityA: 9,
-    intensityB: 2,
+    intensityB: 5,
     dietary: ['pescatarian', 'all-good'],
   },
   {
