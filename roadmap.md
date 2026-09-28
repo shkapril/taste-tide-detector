@@ -19,3 +19,5 @@
 - [x] Add Tomato vs Sun-Dried Tomatoes to the umami quiz
 - [x] Rename Pollock Roe to Salt Bread with Pollock Roe (Mentaiko) and add Salt Bread to the umami quiz
 - [x] Use uploaded photos for Salt Bread and Salt Bread with Pollock Roe
+- [x] Add Pad Thai/Pad See Ew, Khai Luk Koei/Boiled Egg, Teriyaki vs Grilled Salmon, Bulgogi vs Beef Steak to the sweet quiz
+- [x] Use uploaded photo for Ghost Pepper Wings
