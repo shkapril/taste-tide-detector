@@ -214,7 +214,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-7',
     optionA: { name: 'Caramel', image: caramelImg },
-    optionB: { name: 'Honey', image: '/images/honey.png' },
+    optionB: { name: 'Honey', image: honeyImg.url },
     intensityA: 6,
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -294,7 +294,7 @@ export const sweetItems: QuizItem[] = [
   {
     id: 'sweet-14',
     optionA: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
-    optionB: { name: 'Honey', image: '/images/honey.png' },
+    optionB: { name: 'Honey', image: honeyImg.url },
     intensityA: 7,
     intensityB: 8,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -1104,7 +1104,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-11',
     optionA: { name: 'Marmite', image: marmiteImg.url },
-    optionB: { name: 'Honey', image: '/images/honey.png' },
+    optionB: { name: 'Honey', image: honeyImg.url },
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
