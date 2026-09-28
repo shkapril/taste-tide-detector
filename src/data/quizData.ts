@@ -14,6 +14,7 @@ import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
+import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
@@ -1107,8 +1108,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-12',
-    optionA: { name: 'Beef Stew', image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop' },
-    optionB: { name: 'Steamed Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
+    optionA: { name: 'Braised Beef Stew', image: braisedBeefStewImg.url },
+    optionB: { name: 'Grilled Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 1,
     dietary: ['all-good'],
