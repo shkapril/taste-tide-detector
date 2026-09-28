@@ -50,6 +50,8 @@ import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 import baconImg from '@/assets/bacon.jpg.asset.json';
 import marmiteImg from '@/assets/marmite.png.asset.json';
 import honeyImg from '@/assets/honey.png.asset.json';
+import shiitakeMisoSoupImg from '@/assets/shiitake_miso_soup.png.asset.json';
+import misoSoupPlainImg from '@/assets/miso_soup_plain.png.asset.json';
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
