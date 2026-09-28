@@ -1,4 +1,5 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
@@ -886,7 +887,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-3',
-    optionA: { name: 'Jalapeño Poppers', image: 'https://images.unsplash.com/photo-1548869206-93b036288fa3?w=600&h=600&fit=crop' },
+    optionA: { name: 'Jalapeño Poppers', image: jalapenoPopperImg.url },
     optionB: { name: 'Mozzarella Sticks', image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
