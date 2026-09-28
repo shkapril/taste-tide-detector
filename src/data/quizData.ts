@@ -88,8 +88,10 @@ import whiteBreadAsset from '@/assets/white_bread.png.asset.json';
 const whiteBreadImg = whiteBreadAsset.url;
 import seaweedButterAsset from '@/assets/seaweed_butter_2.jpg.asset.json';
 import truffleButterAsset from '@/assets/truffle_butter.png.asset.json';
+import garlicButterAsset from '@/assets/garlic_butter.png.asset.json';
 const seaweedButterImg = seaweedButterAsset.url;
 const truffleButterImg = truffleButterAsset.url;
+const garlicButterImg = garlicButterAsset.url;
 
 export interface QuizItem {
   id: string;
@@ -1207,7 +1209,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-25',
-    optionA: { name: 'Garlic Butter', image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&h=600&fit=crop' },
+    optionA: { name: 'Garlic Butter', image: garlicButterImg },
     optionB: { name: 'Butter', image: butterImg },
     intensityA: 7,
     intensityB: 4,
