@@ -1119,10 +1119,10 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-14',
-    optionA: { name: 'Natto', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop' },
-    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Natto', image: 'https://images.unsplash.com/photo-1564834724105-918b3d7417b1?w=600&h=600&fit=crop', vegan: true },
+    optionB: { name: 'Edamame', image: 'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600&h=600&fit=crop', vegan: true },
     intensityA: 8,
-    intensityB: 1,
+    intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
   {
