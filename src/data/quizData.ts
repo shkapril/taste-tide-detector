@@ -87,8 +87,10 @@ import butternutSquashSoupImg from '@/assets/butternut_squash_soup.png';
 import peanutButterNoodleImg from '@/assets/peanut_butter_noodle.png.asset.json';
 import whiteBreadAsset from '@/assets/white_bread.png.asset.json';
 const whiteBreadImg = whiteBreadAsset.url;
-import seaweedButterAsset from '@/assets/seaweed_butter.jpg.asset.json';
+import seaweedButterAsset from '@/assets/seaweed_butter_2.jpg.asset.json';
+import truffleButterAsset from '@/assets/truffle_butter.png.asset.json';
 const seaweedButterImg = seaweedButterAsset.url;
+const truffleButterImg = truffleButterAsset.url;
 
 export interface QuizItem {
   id: string;
