@@ -1046,7 +1046,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-3',
     optionA: { name: 'Anchovies', image: anchovyImg.url },
-    optionB: { name: 'Grilled White Fish', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
+    optionB: { name: 'Grilled White Fish', image: grilledWhiteFishImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
