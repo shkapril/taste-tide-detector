@@ -49,6 +49,8 @@ import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 import baconImg from '@/assets/bacon.jpg.asset.json';
 import marmiteImg from '@/assets/marmite.png.asset.json';
+import plainToastAsset from '@/assets/plain_toast.png.asset.json';
+const plainToastImg = plainToastAsset.url;
 import honeyImg from '@/assets/honey.png.asset.json';
 import shiitakeMisoSoupImg from '@/assets/shiitake_miso_soup.png.asset.json';
 import misoSoupPlainImg from '@/assets/miso_soup_plain.png.asset.json';
@@ -906,7 +908,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-22',
     optionA: { name: 'Egg Royale', image: eggRoyaleImg },
-    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Toast', image: plainToastImg },
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
@@ -1242,7 +1244,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-28',
     optionA: { name: 'Truffle Mushroom Paste', image: truffleMushroomPasteImg.url },
-    optionB: { name: 'Plain Toast', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Toast', image: plainToastImg },
     intensityA: 9,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
