@@ -1107,8 +1107,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-12',
-    optionA: { name: 'Beef Stew', image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=600&fit=crop' },
-    optionB: { name: 'Steamed Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
+    optionA: { name: 'Braised Beef Stew', image: braisedBeefStewImg.url },
+    optionB: { name: 'Grilled Chicken', image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 1,
     dietary: ['all-good'],

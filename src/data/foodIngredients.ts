@@ -163,7 +163,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   // ── Meat / poultry ──
   'chicken soup': ['chicken', 'carrot', 'onion', 'celery', 'salt'],
   'grilled chicken': ['chicken', 'salt', 'olive_oil'],
-  'steamed chicken': ['chicken', 'ginger', 'scallion'],
+  'grilled chicken': ['chicken', 'garlic', 'olive', 'olive_oil', 'herbs'],
   'roasted chicken': ['chicken', 'butter', 'garlic', 'salt'],
   'fried chicken': ['chicken', 'wheat_flour', 'egg', 'salt'],
   'korean fried chicken': ['chicken', 'wheat_flour', 'garlic', 'soy_sauce', 'chili_pepper', 'sugar'],
