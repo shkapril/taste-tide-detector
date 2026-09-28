@@ -1,6 +1,8 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
 import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
+import anchovyImg from '@/assets/anchovy.png.asset.json';
+import olivesImg from '@/assets/olives.png.asset.json';
 import garlicShrimpPastaImg from '@/assets/garlic_shrimp_pasta.jpg';
 import padThaiImg from '@/assets/pad_thai.jpg';
 import padSeeEwImg from '@/assets/pad_see_ew.jpg';
@@ -693,7 +695,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-9',
-    optionA: { name: 'Olives', image: 'https://images.unsplash.com/photo-1593030103066-0093718b6f74?w=600&h=600&fit=crop' },
+    optionA: { name: 'Olives', image: olivesImg.url },
     optionB: { name: 'Grapes', image: 'https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
@@ -1041,7 +1043,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-3',
-    optionA: { name: 'Anchovies', image: 'https://images.unsplash.com/photo-1599084993091-6c4fd023714a?w=600&h=600&fit=crop' },
+    optionA: { name: 'Anchovies', image: anchovyImg.url },
     optionB: { name: 'Grilled White Fish', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 2,
@@ -1193,8 +1195,8 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-23',
-    optionA: { name: 'Anchovy', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
-    optionB: { name: 'Olive', image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=600&fit=crop' },
+    optionA: { name: 'Anchovy', image: anchovyImg.url },
+    optionB: { name: 'Olive', image: olivesImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
