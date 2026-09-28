@@ -1,4 +1,5 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
