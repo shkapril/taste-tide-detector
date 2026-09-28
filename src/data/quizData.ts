@@ -652,7 +652,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-4',
     optionA: { name: 'Anchovy Pasta', image: anchovyPastaImg },
-    optionB: { name: 'Garlic Shrimp Pasta', image: garlicShrimpPastaImg },
+    optionB: { name: 'Garlic Shrimp Oil Pasta', image: garlicShrimpPastaImg },
     intensityA: 9,
     intensityB: 5,
     dietary: ['pescatarian', 'all-good'],
