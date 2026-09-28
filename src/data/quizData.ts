@@ -2,6 +2,7 @@ import orangeImg from '@/assets/orange.jpg.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
 import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
 import anchovyImg from '@/assets/anchovy.png.asset.json';
+import grilledWhiteFishImg from '@/assets/grilled_white_fish.png.asset.json';
 import olivesImg from '@/assets/olives.png.asset.json';
 import garlicShrimpPastaImg from '@/assets/garlic_shrimp_pasta.jpg';
 import padThaiImg from '@/assets/pad_thai.jpg';
