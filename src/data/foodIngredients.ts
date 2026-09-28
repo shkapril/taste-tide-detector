@@ -177,7 +177,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'vindaloo': ['pork', 'chili_pepper', 'garlic', 'vinegar', 'onion'],
   'roast turkey': ['turkey', 'butter', 'salt'],
   'turkey breast': ['turkey', 'salt'],
-  'beef stew': ['beef', 'onion', 'carrot', 'potato', 'celery', 'salt'],
+  'braised beef stew': ['beef', 'onion', 'carrot', 'potato', 'celery', 'salt'],
   'bacon': ['pork', 'bacon', 'salt'],
   'prosciutto': ['pork', 'prosciutto', 'salt'],
 
