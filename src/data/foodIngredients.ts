@@ -303,6 +303,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'dashi': ['dashi', 'fish_generic', 'katsuobushi', 'seaweed'],
   'katsuobushi': ['katsuobushi', 'fish_generic'],
   'natto': ['natto', 'soybean'],
+  'edamame': ['soybean'],
   'porcini mushrooms': ['porcini', 'mushroom'],
   'button mushrooms': ['mushroom'],
   'shiitake mushrooms': ['shiitake', 'mushroom'],
