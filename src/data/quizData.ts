@@ -1,4 +1,13 @@
 import orangeImg from '@/assets/orange.jpg.asset.json';
+import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
+import padThaiImg from '@/assets/pad_thai.jpg';
+import padSeeEwImg from '@/assets/pad_see_ew.jpg';
+import boiledEggImg from '@/assets/boiled_egg.jpg';
+import khaiLukKoeiImg from '@/assets/khai_luk_koei.jpg';
+import teriyakiSalmonImg from '@/assets/teriyaki_salmon.jpg';
+import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
+import bulgogiImg from '@/assets/bulgogi.jpg';
+import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
@@ -359,6 +368,38 @@ export const sweetItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 7,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-25',
+    optionA: { name: 'Pad Thai', image: padThaiImg },
+    optionB: { name: 'Pad See Ew', image: padSeeEwImg },
+    intensityA: 6,
+    intensityB: 4,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-26',
+    optionA: { name: 'Khai Luk Koei', image: khaiLukKoeiImg },
+    optionB: { name: 'Boiled Egg', image: boiledEggImg },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-27',
+    optionA: { name: 'Teriyaki Salmon', image: teriyakiSalmonImg },
+    optionB: { name: 'Grilled Salmon', image: grilledSalmonImg },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
+  {
+    id: 'sweet-28',
+    optionA: { name: 'Bulgogi', image: bulgogiImg },
+    optionB: { name: 'Beef Steak', image: beefSteakImg },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['all-good'],
   },
 ];
 
@@ -871,7 +912,7 @@ export const richItems: QuizItem[] = [
 export const spicyItems: QuizItem[] = [
   {
     id: 'spicy-1',
-    optionA: { name: 'Ghost Pepper Wings', image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=600&fit=crop' },
+    optionA: { name: 'Ghost Pepper Wings', image: ghostPepperWingsAsset.url },
     optionB: { name: 'BBQ Wings', image: bbqWingsImg.url },
     intensityA: 10,
     intensityB: 2,
