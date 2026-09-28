@@ -148,6 +148,13 @@ const allergenMap: Record<string, Allergen[]> = {
 
   // MEAT / POULTRY
   'steak': ['meat'],
+  'pad see ew': ['gluten', 'soy', 'eggs'],
+  'boiled egg': ['eggs'],
+  'khai luk koei': ['eggs', 'fish'],
+  'teriyaki salmon': ['fish', 'soy', 'gluten'],
+  'grilled salmon': ['fish'],
+  'bulgogi': ['meat', 'soy', 'gluten', 'seeds'],
+  'beef steak': ['meat'],
 };
 
 /**
