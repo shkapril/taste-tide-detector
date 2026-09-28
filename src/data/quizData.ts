@@ -1089,7 +1089,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-10',
     optionA: { name: 'Fish Sauce', image: fishSauceImg.url },
-    optionB: { name: 'Lime Juice', image: limeJuiceImg.url },
+    optionB: { name: 'Soy Sauce', image: soySauceImg },
     intensityA: 9,
     intensityB: 1,
     dietary: ['pescatarian', 'all-good'],
