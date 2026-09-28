@@ -23,7 +23,7 @@ import sparklingWaterImg from '@/assets/sparkling_water.png.asset.json';
 import limeCevicheImg from '@/assets/lime_ceviche.jpg.asset.json';
 import limeJuiceImg from '@/assets/lime_juice.png.asset.json';
 import bbqWingsImg from '@/assets/bbq_wings.jpg.asset.json';
-import buffaloWingsImg from '@/assets/buffalo_wings.jpg.asset.json';
+import buffaloWingsImg from '@/assets/buffalo_wing.png.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
