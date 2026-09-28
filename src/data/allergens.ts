@@ -116,6 +116,8 @@ const allergenMap: Record<string, Allergen[]> = {
 
   // SOY
   'soy sauce': ['soy'],
+  'natto': ['soy'],
+  'edamame': ['soy'],
   'teriyaki sauce': ['soy', 'gluten'],
   'miso soup': ['soy'],
   'sour gummy worms': [],
