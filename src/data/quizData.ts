@@ -48,6 +48,8 @@ import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
 import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 import baconImg from '@/assets/bacon.jpg.asset.json';
+import marmiteImg from '@/assets/marmite.png.asset.json';
+import honeyImg from '@/assets/honey.png.asset.json';
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
@@ -1101,7 +1103,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-11',
-    optionA: { name: 'Marmite', image: 'https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=600&h=600&fit=crop' },
+    optionA: { name: 'Marmite', image: marmiteImg.url },
     optionB: { name: 'Honey', image: '/images/honey.png' },
     intensityA: 8,
     intensityB: 1,
