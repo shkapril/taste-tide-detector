@@ -155,6 +155,8 @@ const allergenMap: Record<string, Allergen[]> = {
   'grilled salmon': ['fish'],
   'bulgogi': ['meat', 'soy', 'gluten', 'seeds'],
   'beef steak': ['meat'],
+  'anchovy pasta': ['fish', 'gluten'],
+  'garlic shrimp pasta': ['shellfish', 'gluten', 'dairy'],
 };
 
 /**

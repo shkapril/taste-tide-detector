@@ -21,3 +21,4 @@
 - [x] Use uploaded photos for Salt Bread and Salt Bread with Pollock Roe
 - [x] Add Pad Thai/Pad See Ew, Khai Luk Koei/Boiled Egg, Teriyaki vs Grilled Salmon, Bulgogi vs Beef Steak to the sweet quiz
 - [x] Use uploaded photo for Ghost Pepper Wings
+- [x] Replace Anchovies vs Fresh Salmon with Anchovy Pasta vs Garlic Shrimp Pasta in the salty quiz
