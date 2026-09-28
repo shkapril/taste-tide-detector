@@ -2,6 +2,7 @@ import orangeImg from '@/assets/orange.jpg.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
 import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
 import anchovyImg from '@/assets/anchovy.png.asset.json';
+import grilledWhiteFishImg from '@/assets/grilled_white_fish.png.asset.json';
 import olivesImg from '@/assets/olives.png.asset.json';
 import garlicShrimpPastaImg from '@/assets/garlic_shrimp_pasta.jpg';
 import padThaiImg from '@/assets/pad_thai.jpg';
@@ -1045,7 +1046,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-3',
     optionA: { name: 'Anchovies', image: anchovyImg.url },
-    optionB: { name: 'Grilled White Fish', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=600&fit=crop' },
+    optionB: { name: 'Grilled White Fish', image: grilledWhiteFishImg.url },
     intensityA: 9,
     intensityB: 2,
     dietary: ['pescatarian', 'all-good'],
