@@ -1222,7 +1222,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-27',
-    optionA: { name: 'Truffle Butter', image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&h=600&fit=crop' },
+    optionA: { name: 'Truffle Butter', image: truffleButterImg.url },
     optionB: { name: 'Butter', image: butterImg },
     intensityA: 7,
     intensityB: 4,
