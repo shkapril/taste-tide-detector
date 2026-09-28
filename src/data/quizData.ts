@@ -858,10 +858,10 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-23',
     optionA: { name: 'Sourdough Bread', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop' },
-    optionB: { name: 'Butter', image: butterImg },
+    optionB: { name: 'Garlic Butter Bread', image: '/images/garlic_butter_bread.png' },
     intensityA: 2,
-    intensityB: 10,
-    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    intensityB: 7,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
