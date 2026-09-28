@@ -45,7 +45,7 @@ import wasabiImg from '@/assets/wasabi.jpg.asset.json';
 import baconImg from '@/assets/bacon.jpg.asset.json';
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
-import ricottaImg from '@/assets/ricotta_cheese.png.asset.json';
+import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
 import greekYogurtImg from '@/assets/greek-yogurt.jpg.asset.json';
 import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
 import datePalmImg from '@/assets/date_palm.png';
