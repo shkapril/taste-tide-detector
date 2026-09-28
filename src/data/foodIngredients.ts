@@ -204,7 +204,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'aglio e olio': ['pasta', 'wheat_flour', 'garlic', 'olive', 'olive_oil', 'chili_pepper'],
   'alfredo pasta': ['pasta', 'wheat_flour', 'cream', 'butter', 'parmesan', 'cheese', 'garlic'],
   'anchovy pasta': ['pasta', 'wheat_flour', 'anchovy', 'fish_generic', 'garlic', 'olive', 'olive_oil'],
-  'garlic shrimp pasta': ['pasta', 'wheat_flour', 'shrimp', 'shellfish', 'garlic', 'olive', 'olive_oil', 'butter', 'parsley'],
+  'garlic shrimp pasta': ['pasta', 'wheat_flour', 'shellfish', 'garlic', 'olive', 'olive_oil', 'butter'],
   'mushroom cream pasta': ['pasta', 'wheat_flour', 'mushroom', 'cream', 'butter', 'garlic', 'parmesan', 'cheese'],
   'carbonara': ['pasta', 'wheat_flour', 'pork', 'bacon', 'egg', 'parmesan', 'cheese'],
   'classic carbonara with pork': ['pasta', 'wheat_flour', 'pork', 'bacon', 'egg', 'parmesan', 'cheese'],
