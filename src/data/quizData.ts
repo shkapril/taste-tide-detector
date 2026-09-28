@@ -14,6 +14,7 @@ import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
+import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
