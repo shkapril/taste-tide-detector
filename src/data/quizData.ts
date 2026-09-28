@@ -57,6 +57,9 @@ const saltBreadMentaikoImg = saltBreadMentaikoAsset.url;
 const avocadoToastImg = avocadoToastAsset.url;
 import butterAsset from '@/assets/butter.png.asset.json';
 const butterImg = butterAsset.url;
+import mangoAsset from '@/assets/mango.png.asset.json';
+const mangoImg = mangoAsset.url;
+
 
 import katsuobushiAsset from '@/assets/katsuobushi.png.asset.json';
 const katsuobushiImg = katsuobushiAsset.url;
@@ -348,7 +351,8 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-24',
-    optionA: { name: 'Mango', image: '/images/mango.png' },
+    optionA: { name: 'Mango', image: mangoImg },
+
     optionB: { name: 'Milk Chocolate', image: 'https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&h=600&fit=crop', vegan: true },
     intensityA: 7,
     intensityB: 7,
@@ -401,7 +405,8 @@ export const sourItems: QuizItem[] = [
   {
     id: 'sour-7',
     optionA: { name: 'Passion Fruit', image: 'https://images.unsplash.com/photo-1604495772376-9657f0035eb5?w=600&h=600&fit=crop' },
-    optionB: { name: 'Mango', image: '/images/mango.png' },
+    optionB: { name: 'Mango', image: mangoImg },
+
     intensityA: 7,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
