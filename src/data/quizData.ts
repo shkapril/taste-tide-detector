@@ -16,7 +16,6 @@ import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
 import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
-import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
 import vegetableSoupImg from '@/assets/vegetable_soup.jpg';
 import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
