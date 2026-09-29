@@ -58,6 +58,8 @@ const plainToastImg = plainToastAsset.url;
 import honeyImg from '@/assets/honey.png.asset.json';
 import shiitakeMisoSoupImg from '@/assets/shiitake_miso_soup.png.asset.json';
 import misoSoupPlainImg from '@/assets/miso_soup_plain.png.asset.json';
+import riceWithFurikakeAsset from '@/assets/rice_with_furikake.png.asset.json';
+const riceWithFurikakeImg = riceWithFurikakeAsset.url;
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
@@ -1277,6 +1279,14 @@ export const umamiItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 3,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-31',
+    optionA: { name: 'Rice with Furikake', image: riceWithFurikakeImg },
+    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    intensityA: 7,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 

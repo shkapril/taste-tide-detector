@@ -223,6 +223,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'buldak hot chicken ramen': ['chicken', 'noodles', 'wheat_flour', 'chili_pepper', 'garlic', 'soy_sauce', 'sugar'],
   'tonkotsu ramen': ['noodles', 'wheat_flour', 'pork', 'garlic', 'scallion', 'egg', 'soy_sauce'],
   'plain rice': ['rice'],
+  'rice with furikake': ['rice', 'seaweed', 'sesame', 'egg'],
   'rice cakes': ['rice'],
   'thai green curry': ['coconut', 'chili_pepper', 'lemongrass', 'garlic', 'ginger', 'fish_sauce', 'basil'],
 
