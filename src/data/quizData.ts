@@ -713,7 +713,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-10',
-    optionA: { name: 'Miso Soup', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop' },
+    optionA: { name: 'Miso Soup', image: misoSoupPlainImg.url },
     optionB: { name: 'Vegetable Broth', image: vegetableBrothImg.url },
     intensityA: 6,
     intensityB: 2,
