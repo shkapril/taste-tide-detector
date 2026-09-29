@@ -1286,7 +1286,7 @@ export const umamiItems: QuizItem[] = [
     optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 1,
-    dietary: ['pescatarian', 'all-good'],
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
