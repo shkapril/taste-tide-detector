@@ -1033,6 +1033,15 @@ export const spicyItems: QuizItem[] = [
     intensityB: 7,
     dietary: ['all-good'],
   },
+  {
+    id: 'spicy-14',
+    optionA: { name: 'Sichuan Mapo Tofu', image: sichuanMapoTofuImg },
+    optionB: { name: 'Kung Pao Chicken', image: kungPaoChickenImg },
+    intensityA: 8,
+    intensityB: 5,
+    dietary: ['all-good'],
+  },
+
 ];
 
 // Umami comparisons (savory depth)
