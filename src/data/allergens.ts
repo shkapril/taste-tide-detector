@@ -95,7 +95,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'lo mein': ['gluten', 'soy'],
   'sichuan noodle': ['gluten', 'soy'],
   'sichuan mapo tofu': ['soy', 'gluten', 'meat'],
-  'kung pao chicken': ['peanut', 'soy', 'gluten', 'meat'],
+  'kung pao chicken': ['peanuts', 'soy', 'gluten', 'meat'],
   'spicy ramen': ['gluten', 'eggs', 'soy'],
   'tonkotsu ramen': ['gluten', 'eggs', 'soy'],
 
