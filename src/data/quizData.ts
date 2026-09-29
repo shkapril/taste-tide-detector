@@ -16,7 +16,7 @@ import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
 import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
-import chickenSoupImg from '@/assets/chicken_soup.png.asset.json';
+import vegetableSoupImg from '@/assets/vegetable_soup.jpg';
 import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
@@ -753,7 +753,7 @@ export const saltyItems: QuizItem[] = [
 export const richItems: QuizItem[] = [
   {
     id: 'rich-1',
-    optionA: { name: 'Chicken Soup', image: chickenSoupImg.url },
+    optionA: { name: 'Vegetable Soup', image: vegetableSoupImg, vegan: true },
     optionB: { name: 'Mushroom Soup', image: '/images/mushroom_soup.png', vegan: true },
     intensityA: 2,
     intensityB: 4,
@@ -866,7 +866,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-16',
     optionA: { name: 'Coconut Curry', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop', vegan: true },
-    optionB: { name: 'Chicken Soup', image: chickenSoupImg.url },
+    optionB: { name: 'Vegetable Soup', image: vegetableSoupImg, vegan: true },
     intensityA: 8,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
@@ -890,7 +890,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-19',
     optionA: { name: 'Butternut Squash Soup', image: butternutSquashSoupImg, vegan: true },
-    optionB: { name: 'Chicken Soup', image: chickenSoupImg.url },
+    optionB: { name: 'Vegetable Soup', image: vegetableSoupImg, vegan: true },
     intensityA: 6,
     intensityB: 2,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],

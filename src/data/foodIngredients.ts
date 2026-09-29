@@ -117,6 +117,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'coconut curry': ['coconut', 'onion', 'garlic', 'ginger', 'chili_pepper'],
   'smashed avocado on toast': ['avocado', 'wheat_flour', 'lemon', 'salt'],
   'butternut squash soup': ['butternut_squash', 'onion', 'cream', 'salt'],
+  'vegetable soup': ['carrot', 'potato', 'celery', 'peas', 'onion', 'vegetable_broth'],
   'peanut butter noodles': ['peanut', 'noodles', 'soy_sauce', 'sesame_oil'],
 
   // ── Salads & vegetables ──
