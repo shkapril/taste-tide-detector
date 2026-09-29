@@ -45,6 +45,8 @@ import buffaloWingsImg from '@/assets/buffalo_wing.png.asset.json';
 import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
+import sichuanMapoTofuImg from '@/assets/sichuan_mapo_tofu.jpg';
+import kungPaoChickenImg from '@/assets/kung_pao_chicken.jpg';
 import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.jpg.asset.json';
 import tomatoSalsaImg from '@/assets/tomato_salsa.jpg.asset.json';
@@ -1031,6 +1033,15 @@ export const spicyItems: QuizItem[] = [
     intensityB: 7,
     dietary: ['all-good'],
   },
+  {
+    id: 'spicy-14',
+    optionA: { name: 'Sichuan Mapo Tofu', image: sichuanMapoTofuImg },
+    optionB: { name: 'Kung Pao Chicken', image: kungPaoChickenImg },
+    intensityA: 8,
+    intensityB: 5,
+    dietary: ['all-good'],
+  },
+
 ];
 
 // Umami comparisons (savory depth)
