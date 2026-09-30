@@ -267,7 +267,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'dark chocolate (70%)': ['chocolate', 'cocoa', 'sugar'],
   '70% dark chocolate': ['chocolate', 'cocoa', 'sugar'],
   'dark chocolate (85%)': ['chocolate', 'cocoa', 'sugar'],
-  '85% cacao': ['chocolate', 'cocoa', 'sugar'],
+  '85% dark chocolate': ['chocolate', 'cocoa', 'sugar'],
   '90% cacao': ['chocolate', 'cocoa'],
   'caramel': ['sugar', 'cream', 'butter'],
   'salted caramel': ['sugar', 'cream', 'butter', 'salt'],
