@@ -1,3 +1,7 @@
+import radicchioSaladAsset from '@/assets/radicchio_salad.png.asset.json';
+import caesarSaladAsset from '@/assets/caesar_salad.png.asset.json';
+const radicchioSaladImg = radicchioSaladAsset.url;
+const caesarSaladImg = caesarSaladAsset.url;
 import orangeImg from '@/assets/orange.jpg.asset.json';
 import edamameImg from '@/assets/edamame.png.asset.json';
 import nattoImg from '@/assets/natto.png.asset.json';
@@ -627,8 +631,8 @@ export const bitterItems: QuizItem[] = [
   },
   {
     id: 'bitter-10',
-    optionA: { name: 'Radicchio Salad', image: '/images/radicchio_salad.png' },
-    optionB: { name: 'Caesar Salad', image: '/images/caesar_salad.png' },
+    optionA: { name: 'Radicchio Salad', image: radicchioSaladImg },
+    optionB: { name: 'Caesar Salad', image: caesarSaladImg },
     intensityA: 7,
     intensityB: 3,
     dietary: ['pescatarian', 'all-good'],
