@@ -539,7 +539,16 @@ export const sourItems: QuizItem[] = [
     intensityB: 4,
     dietary: ['all-good'],
   },
+  {
+    id: 'sour-16',
+    optionA: { name: 'Pad Thai', image: padThaiImg },
+    optionB: { name: 'Pad See Ew', image: padSeeEwImg },
+    intensityA: 6,
+    intensityB: 1,
+    dietary: ['pescatarian', 'all-good'],
+  },
 ];
+
 
 // Bitter comparisons
 export const bitterItems: QuizItem[] = [
