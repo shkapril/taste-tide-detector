@@ -18,6 +18,7 @@ import beefSteakImg from '@/assets/beef_steak.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import vegetableSoupImg from '@/assets/vegetable_soup.jpg';
 import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
+import cabbageImg from '@/assets/cabbage.jpg';
 import agedCheddarImg from '@/assets/aged_cheddar.png.asset.json';
 import porciniImg from '@/assets/porcini.png.asset.json';
 import seaweedSnackImg from '@/assets/seaweed_snack.png.asset.json';
@@ -646,6 +647,14 @@ export const bitterItems: QuizItem[] = [
     optionB: { name: 'Americano', image: 'https://images.unsplash.com/photo-1551030173-122aabc4489c?w=600&h=600&fit=crop' },
     intensityA: 9,
     intensityB: 5,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'bitter-14',
+    optionA: { name: 'Brussels Sprouts', image: 'https://images.unsplash.com/photo-1438118907704-7718ee9a191a?w=600&h=600&fit=crop', vegan: true },
+    optionB: { name: 'Cabbage', image: cabbageImg, vegan: true },
+    intensityA: 5,
+    intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 ];
