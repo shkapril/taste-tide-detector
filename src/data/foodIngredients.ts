@@ -134,6 +134,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'roasted cauliflower': ['cauliflower', 'olive_oil', 'salt'],
   'buffalo cauliflower': ['cauliflower', 'chili_pepper', 'butter', 'wheat_flour'],
   'brussels sprouts': ['brussels_sprouts', 'olive_oil'],
+  'cabbage': ['cabbage'],
   'coleslaw': ['cabbage', 'carrot', 'egg', 'vinegar'],
   'kimchi': ['cabbage', 'chili_pepper', 'garlic', 'ginger', 'fish_sauce', 'scallion', 'salt'],
   'pickles': ['cucumber', 'vinegar', 'salt'],
