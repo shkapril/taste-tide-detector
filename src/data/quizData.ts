@@ -1,5 +1,7 @@
 import radicchioSaladAsset from '@/assets/radicchio_salad.png.asset.json';
 import caesarSaladAsset from '@/assets/caesar_salad.png.asset.json';
+import peachAsset from '@/assets/peach.png.asset.json';
+import spicyTunaRollAsset from '@/assets/spicy_tuna_roll.jpg.asset.json';
 const radicchioSaladImg = radicchioSaladAsset.url;
 const caesarSaladImg = caesarSaladAsset.url;
 import orangeImg from '@/assets/orange.jpg.asset.json';
@@ -380,7 +382,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-23',
-    optionA: { name: 'Peach', image: '/images/peach.png' },
+    optionA: { name: 'Peach', image: peachAsset.url },
     optionB: { name: 'Banana Bread', image: bananaBreadImg, vegan: true },
     intensityA: 5,
     intensityB: 6,
@@ -1027,7 +1029,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-10',
-    optionA: { name: 'Spicy Tuna Roll', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Spicy Tuna Roll', image: spicyTunaRollAsset.url },
     optionB: { name: 'California Roll', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
