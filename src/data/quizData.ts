@@ -18,6 +18,8 @@ import padSeeEwImg from '@/assets/pad_see_ew.jpg';
 import boiledEggImg from '@/assets/boiled_egg.jpg';
 import khaiLukKoeiImg from '@/assets/khai_luk_koei.jpg';
 import teriyakiSalmonImg from '@/assets/teriyaki_salmon.jpg';
+import teriyakiSauceAsset from '@/assets/teriyaki_sauce.png.asset.json';
+const teriyakiSauceImg = teriyakiSauceAsset.url;
 import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
 import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
@@ -702,7 +704,7 @@ export const saltyItems: QuizItem[] = [
   {
     id: 'salty-5',
     optionA: { name: 'Soy Sauce', image: soySauceImg },
-    optionB: { name: 'Teriyaki Sauce', image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba0?w=600&h=600&fit=crop' },
+    optionB: { name: 'Teriyaki Sauce', image: teriyakiSauceImg },
     intensityA: 10,
     intensityB: 5,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
