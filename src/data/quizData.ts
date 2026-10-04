@@ -18,6 +18,8 @@ import padSeeEwImg from '@/assets/pad_see_ew.jpg';
 import boiledEggImg from '@/assets/boiled_egg.jpg';
 import khaiLukKoeiImg from '@/assets/khai_luk_koei.jpg';
 import teriyakiSalmonImg from '@/assets/teriyaki_salmon.jpg';
+import teriyakiSauceAsset from '@/assets/teriyaki_sauce.png.asset.json';
+const teriyakiSauceImg = teriyakiSauceAsset.url;
 import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
 import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
