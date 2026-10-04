@@ -382,7 +382,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-23',
-    optionA: { name: 'Peach', image: '/images/peach.png' },
+    optionA: { name: 'Peach', image: peachAsset.url },
     optionB: { name: 'Banana Bread', image: bananaBreadImg, vegan: true },
     intensityA: 5,
     intensityB: 6,
