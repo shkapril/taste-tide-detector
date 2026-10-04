@@ -65,6 +65,7 @@ import marmiteImg from '@/assets/marmite.png.asset.json';
 import plainToastAsset from '@/assets/plain_toast.png.asset.json';
 const plainToastImg = plainToastAsset.url;
 import honeyImg from '@/assets/honey.png.asset.json';
+import glazedDonutsAsset from '@/assets/glazed_donuts.png.asset.json';
 import shiitakeMisoSoupImg from '@/assets/shiitake_miso_soup.png.asset.json';
 import misoSoupPlainImg from '@/assets/miso_soup_plain.png.asset.json';
 import riceWithFurikakeAsset from '@/assets/rice_with_furikake.png.asset.json';
@@ -240,7 +241,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-8',
-    optionA: { name: 'Glazed Donut', image: '/images/glazed_donuts.png', vegan: true },
+    optionA: { name: 'Glazed Donut', image: glazedDonutsAsset.url, vegan: true },
     optionB: { name: 'French Macaron', image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 8,
