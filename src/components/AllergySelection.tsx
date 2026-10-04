@@ -48,8 +48,8 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyle
         How do you usually eat? We'll tailor the quiz menu to match.
       </p>
 
-      {/* 2x2 boxes */}
-      <div className="grid grid-cols-2 gap-3 mb-10">
+      {/* Options — 2x2 on mobile, single horizontal row on desktop */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
         {eatingStyles.map((style, index) => {
           const isActive = selected === style.value;
           return (
