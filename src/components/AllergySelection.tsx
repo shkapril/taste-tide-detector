@@ -49,7 +49,7 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyle
       </p>
 
       {/* Options — 2x2 on mobile, single horizontal row on desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:max-w-5xl md:mx-auto">
         {eatingStyles.map((style, index) => {
           const isActive = selected === style.value;
           return (
