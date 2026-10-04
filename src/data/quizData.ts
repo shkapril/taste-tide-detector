@@ -1029,7 +1029,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-10',
-    optionA: { name: 'Spicy Tuna Roll', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Spicy Tuna Roll', image: spicyTunaRollAsset.url },
     optionB: { name: 'California Roll', image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
