@@ -1,5 +1,7 @@
 import radicchioSaladAsset from '@/assets/radicchio_salad.png.asset.json';
 import caesarSaladAsset from '@/assets/caesar_salad.png.asset.json';
+import peachAsset from '@/assets/peach.png.asset.json';
+import spicyTunaRollAsset from '@/assets/spicy_tuna_roll.jpg.asset.json';
 const radicchioSaladImg = radicchioSaladAsset.url;
 const caesarSaladImg = caesarSaladAsset.url;
 import orangeImg from '@/assets/orange.jpg.asset.json';
