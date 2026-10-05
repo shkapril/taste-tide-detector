@@ -17,6 +17,7 @@
 14. [x] Replace Ricotta image with uploaded photo
 
 - [x] Add Tomato vs Sun-Dried Tomatoes to the umami quiz
+- [x] Add umami-32/33/34 (Vegan Miso Ramen, Vegan Shoyu Ramen, Vegan Doenjang Jjigae, Nasu Dengaku, Vegan Mushroom Risotto, Tomato Pasta) with generated images, allergen map, and ingredient mappings
 - [x] Rename Pollock Roe to Salt Bread with Pollock Roe (Mentaiko) and add Salt Bread to the umami quiz
 - [x] Use uploaded photos for Salt Bread and Salt Bread with Pollock Roe
 - [x] Add Pad Thai/Pad See Ew, Khai Luk Koei/Boiled Egg, Teriyaki vs Grilled Salmon, Bulgogi vs Beef Steak to the sweet quiz
