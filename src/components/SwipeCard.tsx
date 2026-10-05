@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 interface SwipeCardProps {
   optionA: { name: string; image: string };
   optionB: { name: string; image: string };
-  onSwipe: (direction: 'left' | 'right') => void;
+  onChoose: (option: 'A' | 'B') => void;
   isTop: boolean;
 }
 
-const SwipeCard = ({ optionA, optionB, onSwipe, isTop }: SwipeCardProps) => {
+const SwipeCard = ({ optionA, optionB, onChoose, isTop }: SwipeCardProps) => {
   const handleChooseA = () => {
     if (!isTop) return;
-    onSwipe('right');
+    onChoose('A');
   };
 
   const handleChooseB = () => {
     if (!isTop) return;
-    onSwipe('left');
+    onChoose('B');
   };
 
   return (
