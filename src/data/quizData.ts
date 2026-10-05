@@ -1321,6 +1321,30 @@ export const umamiItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-32',
+    optionA: { name: 'Vegan Miso Ramen', image: veganMisoRamenImg, vegan: true },
+    optionB: { name: 'Vegan Shoyu Ramen', image: veganShoyuRamenImg, vegan: true },
+    intensityA: 8,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-33',
+    optionA: { name: 'Vegan Doenjang Jjigae', image: veganDoenjangJjigaeImg, vegan: true },
+    optionB: { name: 'Vegan Miso-Glazed Eggplant (Nasu Dengaku)', image: veganMisoGlazedEggplantImg, vegan: true },
+    intensityA: 8,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-34',
+    optionA: { name: 'Vegan Mushroom Risotto', image: veganMushroomRisottoImg, vegan: true },
+    optionB: { name: 'Tomato Pasta', image: tomatoPastaImg, vegan: true },
+    intensityA: 7,
+    intensityB: 5,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {
