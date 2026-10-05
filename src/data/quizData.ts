@@ -23,6 +23,12 @@ const teriyakiSauceImg = teriyakiSauceAsset.url;
 import grilledSalmonImg from '@/assets/grilled_salmon.jpg';
 import bulgogiImg from '@/assets/bulgogi.jpg';
 import beefSteakImg from '@/assets/beef_steak.jpg';
+import veganMisoRamenImg from '@/assets/vegan_miso_ramen.jpg';
+import veganShoyuRamenImg from '@/assets/vegan_shoyu_ramen.jpg';
+import veganDoenjangJjigaeImg from '@/assets/vegan_doenjang_jjigae.jpg';
+import veganMisoGlazedEggplantImg from '@/assets/vegan_miso_glazed_eggplant.jpg';
+import veganMushroomRisottoImg from '@/assets/vegan_mushroom_risotto.jpg';
+import tomatoPastaImg from '@/assets/tomato_pasta.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import vegetableSoupImg from '@/assets/vegetable_soup.jpg';
 import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
@@ -1314,6 +1320,30 @@ export const umamiItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-32',
+    optionA: { name: 'Vegan Miso Ramen', image: veganMisoRamenImg, vegan: true },
+    optionB: { name: 'Vegan Shoyu Ramen', image: veganShoyuRamenImg, vegan: true },
+    intensityA: 8,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-33',
+    optionA: { name: 'Vegan Doenjang Jjigae', image: veganDoenjangJjigaeImg, vegan: true },
+    optionB: { name: 'Vegan Miso-Glazed Eggplant (Nasu Dengaku)', image: veganMisoGlazedEggplantImg, vegan: true },
+    intensityA: 8,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-34',
+    optionA: { name: 'Vegan Mushroom Risotto', image: veganMushroomRisottoImg, vegan: true },
+    optionB: { name: 'Tomato Pasta', image: tomatoPastaImg, vegan: true },
+    intensityA: 7,
+    intensityB: 5,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
