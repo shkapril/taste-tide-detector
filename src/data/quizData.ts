@@ -131,8 +131,8 @@ export interface QuizItem {
     image: string;
     vegan?: boolean; // true = treated as a "vegan version" of this option
   };
-  // If user swipes right (prefers A), their intensity goes toward intensityA
-  // If user swipes left (prefers B), their intensity goes toward intensityB
+  // If user chooses optionA, their intensity goes toward intensityA
+  // If user chooses optionB, their intensity goes toward intensityB
   intensityA: number; // 1-10 scale
   intensityB: number; // 1-10 scale
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
