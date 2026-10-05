@@ -49,7 +49,7 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyle
       </p>
 
       {/* Options — 2x2 on mobile, single horizontal row on desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:max-w-5xl md:mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:max-w-5xl md:mx-auto">
         {eatingStyles.map((style, index) => {
           const isActive = selected === style.value;
           return (
@@ -79,6 +79,16 @@ export const EatingStyleSelection = ({ selected, onSelect, onBack }: EatingStyle
           );
         })}
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="text-muted-foreground text-sm leading-relaxed text-center max-w-md mx-auto"
+      >
+        Just picture the ingredients substituted to fit your diet, and go with
+        whichever one appeals to you more.
+      </motion.p>
 
     </motion.div>
   );
