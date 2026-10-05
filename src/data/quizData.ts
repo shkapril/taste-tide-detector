@@ -142,6 +142,9 @@ export interface QuizItem {
   intensityA: number; // 1-10 scale
   intensityB: number; // 1-10 scale
   dietary: ('vegan' | 'vegetarian' | 'pescatarian' | 'all-good')[];
+  // 이 필드가 있으면 all-good 예외를 무시하고, 여기 적힌 스타일을 선택한
+  // 유저한테만 보여줌 (일반 dietary 필터보다 더 엄격하게 제한)
+  onlyForStyles?: ('vegan' | 'vegetarian' | 'pescatarian')[];
 }
 
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
