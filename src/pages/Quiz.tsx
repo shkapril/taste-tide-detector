@@ -255,7 +255,7 @@ const Quiz = () => {
                 key={`bg-${previewQuestion.id}`}
                 optionA={previewQuestion.optionA}
                 optionB={previewQuestion.optionB}
-                onSwipe={() => {}}
+                onChoose={() => {}}
                 isTop={false}
               />
             )}
@@ -263,7 +263,7 @@ const Quiz = () => {
               key={`top-${currentQuestion.id}-${questionNum}`}
               optionA={currentQuestion.optionA}
               optionB={currentQuestion.optionB}
-              onSwipe={handleSwipe}
+              onChoose={handleChoose}
               isTop={true}
             />
 
