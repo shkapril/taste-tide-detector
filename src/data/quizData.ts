@@ -6,6 +6,8 @@ const radicchioSaladImg = radicchioSaladAsset.url;
 const caesarSaladImg = caesarSaladAsset.url;
 import orangeImg from '@/assets/orange.jpg.asset.json';
 import edamameImg from '@/assets/edamame.png.asset.json';
+import gochujangAsset from '@/assets/gochujang.png.asset.json';
+const gochujangImg = gochujangAsset.url;
 import nattoImg from '@/assets/natto.png.asset.json';
 import ghostPepperWingsAsset from '@/assets/ghost_pepper_wings.png.asset.json';
 import anchovyPastaImg from '@/assets/anchovy_pasta.jpg';
@@ -1078,6 +1080,14 @@ export const spicyItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 5,
     dietary: ['all-good'],
+  },
+  {
+    id: 'spicy-15',
+    optionA: { name: 'Gochujang', image: gochujangImg },
+    optionB: { name: 'Kimchi', image: '/images/kimchi.png' },
+    intensityA: 7,
+    intensityB: 6,
+    dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
 
 ];
