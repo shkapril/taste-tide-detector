@@ -29,7 +29,6 @@ import veganDoenjangJjigaeImg from '@/assets/vegan_doenjang_jjigae.jpg';
 import veganMisoGlazedEggplantImg from '@/assets/vegan_miso_glazed_eggplant.jpg';
 import veganMushroomRisottoImg from '@/assets/vegan_mushroom_risotto.jpg';
 import tomatoPastaImg from '@/assets/tomato_pasta.jpg';
-import veganButterImg from '@/assets/vegan_butter.jpg';
 import jalapenoPopperImg from '@/assets/jalapeno_popper.png.asset.json';
 import vegetableSoupImg from '@/assets/vegetable_soup.jpg';
 import braisedBeefStewImg from '@/assets/braised_beef_stew.png.asset.json';
