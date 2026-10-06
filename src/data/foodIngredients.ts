@@ -280,7 +280,8 @@ export const foodIngredientMap: Record<string, string[]> = {
   'sour gummy worms': ['sugar', 'gelatin', 'vinegar'],
 
   // ── Dairy & eggs ──
-  'butter': ['butter', 'milk'],
+'butter': ['butter', 'milk'],
+  'vegan butter': ['olive_oil', 'salt'],
   'garlic butter': ['butter', 'milk', 'garlic'],
   'seaweed butter': ['butter', 'milk', 'seaweed'],
   'truffle butter': ['butter', 'milk', 'truffle'],
