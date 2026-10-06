@@ -101,11 +101,11 @@ const allergenMap: Record<string, Allergen[]> = {
   'kung pao chicken': ['peanuts', 'soy', 'gluten', 'meat'],
   'spicy ramen': ['gluten', 'eggs', 'soy'],
   'tonkotsu ramen': ['gluten', 'eggs', 'soy'],
-  'vegan miso ramen': ['soy', 'gluten'],
-  'vegan shoyu ramen': ['soy', 'gluten'],
-  'vegan doenjang jjigae': ['soy'],
-  'vegan miso-glazed eggplant (nasu dengaku)': ['soy'],
-  'vegan mushroom risotto': [],
+  'miso ramen': ['soy', 'gluten'],
+  'shoyu ramen': ['soy', 'gluten'],
+  'doenjang-jjigae (fermented soybean paste soup)': ['soy'],
+  'miso-glazed eggplant (nasu dengaku)': ['soy'],
+  'mushroom risotto': [],
   'tomato pasta': ['gluten'],
 
   // NUTS
