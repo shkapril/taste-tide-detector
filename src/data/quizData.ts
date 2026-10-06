@@ -1348,6 +1348,15 @@ export const umamiItems: QuizItem[] = [
     intensityB: 5,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
   },
+  {
+    id: 'umami-36',
+    optionA: { name: 'Marmite', image: marmiteImg.url },
+    optionB: { name: 'Vegan Butter', image: butterImg },
+    intensityA: 8,
+    intensityB: 1,
+    dietary: ['vegan', 'vegetarian'],
+    onlyForStyles: ['vegan', 'vegetarian'],
+  },
 ];
 
 export const quizDataMap: Record<QuizType, QuizItem[]> = {

@@ -117,6 +117,13 @@ const Quiz = () => {
   const pool = useMemo(() => {
     const items = quizDataMap[quizType] || [];
     return items.filter(item => {
+      // onlyForStyles가 있으면 all-good 예외를 무시하고, 여기 적힌 스타일을
+      // 모두 선택한 유저한테만 보여줌 (일반 dietary 필터보다 엄격)
+      if (item.onlyForStyles) {
+        if (eatingStyles.length === 0 || eatingStyles.includes('all-good')) return false;
+        const allowed = item.onlyForStyles;
+        if (!eatingStyles.every(s => (allowed as string[]).includes(s))) return false;
+      }
       if (shouldFilterItem(item.optionA.name, item.optionB.name, allergies)) return false;
       // A "vegan version" option is always shown to vegan users, overriding
       // other dietary exclusions (dietary tag, blocked ingredients).
