@@ -1352,7 +1352,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-36',
     optionA: { name: 'Marmite', image: marmiteImg.url },
-    optionB: { name: 'Vegan Butter', image: veganButterImg },
+    optionB: { name: 'Vegan Butter', image: butterImg.url },
     intensityA: 8,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian'],
