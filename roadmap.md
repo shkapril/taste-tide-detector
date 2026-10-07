@@ -25,3 +25,4 @@
 - [x] Use uploaded photos for Truffle Butter and Seaweed Butter (umami quiz)
 - [x] Add umami-32/33/34 (Vegan Miso Ramen, Vegan Shoyu Ramen, Vegan Doenjang Jjigae, Nasu Dengaku, Vegan Mushroom Risotto, Tomato Pasta) with generated images, allergen map, and ingredient mappings
 - [x] Add onlyForStyles field to QuizItem; add umami-36 Marmite vs Vegan Butter (vegan/vegetarian only)
+- [x] Use uploaded photo for Mushroom Cream Pasta (umami quiz)
