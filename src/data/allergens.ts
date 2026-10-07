@@ -175,6 +175,7 @@ const allergenMap: Record<string, Allergen[]> = {
   'matcha latte (no syrup)': ['dairy'],
   'matcha strawberry latte': ['dairy'],
   'houjicha latte': ['dairy'],
+  'meringue': ['eggs'],
   'beef steak': ['meat'],
   'anchovy pasta': ['fish', 'gluten'],
   'garlic shrimp oil pasta': ['shellfish', 'gluten'],
