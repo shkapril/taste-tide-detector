@@ -1,3 +1,5 @@
+import parmesanCheeseAsset from '@/assets/parmesan_cheese.png.asset.json';
+const parmesanCheeseImg = parmesanCheeseAsset.url;
 import mushroomCreamPastaAsset from '@/assets/mushroom_cream_pasta.png.asset.json';
 const mushroomCreamPastaImg = mushroomCreamPastaAsset.url;
 import thaiGreenCurryAsset from '@/assets/thai_green_curry.png.asset.json';
@@ -702,7 +704,7 @@ export const saltyItems: QuizItem[] = [
   },
   {
     id: 'salty-3',
-    optionA: { name: 'Parmesan', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionA: { name: 'Parmesan', image: parmesanCheeseImg },
     optionB: { name: 'Mozzarella', image: mozzarellaImg },
     intensityA: 7,
     intensityB: 2,
@@ -1107,7 +1109,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-2',
-    optionA: { name: 'Parmesan Cheese', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=600&fit=crop' },
+    optionA: { name: 'Parmesan Cheese', image: parmesanCheeseImg },
     optionB: { name: 'Mozzarella', image: mozzarellaImg },
     intensityA: 9,
     intensityB: 2,
