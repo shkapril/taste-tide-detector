@@ -88,6 +88,7 @@ import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
 import greekYogurtImg from '@/assets/greek-yogurt.jpg.asset.json';
 import plainYogurtImg from '@/assets/plain-yogurt.jpg.asset.json';
+import fruitYogurtImg from '@/assets/fruit_flavored_yogurt.png.asset.json';
 import datePalmImg from '@/assets/date_palm.png';
 import coconutCrackerImg from '@/assets/coconut_cracker.png';
 import bananaBreadImg from '@/assets/banana_bread.png';
@@ -169,7 +170,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-1b',
-    optionA: { name: 'Fruit Flavored Yogurt', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=600&fit=crop' },
+    optionA: { name: 'Fruit Flavored Yogurt', image: fruitYogurtImg.url },
     optionB: { name: 'Natural Yogurt', image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?w=600&h=600&fit=crop' },
     intensityA: 5,
     intensityB: 1,
