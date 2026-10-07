@@ -1,3 +1,4 @@
+import thaiGreenCurryAsset from '@/assets/thai_green_curry.png.asset.json';
 import radicchioSaladAsset from '@/assets/radicchio_salad.png.asset.json';
 import caesarSaladAsset from '@/assets/caesar_salad.png.asset.json';
 import peachAsset from '@/assets/peach.png.asset.json';
@@ -979,7 +980,7 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-2',
-    optionA: { name: 'Thai Green Curry', image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=600&fit=crop' },
+    optionA: { name: 'Thai Green Curry', image: thaiGreenCurryAsset.url },
     optionB: { name: 'Coconut Curry', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop' },
     intensityA: 7,
     intensityB: 2,
