@@ -448,6 +448,14 @@ export const sweetItems: QuizItem[] = [
     intensityB: 1,
     dietary: ['all-good'],
   },
+  {
+    id: 'sweet-29',
+    optionA: { name: 'Matcha Latte (No Syrup)', image: '/images/matcha_latte.png' },
+    optionB: { name: 'Matcha Strawberry Latte', image: '/images/matcha_strawberry_latte.png' },
+    intensityA: 2,
+    intensityB: 7,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
+  },
 ];
 
 // Sour comparisons
@@ -681,6 +689,14 @@ export const bitterItems: QuizItem[] = [
     intensityA: 5,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'bitter-15',
+    optionA: { name: 'Matcha Latte', image: '/images/matcha_latte.png' },
+    optionB: { name: 'Houjicha Latte', image: '/images/houjicha_latte.png' },
+    intensityA: 5,
+    intensityB: 1,
+    dietary: ['vegetarian', 'pescatarian', 'all-good'],
   },
 ];
 
