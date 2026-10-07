@@ -1,3 +1,5 @@
+import parmesanCheeseAsset from '@/assets/parmesan_cheese.png.asset.json';
+const parmesanCheeseImg = parmesanCheeseAsset.url;
 import mushroomCreamPastaAsset from '@/assets/mushroom_cream_pasta.png.asset.json';
 const mushroomCreamPastaImg = mushroomCreamPastaAsset.url;
 import thaiGreenCurryAsset from '@/assets/thai_green_curry.png.asset.json';
