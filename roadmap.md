@@ -28,3 +28,4 @@
 - [x] Use uploaded photo for Mushroom Cream Pasta (umami quiz)
 - [x] Use uploaded photo for Parmesan and Parmesan Cheese (salty/umami quiz)
 - [x] Replace Cotton Candy with Meringue (sweet-6 optionA), add meringue allergen/ingredient mapping and generated photo, delete cotton_candy.png
+- [x] Use uploaded photo for Fruit Flavored Yogurt (sweet quiz)
