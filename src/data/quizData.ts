@@ -1,3 +1,5 @@
+import mushroomCreamPastaAsset from '@/assets/mushroom_cream_pasta.png.asset.json';
+const mushroomCreamPastaImg = mushroomCreamPastaAsset.url;
 import thaiGreenCurryAsset from '@/assets/thai_green_curry.png.asset.json';
 import radicchioSaladAsset from '@/assets/radicchio_salad.png.asset.json';
 import caesarSaladAsset from '@/assets/caesar_salad.png.asset.json';
@@ -1241,7 +1243,7 @@ export const umamiItems: QuizItem[] = [
   },
   {
     id: 'umami-20',
-    optionA: { name: 'Mushroom Cream Pasta', image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop' },
+    optionA: { name: 'Mushroom Cream Pasta', image: mushroomCreamPastaImg },
     optionB: { name: 'Aglio e Olio', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=600&fit=crop' },
     intensityA: 8,
     intensityB: 4,
