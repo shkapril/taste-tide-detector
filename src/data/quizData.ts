@@ -48,6 +48,9 @@ import popcornImg from '@/assets/popcorn.png.asset.json';
 import clearTofuSoupImg from '@/assets/clear_tofu_soup.jpg.asset.json';
 import fishClearSoupImg from '@/assets/fish_clear_soup.jpg';
 import eggRoyaleImg from '@/assets/egg_royale.jpg';
+import nasiGorengImg from '@/assets/nasi_goreng.jpg';
+import crabFriedRiceImg from '@/assets/crab_fried_rice.jpg';
+import eggFriedRiceImg from '@/assets/egg_fried_rice.jpg';
 import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg.asset.json';
 import baguetteImg from '@/assets/baguette.png.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
@@ -1396,6 +1399,30 @@ export const umamiItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 6,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'umami-38',
+    optionA: { name: 'Nasi Goreng', image: nasiGorengImg },
+    optionB: { name: 'Egg Fried Rice', image: eggFriedRiceImg },
+    intensityA: 8,
+    intensityB: 4,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'umami-39',
+    optionA: { name: 'Nasi Goreng', image: nasiGorengImg },
+    optionB: { name: 'Crab Fried Rice', image: crabFriedRiceImg },
+    intensityA: 8,
+    intensityB: 6,
+    dietary: ['all-good'],
+  },
+  {
+    id: 'umami-40',
+    optionA: { name: 'Crab Fried Rice', image: crabFriedRiceImg },
+    optionB: { name: 'Egg Fried Rice', image: eggFriedRiceImg },
+    intensityA: 6,
+    intensityB: 4,
+    dietary: ['pescatarian', 'all-good'],
   },
 ];
 
