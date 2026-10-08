@@ -6,6 +6,7 @@ import chefImage from '@/assets/chef.png';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';
+import GlobalTasteDistribution from '@/components/GlobalTasteDistribution';
 import { getCharacter } from '@/data/tasteCharacters';
 import type { TasteVector7 } from '@/data/foodDataset';
 
@@ -211,6 +212,18 @@ const Results = () => {
                 <ResultsChart scores={uxScores} />
               </div>
             </motion.div>
+
+            {['sweet', 'bitter'].some(k => completedQuizzes.includes(k)) && (
+              <div className="mt-10">
+                <h2 className="text-lg font-display font-semibold text-center text-foreground mb-4">
+                  You vs. the World
+                </h2>
+                <GlobalTasteDistribution
+                  scores={uxScores}
+                  keys={['sweet', 'bitter'].filter(k => completedQuizzes.includes(k))}
+                />
+              </div>
+            )}
           </div>
 
           <motion.div
