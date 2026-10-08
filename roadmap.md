@@ -29,3 +29,4 @@
 - [x] Use uploaded photo for Parmesan and Parmesan Cheese (salty/umami quiz)
 - [x] Replace Cotton Candy with Meringue (sweet-6 optionA), add meringue allergen/ingredient mapping and generated photo, delete cotton_candy.png
 - [x] Use uploaded photo for Fruit Flavored Yogurt (sweet quiz)
+- [x] Add Nasi Goreng / Crab Fried Rice / Egg Fried Rice comparisons to the umami quiz (umami-38/39/40) with generated photos, allergen map, and ingredient mappings
