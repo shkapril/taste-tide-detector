@@ -168,7 +168,6 @@ export const foodIngredientMap: Record<string, string[]> = {
   'grilled chicken': ['chicken', 'salt', 'olive_oil'],
   'roasted chicken': ['chicken', 'butter', 'garlic', 'salt'],
   'fried chicken': ['chicken', 'wheat_flour', 'egg', 'salt'],
-  'korean fried chicken': ['chicken', 'wheat_flour', 'garlic', 'soy_sauce', 'chili_pepper', 'sugar'],
   'nashville spicy chicken': ['chicken', 'wheat_flour', 'chili_pepper', 'butter'],
   'buffalo wings': ['chicken', 'butter', 'chili_pepper', 'vinegar'],
   'bbq wings': ['chicken', 'tomato', 'sugar', 'vinegar'],
