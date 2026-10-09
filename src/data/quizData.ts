@@ -922,7 +922,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-15',
     optionA: { name: 'Roasted Chicken', image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=600&fit=crop' },
-    optionB: { name: 'Korean Fried Chicken', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop' },
+    optionB: { name: 'Fried Chicken', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&h=600&fit=crop' },
     intensityA: 4,
     intensityB: 8,
     dietary: ['all-good'],
