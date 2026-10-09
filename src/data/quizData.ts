@@ -51,6 +51,7 @@ import eggRoyaleImg from '@/assets/egg_royale.jpg';
 import nasiGorengImg from '@/assets/nasi_goreng.jpg';
 import crabFriedRiceImg from '@/assets/crab_fried_rice.jpg';
 import eggFriedRiceImg from '@/assets/egg_fried_rice.jpg';
+import scrambledEggImg from '@/assets/scrambled_egg.png.asset.json';
 import fishBrothSoupImg from '@/assets/fish_broth_soup.jpg.asset.json';
 import baguetteImg from '@/assets/baguette.png.asset.json';
 import truffleMushroomPasteImg from '@/assets/truffle_mushroom_paste.jpg.asset.json';
@@ -913,7 +914,7 @@ export const richItems: QuizItem[] = [
   {
     id: 'rich-14',
     optionA: { name: 'Poached Egg', image: poachedEggImg.url },
-    optionB: { name: 'Scrambled Egg', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=600&fit=crop' },
+    optionB: { name: 'Scrambled Egg', image: scrambledEggImg.url },
     intensityA: 3,
     intensityB: 7,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
