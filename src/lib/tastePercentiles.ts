@@ -39,8 +39,18 @@ export interface TastePercentile extends TasteDistribution {
   blurb: string;
 }
 
-export function getTastePercentiles(scores: Record<string, number>): TastePercentile[] {
-  return TASTE_DISTRIBUTIONS.map(d => {
+export interface LiveStat { mean: number; sd: number; n: number }
+
+/** Uses real participant stats when a category has enough data (minSample), else the baseline. */
+export function getTastePercentiles(
+  scores: Record<string, number>,
+  live: Record<string, LiveStat> = {},
+  minSample = 20,
+): (TastePercentile & { n: number; isLive: boolean })[] {
+  return TASTE_DISTRIBUTIONS.map(base => {
+    const l = live[base.key];
+    const isLive = !!l && l.n >= minSample;
+    const d = isLive ? { ...base, mean: l.mean, sd: Math.max(0.5, l.sd) } : base;
     const score = scores[d.key] ?? 0;
     const z = (score - d.mean) / d.sd;
     const pct = Math.min(99, Math.max(1, Math.round(normalCdf(z) * 100)));
@@ -55,6 +65,6 @@ export function getTastePercentiles(scores: Record<string, number>): TastePercen
         : pct >= 20
         ? `Below average — less ${d.label.toLowerCase()} than most`
         : `Bottom ${Math.max(1, pct)}% — you avoid ${d.label.toLowerCase()}`;
-    return { ...d, score, percentile: pct, blurb };
+    return { ...d, score, percentile: pct, blurb, n: l?.n ?? 0, isLive };
   });
 }

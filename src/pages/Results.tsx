@@ -122,6 +122,7 @@ const Results = () => {
 
   const handleRetake = () => {
     localStorage.removeItem('quizScores');
+    localStorage.removeItem('resultSessionId');
     localStorage.removeItem('completedQuizzes');
     localStorage.removeItem('tasteDNA');
     navigate('/');

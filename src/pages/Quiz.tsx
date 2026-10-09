@@ -13,6 +13,7 @@ import {
 } from '@/data/quizData';
 import { Allergen, EatingStyle, shouldFilterItem, shouldFilterByDiet, hasVeganOverride } from '@/data/allergens';
 import { foodContainsBlockedIngredient, isVeganSafeFood } from '@/data/foodIngredients';
+import { submitCategoryScore } from '@/lib/globalStats';
 
 const TOTAL_QUESTIONS = 8;
 
@@ -186,6 +187,7 @@ const Quiz = () => {
           const savedScores = JSON.parse(localStorage.getItem('quizScores') || '{}');
           savedScores[quizType] = score;
           localStorage.setItem('quizScores', JSON.stringify(savedScores));
+          submitCategoryScore(quizType, score);
 
           // Track completed quizzes
           const completed = JSON.parse(localStorage.getItem('completedQuizzes') || '[]');

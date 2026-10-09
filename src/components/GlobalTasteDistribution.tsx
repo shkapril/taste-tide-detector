@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { TASTE_DISTRIBUTIONS, getTastePercentiles } from '@/lib/tastePercentiles';
+import { getTastePercentiles } from '@/lib/tastePercentiles';
+import { useGlobalStats, MIN_SAMPLE } from '@/lib/globalStats';
 
 interface Props {
   scores: Record<string, number>;
@@ -14,13 +15,14 @@ const pdf = (x: number, mean: number, sd: number) =>
   Math.exp(-0.5 * ((x - mean) / sd) ** 2);
 
 const GlobalTasteDistribution = ({ scores, keys }: Props) => {
-  const rows = getTastePercentiles(scores).filter(r => keys.includes(r.key));
+  const live = useGlobalStats();
+  const rows = getTastePercentiles(scores, live, MIN_SAMPLE).filter(r => keys.includes(r.key));
   if (rows.length === 0) return null;
 
   return (
     <div className="w-full max-w-md mx-auto space-y-6">
       {rows.map((r, i) => {
-        const d = TASTE_DISTRIBUTIONS.find(t => t.key === r.key)!;
+        const d = r;
         const pts: string[] = [];
         for (let s = 0; s <= 100; s++) {
           const x = (s / 100) * 10;
@@ -55,6 +57,8 @@ const GlobalTasteDistribution = ({ scores, keys }: Props) => {
             </svg>
             <p className="text-xs text-muted-foreground mt-1">
               You: {r.score.toFixed(1)} · Global average: {d.mean.toFixed(1)} — {r.blurb}
+              <br />
+              {r.isLive ? `Based on ${r.n} real participants` : `Sample curve until ${MIN_SAMPLE}+ people finish this quiz (${r.n} so far)`}
             </p>
           </motion.div>
         );

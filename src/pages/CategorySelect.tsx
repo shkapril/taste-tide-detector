@@ -51,6 +51,7 @@ const CategorySelect = () => {
     // Reset all quiz progress and stay on this page so the user
     // can pick whichever category they want to start with
     localStorage.removeItem('quizScores');
+    localStorage.removeItem('resultSessionId');
     localStorage.removeItem('completedQuizzes');
     localStorage.removeItem('tasteDNA');
     setCompletedQuizzes([]);
