@@ -14,13 +14,44 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quiz_results: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          score: number
+          session_id: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          id?: string
+          score: number
+          session_id: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          score?: number
+          session_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_taste_stats: {
+        Args: never
+        Returns: {
+          category: string
+          mean: number
+          n: number
+          sd: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
