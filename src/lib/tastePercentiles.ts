@@ -65,6 +65,6 @@ export function getTastePercentiles(
         : pct >= 20
         ? `Below average — less ${d.label.toLowerCase()} than most`
         : `Bottom ${Math.max(1, pct)}% — you avoid ${d.label.toLowerCase()}`;
-    return { ...d, score, percentile: pct, blurb };
+    return { ...d, score, percentile: pct, blurb, n: l?.n ?? 0, isLive };
   });
 }
