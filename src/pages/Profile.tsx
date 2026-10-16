@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Share2, Link as LinkIcon, Download, MessageCircle, Check, BarChart3 } from 'lucide-react';
 import { toPng } from 'html-to-image';
@@ -45,7 +45,11 @@ const Profile = () => {
     pescatarian: 'Pescatarian',
   };
 
+  const [searchParams] = useSearchParams();
   const [shareOpen, setShareOpen] = useState(false);
+  useEffect(() => {
+    if (!isAnalyzing && searchParams.get('share') === '1' && hasResults) setShareOpen(true);
+  }, [isAnalyzing]); // eslint-disable-line react-hooks/exhaustive-deps
   const [infoOpen, setInfoOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareCardRef = useRef<HTMLDivElement>(null);

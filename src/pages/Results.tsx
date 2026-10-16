@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Share2, RotateCcw, Sparkles } from 'lucide-react';
+import { Share2, RotateCcw, Sparkles, UtensilsCrossed } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
@@ -105,19 +105,12 @@ const Results = () => {
     return <Navigate to="/" replace />;
   }
 
-  const handleShare = async () => {
-    const lines = Object.entries(uxScores)
-      .map(([k, v]) => `${k}: ${v.toFixed(1)}/10`)
-      .join('\n');
-    const charLine = character ? `${character.emoji} ${character.name}` : '';
-    const text = `🧬 My Taste DNA:\n${charLine}\n\n${lines}\n\nDiscover yours at ${window.location.origin}`;
+  const handleShare = () => navigate('/profile?share=1');
 
-    if (navigator.share) {
-      try { await navigator.share({ title: 'My Taste DNA', text, url: window.location.origin }); }
-      catch { /* cancelled */ }
-    } else {
-      navigator.clipboard.writeText(text);
-    }
+  const handleFindRestaurants = () => {
+    const cuisine = character?.name === 'US' ? 'American' : character?.name ?? '';
+    const q = encodeURIComponent(`${cuisine} restaurants near me`.trim());
+    window.open(`https://www.google.com/maps/search/${q}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleRetake = () => {
@@ -255,6 +248,16 @@ const Results = () => {
               size="lg"
             >
               See My Full Profile
+            </Button>
+
+            <Button
+              onClick={handleFindRestaurants}
+              variant="outline"
+              className="w-full h-14 text-lg font-medium"
+              size="lg"
+            >
+              <UtensilsCrossed className="w-5 h-5 mr-2" />
+              Find Restaurants for My Taste
             </Button>
           </motion.div>
         </motion.div>
