@@ -94,7 +94,8 @@ function selectNextQuestion(
     const centerDist = Math.abs((item.intensityA + item.intensityB) / 2 - mean);
     return {
       item,
-      score: (brackets ? 10 : 0) + spread - centerDist,
+      // A guaranteed item that somehow reached this phase is picked first.
+      score: (brackets ? 10 : 0) + spread - centerDist + (item.guaranteed ? 100 : 0),
     };
   });
   scored.sort((a, b) => b.score - a.score);
