@@ -34,3 +34,4 @@
 - [x] Guarantee Natto vs Edamame in the umami quiz (new `guaranteed` flag, served within the first 3 questions)
 - [x] Use uploaded white_rice.png for Plain Rice (umami-24, umami-31)
 - [x] Remove "Compare Globally" feature card from the landing page
+- [ ] Results: 'Find restaurants for my taste' button under See My Full Profile
