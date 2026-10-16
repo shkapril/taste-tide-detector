@@ -157,6 +157,9 @@ export interface QuizItem {
   // 이 필드가 있으면 all-good 예외를 무시하고, 여기 적힌 스타일을 선택한
   // 유저한테만 보여줌 (일반 dietary 필터보다 더 엄격하게 제한)
   onlyForStyles?: ('vegan' | 'vegetarian' | 'pescatarian')[];
+  // true = this comparison is always asked (within the first three
+  // questions) to every user whose dietary filters keep it in the pool.
+  guaranteed?: boolean;
 }
 
 export type QuizType = 'sweet' | 'sour' | 'bitter' | 'salty' | 'rich' | 'spicy' | 'umami';
@@ -1223,6 +1226,7 @@ export const umamiItems: QuizItem[] = [
     intensityA: 8,
     intensityB: 4,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+    guaranteed: true,
   },
   {
     id: 'umami-15',
