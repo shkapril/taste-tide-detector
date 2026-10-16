@@ -1303,7 +1303,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-24',
     optionA: { name: 'Katsuobushi', image: katsuobushiImg },
-    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Rice', image: whiteRiceImg },
     intensityA: 9,
     intensityB: 1,
     dietary: ['pescatarian', 'all-good'],
@@ -1359,7 +1359,7 @@ export const umamiItems: QuizItem[] = [
   {
     id: 'umami-31',
     optionA: { name: 'Rice with Furikake', image: riceWithFurikakeImg },
-    optionB: { name: 'Plain Rice', image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop' },
+    optionB: { name: 'Plain Rice', image: whiteRiceImg },
     intensityA: 7,
     intensityB: 1,
     dietary: ['vegetarian', 'pescatarian', 'all-good'],
