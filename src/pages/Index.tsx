@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { EatingStyleSelection, IngredientSelection } from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
@@ -20,15 +20,6 @@ const Index = () => {
   );
   const [eatingStyle, setEatingStyle] = useState<EatingStyle | null>(savedPrefs?.eatingStyle || null);
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>(savedPrefs?.blockedIngredients || []);
-
-  const features = [
-    {
-      icon: Users,
-      title: 'Compare Globally',
-      description: 'See how your palate ranks among others worldwide',
-      onClick: undefined as (() => void) | undefined,
-    },
-  ];
 
   const savePreferences = (style: EatingStyle | null, ingredients: string[]) => {
     localStorage.setItem(
@@ -245,33 +236,6 @@ const Index = () => {
               </motion.div>
             </div>
 
-            {/* Features Section */}
-            <div className="px-8 pb-16">
-              <div className="space-y-3">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
-                    className={`flex items-start gap-5 p-5 bg-card/60 backdrop-blur-sm rounded-2xl chic-border ${feature.onClick ? 'cursor-pointer hover:bg-card/80 transition-colors' : ''}`}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                    onClick={feature.onClick}
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-5 h-5 text-foreground/70" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-lg text-foreground mb-0.5">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
 
             {/* Footer */}
             <footer className="px-8 pb-10 text-center">
