@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Share2, Link as LinkIcon, Download, MessageCircle, Check, BarChart3 } from 'lucide-react';
 import { toPng } from 'html-to-image';
@@ -45,7 +45,11 @@ const Profile = () => {
     pescatarian: 'Pescatarian',
   };
 
+  const [searchParams] = useSearchParams();
   const [shareOpen, setShareOpen] = useState(false);
+  useEffect(() => {
+    if (!isAnalyzing && searchParams.get('share') === '1' && hasResults) setShareOpen(true);
+  }, [isAnalyzing]); // eslint-disable-line react-hooks/exhaustive-deps
   const [infoOpen, setInfoOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const shareCardRef = useRef<HTMLDivElement>(null);
@@ -78,15 +82,54 @@ const Profile = () => {
 
   const openExternal = (url: string) => window.open(url, '_blank', 'noopener,noreferrer');
 
-  const handleKakao = () =>
-    openExternal(`https://story.kakao.com/share?url=${encodeURIComponent(shareUrl)}`);
-  const handleWeChat = () => {
-    // WeChat has no web share URL — copy link and prompt to paste
-    navigator.clipboard.writeText(shareText);
-    toast({ title: 'Link copied — paste in WeChat to share' });
+  const [sharing, setSharing] = useState(false);
+  const fileName = `taste-dna-${character?.name?.replace(/\s+/g, '-').toLowerCase() || 'profile'}.png`;
+
+  const makeImageFile = async (): Promise<{ file: File; dataUrl: string } | null> => {
+    if (!shareCardRef.current) return null;
+    const dataUrl = await toPng(shareCardRef.current, { cacheBust: true, pixelRatio: 2, backgroundColor: '#ffffff' });
+    const blob = await (await fetch(dataUrl)).blob();
+    return { file: new File([blob], fileName, { type: 'image/png' }), dataUrl };
   };
-  const handleWhatsApp = () =>
-    openExternal(`https://wa.me/?text=${encodeURIComponent(shareText)}`);
+
+  const downloadDataUrl = (dataUrl: string) => {
+    const link = document.createElement('a');
+    link.download = fileName;
+    link.href = dataUrl;
+    link.click();
+  };
+
+  // Share the full profile image via the device share sheet; fall back to download + app link.
+  const shareImageTo = async (app: 'kakao' | 'whatsapp' | 'instagram') => {
+    setSharing(true);
+    try {
+      const img = await makeImageFile();
+      if (!img) return;
+      const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
+      if (nav.canShare?.({ files: [img.file] })) {
+        try {
+          await nav.share({ files: [img.file], text: shareText });
+          return;
+        } catch (e) {
+          if ((e as Error).name === 'AbortError') return;
+        }
+      }
+      downloadDataUrl(img.dataUrl);
+      if (app === 'whatsapp') {
+        openExternal(`https://wa.me/?text=${encodeURIComponent(shareText)}`);
+        toast({ title: 'Image saved — attach it in WhatsApp' });
+      } else if (app === 'kakao') {
+        navigator.clipboard?.writeText(shareText).catch(() => {});
+        toast({ title: 'Image saved — attach it in KakaoTalk' });
+      } else {
+        toast({ title: 'Image saved — open Instagram on your phone to post it' });
+      }
+    } catch {
+      toast({ title: 'Could not create image', variant: 'destructive' });
+    } finally {
+      setSharing(false);
+    }
+  };
 
   const handleShare = () => setShareOpen(true);
 
@@ -311,44 +354,40 @@ const Profile = () => {
               <DialogHeader>
                 <DialogTitle className="font-display">Share your Taste DNA</DialogTitle>
               </DialogHeader>
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <p className="text-sm text-muted-foreground -mt-1">Your full profile will be sent as an image.</p>
+              <div className="grid grid-cols-1 gap-3 pt-2">
                 <button
-                  onClick={handleCopyLink}
-                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
-                >
-                  {copied ? <Check className="w-6 h-6 text-primary" /> : <LinkIcon className="w-6 h-6" />}
-                  <span className="text-sm">{copied ? 'Copied' : 'Copy link'}</span>
-                </button>
-                <button
-                  onClick={handleDownloadImage}
-                  className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border p-4 hover:bg-accent/40 transition-colors"
-                >
-                  <Download className="w-6 h-6" />
-                  <span className="text-sm">Download image</span>
-                </button>
-                <button
-                  onClick={handleKakao}
-                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition-colors hover:opacity-90"
+                  disabled={sharing}
+                  onClick={() => shareImageTo('kakao')}
+                  className="flex items-center justify-center gap-2 rounded-xl p-4 transition-opacity hover:opacity-90 disabled:opacity-50"
                   style={{ backgroundColor: '#FEE500', color: '#3C1E1E' }}
                 >
                   <span className="text-lg font-bold">K</span>
                   <span className="text-sm font-medium">KakaoTalk</span>
                 </button>
                 <button
-                  onClick={handleWeChat}
-                  className="flex flex-col items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#07C160' }}
-                >
-                  <MessageCircle className="w-6 h-6" />
-                  <span className="text-sm font-medium">WeChat</span>
-                </button>
-                <button
-                  onClick={handleWhatsApp}
-                  className="col-span-2 flex items-center justify-center gap-2 rounded-xl p-4 text-white transition-colors hover:opacity-90"
+                  disabled={sharing}
+                  onClick={() => shareImageTo('whatsapp')}
+                  className="flex items-center justify-center gap-2 rounded-xl p-4 text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                   style={{ backgroundColor: '#25D366' }}
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span className="text-sm font-medium">WhatsApp</span>
+                </button>
+                <button
+                  disabled={sharing}
+                  onClick={() => shareImageTo('instagram')}
+                  className="flex items-center justify-center gap-2 rounded-xl p-4 text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  style={{ background: 'linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4)' }}
+                >
+                  <Share2 className="w-5 h-5" />
+                  <span className="text-sm font-medium">Post to Instagram</span>
+                </button>
+                <button
+                  onClick={handleDownloadImage}
+                  className="flex items-center justify-center gap-2 text-sm text-muted-foreground pt-1"
+                >
+                  <Download className="w-4 h-4" /> Download image
                 </button>
               </div>
             </DialogContent>
