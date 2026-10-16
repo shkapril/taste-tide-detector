@@ -87,6 +87,8 @@ import shiitakeMisoSoupImg from '@/assets/shiitake_miso_soup.png.asset.json';
 import misoSoupPlainImg from '@/assets/miso_soup_plain.png.asset.json';
 import riceWithFurikakeAsset from '@/assets/rice_with_furikake.png.asset.json';
 const riceWithFurikakeImg = riceWithFurikakeAsset.url;
+import whiteRiceAsset from '@/assets/white_rice.png.asset.json';
+const whiteRiceImg = whiteRiceAsset.url;
 import saltedCaramelImg from '@/assets/salted_caramel.png.asset.json';
 import plainCrackerImg from '@/assets/plain_cracker.png.asset.json';
 import ricottaImg from '@/assets/ricotta_cheese_2.png.asset.json';
