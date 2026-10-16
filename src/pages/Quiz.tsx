@@ -68,6 +68,13 @@ function selectNextQuestion(
 
   const q = state.questionsAnswered;
 
+  // Guaranteed items must be asked in every run. Serve one at a random slot
+  // among the first three questions, forced by the third one.
+  const forced = available.filter(item => item.guaranteed);
+  if (forced.length > 0 && q < 3 && (q === 2 || Math.random() < 0.5)) {
+    return shuffle(forced)[0];
+  }
+
   // Phase 1 (Q1-3): Random exploration
   if (q < 3) {
     return shuffle(available)[0];
