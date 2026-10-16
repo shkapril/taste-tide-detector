@@ -32,3 +32,4 @@
 - [x] Add Nasi Goreng / Crab Fried Rice / Egg Fried Rice comparisons to the umami quiz (umami-38/39/40) with generated photos, allergen map, and ingredient mappings
 - [x] Rename Korean Fried Chicken to Fried Chicken (rich-15) and drop the orphaned ingredient mapping
 - [x] Guarantee Natto vs Edamame in the umami quiz (new `guaranteed` flag, served within the first 3 questions)
+- [x] Use uploaded white_rice.png for Plain Rice (umami-24, umami-31)
