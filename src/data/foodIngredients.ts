@@ -232,7 +232,7 @@ export const foodIngredientMap: Record<string, string[]> = {
   'rice cakes': ['rice'],
   'thai green curry': ['coconut', 'chili_pepper', 'lemongrass', 'garlic', 'ginger', 'fish_sauce', 'basil'],
   'parmigiana di melanzane': ['eggplant', 'tomato', 'cheese', 'basil', 'olive_oil', 'garlic'],
-  'vegan eggplant mapo tofu': ['eggplant', 'tofu', 'soybean', 'szechuan_pepper', 'chili_pepper', 'garlic', 'soy_sauce', 'scallion'],
+  'eggplant mapo tofu': ['eggplant', 'tofu', 'soybean', 'szechuan_pepper', 'chili_pepper', 'garlic', 'soy_sauce', 'scallion'],
 
   // ── Bread & baked goods ──
   'plain bread': ['bread', 'wheat_flour', 'yeast', 'salt'],

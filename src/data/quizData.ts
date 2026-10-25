@@ -1127,7 +1127,7 @@ export const spicyItems: QuizItem[] = [
   {
     id: 'spicy-16',
     optionA: { name: 'Parmigiana di Melanzane', image: parmigianaDiMelanzaneImg, vegan: true },
-    optionB: { name: 'Vegan Eggplant Mapo Tofu', image: veganEggplantMapoTofuImg, vegan: true },
+    optionB: { name: 'Eggplant Mapo Tofu', image: veganEggplantMapoTofuImg, vegan: true },
     intensityA: 3,
     intensityB: 8,
     dietary: ['vegan'],
