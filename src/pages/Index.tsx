@@ -101,7 +101,7 @@ const Index = () => {
                   ['/images/aglio_e_olio.png','Aglio e Olio'],
                   ['https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop','Chocolate cake'],
                   ['https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&h=400&fit=crop','Chocolate'],
-                  ['https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=400&fit=crop','Dessert'],
+                  [redVelvetCakeImg.url, 'Red velvet cake'],
                   ['https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop','Salad'],
                 ];
                 const cells = [...imgs.slice(0, 4), null, ...imgs.slice(4)];
