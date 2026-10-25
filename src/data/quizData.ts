@@ -74,6 +74,8 @@ import buldakRamenImg from '@/assets/buldak_hot_chicken_ramen.jpg.asset.json';
 import nashvilleImg from '@/assets/nashville_chicken.jpg.asset.json';
 import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
 import sichuanMapoTofuImg from '@/assets/sichuan_mapo_tofu.jpg';
+import parmigianaDiMelanzaneImg from '@/assets/parmigiana_di_melanzane.jpg';
+import veganEggplantMapoTofuImg from '@/assets/vegan_eggplant_mapo_tofu.jpg';
 import kungPaoChickenImg from '@/assets/kung_pao_chicken.jpg';
 import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.png.asset.json';
@@ -1121,6 +1123,14 @@ export const spicyItems: QuizItem[] = [
     intensityA: 7,
     intensityB: 6,
     dietary: ['vegan', 'vegetarian', 'pescatarian', 'all-good'],
+  },
+  {
+    id: 'spicy-16',
+    optionA: { name: 'Parmigiana di Melanzane', image: parmigianaDiMelanzaneImg, vegan: true },
+    optionB: { name: 'Vegan Eggplant Mapo Tofu', image: veganEggplantMapoTofuImg, vegan: true },
+    intensityA: 3,
+    intensityB: 8,
+    dietary: ['vegan'],
   },
 
 ];
