@@ -36,4 +36,4 @@
 - [x] Remove "Compare Globally" feature card from the landing page
 - [x] Results: Find restaurants for my taste' button under See My Full Profile
 - [x] Cauliflower images
-- [ ] Landing 3x3 grid
+- [x] Landing 3x3 grid

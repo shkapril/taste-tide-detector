@@ -92,148 +92,49 @@ const Index = () => {
                 transition={{ duration: 5, repeat: Infinity, delay: 1, ease: "easeInOut" }}
               />
 
-              {/* Logo / Title */}
-              <motion.div
-                className="text-center mb-12"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <motion.div
-                  className="inline-block text-4xl mb-6 opacity-80"
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  ✦
-                </motion.div>
-                <h1 className="text-5xl md:text-6xl font-display text-foreground mb-5 leading-[1.1] tracking-tight">
-                  What's Your
-                  <span className="block italic text-primary">Taste Level?</span>
-                </h1>
-                <p className="text-muted-foreground text-base max-w-xs mx-auto leading-relaxed tracking-wide">
-                  Click through food and find out your true taste preference
-                </p>
-              </motion.div>
+              {(() => {
+                const imgs = [
+                  ['https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=400&fit=crop','Donuts'],
+                  ['/images/steak.png','Grilled steak'],
+                  ['https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=400&h=400&fit=crop','Macarons'],
+                  ['/images/aglio_e_olio.png','Aglio e Olio'],
+                  ['https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop','Chocolate cake'],
+                  ['https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&h=400&fit=crop','Chocolate'],
+                  ['https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=400&fit=crop','Dessert'],
+                  ['https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop','Salad'],
+                ];
+                const cells = [...imgs.slice(0, 4), null, ...imgs.slice(4)];
+                return (
+                  <div className="relative grid grid-cols-3 gap-2 md:gap-3 max-w-2xl mx-auto mb-10">
+                    {cells.map((c, i) => c ? (
+                      <motion.div key={i} className="aspect-square rounded-2xl overflow-hidden card-shadow"
+                        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.05 * i }}>
+                        <img src={c[0]} alt={c[1]} className="w-full h-full object-cover" />
+                      </motion.div>
+                    ) : (
+                      <motion.div key={i} className="aspect-square rounded-2xl bg-card elevated-shadow flex flex-col items-center justify-center text-center p-2"
+                        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                        <h1 className="text-lg sm:text-2xl md:text-4xl font-display text-foreground leading-tight tracking-tight">
+                          What's Your<span className="block italic text-primary">Taste Level?</span>
+                        </h1>
+                      </motion.div>
+                    ))}
+                  </div>
+                );
+              })()}
 
-              {/* Elegant Food Gallery */}
-              <motion.div
-                className="relative mb-10"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {/* Main Featured Row */}
-                <div className="flex justify-center gap-3 mb-3">
-                  <motion.div
-                    className="w-24 h-32 rounded-2xl overflow-hidden card-shadow"
-                    style={{ rotate: -6 }}
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.2 }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200&h=280&fit=crop"
-                      alt="Colorful donuts"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className="w-32 h-40 rounded-2xl overflow-hidden elevated-shadow z-10"
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=280&h=360&fit=crop"
-                      alt="Gourmet chocolate"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
-                  </motion.div>
-                  <motion.div
-                    className="w-24 h-32 rounded-2xl overflow-hidden card-shadow"
-                    style={{ rotate: 6 }}
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.4 }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=200&h=280&fit=crop"
-                      alt="French macarons"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                </div>
+              <p className="text-muted-foreground text-base max-w-xs mx-auto leading-relaxed tracking-wide text-center mb-8">
+                Click through food and find out your true taste preference
+              </p>
 
-                {/* Secondary Row */}
-                <div className="flex justify-center gap-2">
-                  <motion.div
-                    className="w-16 h-20 rounded-xl overflow-hidden card-shadow"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                  <img
-                      src="/images/steak.png"
-                      alt="Grilled steak"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className="w-20 h-24 rounded-xl overflow-hidden card-shadow"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=160&h=200&fit=crop"
-                      alt="Chocolate cake"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className="w-20 h-24 rounded-xl overflow-hidden card-shadow"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    <img
-                      src="/images/aglio_e_olio.png"
-                      alt="Aglio e Olio pasta"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className="w-16 h-20 rounded-xl overflow-hidden card-shadow"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=140&h=180&fit=crop"
-                      alt="Gourmet dessert"
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* CTA Button */}
-              <motion.div
-                className="text-center mb-16"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <Button
-                  onClick={() => setStep(1)}
-                  size="lg"
-                  className="h-14 px-10 text-lg font-display tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300"
-                >
+              <div className="text-center mb-16">
+                <Button onClick={() => setStep(1)} size="lg"
+                  className="h-14 px-10 text-lg font-display tracking-wide rounded-full shadow-sm hover:shadow-md transition-all duration-300">
                   Discover Your Taste
                   <ArrowRight className="w-4 h-4 ml-3" />
                 </Button>
-                <p className="text-xs text-muted-foreground mt-4 tracking-widest uppercase">
-                  2 min • 8 questions
-                </p>
-              </motion.div>
+                <p className="text-xs text-muted-foreground mt-4 tracking-widest uppercase">2 min • 8 questions</p>
+              </div>
             </div>
 
 
