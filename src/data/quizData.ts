@@ -1,3 +1,5 @@
+import buffaloCauliflowerImg from '@/assets/buffalo_cauliflower.png.asset.json';
+import roastedCauliflowerImg from '@/assets/roasted_cauliflower.png.asset.json';
 import parmesanCheeseAsset from '@/assets/parmesan_cheese.png.asset.json';
 const parmesanCheeseImg = parmesanCheeseAsset.url;
 import mushroomCreamPastaAsset from '@/assets/mushroom_cream_pasta.png.asset.json';
@@ -1090,8 +1092,8 @@ export const spicyItems: QuizItem[] = [
   },
   {
     id: 'spicy-12',
-    optionA: { name: 'Buffalo Cauliflower', image: 'https://images.unsplash.com/photo-1529059356943-4d0aa6c20ace?w=600&h=600&fit=crop' },
-    optionB: { name: 'Roasted Cauliflower', image: 'https://images.unsplash.com/photo-1613743983303-b3e8991e050c?w=600&h=600&fit=crop' },
+    optionA: { name: 'Buffalo Cauliflower', image: buffaloCauliflowerImg.url },
+    optionB: { name: 'Roasted Cauliflower', image: roastedCauliflowerImg.url },
     intensityA: 6,
     intensityB: 1,
     dietary: ['vegan', 'vegetarian', 'pescatarian'],

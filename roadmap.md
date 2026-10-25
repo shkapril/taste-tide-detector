@@ -35,3 +35,5 @@
 - [x] Use uploaded white_rice.png for Plain Rice (umami-24, umami-31)
 - [x] Remove "Compare Globally" feature card from the landing page
 - [x] Results: Find restaurants for my taste' button under See My Full Profile
+- [x] Cauliflower images
+- [x] Landing 3x3 grid
