@@ -206,7 +206,11 @@ export function hasVeganOverride(
   optionBVegan: boolean | undefined,
   eatingStyles: EatingStyle[]
 ): boolean {
-  return eatingStyles.includes('vegan') && !!(optionAVegan || optionBVegan);
+  // Options carrying the vegan tag are plant-based, so they are shown to
+  // vegan, vegetarian AND pescatarian users alike, overriding diet and
+  // blocked-ingredient filters (allergy filters always win).
+  const plantBased = ['vegan', 'vegetarian', 'pescatarian'].some(s => eatingStyles.includes(s));
+  return plantBased && !!(optionAVegan || optionBVegan);
 }
 
 /**
