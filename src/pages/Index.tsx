@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { EatingStyleSelection, IngredientSelection } from '@/components/AllergySelection';
 import { Allergen, EatingStyle } from '@/data/allergens';
 import { defaultAvoidancesForStyle } from '@/data/foodIngredients';
+import redVelvetCakeImg from '@/assets/red_velvet_cake.png.asset.json';
 
 const Index = () => {
   const navigate = useNavigate();
