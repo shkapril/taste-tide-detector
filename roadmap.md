@@ -37,3 +37,4 @@
 - [x] Results: Find restaurants for my taste' button under See My Full Profile
 - [x] Cauliflower images
 - [x] Landing 3x3 grid
+- [x] Use uploaded photos for Habanero Salsa and Tomato Salsa (replaced old .jpg assets with .png)
