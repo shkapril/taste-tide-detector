@@ -76,6 +76,7 @@ import sichuanNoodleImg from '@/assets/sichuan_noodle.jpg.asset.json';
 import sichuanMapoTofuImg from '@/assets/sichuan_mapo_tofu.jpg';
 import parmigianaDiMelanzaneImg from '@/assets/parmigiana_di_melanzane.jpg';
 import veganEggplantMapoTofuImg from '@/assets/vegan_eggplant_mapo_tofu.jpg';
+import spicyStirFriedEggplantImg from '@/assets/spicy_stir_fried_eggplant.jpg';
 import kungPaoChickenImg from '@/assets/kung_pao_chicken.jpg';
 import mustardImg from '@/assets/mustard.jpg.asset.json';
 import habaneroSalsaImg from '@/assets/habanero_salsa.png.asset.json';
@@ -1130,6 +1131,14 @@ export const spicyItems: QuizItem[] = [
     optionB: { name: 'Eggplant Mapo Tofu', image: veganEggplantMapoTofuImg, vegan: true },
     intensityA: 3,
     intensityB: 8,
+    dietary: ['vegan'],
+  },
+  {
+    id: 'spicy-17',
+    optionA: { name: 'Miso-Glazed Eggplant (Nasu Dengaku)', image: veganMisoGlazedEggplantImg, vegan: true },
+    optionB: { name: 'Spicy Stir-fried Eggplant', image: spicyStirFriedEggplantImg, vegan: true },
+    intensityA: 2,
+    intensityB: 7,
     dietary: ['vegan'],
   },
 
