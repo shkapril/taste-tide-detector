@@ -156,6 +156,15 @@ const Results = () => {
           <div className="flex-1 px-6 py-4">
             {/* Character Card — only shown when all categories are complete */}
             {allCompleted && character && (
+              <>
+              <motion.p
+                className="text-center text-lg font-display font-semibold text-foreground mb-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                In your past life, were you born in {character.name}?
+              </motion.p>
               <motion.div
                 className="rounded-2xl overflow-hidden card-shadow mb-8"
                 initial={{ opacity: 0, y: 30 }}
