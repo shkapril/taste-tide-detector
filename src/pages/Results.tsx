@@ -3,6 +3,7 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Share2, RotateCcw, Sparkles, UtensilsCrossed } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
+import chefDesktopAsset from '@/assets/chef_desktop.png.asset.json';
 import { Button } from '@/components/ui/button';
 import ResultsChart from '@/components/ResultsChart';
 import HexRadarChart from '@/components/HexRadarChart';

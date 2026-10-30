@@ -5,6 +5,7 @@ import { ArrowRight, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { quizLabels, getTasteProfile, QuizType } from '@/data/quizData';
 import chefImage from '@/assets/chef.png';
+import chefDesktopAsset from '@/assets/chef_desktop.png.asset.json';
 import type { Allergen, EatingStyle } from '@/data/allergens';
 
 interface LocationState {
