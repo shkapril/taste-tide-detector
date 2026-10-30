@@ -144,7 +144,7 @@ const Results = () => {
             {allCompleted && character && (
               <>
               <motion.p
-                className="text-center text-lg font-display font-semibold text-foreground mb-4"
+                className="text-center text-3xl font-display font-bold text-foreground mb-6"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
