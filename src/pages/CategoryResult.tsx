@@ -18,7 +18,7 @@ interface LocationState {
 
 const AnalyzingScreen = () => (
   <motion.div
-    className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+    className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pb-[30vh]"
     style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
