@@ -1,3 +1,5 @@
+import matchaLatteNoSyrupAsset from '@/assets/matcha_latte_no_syrup.png.asset.json';
+const matchaLatteNoSyrupImg = matchaLatteNoSyrupAsset.url;
 import buffaloCauliflowerImg from '@/assets/buffalo_cauliflower.png.asset.json';
 import roastedCauliflowerImg from '@/assets/roasted_cauliflower.png.asset.json';
 import parmesanCheeseAsset from '@/assets/parmesan_cheese.png.asset.json';
