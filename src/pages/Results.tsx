@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Share2, RotateCcw, Sparkles, UtensilsCrossed } from 'lucide-react';
+import { Share2, RotateCcw, UtensilsCrossed } from 'lucide-react';
 import chefImage from '@/assets/chef.png';
 import chefDesktopAsset from '@/assets/chef_desktop.png.asset.json';
 import { Button } from '@/components/ui/button';
@@ -139,21 +139,7 @@ const Results = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <header className="px-6 pt-8 pb-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                <Sparkles className="w-4 h-4" />
-                <span className="text-sm font-medium">Your Taste DNA</span>
-              </div>
-            </motion.div>
-          </header>
-
-          <div className="flex-1 px-6 py-4">
+          <div className="flex-1 px-6 pt-8 pb-4">
             {/* Character Card — only shown when all categories are complete */}
             {allCompleted && character && (
               <>
