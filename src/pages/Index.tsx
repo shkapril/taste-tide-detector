@@ -7,6 +7,7 @@ import { EatingStyleSelection, IngredientSelection } from '@/components/AllergyS
 import { Allergen, EatingStyle } from '@/data/allergens';
 import { defaultAvoidancesForStyle } from '@/data/foodIngredients';
 import redVelvetCakeImg from '@/assets/red_velvet_cake.png.asset.json';
+import basilTomatoSpaghettiImg from '@/assets/basil_tomato_spaghetti.png.asset.json';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -102,7 +103,7 @@ const Index = () => {
                   ['https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop','Chocolate cake'],
                   ['https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&h=400&fit=crop','Chocolate'],
                   [redVelvetCakeImg.url, 'Red velvet cake'],
-                  ['https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop','Salad'],
+                  [basilTomatoSpaghettiImg.url, 'Basil tomato spaghetti'],
                 ];
                 const cells = [...imgs.slice(0, 4), null, ...imgs.slice(4)];
                 return (
