@@ -7,6 +7,7 @@ import { EatingStyleSelection, IngredientSelection } from '@/components/AllergyS
 import { Allergen, EatingStyle } from '@/data/allergens';
 import { defaultAvoidancesForStyle } from '@/data/foodIngredients';
 import redVelvetCakeImg from '@/assets/red_velvet_cake.png.asset.json';
+import basilTomatoSpaghettiImg from '@/assets/basil_tomato_spaghetti.png.asset.json';
 
 const Index = () => {
   const navigate = useNavigate();
