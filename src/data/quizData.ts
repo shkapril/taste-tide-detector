@@ -1,3 +1,5 @@
+import matchaLatteNoSyrupAsset from '@/assets/matcha_latte_no_syrup.png.asset.json';
+const matchaLatteNoSyrupImg = matchaLatteNoSyrupAsset.url;
 import buffaloCauliflowerImg from '@/assets/buffalo_cauliflower.png.asset.json';
 import roastedCauliflowerImg from '@/assets/roasted_cauliflower.png.asset.json';
 import parmesanCheeseAsset from '@/assets/parmesan_cheese.png.asset.json';
@@ -465,7 +467,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-29',
-    optionA: { name: 'Matcha Latte (No Syrup)', image: '/images/matcha_latte.png' },
+    optionA: { name: 'Matcha Latte (No Syrup)', image: matchaLatteNoSyrupImg },
     optionB: { name: 'Matcha Strawberry Latte', image: '/images/matcha_strawberry_latte.png' },
     intensityA: 2,
     intensityB: 7,
