@@ -205,6 +205,7 @@ const Results = () => {
                   </div>
                 )}
               </motion.div>
+              </>
             )}
 
             {/* Taste Profile Chart */}
