@@ -467,7 +467,7 @@ export const sweetItems: QuizItem[] = [
   },
   {
     id: 'sweet-29',
-    optionA: { name: 'Matcha Latte (No Syrup)', image: '/images/matcha_latte.png' },
+    optionA: { name: 'Matcha Latte (No Syrup)', image: matchaLatteNoSyrupImg },
     optionB: { name: 'Matcha Strawberry Latte', image: '/images/matcha_strawberry_latte.png' },
     intensityA: 2,
     intensityB: 7,
