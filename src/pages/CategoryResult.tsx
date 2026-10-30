@@ -18,21 +18,26 @@ interface LocationState {
 
 const AnalyzingScreen = () => (
   <motion.div
-    className="min-h-screen flex flex-col items-center justify-end relative overflow-hidden"
+    className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
     style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0, scale: 0.95 }}
     transition={{ duration: 0.4 }}
   >
-    <motion.img
-      src={chefImage}
-      alt="Chef analyzing"
-      className="w-full max-w-md object-contain drop-shadow-2xl"
+    <motion.picture
+      className="flex items-center justify-center"
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-    />
-    <div className="absolute top-1/4 left-0 right-0 flex flex-col items-center">
+    >
+      <source media="(min-width: 768px)" srcSet={chefDesktopAsset.url} />
+      <img
+        src={chefImage}
+        alt="Chef analyzing"
+        className="w-full max-w-md md:max-w-3xl max-h-[70vh] object-contain drop-shadow-2xl"
+      />
+    </motion.picture>
+    <div className="absolute top-[12%] left-0 right-0 flex flex-col items-center">
       <motion.h2
         className="text-3xl font-display font-bold text-white/90 mb-4 tracking-wide"
         initial={{ opacity: 0, y: 10 }}
